@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A real website for your business, ready in 48 hours | Ari Leon Boozer, Newport AR</title>
+<meta name="description" content="I build one-page websites for local businesses in Northeast Arkansas. $750 flat, ready to review within 48 hours of receiving your content. Call or text (870) 201-0441.">
+<meta name="author" content="Ari Leon Boozer">
+<meta name="theme-color" content="#F5F0E6">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ari Leon Boozer">
+<meta property="og:title" content="A real website for your business. Ready in 48 hours.">
+<meta property="og:description" content="One-page websites for local businesses in Northeast Arkansas. $750 flat, ready to review within 48 hours of receiving your content. Call or text (870) 201-0441.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A real website for your business. Ready in 48 hours.">
+<meta name="twitter:description" content="One-page websites for local businesses in Northeast Arkansas. $750 flat, ready to review within 48 hours of receiving your content. Call or text (870) 201-0441.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231F4D36'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='23' font-weight='700' text-anchor='middle' fill='%23FFFDF8'%3EALB%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ari Leon Boozer",
+  "description": "Websites and custom software builds for small local businesses, at fixed prices. One-page websites are ready to review within 48 hours of receiving the client's content. In person across Northeast Arkansas and remote anywhere.",
+  "telephone": "+1-870-201-0441",
+  "email": "boozer.ira@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Newport",
+    "addressRegion": "AR",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Newport, Arkansas" },
+    { "@type": "City", "name": "Jonesboro, Arkansas" },
+    { "@type": "City", "name": "Batesville, Arkansas" },
+    { "@type": "City", "name": "Searcy, Arkansas" },
+    { "@type": "AdministrativeArea", "name": "Northeast Arkansas" }
+  ],
+  "priceRange": "From $750",
+  "paymentAccepted": "Zelle, Check, Cash, Card",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Launch Page",
+        "description": "A one-page website, ready to review within 48 hours of receiving the client's content. It goes live as soon as the client approves it and the balance is paid.",
+        "price": "750",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Full Site",
+        "description": "Up to five pages, ready to review within 5 calendar days of receiving the client's content.",
+        "price": "1500",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Custom Build",
+        "description": "A fixed-scope build delivered in a 5-working-day sprint. Scope and a fixed price are agreed in writing after a free 30-minute call, before any work starts.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "3000",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Care Plan",
+        "description": "Optional, month to month: hosting looked after, up to one hour of edits a month, backups, uptime checks. Cancel any time.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "50",
+          "priceCurrency": "USD",
+          "unitText": "month"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<style>
+:root{
+  --paper:#F5F0E6;
+  --paper-2:#EBE4D5;
+  --card:#FFFDF8;
+  --ink:#1B1A17;
+  --ink-2:#4A463F;
+  --line:#C9BFAB;
+  --field:#5E584E;
+  --accent:#1F4D36;
+  --accent-dark:#163A28;
+  --error:#A63A1E;
+  --focus:#1B1A17;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Noto Serif",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
+  --gutter:20px;
+}
+@media (min-width:720px){:root{--gutter:32px}}
+@media (min-width:1100px){:root{--gutter:40px}}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media (min-width:960px){body{font-size:1.125rem}html{scroll-padding-top:92px}}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+p,li{text-wrap:pretty}
+ul,ol{padding:0}
+a{color:inherit;text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--accent)}
+svg{display:block}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+/* viewport-fit=cover lets the page run under a phone's notch in landscape, so keep the text clear of it */
+@supports (padding:max(0px)){.wrap{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.nw{white-space:nowrap}
+.ic{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.skip{position:absolute;left:12px;top:-80px;z-index:50;background:var(--ink);color:var(--paper);padding:12px 16px;font-weight:700;border-radius:4px}
+.skip:focus,.skip:hover{top:12px;color:var(--paper);--focus:var(--accent)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.7rem 1.1rem;border:2px solid var(--ink);border-radius:4px;background:transparent;color:var(--ink);font:700 1.0625rem/1.2 var(--sans);text-decoration:none;text-align:center;cursor:pointer;transition:background-color .15s ease,color .15s ease,border-color .15s ease;-webkit-tap-highlight-color:transparent}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{position:relative;z-index:1}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-light{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.btn-light:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.btn-sm{min-height:44px;padding:.45rem .85rem;font-size:1rem}
+.btn-block{width:100%}
+
+/* Header */
+.site-header{background:var(--paper);border-bottom:2px solid var(--ink)}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px;padding-block:10px}
+.brand{display:flex;flex-direction:column;min-width:0;padding-block:2px;color:var(--ink);text-decoration:none;line-height:1.2}
+.brand:hover{color:var(--ink)}
+.brand-name{font-family:var(--serif);font-weight:700;font-size:1.375rem;letter-spacing:-.01em}
+.brand-sub{font-size:.8125rem;color:var(--ink-2);text-wrap:balance}
+.site-nav{display:none}
+.site-nav ul{display:flex;gap:22px;list-style:none}
+.site-nav a{display:inline-block;font-size:.9375rem;font-weight:600;line-height:1.4;text-decoration:none;padding:12px 0}
+.site-nav a:hover{text-decoration:underline;text-decoration-thickness:2px}
+.header-call .hc-num{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media (min-width:560px){.header-call .hc-num{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}}
+@media (min-width:960px){.site-header{position:sticky;top:0;z-index:20}}
+@media (min-width:1100px){.site-nav{display:block;margin-left:auto;margin-right:12px}}
+
+/* Type */
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.25rem,4.6vw + 1.2rem,4.25rem);line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
+h1 .hl{display:block;color:var(--accent)}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1rem,3rem);line-height:1.08;letter-spacing:-.015em;text-wrap:balance}
+.label{display:flex;align-items:center;gap:10px;margin-bottom:14px;color:var(--accent);font:700 .8125rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.label::before{content:"";flex:none;width:28px;height:3px;background:var(--accent)}
+.section{padding-block:clamp(56px,9vw,112px)}
+.section-rule{border-top:2px solid var(--ink)}
+.section-alt{background:var(--paper-2)}
+.section-dark{background:var(--ink);color:var(--paper);--focus:#FFFDF8}
+.section-dark .label{color:var(--paper)}
+.section-dark .label::before{background:var(--paper)}
+.section-dark a:not(.btn):hover{color:#fff}
+
+/* Hero */
+.hero{padding-block:clamp(36px,7vw,96px) clamp(48px,8vw,104px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.lede{margin-top:20px;max-width:34em;font-size:clamp(1.125rem,1vw + .95rem,1.375rem);line-height:1.5;text-wrap:pretty}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pair{display:flex;flex-wrap:wrap;gap:10px;flex:1 1 100%}
+.pair .btn{flex:1 1 auto}
+.cta > .btn{flex:1 1 100%}
+@media (max-width:419.98px){.pair .btn{padding-inline:.75rem;font-size:1rem}}
+@media (max-width:349.98px){.pair .ic{display:none}}
+@media (min-width:600px){.pair{flex:0 1 auto}.cta > .btn{flex:0 0 auto}}
+.ratecard{max-width:560px;background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:22px 20px 18px}
+.ratecard-title{margin-bottom:14px;font:700 .8125rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.rates{list-style:none}
+.rates li{display:grid;grid-template-columns:auto minmax(12px,1fr) auto;align-items:baseline;column-gap:8px;padding:12px 0;border-top:1px solid var(--line)}
+.rates li:first-child{border-top:0;padding-top:0}
+.r-name{font-weight:700}
+.r-dots{border-bottom:2px dotted var(--field);transform:translateY(-5px)}
+.r-price{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.1;font-variant-numeric:lining-nums;white-space:nowrap}
+.r-price .from{font:700 .875rem/1 var(--sans);color:var(--ink-2)}
+.r-note{grid-column:1/-1;color:var(--ink-2);font-size:.9375rem}
+.ratecard-foot{margin-top:4px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink-2);font-size:.875rem}
+@media (min-width:1040px){
+  .hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:64px;align-items:end}
+  .ratecard{max-width:none}
+}
+
+/* Steps */
+.steps{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:36px}
+.steps li{display:grid;grid-template-columns:3.25rem minmax(0,1fr);column-gap:8px;border-top:2px solid var(--ink);padding-top:16px}
+.step-n{grid-row:1 / span 2;font-family:var(--serif);font-weight:700;font-size:3.5rem;line-height:.9;color:var(--accent);font-variant-numeric:lining-nums}
+.steps h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.15;margin-bottom:8px}
+.steps p{grid-column:2;color:var(--ink-2)}
+@media (min-width:860px){
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}
+  .steps li{display:block;padding-top:20px}
+  .step-n{display:block;font-size:4.5rem;margin-bottom:14px}
+}
+
+/* Packages */
+.pkgs{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:36px}
+@media (min-width:980px){.pkgs{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:48px}}
+.pkg{position:relative;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:34px 22px 24px;overflow:hidden}
+.pkg::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--ink)}
+.pkg-lead::before{background:var(--accent)}
+.pkg h3{font:700 .9375rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.price{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.75rem;font-family:var(--serif);font-weight:700;font-size:clamp(3rem,2vw + 2.4rem,3.75rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums;margin-bottom:14px}
+.price .from{font:700 1rem/1.2 var(--sans);letter-spacing:0;color:var(--ink-2)}
+.turn{font-weight:700;line-height:1.4;padding-bottom:18px;margin-bottom:18px;border-bottom:2px solid var(--ink)}
+.pkg h4{font:700 .8125rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
+.pkg-note{margin-bottom:16px}
+.ticks,.dots{list-style:none;margin-bottom:22px}
+.ticks li,.dots li{position:relative;padding-left:1.75rem;margin-bottom:.5rem;line-height:1.45}
+.ticks li::before{content:"";position:absolute;left:.3rem;top:.2em;width:.5rem;height:.9rem;border:solid var(--accent);border-width:0 3px 3px 0;transform:rotate(42deg)}
+.dots li::before{content:"";position:absolute;left:.3rem;top:.55em;width:.5rem;height:.5rem;background:var(--ink)}
+.pkg .btn{margin-top:auto}
+.care{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:24px;border:2px dashed var(--ink);border-radius:4px;padding:20px 22px}
+.care-tag{font:700 .8125rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
+.care h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin-bottom:6px}
+.care-price{font-family:var(--serif);font-weight:700;font-size:2.5rem;line-height:1;font-variant-numeric:lining-nums;white-space:nowrap}
+.care-price .per{font:700 1rem/1 var(--sans);color:var(--ink-2)}
+@media (min-width:720px){.care{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:32px}}
+.terms{margin-top:28px;max-width:62em}
+.terms + .terms{margin-top:12px;color:var(--ink-2)}
+
+/* Work */
+.work-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+@media (min-width:960px){.work-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:72px;align-items:start}}
+.work-copy h2{margin-bottom:24px}
+.work-copy p{max-width:36em;margin-bottom:16px}
+.work-copy .big{font-family:var(--serif);font-size:clamp(1.25rem,1vw + 1.05rem,1.5rem);line-height:1.4}
+.work-copy .btn{margin-top:12px}
+.work-facts{border:1px solid rgba(245,240,230,.45);border-radius:4px;padding:24px 22px}
+.work-facts h3{font:700 .8125rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tools li{border:1px solid rgba(245,240,230,.55);border-radius:3px;padding:6px 10px;font-family:var(--mono);font-size:.875rem;line-height:1.3}
+
+/* FAQ */
+.faq{max-width:840px;margin-top:32px;border-bottom:2px solid var(--ink)}
+.faq details{border-top:2px solid var(--ink)}
+.faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-height:56px;padding:16px 0;list-style:none;cursor:pointer;font-family:var(--serif);font-weight:700;font-size:1.3125rem;line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:18px;height:18px;margin-top:4px;background:linear-gradient(var(--accent),var(--accent)) center/100% 3px no-repeat,linear-gradient(var(--accent),var(--accent)) center/3px 100% no-repeat}
+.faq details[open] summary::after{background:linear-gradient(var(--accent),var(--accent)) center/100% 3px no-repeat}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 34px 22px 0;max-width:62ch}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+@media (min-width:900px){.about-grid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:72px}}
+.about-copy p{max-width:38em;margin-bottom:16px}
+.about-copy p:last-child{margin-bottom:0}
+.about-copy .big{font-family:var(--serif);font-size:clamp(1.25rem,1vw + 1.05rem,1.5rem);line-height:1.4}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+@media (min-width:960px){.contact-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:start}}
+.contact-copy h2{margin-bottom:16px}
+.contact-copy > p{max-width:30em}
+.bignum{margin:18px 0 12px;font-family:var(--serif);font-weight:700;font-size:clamp(2rem,5vw + 1rem,3.5rem);line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums;white-space:nowrap}
+.bignum a{display:inline-block;padding-block:6px;text-decoration:none}
+.bignum a:hover{text-decoration:underline;text-decoration-thickness:3px}
+.contact-btns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;max-width:460px}
+.contact-btns .wide{grid-column:1/-1}
+.contact-btns .addr{overflow-wrap:anywhere}
+.contact-area{margin-top:18px;color:var(--ink-2)}
+.form{background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:24px 20px}
+@media (min-width:720px){.form{padding:32px 30px}}
+.form h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin-bottom:8px}
+.form-note{color:var(--ink-2);font-size:.9375rem}
+.field{margin-top:18px}
+.field label{display:block;font-weight:700;margin-bottom:6px}
+.field .opt{font-weight:400;color:var(--ink-2)}
+.field input,.field textarea{display:block;width:100%;min-height:52px;padding:12px;border:2px solid var(--field);border-radius:4px;background:#fff;color:var(--ink);font:inherit;line-height:1.4}
+.field textarea{min-height:132px;resize:vertical}
+.field input:focus-visible,.field textarea:focus-visible{outline-offset:2px;border-color:var(--ink)}
+.field [aria-invalid="true"]{border-color:var(--error)}
+.err{margin-top:6px;color:var(--error);font-weight:700;font-size:.9375rem}
+.err:empty{display:none}
+.form .btn{margin-top:22px}
+.form-status{margin-top:14px;font-weight:600}
+.form-status:empty{display:none}
+
+/* Footer */
+.site-footer{background:var(--ink);color:var(--paper);padding-block:44px;--focus:#FFFDF8}
+.site-footer a:hover{color:#fff}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+@media (min-width:800px){.foot-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px}}
+.foot-name{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2}
+.foot-links{list-style:none}
+.foot-links a{display:inline-block;padding:10px 0;font-weight:600}
+.foot-legal{grid-column:1/-1;padding-top:12px;border-top:1px solid rgba(245,240,230,.35);font-size:.9375rem}
+.foot-legal a{display:inline-block;padding:10px 0}
+
+/* Sticky call bar, small screens only */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));background:var(--paper);border-top:2px solid var(--ink)}
+@supports (padding:max(0px)){.callbar{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}}
+.callbar .btn{flex:1 1 0;min-height:48px;padding-block:.5rem}
+.callbar{transition:transform .2s ease,visibility .2s ease}
+.callbar.is-tucked{transform:translateY(100%);visibility:hidden}
+.callbar.is-away{display:none}
+@media (max-width:719.98px){
+  html{scroll-padding-bottom:88px}
+  .site-footer{padding-bottom:calc(44px + 72px + env(safe-area-inset-bottom,0px))}
+}
+@media (min-width:720px){.callbar{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.callbar{transition:none}
+}
+@media print{
+  .callbar,.skip,.site-nav{display:none}
+  .site-header{position:static}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">
+      <span class="brand-name">Ari Leon Boozer</span>
+      <span class="brand-sub">Websites and software for local businesses</span>
+    </a>
+    <nav class="site-nav" aria-label="Page sections">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#prices">Prices</a></li>
+        <li><a href="#work">My work</a></li>
+        <li><a href="#faq">Questions</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm header-call" href="tel:+18702010441">
+      <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+      <span>Call<span class="hc-num nw"> (870) 201-0441</span></span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="label">Newport, Arkansas</p>
+        <h1 id="hero-h">A real website for your business. <span class="hl">Ready in 48&nbsp;hours.</span></h1>
+        <p class="lede">I'm Ari Leon Boozer in Newport, and I build one-page websites for local businesses for a flat $750, ready to review within 48 hours of receiving your content.</p>
+        <div class="cta">
+          <div class="pair" role="group" aria-label="Call or text Ari">
+            <a class="btn btn-primary" href="tel:+18702010441">
+              <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              <span class="nw">Call (870) 201-0441</span>
+            </a>
+            <a class="btn btn-primary" href="sms:+18702010441">
+              <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
+              <span>Text<span class="sr-only"> (870) 201-0441</span></span>
+            </a>
+          </div>
+          <a class="btn" href="#prices">
+            <span>See prices</span>
+            <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-down"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="ratecard">
+        <p class="ratecard-title">Prices at a glance</p>
+        <ul class="rates">
+          <li>
+            <span class="r-name">Launch Page</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$750</span>
+            <span class="r-note">One page, ready in 48 hours</span>
+          </li>
+          <li>
+            <span class="r-name">Full Site</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$1,500</span>
+            <span class="r-note">Up to five pages, ready in 5 days</span>
+          </li>
+          <li>
+            <span class="r-name">Custom Build</span><span class="r-dots" aria-hidden="true"></span><span class="r-price"><span class="from">from</span> $3,000</span>
+            <span class="r-note">Fixed scope, <span class="nw">5-working-day</span> sprint</span>
+          </li>
+        </ul>
+        <p class="ratecard-foot">Website turnaround counts from when I receive your content.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <p class="label">How it works</p>
+      <h2 id="how-h">Three steps, start to finish.</h2>
+      <ol class="steps" role="list">
+        <li>
+          <span class="step-n" aria-hidden="true">1</span>
+          <h3>We talk for <span class="nw">15 minutes</span></h3>
+          <p>You tell me what you do, your hours and where to find you. Send me your photos, and your logo if you have one. I write the words from that conversation.</p>
+        </li>
+        <li>
+          <span class="step-n" aria-hidden="true">2</span>
+          <h3>I build it</h3>
+          <p>A custom design for your business, not a template. I build with AI-assisted tools, then review and test everything myself before it ships. A one-page site is ready to review within 48 hours of receiving your content.</p>
+        </li>
+        <li>
+          <span class="step-n" aria-hidden="true">3</span>
+          <h3>You review it and it goes live</h3>
+          <p>You look it over and tell me what to change. One round of revisions is included with a Launch Page, two with a Full Site. As soon as you approve it and the balance is paid, I connect the site to your domain and it goes live.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="prices" aria-labelledby="prices-h">
+    <div class="wrap">
+      <p class="label">Prices</p>
+      <h2 id="prices-h">Three packages. Fixed prices.</h2>
+
+      <div class="pkgs">
+        <article class="pkg pkg-lead" id="launch" aria-labelledby="launch-h">
+          <h3 id="launch-h">Launch Page</h3>
+          <p class="price">$750</p>
+          <p class="turn">One page. Ready to review within 48 hours of receiving your content. It goes live as soon as you approve it and the balance is paid.</p>
+          <h4>What you get</h4>
+          <ul class="ticks">
+            <li>Custom design for your business, not a template</li>
+            <li>Mobile-friendly</li>
+            <li>Tap-to-call button</li>
+            <li>Contact form that reaches your email</li>
+            <li>Hours and location with a map link</li>
+            <li>Copy written from a <span class="nw">15-minute</span> conversation</li>
+            <li>Your photos placed</li>
+            <li>Basic search setup: page title and description, and a link to your Google Business Profile</li>
+            <li>Connection to your domain</li>
+            <li>One round of revisions</li>
+          </ul>
+          <a class="btn" href="#contact" data-need="I'd like a Launch Page ($750).">Ask about a Launch Page</a>
+        </article>
+
+        <article class="pkg" id="full" aria-labelledby="full-h">
+          <h3 id="full-h">Full Site</h3>
+          <p class="price">$1,500</p>
+          <p class="turn">Up to five pages. Ready to review within 5 calendar days of receiving your content.</p>
+          <h4>Everything in the Launch Page, plus</h4>
+          <ul class="ticks">
+            <li>A page per main service, written to be found in search</li>
+            <li>Photo gallery</li>
+            <li>Quote or booking request form</li>
+            <li>Google Business Profile tune-up</li>
+            <li>Basic visitor analytics</li>
+            <li>Two rounds of revisions</li>
+          </ul>
+          <p class="pkg-note">The pages could be, for example, Home, Services, About, Gallery and Contact.</p>
+          <a class="btn" href="#contact" data-need="I'd like a Full Site ($1,500).">Ask about a Full Site</a>
+        </article>
+
+        <article class="pkg" id="custom" aria-labelledby="custom-h">
+          <h3 id="custom-h">Custom Build</h3>
+          <p class="price"><span class="from">from</span> $3,000</p>
+          <p class="turn">Fixed scope. Delivered in a <span class="nw">5-working-day</span> sprint.</p>
+          <h4>For example</h4>
+          <ul class="dots">
+            <li>Online booking or ordering</li>
+            <li>A customer portal</li>
+            <li>An internal tool or dashboard</li>
+            <li>Data cleanup or migration</li>
+            <li>Workflow automation</li>
+            <li>A mobile app prototype</li>
+          </ul>
+          <p class="pkg-note">We agree on the scope and a fixed price in writing after a free <span class="nw">30-minute</span> call, before any work starts.</p>
+          <a class="btn" href="#contact" data-need="I'd like to set up the free 30-minute call about a Custom Build.">Ask about a Custom Build</a>
+        </article>
+      </div>
+
+      <div class="care">
+        <div>
+          <p class="care-tag">Optional add-on</p>
+          <h3>Care Plan</h3>
+          <p>Hosting looked after, up to one hour of edits a month, backups and uptime checks. "Hosting looked after" means I manage your hosting account and settings. You still pay any hosting fee directly. Month to month. Cancel any time.</p>
+        </div>
+        <p class="care-price">$50 <span class="per">per month</span></p>
+      </div>
+
+      <p class="terms"><strong>Payment:</strong> 50% deposit to start, balance due on delivery before the site goes live or files are handed over. Pay in full up front and take $50 off a Launch Page or $100 off a Full Site. I take Zelle, check, cash or card (card by emailed invoice).</p>
+      <p class="terms"><strong>Not included unless we agree to it in writing:</strong> domain registration and hosting fees (you pay these directly and own the accounts), logo design, photography, online store or payment processing setup, and ongoing marketing or ad management.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="work" aria-labelledby="work-h">
+    <div class="wrap work-grid">
+      <div class="work-copy">
+        <p class="label">My work</p>
+        <h2 id="work-h">What I've built</h2>
+        <p class="big">I'm the founder of NeoLibrary, a social app where people log, rate, review and discuss films, TV shows, books and video games.</p>
+        <p>I designed, built and launched it alone: a website plus iOS and Android apps, live in seven languages. I run its hosting, database, security, releases and app-store submissions myself.</p>
+        <p>I'm new to client work, so I have no client sites to show you yet. This is the work I can point to.</p>
+        <a class="btn btn-light" href="https://neolibrary.net" target="_blank" rel="noopener noreferrer">
+          <span>Visit neolibrary.net<span class="sr-only"> (opens in a new tab)</span></span>
+          <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-out"/></svg>
+        </a>
+      </div>
+      <div class="work-facts">
+        <h3>Tools I work in</h3>
+        <ul class="tools">
+          <li>Next.js</li>
+          <li>FastAPI</li>
+          <li>React Native (Expo)</li>
+          <li>PostgreSQL</li>
+          <li>Google Cloud</li>
+          <li>AWS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <p class="label">Questions</p>
+      <h2 id="faq-h">Common questions</h2>
+      <div class="faq">
+        <details open>
+          <summary>How is it this fast?</summary>
+          <div class="a"><p>I build with AI-assisted tools, and I review and test everything myself before it ships. The scope is small and the price is fixed. That is why the turnaround is fast.</p></div>
+        </details>
+        <details>
+          <summary>What do you need from me?</summary>
+          <div class="a"><p>A <span class="nw">15-minute</span> conversation, your photos and logo if you have them, and access to your domain if you own one.</p></div>
+        </details>
+        <details>
+          <summary>Do I own the site?</summary>
+          <div class="a"><p>Yes. The finished site becomes yours on full payment. The domain and hosting are in your name, and your content stays yours.</p></div>
+        </details>
+        <details>
+          <summary>What does it cost after launch?</summary>
+          <div class="a"><p>A domain is typically about $15 a year, paid to the registrar. Hosting for a simple site is usually free or a few dollars a month. The Care Plan is optional.</p></div>
+        </details>
+        <details>
+          <summary>What if I already have a Facebook page?</summary>
+          <div class="a"><p>Keep it. A website is what shows up in Google and Maps searches, and it works for people who are not on Facebook.</p></div>
+        </details>
+        <details>
+          <summary>What if I need changes later?</summary>
+          <div class="a"><p>Small edits are covered by the Care Plan, or billed at a flat $60 an hour.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="about" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <div>
+        <p class="label">About</p>
+        <h2 id="about-h">About me</h2>
+      </div>
+      <div class="about-copy">
+        <p class="big">I'm Ari Leon Boozer. I'm a sole proprietor working under my own name, based in Newport, Arkansas.</p>
+        <p>I work in person across Northeast Arkansas, in Newport, Jonesboro, Batesville, Searcy and nearby, and remotely anywhere.</p>
+        <p>I have a Bachelor of Science in Business Administration, cum laude, from Arkansas State University (2025). I'm working on my MBA at Arkansas State now.</p>
+        <p>I'm new to client work. What I can show you is NeoLibrary, which I built and run myself, and the fixed prices on this page.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <p class="label">Contact</p>
+        <h2 id="contact-h">Call, text or email me</h2>
+        <p>Tell me about your business and what you need. A call or a text is fine. So is an email.</p>
+        <p class="bignum"><a href="tel:+18702010441">(870) 201-0441</a></p>
+        <div class="contact-btns">
+          <a class="btn btn-primary" href="tel:+18702010441">
+            <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+            <span>Call<span class="sr-only"> (870) 201-0441</span></span>
+          </a>
+          <a class="btn btn-primary" href="sms:+18702010441">
+            <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
+            <span>Text<span class="sr-only"> (870) 201-0441</span></span>
+          </a>
+          <a class="btn wide" href="mailto:boozer.ira@gmail.com?subject=Website%20inquiry">
+            <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+            <span>Email <span class="addr">boozer.ira@gmail.com</span></span>
+          </a>
+        </div>
+        <p class="contact-area">Based in Newport. In person across Northeast Arkansas, remote anywhere.</p>
+      </div>
+
+      <form class="form" id="contact-form" action="mailto:boozer.ira@gmail.com" method="post" enctype="text/plain" aria-labelledby="form-h">
+        <h3 id="form-h">Or write it down here</h3>
+        <p class="form-note">This opens your own email app with the message filled in. Nothing is sent until you press send there.</p>
+
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="Name" type="text" autocomplete="name" required aria-describedby="e-name">
+          <p class="err" id="e-name"></p>
+        </div>
+        <div class="field">
+          <label for="f-business">Business <span class="opt">(optional)</span></label>
+          <input id="f-business" name="Business" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+          <input id="f-phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="f-need">What you need</label>
+          <textarea id="f-need" name="What I need" rows="4" maxlength="1200" required aria-describedby="e-need"></textarea>
+          <p class="err" id="e-need"></p>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit">
+          <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+          <span>Send by email</span>
+        </button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">Ari Leon Boozer</p>
+      <p>Websites and software for local businesses</p>
+      <p>Newport, Arkansas. In person across Northeast Arkansas, remote anywhere.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="tel:+18702010441">Call (870) 201-0441</a></li>
+      <li><a href="sms:+18702010441">Text (870) 201-0441</a></li>
+      <li><a href="mailto:boozer.ira@gmail.com">boozer.ira@gmail.com</a></li>
+    </ul>
+    <p class="foot-legal">&copy; 2026 Ari Leon Boozer. Sole proprietor. <a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<div class="callbar" id="callbar" role="group" aria-label="Call or text Ari">
+  <a class="btn btn-primary" href="tel:+18702010441">
+    <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+    <span>Call<span class="sr-only"> (870) 201-0441</span></span>
+  </a>
+  <a class="btn" href="sms:+18702010441">
+    <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
+    <span>Text<span class="sr-only"> (870) 201-0441</span></span>
+  </a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Sticky call bar (small screens). It tucks away while the page's own call
+  // and text buttons (hero, contact) are on screen, so they never double up.
+  var bar = document.getElementById('callbar');
+  var watched = Array.prototype.slice.call(document.querySelectorAll('.cta .pair, .contact-btns'));
+  if (bar && watched.length && 'IntersectionObserver' in window) {
+    var onScreen = watched.map(function (el) {
+      var box = el.getBoundingClientRect();
+      return box.bottom > 0 && box.top < window.innerHeight;
+    });
+    var update = function () {
+      bar.classList.toggle('is-tucked', onScreen.indexOf(true) > -1);
+    };
+    update();
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        onScreen[watched.indexOf(entry.target)] = entry.isIntersecting;
+      });
+      update();
+    });
+    watched.forEach(function (el) { watcher.observe(el); });
+  }
+
+  var EMAIL = 'boozer.ira@gmail.com';
+  var form = document.getElementById('contact-form');
+  if (form === null) { return; }
+
+  var nameEl = document.getElementById('f-name');
+  var businessEl = document.getElementById('f-business');
+  var phoneEl = document.getElementById('f-phone');
+  var needEl = document.getElementById('f-need');
+  var statusEl = document.getElementById('form-status');
+
+  // The script handles validation, so switch off the browser's own bubbles.
+  form.setAttribute('novalidate', '');
+
+  function clean(el) {
+    return el.value.replace(/^\s+|\s+$/g, '');
+  }
+
+  function setError(el, message) {
+    var box = document.getElementById(el.id.replace('f-', 'e-'));
+    if (message) {
+      el.setAttribute('aria-invalid', 'true');
+      box.textContent = message;
+    } else {
+      el.removeAttribute('aria-invalid');
+      box.textContent = '';
+    }
+  }
+
+  [nameEl, needEl].forEach(function (el) {
+    el.addEventListener('input', function () {
+      if (clean(el)) { setError(el, ''); }
+    });
+  });
+
+  // Build a mailto: link from the form and hand it to the visitor's email app.
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+
+    var name = clean(nameEl);
+    var business = clean(businessEl);
+    var phone = clean(phoneEl);
+    var need = clean(needEl);
+    var firstBad = null;
+
+    setError(nameEl, name ? '' : 'Please enter your name.');
+    setError(needEl, need ? '' : 'Please tell me what you need.');
+    if (name === '') { firstBad = nameEl; } else if (need === '') { firstBad = needEl; }
+    if (firstBad) {
+      statusEl.textContent = '';
+      firstBad.focus();
+      return;
+    }
+
+    var lines = ['Name: ' + name];
+    if (business) { lines.push('Business: ' + business); }
+    if (phone) { lines.push('Phone: ' + phone); }
+    lines.push('', 'What I need:', need);
+
+    var subject = 'Website inquiry from ' + (business || name);
+    var href = 'mailto:' + EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(lines.join('\n').replace(/\r\n|\r|\n/g, '\r\n'));
+
+    statusEl.textContent = 'Your email app should open with the message ready. Press send there to reach me. If nothing opened, call or text (870) 201-0441, or email ' + EMAIL + '.';
+    window.location.href = href;
+  });
+
+  // "Ask about ..." links on the price cards start the message for the visitor.
+  var lastAuto = '';
+  Array.prototype.forEach.call(document.querySelectorAll('[data-need]'), function (link) {
+    link.addEventListener('click', function () {
+      if (needEl.value === '' || needEl.value === lastAuto) {
+        lastAuto = link.getAttribute('data-need');
+        needEl.value = lastAuto;
+        setError(needEl, '');
+      }
+    });
+  });
+
+  // Keep the sticky call bar out of the way of the on-screen keyboard.
+  if (bar) {
+    form.addEventListener('focusin', function () { bar.classList.add('is-away'); });
+    form.addEventListener('focusout', function () { bar.classList.remove('is-away'); });
+  }
+})();
+</script>
+</body>
+</html>
