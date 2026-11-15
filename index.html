@@ -4,19 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A real website for your business, ready in 48 hours | Ari Leon Boozer, Newport AR</title>
-<meta name="description" content="I build one-page websites for local businesses in Northeast Arkansas. $750 flat, ready to review within 48 hours of receiving your content. Call or text (870) 201-0441.">
+<meta name="description" content="I build one-page websites for local businesses in Northeast Arkansas. $500 flat, ready to review within 48 hours of receiving your content. Text (870) 201-0441.">
 <meta name="author" content="Ari Leon Boozer">
-<meta name="theme-color" content="#F5F0E6">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#121714">
+<meta name="color-scheme" content="dark light">
+<script>
+/* Set the theme before the page paints so there is no flash. Dark is the default. */
+(function () {
+  var t = 'dark';
+  try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
+  var r = document.documentElement;
+  r.setAttribute('data-theme', t);
+  r.classList.add('js');
+}());
+</script>
 <meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://www.arileonboozer.com/">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.arileonboozer.com/">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ari Leon Boozer">
 <meta property="og:title" content="A real website for your business. Ready in 48 hours.">
-<meta property="og:description" content="One-page websites for local businesses in Northeast Arkansas. $750 flat, ready to review within 48 hours of receiving your content. Call or text (870) 201-0441.">
+<meta property="og:description" content="One-page websites for local businesses in Northeast Arkansas. $500 flat, ready to review within 48 hours of receiving your content. Text (870) 201-0441.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A real website for your business. Ready in 48 hours.">
-<meta name="twitter:description" content="One-page websites for local businesses in Northeast Arkansas. $750 flat, ready to review within 48 hours of receiving your content. Call or text (870) 201-0441.">
+<meta name="twitter:description" content="One-page websites for local businesses in Northeast Arkansas. $500 flat, ready to review within 48 hours of receiving your content. Text (870) 201-0441.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231F4D36'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='23' font-weight='700' text-anchor='middle' fill='%23FFFDF8'%3EALB%3C/text%3E%3C/svg%3E">
 
 <script type="application/ld+json">
@@ -24,6 +36,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Ari Leon Boozer",
+  "url": "https://www.arileonboozer.com/",
   "description": "Websites and custom software builds for small local businesses, at fixed prices. One-page websites are ready to review within 48 hours of receiving the client's content. In person across Northeast Arkansas and remote anywhere.",
   "telephone": "+1-870-201-0441",
   "email": "boozer.ira@gmail.com",
@@ -40,8 +53,8 @@
     { "@type": "City", "name": "Searcy, Arkansas" },
     { "@type": "AdministrativeArea", "name": "Northeast Arkansas" }
   ],
-  "priceRange": "From $750",
-  "paymentAccepted": "Zelle, Check, Cash, Card",
+  "priceRange": "From $500",
+  "paymentAccepted": "Zelle, Cash App, Check, Cash, Card",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Packages",
@@ -50,30 +63,30 @@
         "@type": "Offer",
         "name": "Launch Page",
         "description": "A one-page website, ready to review within 48 hours of receiving the client's content. It goes live as soon as the client approves it and the balance is paid.",
-        "price": "750",
+        "price": "500",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Full Site",
         "description": "Up to five pages, ready to review within 5 calendar days of receiving the client's content.",
-        "price": "1500",
+        "price": "1000",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Custom Build",
-        "description": "A fixed-scope build delivered in a 5-working-day sprint. Scope and a fixed price are agreed in writing after a free 30-minute call, before any work starts.",
+        "description": "A fixed-scope build delivered in a 5-working-day sprint. Scope and a fixed price are agreed in writing by email, before any work starts.",
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "minPrice": "3000",
+          "minPrice": "2000",
           "priceCurrency": "USD"
         }
       },
       {
         "@type": "Offer",
         "name": "Care Plan",
-        "description": "Optional, month to month: hosting looked after, up to one hour of edits a month, backups, uptime checks. Cancel any time.",
+        "description": "Optional, month to month: hosting looked after, edits within two business days of your request, backups, uptime checks. Cancel any time.",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "50",
@@ -88,6 +101,32 @@
 
 <style>
 :root{
+  /* Dark is the default theme. The light theme overrides these below. */
+  --paper:#121714;
+  --paper-2:#19201B;
+  --card:#1D2520;
+  --ink:#EDE8DC;
+  --ink-2:#B3AD9E;
+  --line:#34413A;
+  --field:#8A9A8F;
+  --field-bg:#0F1412;
+  --rule:#56625A;
+  --bar:#3B4A40;
+  --accent:#52B882;
+  --accent-hover:#6FD09B;
+  --on-accent:#0A1710;
+  --error:#F2866A;
+  --focus:#EDE8DC;
+  --sd-bg:#12281C;
+  --sd-fg:#EDE8DC;
+  --sd-line:rgba(237,232,220,.35);
+  color-scheme:dark;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Noto Serif",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
+  --gutter:20px;
+}
+:root[data-theme="light"]{
   --paper:#F5F0E6;
   --paper-2:#EBE4D5;
   --card:#FFFDF8;
@@ -95,14 +134,18 @@
   --ink-2:#4A463F;
   --line:#C9BFAB;
   --field:#5E584E;
+  --field-bg:#fff;
+  --rule:#1B1A17;
+  --bar:#1B1A17;
   --accent:#1F4D36;
-  --accent-dark:#163A28;
+  --accent-hover:#163A28;
+  --on-accent:#fff;
   --error:#A63A1E;
   --focus:#1B1A17;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Noto Serif",Georgia,"Times New Roman",serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
-  --gutter:20px;
+  --sd-bg:#1B1A17;
+  --sd-fg:#F5F0E6;
+  --sd-line:rgba(245,240,230,.45);
+  color-scheme:light;
 }
 @media (min-width:720px){:root{--gutter:32px}}
 @media (min-width:1100px){:root{--gutter:40px}}
@@ -133,18 +176,33 @@ svg{display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.7rem 1.1rem;border:2px solid var(--ink);border-radius:4px;background:transparent;color:var(--ink);font:700 1.0625rem/1.2 var(--sans);text-decoration:none;text-align:center;cursor:pointer;transition:background-color .15s ease,color .15s ease,border-color .15s ease;-webkit-tap-highlight-color:transparent}
 .btn:hover{background:var(--ink);color:var(--paper)}
 .btn:focus-visible{position:relative;z-index:1}
-.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
-.btn-light{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-.btn-light:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--on-accent)}
+.btn-light{background:var(--sd-fg);border-color:var(--sd-fg);color:var(--sd-bg)}
+.btn-light:hover{background:#fff;border-color:#fff;color:var(--sd-bg)}
 .btn-sm{min-height:44px;padding:.45rem .85rem;font-size:1rem}
 .btn-block{width:100%}
 
 /* Header */
-.site-header{background:var(--paper);border-bottom:2px solid var(--ink)}
+.site-header{background:var(--paper);border-bottom:2px solid var(--rule)}
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px;padding-block:10px}
-.brand{display:flex;flex-direction:column;min-width:0;padding-block:2px;color:var(--ink);text-decoration:none;line-height:1.2}
+.header-actions{display:flex;align-items:center;gap:12px;flex:none}
+.header-call{display:none}
+@media (min-width:560px){.header-call{display:inline-flex}}
+.theme-toggle{display:none;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;border:2px solid var(--rule);border-radius:4px;background:transparent;color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .15s ease,color .15s ease}
+.theme-toggle:hover{background:var(--ink);color:var(--paper)}
+.theme-toggle .ic{width:1.4rem;height:1.4rem}
+.js .theme-toggle{display:inline-flex}
+.ic-moon{display:none}
+:root[data-theme="light"] .ic-sun{display:none}
+:root[data-theme="light"] .ic-moon{display:block}
+.mark-light{display:none}
+:root[data-theme="light"] .mark-light{display:block}
+:root[data-theme="light"] .mark-dark{display:none}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;padding-block:2px;color:var(--ink);text-decoration:none;line-height:1.2}
 .brand:hover{color:var(--ink)}
+.brand-mark{flex:none;width:44px;height:44px;border-radius:6px}
+.brand-text{display:flex;flex-direction:column;min-width:0}
 .brand-name{font-family:var(--serif);font-weight:700;font-size:1.375rem;letter-spacing:-.01em}
 .brand-sub{font-size:.8125rem;color:var(--ink-2);text-wrap:balance}
 .site-nav{display:none}
@@ -163,11 +221,11 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .label{display:flex;align-items:center;gap:10px;margin-bottom:14px;color:var(--accent);font:700 .8125rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 .label::before{content:"";flex:none;width:28px;height:3px;background:var(--accent)}
 .section{padding-block:clamp(56px,9vw,112px)}
-.section-rule{border-top:2px solid var(--ink)}
+.section-rule{border-top:2px solid var(--rule)}
 .section-alt{background:var(--paper-2)}
-.section-dark{background:var(--ink);color:var(--paper);--focus:#FFFDF8}
-.section-dark .label{color:var(--paper)}
-.section-dark .label::before{background:var(--paper)}
+.section-dark{background:var(--sd-bg);color:var(--sd-fg);--focus:#FFFDF8}
+.section-dark .label{color:var(--sd-fg)}
+.section-dark .label::before{background:var(--sd-fg)}
 .section-dark a:not(.btn):hover{color:#fff}
 
 /* Hero */
@@ -181,7 +239,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 @media (max-width:419.98px){.pair .btn{padding-inline:.75rem;font-size:1rem}}
 @media (max-width:349.98px){.pair .ic{display:none}}
 @media (min-width:600px){.pair{flex:0 1 auto}.cta > .btn{flex:0 0 auto}}
-.ratecard{max-width:560px;background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:22px 20px 18px}
+.ratecard{max-width:560px;background:var(--card);border:2px solid var(--rule);border-radius:4px;padding:22px 20px 18px}
 .ratecard-title{margin-bottom:14px;font:700 .8125rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 .rates{list-style:none}
 .rates li{display:grid;grid-template-columns:auto minmax(12px,1fr) auto;align-items:baseline;column-gap:8px;padding:12px 0;border-top:1px solid var(--line)}
@@ -199,7 +257,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 
 /* Steps */
 .steps{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:36px}
-.steps li{display:grid;grid-template-columns:3.25rem minmax(0,1fr);column-gap:8px;border-top:2px solid var(--ink);padding-top:16px}
+.steps li{display:grid;grid-template-columns:3.25rem minmax(0,1fr);column-gap:8px;border-top:2px solid var(--rule);padding-top:16px}
 .step-n{grid-row:1 / span 2;font-family:var(--serif);font-weight:700;font-size:3.5rem;line-height:.9;color:var(--accent);font-variant-numeric:lining-nums}
 .steps h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.15;margin-bottom:8px}
 .steps p{grid-column:2;color:var(--ink-2)}
@@ -212,13 +270,13 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 /* Packages */
 .pkgs{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:36px}
 @media (min-width:980px){.pkgs{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:48px}}
-.pkg{position:relative;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:34px 22px 24px;overflow:hidden}
-.pkg::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--ink)}
+.pkg{position:relative;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--rule);border-radius:4px;padding:34px 22px 24px;overflow:hidden}
+.pkg::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--bar)}
 .pkg-lead::before{background:var(--accent)}
 .pkg h3{font:700 .9375rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
 .price{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.75rem;font-family:var(--serif);font-weight:700;font-size:clamp(3rem,2vw + 2.4rem,3.75rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums;margin-bottom:14px}
 .price .from{font:700 1rem/1.2 var(--sans);letter-spacing:0;color:var(--ink-2)}
-.turn{font-weight:700;line-height:1.4;padding-bottom:18px;margin-bottom:18px;border-bottom:2px solid var(--ink)}
+.turn{font-weight:700;line-height:1.4;padding-bottom:18px;margin-bottom:18px;border-bottom:2px solid var(--rule)}
 .pkg h4{font:700 .8125rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
 .pkg-note{margin-bottom:16px}
 .ticks,.dots{list-style:none;margin-bottom:22px}
@@ -226,7 +284,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .ticks li::before{content:"";position:absolute;left:.3rem;top:.2em;width:.5rem;height:.9rem;border:solid var(--accent);border-width:0 3px 3px 0;transform:rotate(42deg)}
 .dots li::before{content:"";position:absolute;left:.3rem;top:.55em;width:.5rem;height:.5rem;background:var(--ink)}
 .pkg .btn{margin-top:auto}
-.care{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:24px;border:2px dashed var(--ink);border-radius:4px;padding:20px 22px}
+.care{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:24px;border:2px dashed var(--rule);border-radius:4px;padding:20px 22px}
 .care-tag{font:700 .8125rem/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
 .care h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin-bottom:6px}
 .care-price{font-family:var(--serif);font-weight:700;font-size:2.5rem;line-height:1;font-variant-numeric:lining-nums;white-space:nowrap}
@@ -242,14 +300,14 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .work-copy p{max-width:36em;margin-bottom:16px}
 .work-copy .big{font-family:var(--serif);font-size:clamp(1.25rem,1vw + 1.05rem,1.5rem);line-height:1.4}
 .work-copy .btn{margin-top:12px}
-.work-facts{border:1px solid rgba(245,240,230,.45);border-radius:4px;padding:24px 22px}
+.work-facts{border:1px solid var(--sd-line);border-radius:4px;padding:24px 22px}
 .work-facts h3{font:700 .8125rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
 .tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
-.tools li{border:1px solid rgba(245,240,230,.55);border-radius:3px;padding:6px 10px;font-family:var(--mono);font-size:.875rem;line-height:1.3}
+.tools li{border:1px solid var(--sd-line);border-radius:3px;padding:6px 10px;font-family:var(--mono);font-size:.875rem;line-height:1.3}
 
 /* FAQ */
-.faq{max-width:840px;margin-top:32px;border-bottom:2px solid var(--ink)}
-.faq details{border-top:2px solid var(--ink)}
+.faq{max-width:840px;margin-top:32px;border-bottom:2px solid var(--rule)}
+.faq details{border-top:2px solid var(--rule)}
 .faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-height:56px;padding:16px 0;list-style:none;cursor:pointer;font-family:var(--serif);font-weight:700;font-size:1.3125rem;line-height:1.25}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";flex:none;width:18px;height:18px;margin-top:4px;background:linear-gradient(var(--accent),var(--accent)) center/100% 3px no-repeat,linear-gradient(var(--accent),var(--accent)) center/3px 100% no-repeat}
@@ -276,14 +334,14 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .contact-btns .wide{grid-column:1/-1}
 .contact-btns .addr{overflow-wrap:anywhere}
 .contact-area{margin-top:18px;color:var(--ink-2)}
-.form{background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:24px 20px}
+.form{background:var(--card);border:2px solid var(--rule);border-radius:4px;padding:24px 20px}
 @media (min-width:720px){.form{padding:32px 30px}}
 .form h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin-bottom:8px}
 .form-note{color:var(--ink-2);font-size:.9375rem}
 .field{margin-top:18px}
 .field label{display:block;font-weight:700;margin-bottom:6px}
 .field .opt{font-weight:400;color:var(--ink-2)}
-.field input,.field textarea{display:block;width:100%;min-height:52px;padding:12px;border:2px solid var(--field);border-radius:4px;background:#fff;color:var(--ink);font:inherit;line-height:1.4}
+.field input,.field textarea{display:block;width:100%;min-height:52px;padding:12px;border:2px solid var(--field);border-radius:4px;background:var(--field-bg);color:var(--ink);font:inherit;line-height:1.4}
 .field textarea{min-height:132px;resize:vertical}
 .field input:focus-visible,.field textarea:focus-visible{outline-offset:2px;border-color:var(--ink)}
 .field [aria-invalid="true"]{border-color:var(--error)}
@@ -294,18 +352,18 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .form-status:empty{display:none}
 
 /* Footer */
-.site-footer{background:var(--ink);color:var(--paper);padding-block:44px;--focus:#FFFDF8}
+.site-footer{background:var(--sd-bg);color:var(--sd-fg);padding-block:44px;--focus:#FFFDF8}
 .site-footer a:hover{color:#fff}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
 @media (min-width:800px){.foot-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px}}
 .foot-name{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2}
 .foot-links{list-style:none}
 .foot-links a{display:inline-block;padding:10px 0;font-weight:600}
-.foot-legal{grid-column:1/-1;padding-top:12px;border-top:1px solid rgba(245,240,230,.35);font-size:.9375rem}
+.foot-legal{grid-column:1/-1;padding-top:12px;border-top:1px solid var(--sd-line);font-size:.9375rem}
 .foot-legal a{display:inline-block;padding:10px 0}
 
 /* Sticky call bar, small screens only */
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));background:var(--paper);border-top:2px solid var(--ink)}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));background:var(--paper);border-top:2px solid var(--rule)}
 @supports (padding:max(0px)){.callbar{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}}
 .callbar .btn{flex:1 1 0;min-height:48px;padding-block:.5rem}
 .callbar{transition:transform .2s ease,visibility .2s ease}
@@ -322,8 +380,11 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
   .btn,.callbar{transition:none}
 }
 @media print{
-  .callbar,.skip,.site-nav{display:none}
+  :root,:root[data-theme="dark"]{--paper:#F5F0E6;--paper-2:#EBE4D5;--card:#FFFDF8;--ink:#1B1A17;--ink-2:#4A463F;--line:#C9BFAB;--field:#5E584E;--field-bg:#fff;--rule:#1B1A17;--bar:#1B1A17;--accent:#1F4D36;--on-accent:#fff;--error:#A63A1E;--focus:#1B1A17;--sd-bg:#1B1A17;--sd-fg:#F5F0E6;--sd-line:rgba(245,240,230,.45)}
+  .callbar,.skip,.site-nav,.theme-toggle{display:none}
   .site-header{position:static}
+  .mark-light{display:block}
+  .mark-dark{display:none}
 }
 </style>
 </head>
@@ -336,6 +397,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
     <symbol id="i-out" viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
   </defs>
 </svg>
 
@@ -344,23 +407,33 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 <header class="site-header" id="top">
   <div class="wrap header-row">
     <a class="brand" href="#top">
-      <span class="brand-name">Ari Leon Boozer</span>
-      <span class="brand-sub">Websites and software for local businesses</span>
+      <img class="brand-mark mark-light" src="data:image/png;base64,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AAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoKD/A20UjD+P6wc0AAAAAElFTkSuQmCC" width="44" height="44" alt="">
+      <img class="brand-mark mark-dark" src="data:image/png;base64,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AKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFDQ/wF6+nb8ThhTdwAAAABJRU5ErkJggg==" width="44" height="44" alt="">
+      <span class="brand-text">
+        <span class="brand-name">Ari Leon Boozer</span>
+        <span class="brand-sub">Websites and software for local businesses</span>
+      </span>
     </a>
     <nav class="site-nav" aria-label="Page sections">
       <ul>
         <li><a href="#how">How it works</a></li>
         <li><a href="#prices">Prices</a></li>
         <li><a href="#work">My work</a></li>
-        <li><a href="#faq">Questions</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">Questions</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary btn-sm header-call" href="tel:+18702010441">
-      <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
-      <span>Call<span class="hc-num nw"> (870) 201-0441</span></span>
-    </a>
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm header-call" href="sms:+18702010441">
+        <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
+        <span>Text<span class="hc-num nw"> (870) 201-0441</span></span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+        <svg class="ic ic-sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
+        <svg class="ic ic-moon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -369,18 +442,17 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
   <section class="hero" aria-labelledby="hero-h">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="label">Newport, Arkansas</p>
         <h1 id="hero-h">A real website for your business. <span class="hl">Ready in 48&nbsp;hours.</span></h1>
-        <p class="lede">I'm Ari Leon Boozer in Newport, and I build one-page websites for local businesses for a flat $750, ready to review within 48 hours of receiving your content.</p>
+        <p class="lede">I'm Ari Leon Boozer, a freelance software developer. I'm based in Newport, Arkansas. I build one-page websites for local businesses for a flat $500, ready to review within 48 hours of receiving your content.</p>
         <div class="cta">
-          <div class="pair" role="group" aria-label="Call or text Ari">
-            <a class="btn btn-primary" href="tel:+18702010441">
-              <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
-              <span class="nw">Call (870) 201-0441</span>
-            </a>
+          <div class="pair" role="group" aria-label="Text or email Ari">
             <a class="btn btn-primary" href="sms:+18702010441">
               <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
-              <span>Text<span class="sr-only"> (870) 201-0441</span></span>
+              <span class="nw">Text (870) 201-0441</span>
+            </a>
+            <a class="btn btn-primary" href="mailto:boozer.ira@gmail.com?subject=Website%20inquiry">
+              <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+              <span>Email<span class="sr-only"> boozer.ira@gmail.com</span></span>
             </a>
           </div>
           <a class="btn" href="#prices">
@@ -394,15 +466,15 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         <p class="ratecard-title">Prices at a glance</p>
         <ul class="rates">
           <li>
-            <span class="r-name">Launch Page</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$750</span>
+            <span class="r-name">Launch Page</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$500</span>
             <span class="r-note">One page, ready in 48 hours</span>
           </li>
           <li>
-            <span class="r-name">Full Site</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$1,500</span>
+            <span class="r-name">Full Site</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$1,000</span>
             <span class="r-note">Up to five pages, ready in 5 days</span>
           </li>
           <li>
-            <span class="r-name">Custom Build</span><span class="r-dots" aria-hidden="true"></span><span class="r-price"><span class="from">from</span> $3,000</span>
+            <span class="r-name">Custom Build</span><span class="r-dots" aria-hidden="true"></span><span class="r-price"><span class="from">from</span> $2,000</span>
             <span class="r-note">Fixed scope, <span class="nw">5-working-day</span> sprint</span>
           </li>
         </ul>
@@ -418,8 +490,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       <ol class="steps" role="list">
         <li>
           <span class="step-n" aria-hidden="true">1</span>
-          <h3>We talk for <span class="nw">15 minutes</span></h3>
-          <p>You tell me what you do, your hours and where to find you. Send me your photos, and your logo if you have one. I write the words from that conversation.</p>
+          <h3>We trade a few messages</h3>
+          <p>I send you a short list of questions by email or text: what you do, your hours and where to find you. You reply in writing and send me your photos, and your logo if you have one. I write the words from your answers.</p>
         </li>
         <li>
           <span class="step-n" aria-hidden="true">2</span>
@@ -443,7 +515,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       <div class="pkgs">
         <article class="pkg pkg-lead" id="launch" aria-labelledby="launch-h">
           <h3 id="launch-h">Launch Page</h3>
-          <p class="price">$750</p>
+          <p class="price">$500</p>
           <p class="turn">One page. Ready to review within 48 hours of receiving your content. It goes live as soon as you approve it and the balance is paid.</p>
           <h4>What you get</h4>
           <ul class="ticks">
@@ -452,18 +524,18 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>Tap-to-call button</li>
             <li>Contact form that reaches your email</li>
             <li>Hours and location with a map link</li>
-            <li>Copy written from a <span class="nw">15-minute</span> conversation</li>
+            <li>Copy written from your answers to a short written questionnaire</li>
             <li>Your photos placed</li>
             <li>Basic search setup: page title and description, and a link to your Google Business Profile</li>
             <li>Connection to your domain</li>
             <li>One round of revisions</li>
           </ul>
-          <a class="btn" href="#contact" data-need="I'd like a Launch Page ($750).">Ask about a Launch Page</a>
+          <a class="btn" href="#contact" data-need="I'd like a Launch Page ($500).">Ask about a Launch Page</a>
         </article>
 
         <article class="pkg" id="full" aria-labelledby="full-h">
           <h3 id="full-h">Full Site</h3>
-          <p class="price">$1,500</p>
+          <p class="price">$1,000</p>
           <p class="turn">Up to five pages. Ready to review within 5 calendar days of receiving your content.</p>
           <h4>Everything in the Launch Page, plus</h4>
           <ul class="ticks">
@@ -475,12 +547,12 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>Two rounds of revisions</li>
           </ul>
           <p class="pkg-note">The pages could be, for example, Home, Services, About, Gallery and Contact.</p>
-          <a class="btn" href="#contact" data-need="I'd like a Full Site ($1,500).">Ask about a Full Site</a>
+          <a class="btn" href="#contact" data-need="I'd like a Full Site ($1,000).">Ask about a Full Site</a>
         </article>
 
         <article class="pkg" id="custom" aria-labelledby="custom-h">
           <h3 id="custom-h">Custom Build</h3>
-          <p class="price"><span class="from">from</span> $3,000</p>
+          <p class="price"><span class="from">from</span> $2,000</p>
           <p class="turn">Fixed scope. Delivered in a <span class="nw">5-working-day</span> sprint.</p>
           <h4>For example</h4>
           <ul class="dots">
@@ -491,8 +563,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>Workflow automation</li>
             <li>A mobile app prototype</li>
           </ul>
-          <p class="pkg-note">We agree on the scope and a fixed price in writing after a free <span class="nw">30-minute</span> call, before any work starts.</p>
-          <a class="btn" href="#contact" data-need="I'd like to set up the free 30-minute call about a Custom Build.">Ask about a Custom Build</a>
+          <p class="pkg-note">We agree on the scope and a fixed price by email, in writing, before any work starts. The scoping is free.</p>
+          <a class="btn" href="#contact" data-need="I'd like to start the free written scoping for a Custom Build.">Ask about a Custom Build</a>
         </article>
       </div>
 
@@ -500,13 +572,14 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         <div>
           <p class="care-tag">Optional add-on</p>
           <h3>Care Plan</h3>
-          <p>Hosting looked after, up to one hour of edits a month, backups and uptime checks. "Hosting looked after" means I manage your hosting account and settings. You still pay any hosting fee directly. Month to month. Cancel any time.</p>
+          <p>Hosting looked after, edits within two business days of your request, backups and uptime checks. "Hosting looked after" means I manage your hosting account and settings. You still pay any hosting fee directly. Edits are changes to your existing pages, such as text, photos and hours. A new page or a redesign is quoted separately. Month to month. Cancel any time.</p>
         </div>
         <p class="care-price">$50 <span class="per">per month</span></p>
       </div>
 
-      <p class="terms"><strong>Payment:</strong> 50% deposit to start, balance due on delivery before the site goes live or files are handed over. Pay in full up front and take $50 off a Launch Page or $100 off a Full Site. I take Zelle, check, cash or card (card by emailed invoice).</p>
-      <p class="terms"><strong>Not included unless we agree to it in writing:</strong> domain registration and hosting fees (you pay these directly and own the accounts), logo design, photography, online store or payment processing setup, and ongoing marketing or ad management.</p>
+      <p class="terms"><strong>Payment:</strong> 50% deposit to start, balance due on delivery before the site goes live or files are handed over. Pay in full up front and take $50 off a Launch Page or $100 off a Full Site. I take Zelle, Cash App, check, cash or card (card is paid through a Stripe invoice I email you).</p>
+      <p class="terms"><strong>Domain registration, if you ask:</strong> I register your domain in your name, set up the accounts and any email addresses on it, and hand over the logins. You pay the registrar's yearly fee at cost.</p>
+      <p class="terms"><strong>Not included unless we agree to it in writing:</strong> hosting fees (you pay these directly and own the accounts), logo design, photography, online store or payment processing setup, and ongoing marketing or ad management.</p>
     </div>
   </section>
 
@@ -537,39 +610,6 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     </div>
   </section>
 
-  <section class="section" id="faq" aria-labelledby="faq-h">
-    <div class="wrap">
-      <p class="label">Questions</p>
-      <h2 id="faq-h">Common questions</h2>
-      <div class="faq">
-        <details open>
-          <summary>How is it this fast?</summary>
-          <div class="a"><p>I build with AI-assisted tools, and I review and test everything myself before it ships. The scope is small and the price is fixed. That is why the turnaround is fast.</p></div>
-        </details>
-        <details>
-          <summary>What do you need from me?</summary>
-          <div class="a"><p>A <span class="nw">15-minute</span> conversation, your photos and logo if you have them, and access to your domain if you own one.</p></div>
-        </details>
-        <details>
-          <summary>Do I own the site?</summary>
-          <div class="a"><p>Yes. The finished site becomes yours on full payment. The domain and hosting are in your name, and your content stays yours.</p></div>
-        </details>
-        <details>
-          <summary>What does it cost after launch?</summary>
-          <div class="a"><p>A domain is typically about $15 a year, paid to the registrar. Hosting for a simple site is usually free or a few dollars a month. The Care Plan is optional.</p></div>
-        </details>
-        <details>
-          <summary>What if I already have a Facebook page?</summary>
-          <div class="a"><p>Keep it. A website is what shows up in Google and Maps searches, and it works for people who are not on Facebook.</p></div>
-        </details>
-        <details>
-          <summary>What if I need changes later?</summary>
-          <div class="a"><p>Small edits are covered by the Care Plan, or billed at a flat $60 an hour.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <section class="section section-alt" id="about" aria-labelledby="about-h">
     <div class="wrap about-grid">
       <div>
@@ -589,14 +629,10 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     <div class="wrap contact-grid">
       <div class="contact-copy">
         <p class="label">Contact</p>
-        <h2 id="contact-h">Call, text or email me</h2>
-        <p>Tell me about your business and what you need. A call or a text is fine. So is an email.</p>
-        <p class="bignum"><a href="tel:+18702010441">(870) 201-0441</a></p>
+        <h2 id="contact-h">Text or email me</h2>
+        <p>Tell me about your business and what you need. A text or an email is best. I reply in writing.</p>
+        <p class="bignum"><a href="sms:+18702010441">(870) 201-0441</a></p>
         <div class="contact-btns">
-          <a class="btn btn-primary" href="tel:+18702010441">
-            <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
-            <span>Call<span class="sr-only"> (870) 201-0441</span></span>
-          </a>
           <a class="btn btn-primary" href="sms:+18702010441">
             <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
             <span>Text<span class="sr-only"> (870) 201-0441</span></span>
@@ -623,7 +659,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
           <input id="f-business" name="Business" type="text" autocomplete="organization">
         </div>
         <div class="field">
-          <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+          <label for="f-phone">Number for text replies <span class="opt">(optional)</span></label>
           <input id="f-phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel">
         </div>
         <div class="field">
@@ -641,6 +677,39 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     </div>
   </section>
 
+  <section class="section section-alt" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <p class="label">Questions</p>
+      <h2 id="faq-h">Common questions</h2>
+      <div class="faq">
+        <details open>
+          <summary>How is it this fast?</summary>
+          <div class="a"><p>I build with AI-assisted tools, and I review and test everything myself before it ships. The scope is small and the price is fixed. That is why the turnaround is fast.</p></div>
+        </details>
+        <details>
+          <summary>What do you need from me?</summary>
+          <div class="a"><p>Short written answers to a few questions, by email or text. Your photos and logo if you have them. Access to your domain if you own one. If you don't have one, I can register it for you.</p></div>
+        </details>
+        <details>
+          <summary>Do I own the site?</summary>
+          <div class="a"><p>Yes. The finished site becomes yours on full payment. The domain and hosting are in your name, and your content stays yours.</p></div>
+        </details>
+        <details>
+          <summary>What does it cost after launch?</summary>
+          <div class="a"><p>A domain is typically about $15 a year, paid to the registrar. Hosting for a simple site is usually free or a few dollars a month. I can register the domain for you if you ask. The Care Plan is optional.</p></div>
+        </details>
+        <details>
+          <summary>What if I already have a Facebook page?</summary>
+          <div class="a"><p>Keep it. A website is what shows up in Google and Maps searches, and it works for people who are not on Facebook.</p></div>
+        </details>
+        <details>
+          <summary>What if I need changes later?</summary>
+          <div class="a"><p>Edits are included in the Care Plan, made within two business days of your request. Without the plan, small edits are billed at a flat $60 an hour.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -651,7 +720,6 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       <p>Newport, Arkansas. In person across Northeast Arkansas, remote anywhere.</p>
     </div>
     <ul class="foot-links">
-      <li><a href="tel:+18702010441">Call (870) 201-0441</a></li>
       <li><a href="sms:+18702010441">Text (870) 201-0441</a></li>
       <li><a href="mailto:boozer.ira@gmail.com">boozer.ira@gmail.com</a></li>
     </ul>
@@ -659,20 +727,42 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
   </div>
 </footer>
 
-<div class="callbar" id="callbar" role="group" aria-label="Call or text Ari">
-  <a class="btn btn-primary" href="tel:+18702010441">
-    <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
-    <span>Call<span class="sr-only"> (870) 201-0441</span></span>
-  </a>
-  <a class="btn" href="sms:+18702010441">
+<div class="callbar" id="callbar" role="group" aria-label="Text or email Ari">
+  <a class="btn btn-primary" href="sms:+18702010441">
     <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
     <span>Text<span class="sr-only"> (870) 201-0441</span></span>
+  </a>
+  <a class="btn" href="mailto:boozer.ira@gmail.com?subject=Website%20inquiry">
+    <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+    <span>Email<span class="sr-only"> boozer.ira@gmail.com</span></span>
   </a>
 </div>
 
 <script>
 (function () {
   'use strict';
+
+  // Theme toggle. Dark is the default; the choice is remembered on this device.
+  var themeBtn = document.getElementById('theme-toggle');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var THEME_COLORS = { dark: '#121714', light: '#F5F0E6' };
+  function showTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeMeta) { themeMeta.setAttribute('content', THEME_COLORS[theme]); }
+    if (themeBtn) {
+      var label = 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme';
+      themeBtn.setAttribute('aria-label', label);
+      themeBtn.setAttribute('title', label);
+    }
+  }
+  showTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      showTheme(next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
 
   // Sticky call bar (small screens). It tucks away while the page's own call
   // and text buttons (hero, contact) are on screen, so they never double up.
@@ -751,7 +841,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 
     var lines = ['Name: ' + name];
     if (business) { lines.push('Business: ' + business); }
-    if (phone) { lines.push('Phone: ' + phone); }
+    if (phone) { lines.push('Text number: ' + phone); }
     lines.push('', 'What I need:', need);
 
     var subject = 'Website inquiry from ' + (business || name);
@@ -759,7 +849,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(lines.join('\n').replace(/\r\n|\r|\n/g, '\r\n'));
 
-    statusEl.textContent = 'Your email app should open with the message ready. Press send there to reach me. If nothing opened, call or text (870) 201-0441, or email ' + EMAIL + '.';
+    statusEl.textContent = 'Your email app should open with the message ready. Press send there to reach me. If nothing opened, text (870) 201-0441, or email ' + EMAIL + '.';
     window.location.href = href;
   });
 
