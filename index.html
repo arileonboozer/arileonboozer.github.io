@@ -170,6 +170,7 @@ svg{display:block}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 
 .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+.wrap-wide{max-width:1500px}
 /* viewport-fit=cover lets the page run under a phone's notch in landscape, so keep the text clear of it */
 @supports (padding:max(0px)){.wrap{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -293,6 +294,14 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
   .pkgs .pkg-note{font-size:.875rem}
   .pkgs h4{min-height:2.7em}
   .pkgs .btn{padding-inline:.6rem;font-size:.9375rem;min-height:64px}
+}
+@media (min-width:1440px){
+  .pkgs{gap:18px}
+  .pkgs .pkg{padding:32px 20px 22px}
+  .pkgs .price{font-size:2.9rem}
+  .pkgs .turn,.pkgs .ticks li,.pkgs .dots li{font-size:1rem}
+  .pkgs .pkg-note{font-size:.9375rem}
+  .pkgs .btn{font-size:1rem}
 }
 .pkg{position:relative;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--rule);border-radius:4px;padding:34px 22px 24px;overflow:hidden}
 .pkg::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--bar)}
@@ -536,7 +545,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     <div class="wrap">
       <p class="label">Prices</p>
       <h2 id="prices-h">Pick what fits. Fixed prices.</h2>
-
+    </div>
+    <div class="wrap wrap-wide">
       <div class="pkgs">
         <article class="pkg pkg-lead" id="review" aria-labelledby="review-h">
           <h3 id="review-h">AI Review</h3>
@@ -597,7 +607,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
           <p class="price"><span class="from">from</span> $2,000</p>
           <p class="turn">Fixed scope. Delivered in a <span class="nw">5-business-day</span> sprint.</p>
           <h4>For example</h4>
-          <ul class="dots">
+          <ul class="ticks">
             <li>Online booking or ordering</li>
             <li>A customer portal</li>
             <li>An internal tool or dashboard</li>
@@ -624,9 +634,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
           <a class="btn" href="#contact" data-need="I'd like to add the Care Plan ($50 a month).">Ask about the Care Plan</a>
         </article>
       </div>
-
-      
-
+    </div>
+    <div class="wrap">
       <p class="terms"><strong>Payment:</strong> 50% deposit to start, balance due on delivery before the site goes live or files are handed over. Pay in full up front and take $50 off a Launch Page or $100 off a Full Site. I take Zelle, Cash App, check, cash or card (card is paid through a Stripe invoice I email you). The $100 AI Review is paid in full before I start.</p>
       <p class="terms"><strong>Domain registration, if you ask:</strong> I register your domain in your name, set up the accounts and any email addresses on it, and hand over the logins. You pay the registrar's yearly fee at cost.</p>
       <p class="terms"><strong>Not included unless we agree to it in writing:</strong> hosting fees (you pay these directly and own the accounts), logo design, photography, online store or payment processing setup, and ongoing marketing or ad management.</p>
