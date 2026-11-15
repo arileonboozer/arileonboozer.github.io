@@ -7,12 +7,12 @@
 <meta name="description" content="Websites, custom software and AI reviews for local businesses in Newport and Northeast Arkansas. Fixed prices from $100. Text (870) 201-0441.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Ari Leon Boozer">
-<meta name="theme-color" content="#121714">
-<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#F5F0E6">
+<meta name="color-scheme" content="light dark">
 <script>
-/* Set the theme before the page paints so there is no flash. Dark is the default. */
+/* Set the theme before the page paints so there is no flash. Light is the default. */
 (function () {
-  var t = 'dark';
+  var t = 'light';
   try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
   var r = document.documentElement;
   r.setAttribute('data-theme', t);
@@ -21,9 +21,13 @@
 </script>
 <meta name="format-detection" content="telephone=no">
 <link rel="canonical" href="https://www.arileonboozer.com/">
+<link rel="alternate" hreflang="en" href="https://www.arileonboozer.com/">
+<link rel="alternate" hreflang="es" href="https://www.arileonboozer.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.arileonboozer.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.arileonboozer.com/">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
 <meta property="og:site_name" content="Ari Leon Boozer">
 <meta property="og:title" content="Ari Leon Boozer: websites, software and AI reviews for local businesses">
 <meta property="og:description" content="Websites, custom software and AI reviews for local businesses in Newport and Northeast Arkansas. Fixed prices from $100.">
@@ -121,32 +125,7 @@
 
 <style>
 :root{
-  /* Dark is the default theme. The light theme overrides these below. */
-  --paper:#121714;
-  --paper-2:#19201B;
-  --card:#1D2520;
-  --ink:#EDE8DC;
-  --ink-2:#B3AD9E;
-  --line:#34413A;
-  --field:#8A9A8F;
-  --field-bg:#0F1412;
-  --rule:#56625A;
-  --bar:#3B4A40;
-  --accent:#52B882;
-  --accent-hover:#6FD09B;
-  --on-accent:#0A1710;
-  --error:#F2866A;
-  --focus:#EDE8DC;
-  --sd-bg:#12281C;
-  --sd-fg:#EDE8DC;
-  --sd-line:rgba(237,232,220,.35);
-  color-scheme:dark;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Noto Serif",Georgia,"Times New Roman",serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
-  --gutter:20px;
-}
-:root[data-theme="light"]{
+  /* Light is the default theme. The dark theme overrides these below. */
   --paper:#F5F0E6;
   --paper-2:#EBE4D5;
   --card:#FFFDF8;
@@ -166,6 +145,31 @@
   --sd-fg:#F5F0E6;
   --sd-line:rgba(245,240,230,.45);
   color-scheme:light;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Noto Serif",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
+  --gutter:20px;
+}
+:root[data-theme="dark"]{
+  --paper:#121714;
+  --paper-2:#19201B;
+  --card:#1D2520;
+  --ink:#EDE8DC;
+  --ink-2:#B3AD9E;
+  --line:#34413A;
+  --field:#8A9A8F;
+  --field-bg:#0F1412;
+  --rule:#56625A;
+  --bar:#3B4A40;
+  --accent:#52B882;
+  --accent-hover:#6FD09B;
+  --on-accent:#0A1710;
+  --error:#F2866A;
+  --focus:#EDE8DC;
+  --sd-bg:#12281C;
+  --sd-fg:#EDE8DC;
+  --sd-line:rgba(237,232,220,.35);
+  color-scheme:dark;
 }
 @media (min-width:720px){:root{--gutter:32px}}
 @media (min-width:1100px){:root{--gutter:40px}}
@@ -214,12 +218,19 @@ svg{display:block}
 .theme-toggle:hover{background:var(--ink);color:var(--paper)}
 .theme-toggle .ic{width:1.4rem;height:1.4rem}
 .js .theme-toggle{display:inline-flex}
-.ic-moon{display:none}
-:root[data-theme="light"] .ic-sun{display:none}
-:root[data-theme="light"] .ic-moon{display:block}
-.mark-light{display:none}
-:root[data-theme="light"] .mark-light{display:block}
-:root[data-theme="light"] .mark-dark{display:none}
+.lang{display:inline-flex;flex:none;border:2px solid var(--rule);border-radius:4px;overflow:hidden}
+.lang-opt{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:40px;padding:0 8px;font:700 .875rem/1 var(--sans);letter-spacing:.06em;color:var(--ink);text-decoration:none}
+.lang-opt:hover{background:var(--paper-2);color:var(--ink)}
+.lang-opt[aria-current="true"]{background:var(--accent);color:var(--on-accent)}
+.lang-opt[aria-current="true"]:hover{background:var(--accent-hover)}
+@media (max-width:699.98px){.brand-sub{display:none}}
+@media (max-width:459.98px){.lang-opt[aria-current="true"]{display:none}}
+.ic-sun{display:none}
+:root[data-theme="dark"] .ic-sun{display:block}
+:root[data-theme="dark"] .ic-moon{display:none}
+.mark-dark{display:none}
+:root[data-theme="dark"] .mark-dark{display:block}
+:root[data-theme="dark"] .mark-light{display:none}
 .brand{display:flex;align-items:center;gap:12px;min-width:0;padding-block:2px;color:var(--ink);text-decoration:none;line-height:1.2}
 .brand:hover{color:var(--ink)}
 .brand-mark{flex:none;width:44px;height:44px;border-radius:6px}
@@ -228,12 +239,11 @@ svg{display:block}
 .brand-sub{font-size:.8125rem;color:var(--ink-2);text-wrap:balance}
 .site-nav{display:none}
 .site-nav ul{display:flex;gap:22px;list-style:none}
-.site-nav a{display:inline-block;font-size:.9375rem;font-weight:600;line-height:1.4;text-decoration:none;padding:12px 0}
+.site-nav a{display:inline-block;font-size:.9375rem;font-weight:600;line-height:1.4;text-decoration:none;padding:12px 0;white-space:nowrap}
 .site-nav a:hover{text-decoration:underline;text-decoration-thickness:2px}
 .header-call .hc-num{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-@media (min-width:560px){.header-call .hc-num{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}}
 @media (min-width:960px){.site-header{position:sticky;top:0;z-index:20}}
-@media (min-width:1100px){.site-nav{display:block;margin-left:auto;margin-right:12px}}
+@media (min-width:1240px){.site-nav{display:block;margin-left:auto;margin-right:12px}}
 
 /* Type */
 h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.25rem,4.6vw + 1.2rem,4.25rem);line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
@@ -472,7 +482,11 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg>
         <span>Text<span class="hc-num nw"> (870) 201-0441</span></span>
       </a>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+      <div class="lang" role="group" aria-label="Language">
+        <a class="lang-opt" href="/" lang="en" hreflang="en" aria-current="true" title="English">EN</a>
+        <a class="lang-opt" href="/es/" lang="es" hreflang="es" title="Español">ES</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
         <svg class="ic ic-sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
         <svg class="ic ic-moon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
       </button>
@@ -593,6 +607,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>Your photos placed</li>
             <li>Basic search setup: page title and description, and a link to your Google Business Profile</li>
             <li>Connection to your domain</li>
+            <li>A Spanish version of your page, at no extra cost, if you want one</li>
             <li>One round of revisions</li>
           </ul>
           <a class="btn" href="#contact" data-need="I'd like a Launch Page ($500).">Ask about a Launch Page</a>
@@ -827,7 +842,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 (function () {
   'use strict';
 
-  // Theme toggle. Dark is the default; the choice is remembered on this device.
+  // Theme toggle. Light is the default; the choice is remembered on this device.
   var themeBtn = document.getElementById('theme-toggle');
   var themeMeta = document.querySelector('meta[name="theme-color"]');
   var THEME_COLORS = { dark: '#121714', light: '#F5F0E6' };
@@ -840,10 +855,10 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       themeBtn.setAttribute('title', label);
     }
   }
-  showTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  showTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
   if (themeBtn) {
     themeBtn.addEventListener('click', function () {
-      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       showTheme(next);
       try { localStorage.setItem('theme', next); } catch (e) {}
     });

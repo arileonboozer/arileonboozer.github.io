@@ -6,32 +6,35 @@
 <title>Terms of Service | Ari Leon Boozer</title>
 <meta name="description" content="Terms for using the Ari Leon Boozer website and for the web and software work I do for clients.">
 <meta name="author" content="Ari Leon Boozer">
-<meta name="theme-color" content="#121714">
-<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#F5F0E6">
+<meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://www.arileonboozer.com/terms.html">
+<link rel="alternate" hreflang="en" href="https://www.arileonboozer.com/terms.html">
+<link rel="alternate" hreflang="es" href="https://www.arileonboozer.com/es/terminos.html">
+<link rel="alternate" hreflang="x-default" href="https://www.arileonboozer.com/terms.html">
 <link rel="icon" type="image/png" sizes="192x192" href="https://www.arileonboozer.com/favicon-192.png">
 <link rel="apple-touch-icon" href="https://www.arileonboozer.com/apple-touch-icon.png">
 <script>
-/* Use the theme chosen on the main page. Dark is the default. */
+/* Use the theme chosen on the main page. Light is the default. */
 (function () {
-  var t = 'dark';
+  var t = 'light';
   try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
   document.documentElement.setAttribute('data-theme', t);
 }());
 </script>
 <style>
 :root{
-  --paper:#121714; --paper-2:#19201B; --ink:#EDE8DC; --ink-2:#B3AD9E; --rule:#56625A;
-  --accent:#52B882; --accent-hover:#6FD09B; --focus:#EDE8DC;
+  --paper:#F5F0E6; --paper-2:#EBE4D5; --ink:#1B1A17; --ink-2:#4A463F; --rule:#1B1A17;
+  --accent:#1F4D36; --accent-hover:#163A28; --focus:#1B1A17;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Noto Serif",Georgia,"Times New Roman",serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --gutter:20px;
-  color-scheme:dark;
-}
-:root[data-theme="light"]{
-  --paper:#F5F0E6; --paper-2:#EBE4D5; --ink:#1B1A17; --ink-2:#4A463F; --rule:#1B1A17;
-  --accent:#1F4D36; --accent-hover:#163A28; --focus:#1B1A17;
   color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --paper:#121714; --paper-2:#19201B; --ink:#EDE8DC; --ink-2:#B3AD9E; --rule:#56625A;
+  --accent:#52B882; --accent-hover:#6FD09B; --focus:#EDE8DC;
+  color-scheme:dark;
 }
 @media (min-width:720px){:root{--gutter:32px}}
 *,*::before,*::after{box-sizing:border-box}
@@ -47,6 +50,7 @@ a:hover{color:var(--accent-hover)}
 .brand{font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--ink);text-decoration:none}
 .brand:hover{color:var(--ink)}
 .back{font-weight:600;font-size:.9375rem;padding:10px 0;display:inline-block}
+.head-links{display:flex;gap:20px;flex-wrap:wrap}
 main{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px}
 h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4vw + 1rem,3rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 8px}
 h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin:2.4rem 0 .6rem}
@@ -68,7 +72,7 @@ li{margin-bottom:.45rem}
 <header class="top">
   <div class="top-row">
     <a class="brand" href="/">Ari Leon Boozer</a>
-    <a class="back" href="/">Back to the main page</a>
+    <span class="head-links"><a class="back" href="/">Back to the main page</a><a class="back" href="/es/terminos.html" lang="es" hreflang="es">Español</a></span>
   </div>
 </header>
 <main id="main">
