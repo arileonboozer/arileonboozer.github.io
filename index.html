@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ari Leon Boozer</title>
-<meta name="description" content="Websites, custom software and AI consultant reports for local businesses in Newport and Northeast Arkansas. Fixed prices from $100. Text (870) 201-0441.">
+<meta name="description" content="Websites, custom software and AI consultant reports for local businesses in Newport and Northeast Arkansas. Fixed prices from $99.99. Text (870) 201-0441.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Ari Leon Boozer">
 <meta name="theme-color" content="#F5F0E6">
@@ -30,14 +30,14 @@
 <meta property="og:locale:alternate" content="es_US">
 <meta property="og:site_name" content="Ari Leon Boozer">
 <meta property="og:title" content="Ari Leon Boozer: websites, software and AI consultant reports for local businesses">
-<meta property="og:description" content="Websites, custom software and AI consultant reports for local businesses in Newport and Northeast Arkansas. Fixed prices from $100.">
+<meta property="og:description" content="Websites, custom software and AI consultant reports for local businesses in Newport and Northeast Arkansas. Fixed prices from $99.99.">
 <meta property="og:image" content="https://www.arileonboozer.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ari Leon Boozer, freelance software developer in Newport, Arkansas">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ari Leon Boozer: websites, software and AI consultant reports for local businesses">
-<meta name="twitter:description" content="Websites, custom software and AI consultant reports for local businesses in Newport and Northeast Arkansas. Fixed prices from $100.">
+<meta name="twitter:description" content="Websites, custom software and AI consultant reports for local businesses in Newport and Northeast Arkansas. Fixed prices from $99.99.">
 <meta name="twitter:image" content="https://www.arileonboozer.com/og-image.jpg">
 <link rel="icon" type="image/png" sizes="192x192" href="https://www.arileonboozer.com/favicon-192.png">
 <link rel="apple-touch-icon" href="https://www.arileonboozer.com/apple-touch-icon.png">
@@ -73,7 +73,7 @@
     { "@type": "City", "name": "Searcy, Arkansas" },
     { "@type": "AdministrativeArea", "name": "Northeast Arkansas" }
   ],
-  "priceRange": "From $100",
+  "priceRange": "From $99.99",
   "paymentAccepted": "Zelle, Cash App, Check, Cash, Card",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -83,23 +83,23 @@
         "@type": "Offer",
         "name": "Launch Page",
         "description": "A one-page website, ready to review within three business days of the client's deposit. It goes live as soon as the client approves it and the balance is paid.",
-        "price": "500",
+        "price": "499.99",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Full Site",
         "description": "Up to five pages, ready to review within 10 business days of the client's deposit.",
-        "price": "1500",
+        "price": "1499.99",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Custom Build",
-        "description": "Everything in the Full Site, plus a fixed-scope build delivered in a 15-business-day sprint counted from the client's deposit, with the client's review in the final business week. A functional mobile app for Android and iPhone is available for an additional $1,000, which includes the Google developer fee and the first year of the Apple developer fee. Scope and a fixed price are agreed in writing by email, before any work starts.",
+        "description": "Everything in the Full Site, plus a fixed-scope build delivered in a 15-business-day sprint counted from the client's deposit, with the client's review in the final business week. A functional mobile app for Android and iPhone is available for an additional $999.99, which includes the Google developer fee and the first year of the Apple developer fee. Scope and a fixed price are agreed in writing by email, before any work starts.",
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "minPrice": "3000",
+          "minPrice": "2999.99",
           "priceCurrency": "USD"
         }
       },
@@ -107,7 +107,7 @@
         "@type": "Offer",
         "name": "AI Consultant Report",
         "description": "A written report on how AI could help your business: a list of specific tasks, tools, rough cost and effort, risks, and a next step. Delivered within three business days of the client's payment. Advice only; paid in full before work starts.",
-        "price": "100",
+        "price": "99.99",
         "priceCurrency": "USD"
       },
       {
@@ -116,7 +116,7 @@
         "description": "Optional, month to month: hosting looked after, edits within three business days of your request, backups, uptime checks. Cancel any time.",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "50",
+          "price": "29.99",
           "priceCurrency": "USD",
           "unitText": "month"
         }
@@ -282,6 +282,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .r-dots{border-bottom:2px dotted var(--field);transform:translateY(-5px)}
 .r-price{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.1;font-variant-numeric:lining-nums;white-space:nowrap}
 .r-price .from{font:700 .875rem/1 var(--sans);color:var(--ink-2)}
+@media (max-width:339px){.r-price{font-size:1.25rem}.rates li{column-gap:6px}}
 .r-note{grid-column:1/-1;color:var(--ink-2);font-size:.9375rem}
 .ratecard-foot{margin-top:4px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink-2);font-size:.875rem}
 @media (min-width:1040px){
@@ -307,6 +308,12 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
   .pkgs{grid-template-columns:repeat(6,minmax(0,1fr));gap:20px;margin-top:48px}
   .pkgs > .pkg{grid-column:span 2}
   .pkgs > .pkg:nth-child(n+4){grid-column:span 3}
+}
+/* Longer prices: keep every number on the same line in the multi-column layouts. Labels sit on their own line below the number; the "from" label sits in a row reserved above the number. */
+@media (min-width:980px){
+  .pkgs .price{display:block;position:relative;padding-top:1.2rem;min-height:calc(1em + 2.4rem)}
+  .pkgs .price .from{display:block;line-height:1.2}
+  .pkgs > .pkg:nth-child(4) .price > .from{position:absolute;left:0;top:0}
 }
 /* Wide screens: all five cards in one row, a little tighter */
 @media (min-width:1180px){
@@ -381,7 +388,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 .about-copy p:last-child{margin-bottom:0}
 .about-copy .big{font-family:var(--serif);font-size:clamp(1.25rem,1vw + 1.05rem,1.5rem);line-height:1.4}
 /* Social links: square icon buttons that match the .btn outline style */
-.about-copy .follow{margin-top:28px}
+.about-copy .follow{margin-top:28px;margin-bottom:28px}
 .social{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none}
 .social a{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border:2px solid var(--ink);border-radius:4px;color:var(--ink);text-decoration:none}
 .social a:hover{background:var(--ink);color:var(--paper)}
@@ -516,7 +523,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1 id="hero-h">A real website for your business. <span class="hl">Ready in three business&nbsp;days.</span></h1>
-        <p class="lede">I'm Ari Leon Boozer, a freelance software developer and entrepreneur. I'm based in Newport, Arkansas. I help local businesses with websites, custom software and AI, at fixed prices from $100. A one-page website is ready to review within three business days of your deposit.</p>
+        <p class="lede">I'm Ari Leon Boozer, a freelance software developer and entrepreneur. I'm based in Newport, Arkansas. I help local businesses with websites, custom software and AI, at fixed prices from $99.99. A one-page website is ready to review within three business days of your deposit.</p>
         <div class="cta">
           <div class="pair" role="group" aria-label="Text or email Ari">
             <a class="btn btn-primary" href="sms:+18702010441">
@@ -539,19 +546,19 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         <p class="ratecard-title">Prices at a glance</p>
         <ul class="rates">
           <li>
-            <span class="r-name">AI Consultant Report</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$100</span>
+            <span class="r-name">AI Consultant Report</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$99.99</span>
             <span class="r-note">Written report in three business days</span>
           </li>
           <li>
-            <span class="r-name">Launch Page</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$500</span>
+            <span class="r-name">Launch Page</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$499.99</span>
             <span class="r-note">One page, ready in three business days</span>
           </li>
           <li>
-            <span class="r-name">Full Site</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$1,500</span>
+            <span class="r-name">Full Site</span><span class="r-dots" aria-hidden="true"></span><span class="r-price">$1,499.99</span>
             <span class="r-note">Up to five pages, ready in 10 business days</span>
           </li>
           <li>
-            <span class="r-name">Custom Build</span><span class="r-dots" aria-hidden="true"></span><span class="r-price"><span class="from">from</span> $3,000</span>
+            <span class="r-name">Custom Build</span><span class="r-dots" aria-hidden="true"></span><span class="r-price"><span class="from">from</span> $2,999.99</span>
             <span class="r-note">Fixed scope, <span class="nw">15-business-day</span> sprint</span>
           </li>
         </ul>
@@ -591,7 +598,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       <div class="pkgs">
         <article class="pkg pkg-lead" id="review" aria-labelledby="review-h">
           <h3 id="review-h">AI Consultant Report</h3>
-          <p class="price">$100 <span class="from">one time</span></p>
+          <p class="price">$99.99 <span class="from">one time</span></p>
           <p class="turn">A written report within three business days of your payment.</p>
           <h4>What you get</h4>
           <ul class="ticks">
@@ -603,12 +610,12 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>A recommended next step</li>
           </ul>
           <p class="pkg-note">Advice only. I do not build or set anything up. Paid in full before I start. Not legal, tax or compliance advice.</p>
-          <a class="btn" href="#contact" data-need="I'd like an AI Consultant Report ($100).">Ask about an AI Consultant Report</a>
+          <a class="btn" href="#contact" data-need="I'd like an AI Consultant Report ($99.99).">Ask about an AI Consultant Report</a>
         </article>
 
         <article class="pkg" id="launch" aria-labelledby="launch-h">
           <h3 id="launch-h">Launch Page</h3>
-          <p class="price">$500</p>
+          <p class="price">$499.99</p>
           <p class="turn">One page. Ready to review within three business days of your deposit.</p>
           <h4>What you get</h4>
           <ul class="ticks">
@@ -624,16 +631,17 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>A Spanish version of your page, at no extra cost, if you want one</li>
             <li>One round of revisions</li>
           </ul>
-          <a class="btn" href="#contact" data-need="I'd like a Launch Page ($500).">Ask about a Launch Page</a>
+          <a class="btn" href="#contact" data-need="I'd like a Launch Page ($499.99).">Ask about a Launch Page</a>
         </article>
 
         <article class="pkg" id="full" aria-labelledby="full-h">
           <h3 id="full-h">Full Site</h3>
-          <p class="price">$1,500</p>
+          <p class="price">$1,499.99</p>
           <p class="turn">Up to five pages. Ready to review within 10 business days of your deposit.</p>
           <h4>Everything in the Launch Page, plus</h4>
           <ul class="ticks">
             <li>A page per main service, written to be found in search</li>
+            <li>Search engine optimization</li>
             <li>Photo gallery</li>
             <li>Quote or booking request form</li>
             <li>Google Business Profile tune-up</li>
@@ -641,12 +649,12 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>Two rounds of revisions</li>
           </ul>
           <p class="pkg-note">The pages could be, for example, Home, Services, About, Gallery and Contact.</p>
-          <a class="btn" href="#contact" data-need="I'd like a Full Site ($1,500).">Ask about a Full Site</a>
+          <a class="btn" href="#contact" data-need="I'd like a Full Site ($1,499.99).">Ask about a Full Site</a>
         </article>
 
         <article class="pkg" id="custom" aria-labelledby="custom-h">
           <h3 id="custom-h">Custom Build</h3>
-          <p class="price"><span class="from">from</span> $3,000</p>
+          <p class="price"><span class="from">from</span> $2,999.99</p>
           <p class="turn">Fixed scope. Delivered in a <span class="nw">15-business-day</span> sprint, counted from your deposit. Review is in the final business week.</p>
           <h4>Everything in the Full Site, plus</h4>
           <ul class="ticks">
@@ -655,7 +663,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>An internal tool or dashboard</li>
             <li>Data cleanup or migration</li>
             <li>Workflow automation</li>
-            <li>A functional mobile app on Android and iPhone, for an additional $1,000. I cover Google's developer fee and the first year of Apple's.</li>
+            <li>Full search engine optimization suite</li>
+            <li>A functional mobile app on Android and iPhone, for an additional $999.99. I cover Google's developer fee and the first year of Apple's.</li>
           </ul>
           <p class="pkg-note">The list shows what I can build, not what every build includes. We agree on the scope and a fixed price by email, in writing, before any work starts. The scoping is free.</p>
           <a class="btn" href="#contact" data-need="I'd like to start the free written scoping for a Custom Build.">Ask about a Custom Build</a>
@@ -663,7 +672,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 
         <article class="pkg" id="care" aria-labelledby="care-h">
           <h3 id="care-h">Care Plan</h3>
-          <p class="price">$50 <span class="from">per month</span></p>
+          <p class="price">$29.99 <span class="from">per month</span></p>
           <p class="turn">Optional add-on. Month to month. Cancel any time.</p>
           <h4>What you get</h4>
           <ul class="ticks">
@@ -673,12 +682,12 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
             <li>Uptime checks</li>
           </ul>
           <p class="pkg-note">"Hosting looked after" means I manage your hosting account and settings. You still pay any hosting fee directly. Edits are changes to your existing pages, such as text, photos and hours. A new page or a redesign is quoted separately.</p>
-          <a class="btn" href="#contact" data-need="I'd like to add the Care Plan ($50 a month).">Ask about the Care Plan</a>
+          <a class="btn" href="#contact" data-need="I'd like to add the Care Plan ($29.99 a month).">Ask about the Care Plan</a>
         </article>
       </div>
     </div>
     <div class="wrap">
-      <p class="terms"><strong>Payment:</strong> 50% deposit to start, balance due on delivery before the site goes live or files are handed over. Pay in full up front and take $50 off a Launch Page or $100 off a Full Site. I take Zelle, Cash App, check, cash or card (card is paid through a Stripe invoice I email you). The $100 AI Consultant Report is paid in full before I start.</p>
+      <p class="terms"><strong>Payment:</strong> 50% deposit to start, balance due on delivery before the site goes live or files are handed over. Pay in full up front and take $50 off a Launch Page or $100 off a Full Site. I take Zelle, Cash App, check, cash or card (card is paid through a Stripe invoice I email you). The $99.99 AI Consultant Report is paid in full before I start.</p>
       <p class="terms"><strong>When the clock starts:</strong> the Launch Page, Full Site and Custom Build turnarounds count from the day your deposit is paid, or from the day you pay in full if you pay in full up front. The AI Consultant Report counts from the day you pay for it. Care Plan edits count from your request. If your materials are late, my delivery date moves back by the same number of days.</p>
       <p class="terms"><strong>Domain registration, if you ask:</strong> I register your domain in your name, set up the accounts and any email addresses on it, and hand over the logins. You pay the registrar's yearly fee at cost.</p>
       <p class="terms"><strong>Mobile app accounts:</strong> for a mobile app, I set up the Apple and Google developer accounts for you, in your name, and you own them. I cover Google's developer fee and the first year of Apple's. After the first year, you pay Apple's annual developer fee, currently $99 a year.</p>
@@ -802,7 +811,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         </details>
         <details>
           <summary>What is the AI Consultant Report?</summary>
-          <div class="a"><p>A short written report on how AI could help your business. You answer a written questionnaire and pay $100, and within three business days of your payment I send a list of specific tasks AI could help with, the tools I would use, rough costs and risks, and a next step. I write it myself, using AI-assisted tools, and check it before it goes to you. It is advice only, and it is not legal, tax or compliance advice.</p></div>
+          <div class="a"><p>A short written report on how AI could help your business. You answer a written questionnaire and pay $99.99, and within three business days of your payment I send a list of specific tasks AI could help with, the tools I would use, rough costs and risks, and a next step. I write it myself, using AI-assisted tools, and check it before it goes to you. It is advice only, and it is not legal, tax or compliance advice.</p></div>
         </details>
         <details>
           <summary>What do you need from me?</summary>
