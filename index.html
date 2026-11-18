@@ -477,7 +477,9 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 @supports (padding:max(0px)){.callbar{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}}
 .callbar .btn{flex:1 1 0;min-height:48px;padding-block:.5rem}
 .callbar{transition:transform .2s var(--ease),visibility .2s var(--ease)}
-.callbar.is-tucked{transform:translateY(100%);visibility:hidden}
+/* With JavaScript on, the bar stays out of sight until the script places it,
+   so it never flashes up or slides away as the page opens */
+.callbar.is-tucked,.js .callbar:not(.is-placed){transform:translateY(100%);visibility:hidden}
 .callbar.is-away{display:none}
 @media (max-width:719.98px){
   html{scroll-padding-bottom:88px}
@@ -491,7 +493,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 }
 @media print{
   :root,:root[data-theme="dark"]{--paper:#F5F0E6;--paper-2:#EBE4D5;--card:#FFFDF8;--ink:#1B1A17;--ink-2:#4A463F;--line:#C9BFAB;--field:#5E584E;--field-bg:#fff;--rule:#1B1A17;--bar:#1B1A17;--accent:#1F4D36;--on-accent:#fff;--error:#A63A1E;--focus:#1B1A17;--sd-bg:#1B1A17;--sd-fg:#F5F0E6;--sd-line:rgba(245,240,230,.45)}
-  .callbar,.skip,.site-nav,.theme-toggle{display:none}
+  .callbar,.skip,.site-nav,.theme-toggle,.js .theme-toggle{display:none}
   .site-header{position:static}
   :root[data-theme] .mark-light{opacity:1}
   .mark-dark{display:none}
@@ -1006,7 +1008,13 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
     var update = function () {
       bar.classList.toggle('is-tucked', onScreen.indexOf(true) > -1);
     };
+    // Place the bar with its slide switched off, so it starts where it belongs
+    // instead of sliding away as the page opens. After this it slides as usual.
+    bar.style.transition = 'none';
     update();
+    bar.classList.add('is-placed');
+    void bar.offsetWidth;
+    bar.style.transition = '';
     var watcher = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         onScreen[watched.indexOf(entry.target)] = entry.isIntersecting;
@@ -1014,6 +1022,8 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
       update();
     });
     watched.forEach(function (el) { watcher.observe(el); });
+  } else if (bar) {
+    bar.classList.add('is-placed');
   }
 
   var EMAIL = 'arileonboozer@gmail.com';
