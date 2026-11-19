@@ -7,6 +7,7 @@
 <meta name="description" content="Términos para usar el sitio web de Ari Leon Boozer y para el trabajo web y de software que hago para clientes.">
 <meta name="author" content="Ari Leon Boozer">
 <meta name="theme-color" content="#F5F0E6">
+<meta name="format-detection" content="telephone=no">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://www.arileonboozer.com/es/terminos.html">
 <link rel="alternate" hreflang="en" href="https://www.arileonboozer.com/terms.html">
@@ -17,9 +18,17 @@
 <script>
 /* Use the theme chosen on the main page. Light is the default. */
 (function () {
-  var t = 'light';
-  try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
-  document.documentElement.setAttribute('data-theme', t);
+  var r = document.documentElement;
+  var m = document.querySelector('meta[name="theme-color"]');
+  function apply() {
+    var t = 'light';
+    try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
+    r.setAttribute('data-theme', t);
+    if (m) { m.setAttribute('content', t === 'dark' ? '#121714' : '#F5F0E6'); }
+  }
+  apply();
+  // The Back button can bring back a saved copy from before the theme changed
+  window.addEventListener('pageshow', function (e) { if (e.persisted) { apply(); } });
 }());
 </script>
 <style>
@@ -42,6 +51,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
 a:hover{color:var(--accent-hover)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .skip{position:absolute;left:12px;top:-80px;background:var(--ink);color:var(--paper);padding:12px 16px;font-weight:700;border-radius:4px;z-index:5}
 .skip:focus{top:12px;color:var(--paper)}
@@ -51,9 +61,10 @@ a:hover{color:var(--accent-hover)}
 .brand:hover{color:var(--ink)}
 .back{font-weight:600;font-size:.9375rem;padding:10px 0;display:inline-block}
 .head-links{display:flex;gap:20px;flex-wrap:wrap}
-main{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px}
+main{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px;overflow-wrap:break-word}
 h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4vw + 1rem,3rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 8px}
 h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin:2.4rem 0 .6rem}
+h1,h2{text-wrap:balance}
 p,ul{margin:0 0 1rem}
 ul{padding-left:1.4rem}
 li{margin-bottom:.45rem}
@@ -62,7 +73,8 @@ li{margin-bottom:.45rem}
 .foot{border-top:2px solid var(--rule);margin-top:3rem;padding-top:1.2rem;color:var(--ink-2);font-size:.9375rem}
 .foot a{margin-right:16px;display:inline-block;padding:8px 0}
 @media print{
-  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#000;--accent:#000}
+  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#000;--accent:#000;color-scheme:light}
+  h1,h2,h3,h4{break-after:avoid;page-break-after:avoid}
   .skip,.back{display:none}
 }
 </style>
@@ -77,11 +89,11 @@ li{margin-bottom:.45rem}
 </header>
 <main id="main">
 <h1>Términos de servicio</h1>
-<p class="updated">Última actualización: 17 de noviembre de 2026</p>
+<p class="updated">Última actualización: 19 de noviembre de 2026</p>
 <p class="note">Esta es una traducción de la versión en inglés. Si hay diferencias entre las dos versiones, prevalece la versión en inglés.</p>
 
 <p>Estos términos se aplican a este sitio web y al trabajo web y de software que hago para clientes. Soy Ari Leon Boozer y tengo un negocio de propietario único con sede en Newport, Arkansas. En estos términos, &ldquo;yo&rdquo; significa yo y &ldquo;usted&rdquo; significa la persona o el negocio que me contrata o que usa este sitio.</p>
-<p class="note">Para cada proyecto, ambos firmamos un breve acuerdo de proyecto. Si algo en estos términos entra en conflicto con ese acuerdo firmado, prevalece el acuerdo.</p>
+<p class="note">Para cada proyecto de sitio web o de software, ambos firmamos un breve acuerdo de proyecto. Si algo en estos términos entra en conflicto con ese acuerdo firmado, prevalece el acuerdo.</p>
 
 <h2>1. Lo que ofrezco</h2>
 <ul>
@@ -92,11 +104,11 @@ li{margin-bottom:.45rem}
   <li><strong>Plan de Cuidado.</strong> Un complemento opcional, $29.99 al mes.</li>
   <li><strong>Registro de dominio.</strong> Disponible a solicitud.</li>
 </ul>
-<p><strong>Sobre el Informe de Consultoría de IA.</strong> Le envío un cuestionario escrito breve. Usted lo responde primero, luego paga los $99.99 completos antes de que yo comience, y entrego el informe dentro de los tres días hábiles siguientes a su pago. Es solo asesoría. No construyo ni configuro nada como parte del informe, y no es asesoría legal, fiscal ni de cumplimiento normativo. Si cancela antes de que yo comience, se los reembolso. Una vez que he comenzado, me quedo con la tarifa. Si no puedo entregar, se los reembolso. El Informe de Consultoría de IA no requiere un acuerdo de proyecto firmado. Se aplican al informe estos términos y nuestra confirmación escrita por mensaje de texto o correo electrónico.</p>
-<p>Lo que incluye cada paquete se indica en la página principal y en el acuerdo de proyecto. Los precios son fijos para el alcance descrito en el acuerdo firmado.</p>
+<p><strong>Sobre el Informe de Consultoría de IA.</strong> Le envío un cuestionario escrito breve. Usted lo responde primero, luego paga los $99.99 completos antes de que yo comience, y entrego el informe dentro de los tres días hábiles siguientes a su pago. Es solo asesoría. No construyo ni configuro nada como parte del informe, y no es asesoría legal, fiscal ni de cumplimiento normativo. Le aviso por mensaje de texto o por correo electrónico cuando comience. Si cancela antes de que yo comience, se los reembolso. Una vez que he comenzado, me quedo con la tarifa. Si no puedo entregar, se los reembolso. El Informe de Consultoría de IA no requiere un acuerdo de proyecto firmado. Se aplican al informe estos términos y nuestra confirmación escrita por mensaje de texto o correo electrónico.</p>
+<p>Lo que incluye cada paquete se indica en la página principal y en el acuerdo de proyecto. Los precios son fijos para el alcance descrito en el acuerdo firmado o, para el Informe de Consultoría de IA, en el párrafo anterior.</p>
 
 <h2>2. Inicio del trabajo</h2>
-<p>El trabajo comienza cuando confirmo por escrito que he empezado. Un mensaje de texto o un correo electrónico cuenta como confirmación por escrito. No empiezo hasta que ambos hayamos firmado el acuerdo de proyecto y se haya pagado su depósito.</p>
+<p>Esta sección se aplica a la Página de Lanzamiento, el Sitio Completo y el Desarrollo a la Medida. El Informe de Consultoría de IA se rige por la sección 1. El trabajo comienza cuando confirmo por escrito que he empezado. Un mensaje de texto o un correo electrónico cuenta como confirmación por escrito. No empiezo hasta que ambos hayamos firmado el acuerdo de proyecto y se haya pagado su depósito.</p>
 
 <h2>3. Pago</h2>
 <ul>
@@ -107,7 +119,7 @@ li{margin-bottom:.45rem}
 </ul>
 
 <h2>4. Revisiones y aceptación</h2>
-<p>Una Página de Lanzamiento incluye una ronda de revisiones y un Sitio Completo incluye dos. Una ronda es una lista de cambios enviada en conjunto. Los cambios adicionales se cobran a una tarifa fija de $60 por hora, o quedan cubiertos por su Plan de Cuidado si usted tiene uno. El trabajo se considera aceptado 5 días después de la entrega, a menos que antes de ese plazo usted me envíe solicitudes de cambio por escrito.</p>
+<p>Una Página de Lanzamiento incluye una ronda de revisiones y un Sitio Completo incluye dos. Una ronda es una lista de cambios enviada en conjunto. Los cambios adicionales se cobran a una tarifa fija de $30 por hora, o quedan cubiertos por su Plan de Cuidado si usted tiene uno. El trabajo se considera aceptado 5 días después de la entrega, a menos que antes de ese plazo usted me envíe solicitudes de cambio por escrito.</p>
 
 <h2>5. Propiedad</h2>
 <p>Su dominio, sus cuentas de alojamiento web y su contenido son suyos. El trabajo terminado pasa a ser suyo cuando usted ha pagado en su totalidad. Puedo reutilizar conocimientos generales y código que no sean específicos para usted. Puedo mostrar el trabajo en mi portafolio, a menos que usted opte por excluirse en el acuerdo de proyecto.</p>
@@ -116,12 +128,13 @@ li{margin-bottom:.45rem}
 <p>Configuro su alojamiento web, su formulario de contacto y, en un Sitio Completo, sus estadísticas de visitantes en planes gratuitos, en cuentas a su nombre y sin ninguna tarjeta de pago registrada, así que no tienen cuota mensual. Esos planes gratuitos pertenecen a los proveedores, que pueden cambiarlos. Si alguna vez elige un plan o una herramienta de pago, se le factura directamente a usted, y la cuenta es suya. Si me pide que registre su dominio, lo registro a su nombre, configuro las cuentas y cualquier dirección de correo electrónico de ese dominio, le ayudo a activar la verificación en dos pasos en esas cuentas (necesita su teléfono) y le entrego los datos de acceso al entregar el trabajo. Usted paga la tarifa anual del registrador de dominios, al costo. En una aplicación móvil dentro de un Desarrollo a la Medida, configuro para usted las cuentas de desarrollador de Apple y de Google, a su nombre, y son suyas. Cubro la cuota de desarrollador de Google y el primer año de la de Apple. Después del primer año, usted paga la cuota anual de desarrollador de Apple, actualmente de $99 al año. Si su paquete incluye la configuración o la renovación de un Google Business Profile (Perfil de Negocio de Google), el perfil es suyo: usted es quien lo posee, me agrega con permisos de administración y puede quitarme cuando quiera. Google puede hacer esperar 7 días a un propietario nuevo antes de que pueda quitar a otros usuarios; si eso pasa, pídamelo por escrito y yo me quito. Usted completa la verificación de Google, y yo le explico cómo hacerlo. Google no cobra por un Perfil de Negocio; mi precio cubre mi tiempo. Le aviso por escrito de los cambios que hago en su perfil. Google revisa los cambios antes de publicarlos y no ofrece todas las funciones para todo tipo de negocio, así que una foto o un servicio puede quedar retenido, rechazado o no estar disponible. Google decide si aprueba y conserva un perfil, así que no puedo prometer su aprobación, posiciones en las búsquedas ni reseñas. Si Google no permite o no conserva un perfil para su negocio, el resto de su paquete y el precio no cambian, y eso no cuenta como que yo no pueda entregar. El aviso de Google sobre cómo trabajar con un tercero está en <a href="https://support.google.com/business/answer/7163406?hl=es-419" target="_blank" rel="noopener noreferrer">support.google.com/business/answer/7163406<span class="sr-only"> (se abre en una pestaña nueva)</span></a>.</p>
 
 <h2>7. Plan de Cuidado</h2>
-<p>El Plan de Cuidado cuesta $29.99 al mes, se factura cada mes por adelantado a partir de la fecha de lanzamiento y es de mes a mes. Usted puede cancelar en cualquier momento. Es para un sitio que yo haya construido para usted, a menos que acordemos otra cosa por escrito. Cubre el mantenimiento de su cuenta de alojamiento web y su configuración, ediciones dentro de los tres días hábiles siguientes a su solicitud, copias de seguridad, verificaciones de disponibilidad y chequeos de seguridad. Las ediciones son cambios en sus páginas existentes, como texto, fotos y horarios. Una página nueva o un rediseño se cotiza por separado. El alojamiento web de un sitio que yo construyo está en un plan gratuito, así que no tiene costo. Si su sitio llega a usar un plan de pago, usted paga esa tarifa directamente.</p>
+<p>El Plan de Cuidado cuesta $29.99 al mes, se factura cada mes por adelantado a partir de la fecha de lanzamiento y es de mes a mes. Usted puede cancelar en cualquier momento. Es para un sitio que yo haya construido para usted, a menos que acordemos otra cosa por escrito. Cubre el mantenimiento de su cuenta de alojamiento web y su configuración, actualizaciones dentro de los tres días hábiles siguientes a su solicitud, copias de seguridad, verificaciones de disponibilidad y chequeos de seguridad. Las actualizaciones son cambios en sus páginas existentes, como texto, fotos y horarios. Una página nueva o un rediseño se cotiza por separado. El alojamiento web de un sitio que yo construyo está en un plan gratuito, así que no tiene costo. Si su sitio llega a usar un plan de pago, usted paga esa tarifa directamente.</p>
 <p>Las copias de seguridad son copias de los archivos de su sitio que yo guardo y actualizo cada vez que cambio su sitio. Si un problema daña su sitio, restauro mi copia más reciente en cuanto pueda. Restaurar una copia no encuentra ni corrige la causa del problema, y no incluye nada que tengan otras empresas, como los mensajes que hay en su correo electrónico.</p>
 <p>Los chequeos de seguridad son tres tareas. Primero, mantengo alertas automáticas sobre el certificado HTTPS de su sitio y la fecha de renovación de su dominio, y le aviso cuando alguno necesite atención. El dominio es suyo y usted paga su renovación. Segundo, si su formulario de contacto envía los mensajes a través de su sitio web (en lugar de abrir el correo de la persona que lo usa), mantengo activado el filtro de correo no deseado del formulario. Ningún filtro detecta todo y puede bloquear un mensaje real. Su proveedor de correo también puede enviar los mensajes del formulario a la carpeta de correo no deseado, así que revise esa carpeta en la dirección que recibe los mensajes del formulario. Tercero, aproximadamente cada seis meses repaso con usted los accesos ligados a su sitio: su cuenta de alojamiento web, su dominio, las direcciones de correo electrónico que yo haya configurado en su dominio y cualquier Perfil de Negocio de Google. Compruebo si la verificación en dos pasos está activada y le ayudo a activarla donde no lo esté (necesita su teléfono), y solo elimino un acceso cuando usted me lo pida. Si usted no responde a mi solicitud, omito esa ronda y se la vuelvo a pedir en la siguiente. Usted inicia sesión por su cuenta, o miramos juntos en una pantalla compartida, así que para el repaso no necesito sus contraseñas ni sus códigos de verificación en dos pasos. Usted sigue siendo quien posee cada cuenta y puede quitarme el acceso cuando quiera. Si cancela el plan, elimino mi propio acceso.</p>
 <p>Los chequeos son mantenimiento de rutina, no una garantía. No prometen que nunca habrá un acceso no autorizado a un sitio o a una cuenta, ni un uso indebido de ellos. No forman parte del plan: una auditoría de seguridad, averiguar cómo ocurrió una intrusión, limpiar un sitio pirateado, cuidar un sitio que yo no construí y la seguridad de sus teléfonos, computadoras y redes.</p>
 
 <h2>8. Cancelación y reembolsos</h2>
+<p>Esta sección se aplica a la Página de Lanzamiento, el Sitio Completo y el Desarrollo a la Medida. El Informe de Consultoría de IA se rige por la sección 1.</p>
 <ul>
   <li>Usted puede cancelar antes de que yo comience el trabajo y recibir un reembolso completo de lo que haya pagado.</li>
   <li>Una vez que el trabajo ha comenzado, me quedo con el depósito para cubrir el trabajo realizado.</li>
@@ -136,7 +149,7 @@ li{margin-bottom:.45rem}
 <p>Usted me dará contenido, fotos y acceso que tenga derecho a usar, y me los enviará a más tardar en las fechas indicadas en el acuerdo de proyecto. Si sus materiales llegan tarde, mi fecha de entrega se pospone el mismo número de días. No construiré nada que sea ilegal o que infrinja los derechos de otra persona.</p>
 
 <h2>11. Uso de este sitio web</h2>
-<p>La información de este sitio es general y se ofrece tal como está. No es un contrato. Un contrato existe solo cuando ambos firmamos un acuerdo de proyecto.</p>
+<p>La información de este sitio es general y se ofrece tal como está. No es un contrato. Un contrato existe solo cuando ambos firmamos un acuerdo de proyecto o, en el caso de un Informe de Consultoría de IA, cuando confirmo su pedido por escrito y usted paga.</p>
 
 <h2>12. Privacidad</h2>
 <p>La forma en que manejo su información se explica en mi <a href="/es/privacidad.html">Política de privacidad</a>.</p>
