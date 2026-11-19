@@ -7,6 +7,7 @@
 <meta name="description" content="How Ari Leon Boozer collects, uses and protects information from website visitors and clients.">
 <meta name="author" content="Ari Leon Boozer">
 <meta name="theme-color" content="#F5F0E6">
+<meta name="format-detection" content="telephone=no">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://www.arileonboozer.com/privacy.html">
 <link rel="alternate" hreflang="en" href="https://www.arileonboozer.com/privacy.html">
@@ -17,9 +18,17 @@
 <script>
 /* Use the theme chosen on the main page. Light is the default. */
 (function () {
-  var t = 'light';
-  try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
-  document.documentElement.setAttribute('data-theme', t);
+  var r = document.documentElement;
+  var m = document.querySelector('meta[name="theme-color"]');
+  function apply() {
+    var t = 'light';
+    try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
+    r.setAttribute('data-theme', t);
+    if (m) { m.setAttribute('content', t === 'dark' ? '#121714' : '#F5F0E6'); }
+  }
+  apply();
+  // The Back button can bring back a saved copy from before the theme changed
+  window.addEventListener('pageshow', function (e) { if (e.persisted) { apply(); } });
 }());
 </script>
 <style>
@@ -54,6 +63,7 @@ a:hover{color:var(--accent-hover)}
 main{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px}
 h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4vw + 1rem,3rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 8px}
 h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin:2.4rem 0 .6rem}
+h1,h2{text-wrap:balance}
 p,ul{margin:0 0 1rem}
 ul{padding-left:1.4rem}
 li{margin-bottom:.45rem}
@@ -62,7 +72,8 @@ li{margin-bottom:.45rem}
 .foot{border-top:2px solid var(--rule);margin-top:3rem;padding-top:1.2rem;color:var(--ink-2);font-size:.9375rem}
 .foot a{margin-right:16px;display:inline-block;padding:8px 0}
 @media print{
-  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#000;--accent:#000}
+  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#000;--accent:#000;color-scheme:light}
+  h1,h2,h3,h4{break-after:avoid;page-break-after:avoid}
   .skip,.back{display:none}
 }
 </style>
@@ -77,14 +88,14 @@ li{margin-bottom:.45rem}
 </header>
 <main id="main">
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: November 18, 2026</p>
+<p class="updated">Last updated: November 19, 2026</p>
 
 <p>This policy explains what information I collect, how I use it, who else handles it, and what you can ask me to do. It covers this website (arileonboozer.com), the emails, texts and messages I send and receive for my business, and the work I do for clients, including websites, software and AI Consultant Reports. I am Ari Leon Boozer, a sole proprietor based in Newport, Arkansas. In this policy, &ldquo;I&rdquo; means me.</p>
 
 <h2>What I collect</h2>
 <ul>
   <li><strong>Messages you send me.</strong> When you email me, text me, message me on Facebook, Instagram, LinkedIn or X, or use the contact form, I receive your name, your contact details and whatever you write. Nothing reaches me until you press send.</li>
-  <li><strong>The contact form.</strong> The contact form on this site does not send anything to my website or to any server I run. When you press the form&rsquo;s button, it opens Gmail in a new tab with your message filled in. Everything you typed in the form (your name, business, phone number and message) goes to Google as part of the web link that opens Gmail, and Gmail may save it as a draft, even if you never press send. The page then also shows a link to open the same message in your own email app, but by then Gmail has already opened with your text, unless your browser blocked the new tab. If you use that link, your device opens your email program, or the webmail service your browser is set to use, with your message filled in. If it opens a webmail service, that service receives your text and may save it as a draft.</li>
+  <li><strong>The contact form.</strong> The contact form on this site does not send anything to my website or to any server I run. When you press the form&rsquo;s button, it opens Gmail in a new tab with your message filled in. Everything you typed in the form (your name, business, phone number and message) goes to Google as part of the web link that opens Gmail, and Gmail may save it as a draft, even if you never press send. The page then also shows a link to open the same message in your own email app, but by then Gmail has already opened with your text, unless your browser blocked the new tab. If you use that link, your device opens your email program, or the webmail service your browser is set to use, with your message filled in. If it opens a webmail service, that service receives your text and may save it as a draft. If JavaScript is turned off in your browser, the form&rsquo;s button skips Gmail and opens your email program, or the webmail service your browser is set to use, the same way as that link.</li>
   <li><strong>Email links.</strong> The Email buttons and the email address link in the page footer open your own email app, or the webmail service your browser is set to use, with only my email address and a subject line filled in. If you would rather use Gmail, the link next to &ldquo;Prefer Gmail?&rdquo; in the Contact section of the main page opens Gmail in a new tab, with only my email address and a subject line filled in. The plain email addresses on this page and on the Terms of Service page also open your own email app, or the webmail service your browser is set to use, but with only my email address filled in.</li>
   <li><strong>Text messages.</strong> If you tap a text button, your phone&rsquo;s messaging app opens with a new message to (870) 201-0441 ready to write. Nothing is sent until you press send there. The message then travels through your phone&rsquo;s own messaging service (your phone company, or an app such as iMessage) under that service&rsquo;s rules, not through this website. I use your phone number and what you write to reply to you and to handle what you asked about. If you ask me to stop texting you, I will stop. You can ask me to delete our text conversation from my phone. I cannot delete copies that are on your phone or with your phone company. Sometimes I text or message someone first, such as a person I know or someone who asked me to follow up. I write each of those messages myself, one at a time, and if you ask me to stop, I will stop.</li>
   <li><strong>Project information.</strong> If you hire me or order an AI Consultant Report, I receive the content, photos, logins, questionnaire answers and business details you give me so that I can do the work. If I set up accounts for you, such as your domain, I also receive the name, mailing address, phone number and email address those accounts need. For some projects, such as online booking or ordering, a customer portal, or a data cleanup or migration, I also receive information about your customers.</li>

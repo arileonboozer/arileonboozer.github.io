@@ -7,6 +7,7 @@
 <meta name="description" content="Terms for using the Ari Leon Boozer website and for the web and software work I do for clients.">
 <meta name="author" content="Ari Leon Boozer">
 <meta name="theme-color" content="#F5F0E6">
+<meta name="format-detection" content="telephone=no">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://www.arileonboozer.com/terms.html">
 <link rel="alternate" hreflang="en" href="https://www.arileonboozer.com/terms.html">
@@ -17,9 +18,17 @@
 <script>
 /* Use the theme chosen on the main page. Light is the default. */
 (function () {
-  var t = 'light';
-  try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
-  document.documentElement.setAttribute('data-theme', t);
+  var r = document.documentElement;
+  var m = document.querySelector('meta[name="theme-color"]');
+  function apply() {
+    var t = 'light';
+    try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') { t = s; } } catch (e) {}
+    r.setAttribute('data-theme', t);
+    if (m) { m.setAttribute('content', t === 'dark' ? '#121714' : '#F5F0E6'); }
+  }
+  apply();
+  // The Back button can bring back a saved copy from before the theme changed
+  window.addEventListener('pageshow', function (e) { if (e.persisted) { apply(); } });
 }());
 </script>
 <style>
@@ -42,6 +51,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
 a:hover{color:var(--accent-hover)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .skip{position:absolute;left:12px;top:-80px;background:var(--ink);color:var(--paper);padding:12px 16px;font-weight:700;border-radius:4px;z-index:5}
 .skip:focus{top:12px;color:var(--paper)}
@@ -51,9 +61,10 @@ a:hover{color:var(--accent-hover)}
 .brand:hover{color:var(--ink)}
 .back{font-weight:600;font-size:.9375rem;padding:10px 0;display:inline-block}
 .head-links{display:flex;gap:20px;flex-wrap:wrap}
-main{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px}
+main{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px;overflow-wrap:break-word}
 h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4vw + 1rem,3rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 8px}
 h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;margin:2.4rem 0 .6rem}
+h1,h2{text-wrap:balance}
 p,ul{margin:0 0 1rem}
 ul{padding-left:1.4rem}
 li{margin-bottom:.45rem}
@@ -62,7 +73,8 @@ li{margin-bottom:.45rem}
 .foot{border-top:2px solid var(--rule);margin-top:3rem;padding-top:1.2rem;color:var(--ink-2);font-size:.9375rem}
 .foot a{margin-right:16px;display:inline-block;padding:8px 0}
 @media print{
-  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#000;--accent:#000}
+  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#000;--accent:#000;color-scheme:light}
+  h1,h2,h3,h4{break-after:avoid;page-break-after:avoid}
   .skip,.back{display:none}
 }
 </style>
@@ -77,10 +89,10 @@ li{margin-bottom:.45rem}
 </header>
 <main id="main">
 <h1>Terms of Service</h1>
-<p class="updated">Last updated: November 17, 2026</p>
+<p class="updated">Last updated: November 19, 2026</p>
 
 <p>These terms cover this website and the web and software work I do for clients. I am Ari Leon Boozer, a sole proprietor based in Newport, Arkansas. In these terms, &ldquo;I&rdquo; means me and &ldquo;you&rdquo; means the person or business hiring me or using this site.</p>
-<p class="note">For each project, we both sign a short project agreement. If anything in these terms conflicts with that signed agreement, the agreement controls.</p>
+<p class="note">For each website or software project, we both sign a short project agreement. If anything in these terms conflicts with that signed agreement, the agreement controls.</p>
 
 <h2>1. What I offer</h2>
 <ul>
@@ -91,11 +103,11 @@ li{margin-bottom:.45rem}
   <li><strong>Care Plan.</strong> An optional add-on, $29.99 per month.</li>
   <li><strong>Domain registration.</strong> Available on request.</li>
 </ul>
-<p><strong>About the AI Consultant Report.</strong> I send you a short written questionnaire. You answer it first, then you pay $99.99 in full before I start, and I deliver the report within three business days of your payment. It is advice only. I do not build or set anything up as part of it, and it is not legal, tax or compliance advice. If you cancel before I start, I refund it. Once I have started, I keep the fee. If I cannot deliver, I refund it. The AI Consultant Report does not need a signed project agreement. These terms and our written confirmation by text or email apply to it.</p>
-<p>What each package includes is listed on the main page and in the project agreement. The prices are fixed for the scope described in the signed agreement.</p>
+<p><strong>About the AI Consultant Report.</strong> I send you a short written questionnaire. You answer it first, then you pay $99.99 in full before I start, and I deliver the report within three business days of your payment. It is advice only. I do not build or set anything up as part of it, and it is not legal, tax or compliance advice. I tell you by text or email when I start. If you cancel before I start, I refund it. Once I have started, I keep the fee. If I cannot deliver, I refund it. The AI Consultant Report does not need a signed project agreement. These terms and our written confirmation by text or email apply to it.</p>
+<p>What each package includes is listed on the main page and in the project agreement. The prices are fixed for the scope described in the signed agreement or, for the AI Consultant Report, in the paragraph above.</p>
 
 <h2>2. Starting work</h2>
-<p>Work starts when I confirm in writing that I have begun. A text or email counts. I do not begin until we have both signed the project agreement and your deposit has been paid.</p>
+<p>This section covers the Launch Page, Full Site and Custom Build. The AI Consultant Report follows section 1. Work starts when I confirm in writing that I have begun. A text or email counts. I do not begin until we have both signed the project agreement and your deposit has been paid.</p>
 
 <h2>3. Payment</h2>
 <ul>
@@ -106,7 +118,7 @@ li{margin-bottom:.45rem}
 </ul>
 
 <h2>4. Revisions and acceptance</h2>
-<p>A Launch Page includes one round of revisions and a Full Site includes two. A round is one list of changes sent together. Extra changes are billed at a flat $60 an hour, or are covered by your Care Plan if you have one. The work counts as accepted 5 days after delivery unless you send me written change requests before then.</p>
+<p>A Launch Page includes one round of revisions and a Full Site includes two. A round is one list of changes sent together. Extra changes are billed at a flat $30 an hour, or are covered by your Care Plan if you have one. The work counts as accepted 5 days after delivery unless you send me written change requests before then.</p>
 
 <h2>5. Ownership</h2>
 <p>You own your domain, your hosting accounts and your content. The finished work becomes yours when you have paid in full. I may reuse general know-how and code that is not specific to you. I may show the work in my portfolio unless you opt out in the project agreement.</p>
@@ -121,6 +133,7 @@ li{margin-bottom:.45rem}
 <p>Checkups are routine upkeep, not a guarantee. They do not promise that a site or account will never be broken into, taken over or misused. Not part of the plan: a security audit, finding out how a break-in happened, cleaning up a hacked site, looking after a site I did not build, and the security of your phones, computers and networks.</p>
 
 <h2>8. Cancellation and refunds</h2>
+<p>This section covers the Launch Page, Full Site and Custom Build. The AI Consultant Report follows section 1.</p>
 <ul>
   <li>You may cancel before I start work for a full refund of what you have paid.</li>
   <li>Once work has started, I keep the deposit to cover the work done.</li>
@@ -135,7 +148,7 @@ li{margin-bottom:.45rem}
 <p>You will give me content, photos and access that you have the right to use, and you will send them by the dates in the project agreement. If your materials are late, my delivery date moves back by the same number of days. I will not build anything that is unlawful or that infringes someone else's rights.</p>
 
 <h2>11. Using this website</h2>
-<p>The information on this site is general and is provided as is. It is not a contract. A contract exists only when we both sign a project agreement.</p>
+<p>The information on this site is general and is provided as is. It is not a contract. A contract exists only when we both sign a project agreement or, for an AI Consultant Report, when I confirm your order in writing and you pay.</p>
 
 <h2>12. Privacy</h2>
 <p>How I handle your information is explained in my <a href="privacy.html">Privacy Policy</a>.</p>
