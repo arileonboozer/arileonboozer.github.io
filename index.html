@@ -86,21 +86,21 @@
       {
         "@type": "Offer",
         "name": "Brochure Site",
-        "description": "Up to 5 pages, ready to review within 5 business days of the client's deposit. It goes live as soon as the client approves it and the balance is paid.",
+        "description": "Up to 5 pages, plus a short privacy page, ready to review within 5 business days of the client's deposit. It goes live as soon as the client approves it and the balance is paid.",
         "price": "499.99",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Full Site",
-        "description": "Up to 15 pages, ready to review within 10 business days of the client's deposit.",
+        "description": "Up to 15 pages, plus a short privacy page, ready to review within 10 business days of the client's deposit.",
         "price": "1499.99",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Custom Build",
-        "description": "Everything in the Full Site, plus a fixed-scope build delivered in a 15-business-day sprint counted from the client's deposit, with the client's review in the final business week. A mobile app that customers download from the App Store and Google Play is available for an additional $999.99, which includes the Google developer fee and the first year of the Apple developer fee. Scope and a fixed price are agreed in writing by email, before any work starts.",
+        "description": "Everything in the Full Site, plus a fixed-scope build delivered in a 15-business-day sprint counted from the client's deposit, with the client's review in the final business week. A mobile app that customers download is available for an additional $999.99, which includes the Google developer fee and the first year of the Apple developer fee; Apple and Google decide whether and when it goes live in their stores. Scope, a fixed price and the number of revision rounds are agreed in writing by email, before any work starts.",
         "priceSpecification": {
           "@type": "PriceSpecification",
           "minPrice": "2999.99",
@@ -110,14 +110,14 @@
       {
         "@type": "Offer",
         "name": "AI Consultant Report",
-        "description": "A written report on how AI could help your business: a list of specific tasks, tools, rough cost and effort, risks, what not to buy yet, and a next step. Delivered within 3 business days of the client's payment, as a Word document with PowerPoint slides of the same report at no extra cost. Advice only; paid in full before work starts.",
+        "description": "A written report on how AI could help your business: the 2 or 3 tasks to fix first, worked out from the owner's numbers, which tools to use, cost and time, risks, what not to buy yet, and a do-it-yourself plan. Delivered by email within 3 business days of the client's payment, also as a Word document with PowerPoint slides of the same report at no extra cost. Advice only; paid in full before work starts.",
         "price": "99.99",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Care Plan",
-        "description": "Optional: hosting looked after, edits within 3 business days of your request, backups, uptime checks, security checkups (certificate and domain renewal alerts, form spam filter, a login review about every 6 months). Pay monthly, every 3 months ($89.97) or yearly ($359.88) at the same rate. Cancel any time.",
+        "description": "Optional: edits within 3 business days of your request, hosting looked after, backups, automatic alerts if the site goes down or the certificate or domain renewal needs attention, a monthly contact form test, a check of the site's facts about every 6 months, and security checkups (form spam filter, a written login review about every 6 months). Pay monthly, every 3 months ($89.97) or yearly ($359.88) at the same rate. Cancel any time.",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "29.99",
@@ -388,13 +388,13 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
 }
 /* "AI Consultant Report" wraps to two lines in the five-across layout: keep the prices lined up */
 @media (min-width:1180px){.pkgs .pkg h3{min-height:2.7em}}
-/* Keep each row's divider rule, small heading and button lined up. Tablet widths (three cards, then two): room for three lines
-   of turnaround text, a two-line small heading and two-line buttons in the first row, and for the label under the number.
-   Five across (above): room for five lines of turnaround text, as the Custom Build's runs, and two-line buttons */
+/* Keep each row's divider rule, small heading and button lined up. Tablet widths (three cards, then two): room for four lines
+   of turnaround text, a two-line small heading in both rows, two-line buttons in the first row, and for the
+   label under the number. Five across (above): room for five lines of turnaround text, as the Custom Build's runs, and two-line buttons */
 @media (min-width:980px) and (max-width:1179.98px){
   .pkgs .price{min-height:calc(1em + 2.45rem)}
-  .pkgs .turn{min-height:calc(4.2em + 18px)}
-  .pkgs > .pkg:nth-child(-n+3) h4{min-height:2.7em}
+  .pkgs .turn{min-height:calc(5.6em + 18px)}
+  .pkgs h4{min-height:2.7em}
   .pkgs > .pkg:nth-child(-n+3) .btn{min-height:calc(2.4em + 28px)}
 }
 .pkg{position:relative;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--rule);border-radius:4px;padding:32px 24px 24px;overflow:hidden}
@@ -676,39 +676,40 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
           <p class="turn">A written report within 3 business days of your payment.</p>
           <h4>What you get</h4>
           <ul class="ticks">
-            <li>A short written questionnaire, by email or text</li>
-            <li>A list of specific tasks AI could help with</li>
-            <li>The tools I would use</li>
-            <li>Rough cost and effort</li>
-            <li>Risks to watch, including privacy</li>
+            <li>First, 8 short questions by email or text (about 10 minutes). If the report is not a fit for you, you owe nothing.</li>
+            <li>The 2 or 3 tasks to fix first, biggest first, with what each may be costing you, worked out from your numbers</li>
+            <li>Which tools to use: what you already pay for first, then free or cheap ones</li>
+            <li>First-month and monthly cost, and hours of your time. Each price shows the day I checked it, or says when I could not check it.</li>
+            <li>Risks to watch, including privacy: what never to type into AI, why to check what it writes, and tool contracts</li>
             <li>What not to buy yet</li>
-            <li>A recommended next step</li>
-            <li>Your report as a Word document, plus PowerPoint slides of it at no extra cost, in case you want to present it</li>
+            <li>A do-it-yourself plan with timed steps, a way to check it worked, and when to drop a tool that does not</li>
+            <li>Whether 1 of my packages would help, and if none would, I say you do not need me</li>
+            <li>Your report by email, also attached as a Word document and PowerPoint slides at no extra cost, to share or present</li>
           </ul>
-          <p class="pkg-note">Advice only. I do not build or set anything up. Paid in full before I start. Not legal, tax or compliance advice.</p>
+          <p class="pkg-note">Advice only. I do not build or set anything up. Not legal, tax or compliance advice. Paid in full before I start. Refunded if you cancel first or I cannot deliver.</p>
           <a class="btn" href="#contact" data-need="I'd like an AI Consultant Report ($99.99).">Ask about an AI Consultant Report</a>
         </article>
 
         <article class="pkg" id="launch" aria-labelledby="launch-h">
           <h3 id="launch-h">Brochure Site</h3>
           <p class="price">$499.99</p>
-          <p class="turn">Up to 5 pages. Ready to review within 5 business days of your deposit.</p>
+          <p class="turn">Up to 5 pages, plus a short privacy page. Ready to review within 5 business days of your deposit.</p>
           <h4>What you get</h4>
           <ul class="ticks">
             <li>Custom design for your business, not a template</li>
-            <li>Mobile-friendly</li>
+            <li>Mobile-friendly, with every page checked on a real phone before you see it</li>
             <li>Tap-to-text button</li>
             <li>Contact form that reaches your email</li>
-            <li>A short privacy page, linked from the footer</li>
-            <li>Hours and location with a map link</li>
+            <li>Your hours and the area you serve, with a map link to your address if customers come to you</li>
             <li>Links to your social media pages, and to any booking or ordering page you already use</li>
-            <li>Copy written from your answers to a short written questionnaire</li>
-            <li>Your photos placed</li>
-            <li>Basic search and sharing setup: page titles and descriptions, a link preview for Facebook and texts, and a link to your Google Business Profile</li>
-            <li>Google Business Profile setup if you don't have one yet (you own it, and I walk you through verifying it)</li>
-            <li>Connection to your domain, with HTTPS turned on</li>
-            <li>Your site in Spanish and any other languages you want, at no extra cost</li>
-            <li>1 round of revisions</li>
+            <li>Words for every page, written by me from your answers to a short written questionnaire</li>
+            <li>Your logo, photos and any customer comments you have permission to share, placed on your pages</li>
+            <li>Search and sharing basics on every page: a title, a description, a link preview for Facebook and texts, and a link to your Google Business Profile</li>
+            <li>Google Business Profile setup if you have none: it is yours, and I walk you through Google's verification</li>
+            <li>Hosting on a free plan with no monthly fee, connected to your domain with HTTPS turned on</li>
+            <li>Yours to keep: your accounts in your name, and a copy of your site's files once the balance is paid</li>
+            <li>Your site in Spanish and any other languages you want, at no extra cost. You, or someone you trust who reads each language, check it before launch.</li>
+            <li>1 round of revisions, and for 30 days after delivery I fix anything that does not work as agreed, at no charge</li>
           </ul>
           <a class="btn" href="#contact" data-need="I'd like a Brochure Site ($499.99).">Ask about a Brochure Site</a>
         </article>
@@ -716,18 +717,20 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         <article class="pkg" id="full" aria-labelledby="full-h">
           <h3 id="full-h">Full Site</h3>
           <p class="price">$1,499.99</p>
-          <p class="turn">Up to 15 pages. Ready to review within 10 business days of your deposit.</p>
+          <p class="turn">Up to 15 pages, plus a short privacy page. Ready to review within 10 business days of your deposit.</p>
           <h4>Everything in the Brochure Site, plus</h4>
           <ul class="ticks">
-            <li>A page per main service, written to be found in search</li>
-            <li>Search engine optimization</li>
-            <li>Photo gallery</li>
-            <li>Quote or booking request form</li>
-            <li>Google Business Profile makeover: your listing completed and corrected, with your photos and, where Google offers it for your type of business, your services, and a link for asking customers for reviews</li>
-            <li>Basic visitor analytics</li>
+            <li>A page per main service or product line (such as brake repair, or the brands you carry), written to be found in search</li>
+            <li>Search setup beyond the basics: your business details in the format Google reads, a list of all your pages sent to Google, and your site set up in Google Search Console</li>
+            <li>Up to 4 photo galleries from photos you send, such as your work, your space or before-and-after jobs</li>
+            <li>Quote or booking request form with the questions you choose, linked from every service page with that service already filled in. It sends you a request; it is not online booking.</li>
+            <li>Google Business Profile makeover: your listing completed and corrected, with your photos and, where Google offers it for your type of business, your services, a link for asking customers for reviews, and a written list of my changes</li>
+            <li>QR code images for your website and your Google review link, ready to print on a sign, card or flyer</li>
+            <li>Visit counts with no cookies: visits, page views, your most-read pages and the sites that sent people</li>
+            <li>A short written guide to reading your visit counts and the Google searches that found you</li>
             <li>2 rounds of revisions, in place of 1</li>
           </ul>
-          <p class="pkg-note">The pages could be, for example, Home, About, Gallery, Contact and a page for each of your main services.</p>
+          <p class="pkg-note">The pages could be, for example, Home, About, Our team, Gallery, Questions and answers, Contact and a page for each of your main services.</p>
           <a class="btn" href="#contact" data-need="I'd like a Full Site ($1,499.99).">Ask about a Full Site</a>
         </article>
 
@@ -735,18 +738,17 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
           <h3 id="custom-h">Custom Build</h3>
           <p class="price"><span class="from">from</span> $2,999.99</p>
           <p class="turn">Fixed scope. Delivered in a <span class="nw">15-business-day</span> sprint, counted from your deposit. Review is in the final business week.</p>
-          <h4>Everything in the Full Site, plus</h4>
+          <h4>Everything in the Full Site, plus any of these</h4>
           <ul class="ticks">
-            <li>Online booking built into your site: customers pick an open time, get a confirmation and a reminder by email, and you see all your appointments together</li>
-            <li>Online ordering built into your site, for pickup or delivery, with each order sent to you right away</li>
-            <li>A private login where your customers see their own appointments, orders, invoices or files</li>
-            <li>A tool for you and your staff, such as a job board, an inventory tracker or a sales summary, in place of paper and spreadsheets</li>
-            <li>Moving your records (customer lists, products, job history) out of spreadsheets or old software into a single clean system</li>
-            <li>Repetitive work done automatically, such as follow-up emails, review requests and reports that send themselves</li>
-            <li>Deeper search engine work than the Full Site, such as a page for each town you serve, planned around what your customers search for</li>
-            <li>A mobile app your customers download from the App Store and Google Play, for an additional $999.99. I cover Google's developer fee and the first year of Apple's.</li>
+            <li>Online booking or sign-ups built into your site: customers pick an open time or spot, get a confirmation and a reminder by email, and you see them all together</li>
+            <li>Online ordering built into your site, for pickup or delivery, with each order emailed to you. Customers pay in person, or online by card; the card company keeps a small fee from each sale.</li>
+            <li>A private sign-in where your customers see their own appointments, orders or job status</li>
+            <li>A custom tool, such as a price estimator for your customers, or a job board or inventory tracker for your staff</li>
+            <li>Moving your records (customer lists, products, job history) from spreadsheets or old software into your new system, with a button to download them as a spreadsheet</li>
+            <li>Routine emails sent for you, such as a weekly summary of bookings or orders, or a thank-you with your review link to every customer</li>
+            <li>A mobile app for iPhone and Android that your customers download, for an additional $999.99. I submit it to the App Store and Google Play; Apple and Google decide whether and when it goes live.</li>
           </ul>
-          <p class="pkg-note">The list shows what I can build, not what every build includes. Every website I build already works on phones. An app is a separate program people install. A build with logins, stored customer data or payments always includes a written security review before launch: my own written check of how sign-in, stored data and payments are set up, with anything I find fixed or listed for you. It is not a security audit or a promise that the build can never be compromised. We agree on the scope and a fixed price by email, in writing, before any work starts. The scoping is free.</p>
+          <p class="pkg-note">Every website I build already works on phones. An app is a separate program people install. A scope can also add pages, such as a page for each town you serve, written from real details you give me. I build on free plans, in accounts in your name. Free plans have usage limits, and your written scope lists them. A build with logins, stored customer data or payments always includes a written security review before launch: my own written check of how sign-in, stored data and payments are set up, with anything I find fixed or listed for you. It is not a security audit or a promise that the build can never be compromised. We agree on the scope, a fixed price and the number of revision rounds by email, in writing, before any work starts. The scoping is free.</p>
           <a class="btn" href="#contact" data-need="I'd like to start the free written scoping for a Custom Build.">Ask about a Custom Build</a>
         </article>
 
@@ -756,13 +758,15 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
           <p class="turn">Optional add-on. Pay monthly, quarterly or yearly. Cancel any time.</p>
           <h4>What you get</h4>
           <ul class="ticks">
-            <li>Hosting looked after</li>
             <li>Edits within 3 business days of your request</li>
-            <li>Backups</li>
-            <li>Uptime checks</li>
-            <li>Security checkups: automatic alerts for your HTTPS certificate and domain renewal date, your contact form's spam filter kept on, and a login review with you about every 6 months</li>
+            <li>Your hosting account and settings looked after. The hosting itself is on a free plan.</li>
+            <li>A saved copy of your site's files, updated each time I change your site</li>
+            <li>Automatic alerts if your site goes down, its HTTPS certificate needs attention or your domain renewal is due. I tell you in writing.</li>
+            <li>Every month I send a test message through your contact form and ask you to confirm it arrived</li>
+            <li>About every 6 months, I send you your site's hours, prices and services to confirm or update</li>
+            <li>Security checkups: your contact form's spam filter kept on (if it sends through your website) and a written login review about every 6 months</li>
           </ul>
-          <p class="pkg-note">You can pay monthly ($29.99), every 3 months ($89.97) or yearly ($359.88). The price is the same each way, with no discount for paying ahead. When you cancel, the plan runs to the end of the month already underway, and if you paid for a quarter or a year, I refund every full month after that. "Hosting looked after" means I manage your hosting account and settings. Hosting for a site I build is on a free plan, so it has no fee. If your site ever uses a paid plan, you pay that fee directly. Edits are changes to your existing pages, such as text, photos and hours. A new page or a redesign is quoted separately. The Care Plan is for a site I built for you, unless we agree otherwise in writing. Security checkups are routine upkeep, not a guarantee: they do not promise that a site or account will never be broken into, taken over or misused. If a problem breaks your site, I put back my most recent saved copy of its files as soon as I can; that does not find or fix the cause. A security audit, finding out how a break-in happened, cleaning up a hacked site, looking after a site I did not build, and the security of your phones, computers and networks are not part of the plan.</p>
+          <p class="pkg-note">You can pay monthly ($29.99), every 3 months ($89.97) or yearly ($359.88). The price is the same each way, with no discount for paying ahead. When you cancel, the plan runs to the end of the month already underway, and if you paid for a quarter or a year, I refund every full month after that. If your site ever uses a paid plan, you pay that fee directly. For the login review, I send you a short checklist, and you sign in yourself and text or email me what you find, so I never need your passwords or codes. Edits are changes to your existing pages, such as text, photos and hours. A new page or a redesign is quoted separately. The Care Plan is for a site I built for you, unless we agree otherwise in writing. Security checkups are routine upkeep, not a guarantee: they do not promise that a site or account will never be broken into, taken over or misused. If a problem breaks your site, I put back my most recent saved copy of its files as soon as I can; that does not find or fix the cause. A security audit, finding out how a break-in happened, cleaning up a hacked site, looking after a site I did not build, and the security of your phones, computers and networks are not part of the plan.</p>
           <a class="btn" href="#contact" data-need="I'd like to add the Care Plan ($29.99 a month).">Ask about the Care Plan</a>
         </article>
       </div>
@@ -850,7 +854,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         </details>
         <details>
           <summary>What is the AI Consultant Report?</summary>
-          <div class="a"><p>A short written report on how AI could help your business. You answer a written questionnaire and pay $99.99, and within 3 business days of your payment I send a list of specific tasks AI could help with, the tools I would use, rough costs and risks, what not to buy yet, and a next step. It comes by email as a Word document, with the same report as PowerPoint slides at no extra cost, in case you want to present it. I write it myself, using AI-assisted tools, and check it before it goes to you. It is advice only, and it is not legal, tax or compliance advice.</p></div>
+          <div class="a"><p>A short written report on how AI could help your business. You answer 8 short written questions and pay $99.99, and within 3 business days of your payment I send the 2 or 3 tasks to fix first, worked out from your numbers, the tools to use (starting with what you already pay for), costs and risks, what not to buy yet, and a do-it-yourself plan. It comes by email, with the report also attached as a Word document and as PowerPoint slides at no extra cost, in case you want to present it. I write it myself, using AI-assisted tools, and check it before it goes to you. Before any AI-assisted tool sees your answers, I take out customer names, phone numbers, addresses, card numbers and health details. It is written for a small business, such as a trade, auto shop, restaurant, salon, shop, office, farm, church or nonprofit. A health office gets a narrower report, and a business with several locations is not a fit. It is advice only, and it is not legal, tax or compliance advice.</p></div>
         </details>
         <details>
           <summary>What if I already have a Facebook page?</summary>
@@ -866,11 +870,27 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.875rem,3vw + 1.1re
         </details>
         <details>
           <summary>Do I own the site?</summary>
-          <div class="a"><p>Yes. The finished site becomes yours on full payment. I set up your hosting account, and your domain if you need one, in your name, and you take control of them when I deliver. Your content stays yours.</p></div>
+          <div class="a"><p>Yes. The finished site becomes yours on full payment. I set up your hosting account, and your domain if you need one, in your name, and you take control of them when I deliver. When the balance is paid, I also send you a copy of your site's files. Your content stays yours.</p></div>
         </details>
         <details>
           <summary>What does it cost after launch?</summary>
-          <div class="a"><p>A domain is typically about $15 a year. If I register it for you, I add the first year to your invoice at cost, and after that you pay the registrar directly. Your hosting, your contact form and, with a Full Site, your visitor analytics are set up on free plans, so there is no other monthly fee. If you add a mobile app, Apple charges a developer fee to keep the iPhone version on the App Store, currently $99 a year. I cover the first year, and after that you pay Apple directly. The Care Plan is optional.</p></div>
+          <div class="a"><p>A domain is typically about $15 a year. If I register it for you, I add the first year to your invoice at cost, and after that you pay the registrar directly. Your hosting, your contact form and, with a Full Site, your visitor analytics are set up on free plans, so there is no other monthly fee. If you add a mobile app, Apple charges a developer fee to keep the iPhone version on the App Store, currently $99 a year. I cover the first year, and after that you pay Apple directly. If a Custom Build takes card payments, the card company keeps a small fee from each sale. The Care Plan is optional.</p></div>
+        </details>
+        <details>
+          <summary>What if my web address already has email?</summary>
+          <div class="a"><p>Your email keeps running where it is. When your web address (domain) moves to your new hosting, I carry its email settings over and check that your mail still arrives. Your contact form then opens a filled-in email in the visitor's own email app for them to send. If you want a form that sends straight from your site, with a spam check, I set it up on a second web address that only the form uses. That address has its own yearly domain fee, typically about $15.</p></div>
+        </details>
+        <details>
+          <summary>Why a map link and not a map on the page?</summary>
+          <div class="a"><p>Your pages load no maps, fonts, videos or ads from other companies. The link opens Google Maps when someone taps it.</p></div>
+        </details>
+        <details>
+          <summary>Do you build for accessibility?</summary>
+          <div class="a"><p>Every site I build gets accessibility basics: readable text, strong color contrast, image descriptions and headings in order. It is not a full review against a standard such as WCAG 2.1 AA.</p></div>
+        </details>
+        <details>
+          <summary>Can reminders go by text?</summary>
+          <div class="a"><p>My builds send reminders by email, which has no fee. Business texting needs a paid texting service and registration with the phone carriers, which come with monthly fees.</p></div>
         </details>
         <details>
           <summary>What if I need changes later?</summary>
