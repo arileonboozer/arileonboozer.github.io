@@ -101,11 +101,44 @@ html:not(.js) .menu-btn{display:none!important}
 .two{display:grid;gap:32px}
 @media (min-width:960px){.two{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
 .two>*{min-width:0}
-.home-top{display:grid;gap:24px}
-@media (min-width:960px){.home-top{grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}}
 .status{font-weight:600;margin:0}
 .sos{background:var(--page);border:2px solid var(--ink);border-left:8px solid var(--ink);border-radius:4px;padding:16px 20px}
-.sos-h{font:600 1.375rem/1.2 var(--head);font-synthesis:none;margin:0 0 12px}
+.landing{--lb-h:216px;--lift:92px}
+@media (min-width:520px){.landing{--lb-h:232px;--lift:96px}}
+@media (min-width:768px){.landing{--lb-h:280px;--lift:132px}}
+@media (min-width:1040px){.landing{--lb-h:320px;--lift:156px}}
+@media (min-width:1440px){.landing{--lb-h:380px;--lift:172px}}
+.lb{position:relative;height:var(--lb-h);overflow:hidden;background:#6F8DA6}
+.lb picture{display:block;height:100%}
+.lb img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 84%}
+@media (min-width:520px){.lb img{object-position:50% 70%}}
+@media (min-width:768px){.lb img{object-position:50% 100%}}
+@media (min-width:1040px){.lb img{object-position:50% 90%}}
+@media (min-width:1440px){.lb img{object-position:50% 72%}}
+.lb-cap{position:absolute;left:0;top:0;max-width:20rem;margin:0;padding:4px 12px;background:var(--page);color:var(--ink-2);font-size:.875rem;line-height:1.45}
+@media (min-width:768px){.lb-cap{padding:4px 16px}}
+@media (min-width:1040px){.lb-cap{left:auto;top:auto;right:0;bottom:0}}
+.plate-row{position:relative;margin-top:calc(-1 * var(--lift))}
+.plate{position:relative;background:var(--ac);color:#FFFFFF;padding:24px;border-radius:2px;max-width:46rem}
+.plate::before{content:"";position:absolute;inset:8px;border:4px double #FFFFFF;border-radius:2px;opacity:.75;pointer-events:none}
+@media (min-width:768px){.plate{width:fit-content;padding:28px 36px}}
+@media (min-width:1040px){.plate{max-width:min(46rem,calc(100% - 20rem - 24px))}}
+.plate h1{color:#FFFFFF;font-size:clamp(2.25rem,2vw + 1.375rem,3.25rem);margin:0 0 8px}
+.plate-addr{margin:0;font-size:1.125rem;line-height:1.5}
+.plate .status{display:flex;gap:8px;align-items:flex-start;margin:12px 0 0;padding-top:12px;border-top:1px solid #FFFFFF;line-height:1.45}
+.plate .status .ic{margin-top:1px}
+.top-tasks{padding:32px 0 40px}
+@media (min-width:960px){.top-tasks{padding:40px 0 48px}}
+.top-tasks h2{font-size:clamp(1.75rem,1.4vw + 1.25rem,2.5rem)}
+.sos-strip{background:var(--ink);color:#FFFFFF;padding:16px 0}
+.sos-in{display:grid;gap:8px 32px}
+@media (min-width:1040px){.sos-in{grid-template-columns:auto 1fr;align-items:center}}
+.sos-call{margin:0;font:600 1.375rem/1.25 var(--head);font-synthesis:none}
+.sos-nums{display:grid;gap:8px 32px;margin:0}
+@media (min-width:600px){.sos-nums{grid-template-columns:repeat(3,auto);justify-content:start}}
+.sos-nums div{min-width:0}
+.sos-nums dt{font-size:1rem;line-height:1.4}
+.sos-nums dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.4}
 .card{background:var(--page);border:2px solid var(--ink);border-radius:4px;padding:20px}
 .facts{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:4px 16px;margin:0 0 12px}
 .facts dt{font-weight:600}
@@ -114,8 +147,8 @@ html:not(.js) .menu-btn{display:none!important}
 .num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .ph{white-space:nowrap}
 .tasks{list-style:none;margin:0;padding:0;display:grid;gap:0 32px;border-top:2px solid var(--ink)}
-@media (min-width:720px){.tasks{grid-template-columns:1fr 1fr}}
-@media (min-width:1040px){.tasks{grid-template-columns:1fr 1fr 1fr}}
+@media (min-width:600px){.tasks{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){.tasks{grid-template-columns:repeat(4,1fr)}}
 .tasks li{border-bottom:1px solid var(--rule)}
 .tasks a{display:grid;grid-template-columns:40px 1fr;gap:4px 16px;padding:16px 0;text-decoration:none;color:var(--ink)}
 .tasks .ic{grid-row:span 2;width:40px;height:40px;color:var(--ac);stroke-width:1.4}
@@ -251,6 +284,8 @@ legend{font-weight:600;margin-bottom:8px;padding:0}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 @media print{.nav,.head-acts,.skip,.alerts,.foot,.staff,.filters,.no-print{display:none!important}
 body{font-size:12pt;background:#FFFFFF}a{color:#000000}.band{background:#FFFFFF}
+.lb{display:none!important}.plate-row{margin-top:24px}.plate,.sos-strip{background:#FFFFFF;color:#000000;border:2px solid #000000}.plate::before{display:none}
+.plate h1{color:#000000}.plate .status{border-top-color:#000000}
 .print-one .site-head,.print-one .page-top,.print-one .section:not(#list),.print-one #list h2,.print-one #f-count{display:none!important}
 .print-one .mtgs>li:not(.print-me),.print-one .past>li:not(.print-me),.print-one .empty{display:none!important}.print-one .past{border:0}
 .print-me .mtg{border:0;padding:0}.print-me .doc summary,.print-me [data-print]{display:none}}
@@ -270,12 +305,17 @@ body{font-size:12pt;background:#FFFFFF}a{color:#000000}.band{background:#FFFFFF}
 </div></header>
 <div class="alerts" role="region" aria-label="Avisos de la Ciudad"><div class="wrap"><ul id="alert-list"><li class="alert" data-id="a-road" data-name="Calle cerrada: Ferry Street"><span class="a-tag">Calle cerrada</span><div><p>Ferry Street estará cerrada entre 2nd Street y 3rd Street el <time datetime="2026-11-30" data-k="b+1" data-f="day">lunes, 30 de noviembre</time>, de 7:00 a. m. a 4:00 p. m., por la reparación de una tubería de agua. Use Depot Street.</p><p class="a-meta">Publicado <time datetime="2026-11-24T15:40" data-k="d-1" data-f="stamp" data-at="15:40">24 nov. 2026 · 3:40 p. m.</time></p></div></li><li class="alert lifted" data-id="a-boil" data-name="Aviso de hervir el agua levantado: River Road"><span class="a-tag">Aviso de hervir el agua levantado</span><div><p>Se levantó el aviso de hervir el agua para River Road al norte de Bayou Drive. Las pruebas muestran que el agua es segura para tomar. El aviso se dio el <time datetime="2026-11-20" data-k="d-5" data-f="day">viernes, 20 de noviembre</time>.</p><p class="a-meta">Publicado <time datetime="2026-11-23T11:20" data-k="d-2" data-f="stamp" data-at="11:20">23 nov. 2026 · 11:20 a. m.</time></p></div></li></ul></div></div>
 <main id="main">
-<section class="page-top"><div class="wrap home-top">
-<div><h1>Ciudad de Landing, Arkansas</h1><p class="lede">Ayuntamiento, 300 Front Street. De lunes a viernes, de 8:00 a. m. a 4:30 p. m.</p><p class="status" id="hall-status" aria-live="polite"></p></div>
-<div class="sos"><p class="sos-h">En una emergencia, llame al 911.</p><dl class="facts"><dt>Policía, si no es una emergencia</dt><dd class="num"><span class="ph">(870) 555-0132</span> (24 horas)</dd>
-<dt>Rotura de agua o alcantarillado fuera de horario</dt><dd class="num"><span class="ph">(870) 555-0161</span></dd><dt>Recepción del Ayuntamiento</dt><dd class="num"><span class="ph">(870) 555-0130</span></dd></dl></div>
-</div></section>
-<section class="section rule-top"><div class="wrap"><h2>¿Qué necesita hacer?</h2><ul class="tasks"><li><a href="utilities.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pay"/></svg><strong>Pagar la factura de servicios</strong><span class="d">Agua, alcantarillado y basura, en línea o en el Ayuntamiento</span></a></li><li><a href="report.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-warn"/></svg><strong>Reportar un problema</strong><span class="d">Baches, luces de la calle, fugas de agua y basura que no se recogió</span></a></li><li><a href="trash.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trash"/></svg><strong>Su día de basura</strong><span class="d">Día de recolección, semana de reciclaje y cambios por feriados</span></a></li><li><a href="meetings.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><strong>Reuniones y órdenes del día</strong><span class="d">Concejo, Comisión de Planificación y Junta de Parques, con actas y grabaciones</span></a></li><li><a href="permits.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-permit"/></svg><strong>Permisos y licencias de negocio</strong><span class="d">Permisos de construcción, cercas y letreros, y la licencia anual de negocio</span></a></li><li><a href="records.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-records"/></svg><strong>Pedir registros públicos</strong><span class="d">Solicitudes según la Ley de Libertad de Información de Arkansas</span></a></li><li><a href="council.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><strong>Su distrito y quién le representa</strong><span class="d">Sus integrantes en el Concejo Municipal</span></a></li><li><a href="jobs.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-jobs"/></svg><strong>Empleos en la Ciudad</strong><span class="d">Vacantes, sueldo y cómo solicitar</span></a></li></ul></div></section>
+<section class="landing" aria-labelledby="city-h1">
+<div class="lb"><picture><source media="(min-width:768px)" srcset="../img/landing-river-banner-1920x800.webp" width="1920" height="800" type="image/webp">
+<img src="../img/landing-river-960x640.webp" width="960" height="640" alt="" decoding="async" fetchpriority="high"></picture>
+<p class="lb-cap">Foto de archivo de Diego Mattevi en Unsplash, en lugar de una foto de su ciudad.</p></div>
+<div class="wrap plate-row"><div class="plate"><h1 id="city-h1">Ciudad de Landing, Arkansas</h1><p class="plate-addr">Ayuntamiento, 300 Front Street. De lunes a viernes, de 8:00 a. m. a 4:30 p. m.</p>
+<p class="status js-only"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span id="hall-status" aria-live="polite"></span></p></div></div>
+</section>
+<section class="top-tasks"><div class="wrap"><h2>¿Qué necesita hacer?</h2><ul class="tasks"><li><a href="utilities.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pay"/></svg><strong>Pagar la factura de servicios</strong><span class="d">Agua, alcantarillado y basura, en línea o en el Ayuntamiento</span></a></li><li><a href="report.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-warn"/></svg><strong>Reportar un problema</strong><span class="d">Baches, luces de la calle, fugas de agua y basura que no se recogió</span></a></li><li><a href="trash.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trash"/></svg><strong>Su día de basura</strong><span class="d">Día de recolección, semana de reciclaje y cambios por feriados</span></a></li><li><a href="meetings.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><strong>Reuniones y órdenes del día</strong><span class="d">Concejo, Comisión de Planificación y Junta de Parques, con actas y grabaciones</span></a></li><li><a href="permits.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-permit"/></svg><strong>Permisos y licencias de negocio</strong><span class="d">Permisos de construcción, cercas y letreros, y la licencia anual de negocio</span></a></li><li><a href="records.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-records"/></svg><strong>Pedir registros públicos</strong><span class="d">Solicitudes según la Ley de Libertad de Información de Arkansas</span></a></li><li><a href="council.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><strong>Su distrito y quién le representa</strong><span class="d">Sus integrantes en el Concejo Municipal</span></a></li><li><a href="jobs.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-jobs"/></svg><strong>Empleos en la Ciudad</strong><span class="d">Vacantes, sueldo y cómo solicitar</span></a></li></ul></div></section>
+<div class="sos-strip" role="region" aria-label="Números de emergencia y fuera de horario"><div class="wrap sos-in"><p class="sos-call">En una emergencia, llame al 911.</p>
+<dl class="sos-nums"><div><dt>Policía, si no es una emergencia</dt><dd><span class="ph">(870) 555-0132</span> (24 horas)</dd></div><div><dt>Rotura de agua o alcantarillado fuera de horario</dt><dd><span class="ph">(870) 555-0161</span></dd></div>
+<div><dt>Recepción del Ayuntamiento</dt><dd><span class="ph">(870) 555-0130</span></dd></div></dl></div></div>
 <section class="section band"><div class="wrap two">
 <div><h2>Próximas reuniones</h2><ul class="board" id="next-mtgs"><li><div><span class="k">Concejo Municipal · Reunión extraordinaria</span><a href="meetings.html#m-special-20261130">Lunes, 30 de noviembre · 12:00 p. m.</a><span class="sub">Sala del Concejo, Ayuntamiento, 300 Front Street</span></div><span class="stamp"><b>Publicado</b><time datetime="2026-11-24T16:05">24 nov. 2026 · 4:05 p. m.</time></span></li><li><div><span class="k">Comisión de Planificación · Reunión ordinaria</span><a href="meetings.html#m-plan-20261201">Martes, 1 de diciembre · 5:30 p. m.</a><span class="sub">Sala del Concejo, Ayuntamiento, 300 Front Street</span></div><span class="stamp"><b>Publicado</b><time datetime="2026-11-24T10:05">24 nov. 2026 · 10:05 a. m.</time></span></li><li><div><span class="k">Concejo Municipal · Reunión ordinaria</span><a href="meetings.html#m-council-20261214">Lunes, 14 de diciembre · 6:00 p. m.</a><span class="sub">Sala del Concejo, Ayuntamiento, 300 Front Street</span></div><span class="stamp wait"><b>Orden del día aún sin publicar</b><span>Previsto para el mar. 8 dic.</span></span></li><li><div><span class="k">Junta de Parques y Recreación · Reunión ordinaria</span><a href="meetings.html#m-parks-20261217">Jueves, 17 de diciembre · 5:30 p. m.</a><span class="sub">Centro Comunitario del Depot Park, 400 Depot Street</span></div><span class="stamp wait"><b>Orden del día aún sin publicar</b><span>Previsto para el miér. 9 dic.</span></span></li></ul><p><a class="more" href="meetings.html">Todas las reuniones, órdenes del día y actas</a></p></div>
 <div><h2>Publicado recientemente</h2><ul class="board" id="board"><li id="b-agenda"><div><span class="k">Orden del día</span><a href="meetings.html#m-special-20261130">Concejo Municipal, lunes, 30 de noviembre</a></div><span class="stamp"><b>Publicado</b><time datetime="2026-11-24T16:05">24 nov. 2026 · 4:05 p. m.</time></span></li><li id="b-job"><div><span class="k">Vacante</span><a href="jobs.html#job-operator">Aprendiz de operación de agua y alcantarillado</a></div><span class="stamp"><b>Publicado</b><time datetime="2026-11-22T08:30" data-k="d-3" data-f="stamp" data-at="08:30">22 nov. 2026 · 8:30 a. m.</time></span></li><li id="b-bid"><div><span class="k">Invitación a licitar</span><a href="notices.html#bid-overlay">Reasfaltado de calles 2027</a></div><span class="stamp"><b>Publicado</b><time datetime="2026-11-19T09:00" data-k="d-6" data-f="stamp" data-at="09:00">19 nov. 2026 · 9:00 a. m.</time></span></li><li id="b-hear"><div><span class="k">Aviso de audiencia pública</span><a href="notices.html#n-rezone">Solicitud de cambio de zona, 410 Depot Street</a></div><span class="stamp"><b>Publicado</b><time datetime="2026-11-15T10:05" data-k="m:plan:1-16" data-f="stamp" data-at="10:05" data-max="d-1">15 nov. 2026 · 10:05 a. m.</time></span></li></ul><p><a class="more" href="notices.html">Todos los avisos y licitaciones</a></p></div>

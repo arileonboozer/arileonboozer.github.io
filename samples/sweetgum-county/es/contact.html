@@ -100,10 +100,42 @@ li{margin-bottom:4px}
 .stamp{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:0 0 12px;padding:8px 12px;border:4px double var(--ox);border-radius:2px;background:#fff;color:var(--ox);font:600 .9375rem/1.35 var(--sans);font-variant-numeric:tabular-nums}
 .stamp-by{color:var(--ink-2);font-weight:400}
 .stamps{display:flex;flex-wrap:wrap;gap:0 12px}
-.hero{padding:40px 0 48px}
-@media (min-width:960px){.hero{padding:56px 0 64px}}
-.hero-grid{display:grid;gap:32px}
-@media (min-width:960px){.hero-grid{grid-template-columns:1.25fr .75fr;gap:48px;align-items:start}}
+.photo{position:relative;margin:0;background:var(--rule)}
+.photo picture{display:block}
+.photo img{display:block;width:100%;height:clamp(180px,14vw + 120px,360px);object-fit:cover;object-position:50% 30%}
+@media (min-width:768px){.photo img{object-position:50% 35%}}
+.photo figcaption{position:absolute;left:0;right:0;bottom:0}
+.photo .cap{display:inline-block;max-width:100%;margin:0;padding:4px 12px;background:var(--stone);color:var(--ink);font:400 .875rem/1.4 var(--sans)}
+.plaque{background:var(--ox);color:#fff;text-align:center;padding:16px 0}
+@media (min-width:720px){.plaque{padding:20px 0}}
+.plaque-in{max-width:58rem;margin:0 auto;padding:16px 12px 20px;border:4px double #D79AA3;border-radius:2px}
+@media (min-width:720px){.plaque-in{padding:20px 32px 24px}}
+.plaque h1{color:#fff;font-size:clamp(2rem,2.4vw + 1.25rem,3.25rem);letter-spacing:.01em;margin:0 0 4px}
+.pl-sub{font:400 1.125rem/1.45 var(--head);color:#F2DDE0;margin:0}
+.pl-sub::after{content:"";display:block;width:64px;margin:12px auto;border-top:1px solid #D79AA3}
+.pl-live{font:700 1.125rem/1.45 var(--head);margin:0}
+.pl-today{display:block;font-weight:400;color:#F2DDE0}
+.plates-band{background:var(--stone);padding:20px 0 24px}
+@media (min-width:720px){.plates-band{padding:28px 0 32px}}
+.plates{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (min-width:960px){.plates{grid-template-columns:repeat(4,1fr);gap:20px}}
+.plates li{margin:0}
+.dp{position:relative;display:flex;flex-direction:column;justify-content:flex-start;height:100%;min-height:120px;padding:20px 12px;background:#CFB57C;color:var(--ink);text-align:center;text-decoration:none;border:2px solid #6B5320;border-radius:2px;transition:background-color .15s var(--ease)}
+.dp:hover{background:#C4A869;color:var(--ink)}
+.dp:hover .dp-task{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.dp::before,.dp::after,.dp-s::before,.dp-s::after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#6B5320}
+.dp::before{top:8px;left:8px}.dp::after{top:8px;right:8px}
+.dp-s{position:absolute;inset:0;pointer-events:none;outline:1px solid #8A6C2E;outline-offset:-4px}
+.dp-s::before{bottom:8px;left:8px}.dp-s::after{bottom:8px;right:8px}
+.dp-off{display:block;width:fit-content;max-width:100%;margin:0 auto 8px;padding-bottom:8px;border-bottom:1px solid #8A6C2E;font:600 .9375rem/1.3 var(--head);color:#3F300C}
+.dp-task{display:block;font:700 1.25rem/1.2 var(--head)}
+@media (min-width:720px){.dp{padding:20px}}
+@media (min-width:960px){.dp{min-height:132px}.dp-task{font-size:1.375rem}}
+.sos{background:#fff}
+.sos-in{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 32px;padding-top:12px;padding-bottom:12px;text-align:center}
+.sos p{margin:0}
+.sos .emerg{display:inline-flex;align-items:center;gap:8px}
+.sos .ic{color:var(--ox)}
 .card{background:#fff;border:2px solid var(--ink);border-radius:4px;padding:20px}
 .hours{width:100%;border-collapse:collapse;font-size:1rem;font-variant-numeric:tabular-nums;margin-bottom:12px}
 .hours caption{text-align:left;font:700 1.3125rem/1.2 var(--head);margin-bottom:8px}
@@ -259,8 +291,8 @@ mark{background:var(--amber);color:var(--ink);padding:0 2px}
 .foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
 .foot-mark{display:flex;align-items:center;gap:12px;margin-bottom:8px}
 .foot-mark h2{margin:0}
-@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
-@media print{.nav,.lang,.skip,.acts,.staff,.finder,.foot-grid,.alert .ic{display:none}.site-head,.foot{background:#fff;color:#000}.logo,.logo-sub{color:#000}.alert{background:#fff}body{font-size:12pt}}
+@media (prefers-reduced-motion:reduce){.btn,.dp{transition:none}.btn:active{transform:none}}
+@media print{.nav,.lang,.skip,.acts,.staff,.finder,.foot-grid,.alert .ic,.photo{display:none}.plaque{background:#fff;color:#000}.plaque h1{color:#000}.pl-sub,.pl-today{color:#000}.site-head,.foot{background:#fff;color:#000}.logo,.logo-sub{color:#000}.alert{background:#fff}body{font-size:12pt}}
 </style>
 </head>
 <body>
@@ -349,7 +381,7 @@ function sampleNow() {
 <script>
 /* Courthouse open or closed now, in Central time, with the county's holiday list */
 (function () {
-  var C = {"L": {"open": "El juzgado está abierto ahora, hasta las 4:30 p. m.", "closed": "El juzgado está cerrado ahora. Abre {d} a las 8:00 a. m.", "today": "hoy", "tomorrow": "mañana", "days": ["el domingo", "el lunes", "el martes", "el miércoles", "el jueves", "el viernes", "el sábado"], "hol": "Hoy está cerrado por un día feriado del condado."}, "hol": ["2026-11-26", "2026-11-27", "2026-12-24", "2026-12-25", "2027-01-01", "2027-01-18", "2027-02-15"], "open": 480, "close": 990}, L = C.L, n = sampleNow();
+  var C = {"L": {"open": "El juzgado está abierto ahora, hasta las 4:30 p. m.", "closed": "El juzgado está cerrado ahora. Abre {d} a las 8:00 a. m.", "today": "hoy", "tomorrow": "mañana", "days": ["el domingo", "el lunes", "el martes", "el miércoles", "el jueves", "el viernes", "el sábado"], "hol": "Hoy está cerrado por un día feriado del condado.", "wd": ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"], "t_open": "Hoy, {w}: de 8:00 a. m. a 4:30 p. m.", "t_closed": "Hoy, {w}: cerrado"}, "hol": ["2026-11-26", "2026-11-27", "2026-12-24", "2026-12-25", "2027-01-01", "2027-01-18", "2027-02-15"], "open": 480, "close": 990}, L = C.L, n = sampleNow();
   var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric'}).formatToParts(new Date()), o = {};
   p.forEach(function (q) { o[q.type] = q.value; });
   var base = Date.UTC(+o.year, +o.month - 1, +o.day);
@@ -362,6 +394,9 @@ function sampleNow() {
     if (C.hol.indexOf(iso(0)) > -1) { msg = L.hol + ' ' + msg; }
   }
   document.querySelectorAll('[data-open-status]').forEach(function (e) { e.textContent = msg; });
+  /* The plaque on the home page also gives today's hours */
+  var th = (openOn(0) ? L.t_open : L.t_closed).replace('{w}', L.wd[n.d]);
+  document.querySelectorAll('[data-today-hours]').forEach(function (e) { e.textContent = th; e.hidden = false; });
   var row = document.querySelector('[data-day="' + n.d + '"]');
   if (row) { row.classList.add('today'); row.querySelector('.today-tag').hidden = false; }
 }());
