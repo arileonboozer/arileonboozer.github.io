@@ -77,9 +77,52 @@ p{margin:0 0 16px;text-wrap:pretty}
 .site-head .btn{border-color:var(--yellow);background:transparent;color:var(--yellow)}
 .site-head .btn:hover{background:var(--yellow);color:var(--ink)}
 @media (max-width:959px){.head-acts .btn{display:none}}
-.hero{padding:40px 0 48px}
-.hero-grid{display:grid;gap:32px}
-@media (min-width:960px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}}
+.counter{padding:24px 0 40px}
+@media (min-width:960px){.counter{padding:40px 0 56px}}
+.counter h1{font-size:clamp(2.125rem,3.6vw + 1.1rem,4rem);margin-bottom:16px}
+.signs{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px 16px;margin:0 0 28px}
+.sign{display:flex;gap:4px;padding:4px;border:2px solid var(--ink);border-radius:6px;background:var(--card)}
+.sign p,.plate-addr{margin:0;display:flex;flex-direction:column;justify-content:center;padding:8px 12px;border-radius:2px}
+.sign .sign-state{flex-direction:row;align-items:center;gap:12px;background:var(--ink);color:#FFFFFF;font:600 1.125rem/1.25 var(--head)}
+#sign.is-open .sign-state{background:var(--green)}
+#sign.is-closed .sign-state{background:var(--red)}
+.lamp{width:14px;height:14px;background:currentColor;flex:none}
+.is-open .lamp{border-radius:50%}
+.sign-k{font:400 .9375rem/1.3 var(--sans)}
+.sign-v{font:700 1.125rem/1.25 var(--head);font-variant-numeric:tabular-nums}
+.plate-addr{padding:8px 20px;border:2px solid #FFFFFF;border-radius:6px;outline:3px solid var(--blue);outline-offset:0;margin:4px;background:var(--blue);color:#FFFFFF}
+.sign-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;align-self:center;font-weight:600}
+.sign-link .ic{transform:rotate(90deg)}
+.nw{white-space:nowrap}
+@media (min-width:960px){.plate-addr{margin-left:auto}.sign{max-width:44rem}}
+@media (max-width:959px){.sign-link{order:1}}
+@media (max-width:719px){.sign{flex:1 1 100%}.sign p{flex:1 1 50%}}
+@media (max-width:479px){.sign{flex-direction:column}.sign p{flex:none}}
+.tix{list-style:none;margin:28px 0 20px;padding:0;display:grid;gap:16px}
+@media (min-width:960px){.tix{grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}}
+.tk{display:flex;height:100%;min-height:112px;color:var(--ink);text-decoration:none;background:var(--tk);border:2px solid var(--ink);border-radius:4px;transition:background-color .15s var(--ease)}
+.tk:hover{color:var(--ink);background:var(--tk-h)}
+.tk:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.tk-book{--tk:var(--yellow);--tk-h:#F7DD7E}
+.tk-est{--tk:#D7E3EF;--tk-h:#E5EDF5}
+.tk-stat{--tk:#F5D5DA;--tk-h:#F9E3E6}
+.tk-body{flex:1;min-width:0;display:flex;flex-direction:column;padding:16px 20px 20px}
+.tk-body h3{font-size:1.5rem;margin:0 0 4px}
+.tk-body p{margin:0}
+.tk-body .tk-kind{order:-1;margin:0 0 8px;font:600 .875rem/1.3 var(--mono)}
+.tk-stub{position:relative;flex:none;width:88px;border-left:2px dashed var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tk-stub::before,.tk-stub::after{content:"";position:absolute;left:0;transform:translateX(-11px);width:20px;height:20px;border:2px solid var(--ink);border-radius:50%;background:var(--page)}
+.tk-stub::before{top:-12px;clip-path:inset(50% -2px -2px -2px)}
+.tk-stub::after{bottom:-12px;clip-path:inset(-2px -2px 50% -2px)}
+.tk-no{font-size:.875rem;font-weight:600}
+.tk-n{font-size:1.125rem;font-weight:700;line-height:1.2}
+.tk-stub .ic{width:24px;height:24px;margin-top:4px}
+@media (max-width:479px){.tk-stub{width:72px}.tk-body{padding:16px}}
+.counter .note{max-width:52rem}
+.call-line{font-weight:600;margin-bottom:12px}
+@media (min-width:960px){.two .jobs{grid-template-columns:1fr}}
+#hours{scroll-margin-top:16px}
+.hours-card tr:first-child>*{border-top:0;padding-top:0}
 .kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
 .lede{font-size:1.1875rem;max-width:36rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
@@ -89,6 +132,7 @@ p{margin:0 0 16px;text-wrap:pretty}
 .hours th,.hours td{padding:8px 0;border-top:1px solid var(--rule);text-align:left;font-weight:400}
 .hours td{text-align:right}
 .hours tr.today th,.hours tr.today td{font-weight:700}
+.hol-note{margin:12px 0 0}
 .today-tag{margin-left:8px;font-size:.8125rem;font-weight:700;background:var(--yellow);padding:4px 8px;border-radius:2px}
 .status{font-weight:600;margin:0 0 12px}
 .section{padding:48px 0;border-top:2px solid var(--ink)}
@@ -101,19 +145,6 @@ p{margin:0 0 16px;text-wrap:pretty}
 @media (min-width:720px){.jobs{grid-template-columns:1fr 1fr}}
 .jobs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--rule)}
 .jobs .t{color:var(--ink-2);font-family:var(--mono);font-size:.9375rem;white-space:nowrap}
-.tools{display:grid;gap:20px}
-@media (min-width:960px){.tools{grid-template-columns:1fr 1fr 1fr}}
-.tool{display:block;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:4px;padding:20px;background:var(--card)}
-.tool:hover{color:var(--ink);background:var(--yellow-2)}
-.tool h3{margin-bottom:8px}
-.tool p{margin:0 0 12px;color:var(--ink-2)}
-.tool .go{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--blue)}
-.tool-ticket{background:var(--yellow);border-style:dashed}
-.tool-ticket:hover{background:#F7DD7E}
-.tool-ticket p{color:var(--ink)}
-.tool-receipt{font-family:var(--mono)}
-.tool-receipt h3{font-family:var(--head)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:2px;font:700 .8125rem/1.2 var(--sans);color:#fff}
 .chip svg{width:12px;height:12px}
 .c-now{background:var(--red)}
@@ -297,7 +328,7 @@ body.staff .actbar{display:none}
 .actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--page);border-top:2px solid var(--ink)}
 @media (min-width:960px){.actbar{display:none}}
 @media (max-width:959px){.demo-toast{bottom:84px}}
-@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media (prefers-reduced-motion:reduce){.btn,.tk{transition:none}.btn:active{transform:none}}
 @media print{.actbar,.nav,.head-acts,.skip{display:none}.site-head,.foot{background:#fff;color:#000}}
 </style>
 </head>
@@ -335,7 +366,7 @@ body.staff .actbar{display:none}
 </div></section>
 </main>
 <footer class="foot"><div class="wrap">
-<div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Hours</h2><p>Monday to Friday, 7:30 a.m. to 5:30 p.m.<br>Saturday, 8 a.m. to noon.</p></div>
+<div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Hours</h2><p>Monday to Friday, 7:30 a.m. to 5:30 p.m.<br>Saturday, 8 a.m. to noon.<br>Closed Thanksgiving, December 24 and 25, January 1 and July 4.</p></div>
 <div><h2>Online</h2><ul class="foot-list"><li><a href="book.html">Book a time</a></li><li><a href="estimate.html">Price estimate</a></li><li><a href="status.html">Check on your car</a></li></ul></div>
 <div><h2>Towns we serve</h2><ul class="foot-list"><li><a href="persimmon-landing.html">Persimmon Landing</a></li></ul><h2>Staff</h2><ul class="foot-list"><li><a href="shop-board.html">Staff sign-in</a></li></ul></div></div>
 <div class="foot-links"><span>© 2026 Wing Dam Garage</span><a href="privacy.html">Privacy</a><a href="es/book.html" lang="es" hreflang="es">Español</a></div>
@@ -378,22 +409,27 @@ function sampleNow() {
 }
 </script>
 <script>
+/* The shop's calendar day `off` days from today, in Central time: weekday, a noon date for labels (format it in UTC), and the holiday key when closed */
+function shopDay(off) {
+  var p = {};
+  new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric'}).formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+  var u = new Date(Date.UTC(+p.year, +p.month - 1, +p.day + (off || 0), 12)), m = u.getUTCMonth() + 1, d = u.getUTCDate(), w = u.getUTCDay();
+  var hol = (m === 11 && w === 4 && d >= 22 && d <= 28) ? 'thanks' : ({'12/24': 'eve', '12/25': 'xmas', '1/1': 'newyear', '7/4': 'july4'})[m + '/' + d] || null;
+  return {w: w, u: u, hol: hol};
+}
 /* Appointment book demo: open half hours for the next 6 shop days, in Central time. Nothing is stored or sent. */
 (function () {
   var C = {"locale": "en-US", "taken": "Booked", "hours": {"1": [450, 1050], "2": [450, 1050], "3": [450, 1050], "4": [450, 1050], "5": [450, 1050], "6": [480, 720]}, "seed": [["Oil change", "Darnell T.", "2017 Honda Accord"], ["Front brake pads", "June P.", "2012 Chevy Silverado"], ["Check-engine light diagnosis", "Luis M.", "2019 Toyota RAV4"]], "no": "No.", "at": "at", "open": "Open", "pick": "Pick", "am": "a.m.", "pm": "p.m.", "jobs": {"oil": "Oil change, full synthetic", "tires": "Tire rotation and balance", "pads": "Front brake pads", "diag": "Check-engine light diagnosis", "battery": "Battery replacement"}, "subj": "You're booked: "}, days = document.getElementById('b-days'), slots = document.getElementById('b-slots');
   var pick = {day: null, t: null}, n = sampleNow();
   function fmtT(m) { var h = Math.floor(m / 60), mi = m % 60, ap = h >= 12 ? C.pm : C.am; h = h % 12 || 12; return h + ':' + ('0' + mi).slice(-2) + '\u00a0' + ap; }
   function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 16777619) >>> 0; } return (h >>> 7) % 9973; }
-  var base = new Date(), list = [];
-  for (var i = 0; list.length < 6 && i < 10; i++) {
-    var dt = new Date(base.getTime() + i * 86400000);
-    var wd = (n.d + i) % 7;
-    if (!C.hours[wd]) { continue; }
+  var list = [];
+  for (var i = 0; list.length < 6 && i < 14; i++) {
+    var sd = shopDay(i), wd = sd.w, dt = sd.u;
+    if (!C.hours[wd] || sd.hol) { continue; }
     if (i === 0 && n.t > C.hours[wd][1] - 60) { continue; }
-    var md = new Intl.DateTimeFormat('en-US', {month: '2-digit', day: '2-digit', timeZone: 'America/Chicago'}).format(dt);
-    if (['11/26', '12/24', '12/25', '01/01', '07/04'].indexOf(md) > -1) { continue; }
-    list.push({dt: dt, wd: wd, label: new Intl.DateTimeFormat(C.locale, {weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/Chicago'}).format(dt),
-               long: new Intl.DateTimeFormat(C.locale, {weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/Chicago'}).format(dt)});
+    list.push({dt: dt, wd: wd, label: new Intl.DateTimeFormat(C.locale, {weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC'}).format(dt),
+               long: new Intl.DateTimeFormat(C.locale, {weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC'}).format(dt)});
   }
   list.forEach(function (d, k) {
     var li = document.createElement('li'), b = document.createElement('button');

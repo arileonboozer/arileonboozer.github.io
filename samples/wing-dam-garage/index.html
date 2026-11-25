@@ -77,9 +77,52 @@ p{margin:0 0 16px;text-wrap:pretty}
 .site-head .btn{border-color:var(--yellow);background:transparent;color:var(--yellow)}
 .site-head .btn:hover{background:var(--yellow);color:var(--ink)}
 @media (max-width:959px){.head-acts .btn{display:none}}
-.hero{padding:40px 0 48px}
-.hero-grid{display:grid;gap:32px}
-@media (min-width:960px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}}
+.counter{padding:24px 0 40px}
+@media (min-width:960px){.counter{padding:40px 0 56px}}
+.counter h1{font-size:clamp(2.125rem,3.6vw + 1.1rem,4rem);margin-bottom:16px}
+.signs{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px 16px;margin:0 0 28px}
+.sign{display:flex;gap:4px;padding:4px;border:2px solid var(--ink);border-radius:6px;background:var(--card)}
+.sign p,.plate-addr{margin:0;display:flex;flex-direction:column;justify-content:center;padding:8px 12px;border-radius:2px}
+.sign .sign-state{flex-direction:row;align-items:center;gap:12px;background:var(--ink);color:#FFFFFF;font:600 1.125rem/1.25 var(--head)}
+#sign.is-open .sign-state{background:var(--green)}
+#sign.is-closed .sign-state{background:var(--red)}
+.lamp{width:14px;height:14px;background:currentColor;flex:none}
+.is-open .lamp{border-radius:50%}
+.sign-k{font:400 .9375rem/1.3 var(--sans)}
+.sign-v{font:700 1.125rem/1.25 var(--head);font-variant-numeric:tabular-nums}
+.plate-addr{padding:8px 20px;border:2px solid #FFFFFF;border-radius:6px;outline:3px solid var(--blue);outline-offset:0;margin:4px;background:var(--blue);color:#FFFFFF}
+.sign-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;align-self:center;font-weight:600}
+.sign-link .ic{transform:rotate(90deg)}
+.nw{white-space:nowrap}
+@media (min-width:960px){.plate-addr{margin-left:auto}.sign{max-width:44rem}}
+@media (max-width:959px){.sign-link{order:1}}
+@media (max-width:719px){.sign{flex:1 1 100%}.sign p{flex:1 1 50%}}
+@media (max-width:479px){.sign{flex-direction:column}.sign p{flex:none}}
+.tix{list-style:none;margin:28px 0 20px;padding:0;display:grid;gap:16px}
+@media (min-width:960px){.tix{grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}}
+.tk{display:flex;height:100%;min-height:112px;color:var(--ink);text-decoration:none;background:var(--tk);border:2px solid var(--ink);border-radius:4px;transition:background-color .15s var(--ease)}
+.tk:hover{color:var(--ink);background:var(--tk-h)}
+.tk:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.tk-book{--tk:var(--yellow);--tk-h:#F7DD7E}
+.tk-est{--tk:#D7E3EF;--tk-h:#E5EDF5}
+.tk-stat{--tk:#F5D5DA;--tk-h:#F9E3E6}
+.tk-body{flex:1;min-width:0;display:flex;flex-direction:column;padding:16px 20px 20px}
+.tk-body h3{font-size:1.5rem;margin:0 0 4px}
+.tk-body p{margin:0}
+.tk-body .tk-kind{order:-1;margin:0 0 8px;font:600 .875rem/1.3 var(--mono)}
+.tk-stub{position:relative;flex:none;width:88px;border-left:2px dashed var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tk-stub::before,.tk-stub::after{content:"";position:absolute;left:0;transform:translateX(-11px);width:20px;height:20px;border:2px solid var(--ink);border-radius:50%;background:var(--page)}
+.tk-stub::before{top:-12px;clip-path:inset(50% -2px -2px -2px)}
+.tk-stub::after{bottom:-12px;clip-path:inset(-2px -2px 50% -2px)}
+.tk-no{font-size:.875rem;font-weight:600}
+.tk-n{font-size:1.125rem;font-weight:700;line-height:1.2}
+.tk-stub .ic{width:24px;height:24px;margin-top:4px}
+@media (max-width:479px){.tk-stub{width:72px}.tk-body{padding:16px}}
+.counter .note{max-width:52rem}
+.call-line{font-weight:600;margin-bottom:12px}
+@media (min-width:960px){.two .jobs{grid-template-columns:1fr}}
+#hours{scroll-margin-top:16px}
+.hours-card tr:first-child>*{border-top:0;padding-top:0}
 .kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
 .lede{font-size:1.1875rem;max-width:36rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
@@ -89,6 +132,7 @@ p{margin:0 0 16px;text-wrap:pretty}
 .hours th,.hours td{padding:8px 0;border-top:1px solid var(--rule);text-align:left;font-weight:400}
 .hours td{text-align:right}
 .hours tr.today th,.hours tr.today td{font-weight:700}
+.hol-note{margin:12px 0 0}
 .today-tag{margin-left:8px;font-size:.8125rem;font-weight:700;background:var(--yellow);padding:4px 8px;border-radius:2px}
 .status{font-weight:600;margin:0 0 12px}
 .section{padding:48px 0;border-top:2px solid var(--ink)}
@@ -101,19 +145,6 @@ p{margin:0 0 16px;text-wrap:pretty}
 @media (min-width:720px){.jobs{grid-template-columns:1fr 1fr}}
 .jobs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--rule)}
 .jobs .t{color:var(--ink-2);font-family:var(--mono);font-size:.9375rem;white-space:nowrap}
-.tools{display:grid;gap:20px}
-@media (min-width:960px){.tools{grid-template-columns:1fr 1fr 1fr}}
-.tool{display:block;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:4px;padding:20px;background:var(--card)}
-.tool:hover{color:var(--ink);background:var(--yellow-2)}
-.tool h3{margin-bottom:8px}
-.tool p{margin:0 0 12px;color:var(--ink-2)}
-.tool .go{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--blue)}
-.tool-ticket{background:var(--yellow);border-style:dashed}
-.tool-ticket:hover{background:#F7DD7E}
-.tool-ticket p{color:var(--ink)}
-.tool-receipt{font-family:var(--mono)}
-.tool-receipt h3{font-family:var(--head)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:2px;font:700 .8125rem/1.2 var(--sans);color:#fff}
 .chip svg{width:12px;height:12px}
 .c-now{background:var(--red)}
@@ -297,7 +328,7 @@ body.staff .actbar{display:none}
 .actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--page);border-top:2px solid var(--ink)}
 @media (min-width:960px){.actbar{display:none}}
 @media (max-width:959px){.demo-toast{bottom:84px}}
-@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media (prefers-reduced-motion:reduce){.btn,.tk{transition:none}.btn:active{transform:none}}
 @media print{.actbar,.nav,.head-acts,.skip{display:none}.site-head,.foot{background:#fff;color:#000}}
 </style>
 </head>
@@ -314,18 +345,16 @@ body.staff .actbar{display:none}
 </div>
 </header>
 <main id="main">
-<section class="hero"><div class="wrap hero-grid">
-<div><p class="kicker">1180 River Road, Landing, Arkansas</p><h1>Brakes, oil changes and check-engine lights on River Road</h1><p class="lede">Book a time online, see a price range before you come in, and check on your car without calling.</p>
-<div class="cta"><a class="btn btn-go" href="book.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Book a time</span></a>
-<a class="btn" href="estimate.html">Price estimate</a><a class="btn" href="status.html">Check on your car</a></div>
-<p class="note">Or call (870) 555-0193 during shop hours.</p></div>
-<div class="card"><p class="status" id="open-status" aria-live="polite"></p><table class="hours"><caption>Hours</caption><tbody><tr data-day="1"><th scope="row">Monday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="2"><th scope="row">Tuesday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="3"><th scope="row">Wednesday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="4"><th scope="row">Thursday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="5"><th scope="row">Friday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="6"><th scope="row">Saturday<span class="today-tag" hidden>Today</span></th><td>8 a.m. to noon</td></tr><tr data-day="0"><th scope="row">Sunday<span class="today-tag" hidden>Today</span></th><td>Closed</td></tr></tbody></table></div>
+<section class="counter"><div class="wrap">
+<div class="signs"><div class="sign" id="sign"><p class="sign-state" id="sign-state" hidden><span class="lamp" aria-hidden="true"></span><span id="open-status" aria-live="polite"></span></p>
+<p class="sign-day"><span class="sign-k" id="sign-day">Hours</span><span class="sign-v" id="sign-today">Monday to Friday, 7:30 a.m. to 5:30 p.m.<br>Saturday, 8 a.m. to noon.<br>Closed Thanksgiving, December 24 and 25, January 1 and July 4.</span></p></div>
+<a class="sign-link" href="#hours">All hours<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a>
+<p class="plate-addr"><span class="sign-v">1180 River Road</span><span class="sign-k">Landing, Arkansas</span></p></div>
+<h1>Brakes, oil changes and <span class="nw">check-engine</span> lights on River Road</h1><p class="lede">Book a time online, see a price range before you come in, and check on your car without calling.</p>
+<h2 class="sr-only">Do it online</h2><ul class="tix"><li><a class="tk tk-book" href="book.html"><div class="tk-body"><h3>Book a time</h3><p>Pick a day and an open half hour.</p><p class="tk-kind" aria-hidden="true">Appointment</p></div><div class="tk-stub" aria-hidden="true"><span class="tk-no">No.</span><span class="tk-n">24126</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></div></a></li><li><a class="tk tk-est" href="estimate.html"><div class="tk-body"><h3>Price estimate</h3><p>Pick the job and your vehicle size.</p><p class="tk-kind" aria-hidden="true">Estimate</p></div><div class="tk-stub" aria-hidden="true"><span class="tk-no">No.</span><span class="tk-n">24127</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></div></a></li><li><a class="tk tk-stat" href="status.html"><div class="tk-body"><h3>Check on your car</h3><p>Sign in with your ticket number.</p><p class="tk-kind" aria-hidden="true">Repair order</p></div><div class="tk-stub" aria-hidden="true"><span class="tk-no">No.</span><span class="tk-n">24128</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></div></a></li></ul>
+<p class="call-line">Or call (870) 555-0193 during shop hours.</p>
+<p class="note">When you book, you get a ticket number and the shop sees it on its list. The estimate shows the labor and parts math, not just a total. With your ticket number, you see where your car is and approve the work.</p><p class="note" style="margin:0">Sample: the staff side (a shop board, customer records and the emails the system sends) is under Staff sign-in at the bottom of every page.</p>
 </div></section>
-<section class="section"><div class="wrap"><h2>Do it online</h2><div class="tools">
-<a class="tool tool-ticket" href="book.html"><h3>Book a time</h3><p>Pick a day and an open half hour. You get a ticket number, and the shop sees it on its list.</p><span class="go">Open the demo<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></span></a>
-<a class="tool tool-receipt" href="estimate.html"><h3>Price estimate</h3><p>Pick the job and your vehicle size. The estimate shows the labor and parts math, not just a total.</p><span class="go">Open the demo<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></span></a>
-<a class="tool" href="status.html"><h3>Check on your car</h3><div class="chips"><span class="chip c-now"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#fff"/></svg>Now</span><span class="chip c-soon"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 11 H1 Z" fill="#17191B"/></svg>Soon</span><span class="chip c-ok"><svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#fff"/></svg>OK</span></div><p>Sign in with your ticket number to see where your car is and approve the work.</p><span class="go">Open the demo<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></span></a>
-</div><p class="note" style="margin:20px 0 0">Sample: the staff side (a shop board, customer records and the emails the system sends) is under Staff sign-in at the bottom of every page.</p></div></section>
 <section class="section"><div class="wrap app-grid">
 <div><h2>Get the Wing Dam app</h2><p class="lede">Check on your car, approve work and book your next visit from your phone. The app shows the same ticket you see on this website.</p><ul class="app-list"><li>Where your car is, from check-in to ready</li><li>What we found, marked Now, Soon or OK, with prices</li><li>Approve each item, or say not now</li><li>Book a time without calling</li></ul>
 <div class="stores"><button type="button" class="btn" data-demo="appstore">App Store</button><button type="button" class="btn" data-demo="googleplay">Google Play</button></div>
@@ -339,10 +368,11 @@ body.staff .actbar{display:none}
 <div class="ph-tabs"><span class="on">My car</span><span>Book</span><span>Estimate</span></div></div></div>
 <figcaption>Drawing of the app screen</figcaption></figure>
 </div></section>
-<section class="section"><div class="wrap"><h2>What we fix</h2><ul class="jobs"><li><span>Oil changes</span><span class="t">30 min</span></li><li><span>Brakes</span><span class="t">1 to 2 hr</span></li><li><span>Check-engine lights</span><span class="t">1 hr to find</span></li><li><span>Batteries and alternators</span><span class="t">30 min to 2 hr</span></li><li><span>Tires, rotation and balance</span><span class="t">45 min</span></li><li><span>A/C checks and recharge</span><span class="t">1 hr</span></li></ul></div></section>
+<section class="section"><div class="wrap two"><div><h2>What we fix</h2><ul class="jobs"><li><span>Oil changes</span><span class="t">30 min</span></li><li><span>Brakes</span><span class="t">1 to 2 hr</span></li><li><span>Check-engine lights</span><span class="t">1 hr to find</span></li><li><span>Batteries and alternators</span><span class="t">30 min to 2 hr</span></li><li><span>Tires, rotation and balance</span><span class="t">45 min</span></li><li><span>A/C checks and recharge</span><span class="t">1 hr</span></li></ul></div>
+<div><h2 id="hours">Hours</h2><div class="card hours-card"><table class="hours"><caption class="sr-only">Hours</caption><tbody><tr data-day="1"><th scope="row">Monday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="2"><th scope="row">Tuesday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="3"><th scope="row">Wednesday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="4"><th scope="row">Thursday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="5"><th scope="row">Friday<span class="today-tag" hidden>Today</span></th><td>7:30 a.m. to 5:30 p.m.</td></tr><tr data-day="6"><th scope="row">Saturday<span class="today-tag" hidden>Today</span></th><td>8 a.m. to noon</td></tr><tr data-day="0"><th scope="row">Sunday<span class="today-tag" hidden>Today</span></th><td>Closed</td></tr></tbody></table><p class="note hol-note">Closed Thanksgiving, December 24 and 25, January 1 and July 4.</p></div></div></div></section>
 </main>
 <footer class="foot"><div class="wrap">
-<div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Hours</h2><p>Monday to Friday, 7:30 a.m. to 5:30 p.m.<br>Saturday, 8 a.m. to noon.</p></div>
+<div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Hours</h2><p>Monday to Friday, 7:30 a.m. to 5:30 p.m.<br>Saturday, 8 a.m. to noon.<br>Closed Thanksgiving, December 24 and 25, January 1 and July 4.</p></div>
 <div><h2>Online</h2><ul class="foot-list"><li><a href="book.html">Book a time</a></li><li><a href="estimate.html">Price estimate</a></li><li><a href="status.html">Check on your car</a></li></ul></div>
 <div><h2>Towns we serve</h2><ul class="foot-list"><li><a href="persimmon-landing.html">Persimmon Landing</a></li></ul><h2>Staff</h2><ul class="foot-list"><li><a href="shop-board.html">Staff sign-in</a></li></ul></div></div>
 <div class="foot-links"><span>© 2026 Wing Dam Garage</span><a href="privacy.html">Privacy</a><a href="es/index.html" lang="es" hreflang="es">Español</a></div>
@@ -385,14 +415,30 @@ function sampleNow() {
 }
 </script>
 <script>
+/* The shop's calendar day `off` days from today, in Central time: weekday, a noon date for labels (format it in UTC), and the holiday key when closed */
+function shopDay(off) {
+  var p = {};
+  new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric'}).formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+  var u = new Date(Date.UTC(+p.year, +p.month - 1, +p.day + (off || 0), 12)), m = u.getUTCMonth() + 1, d = u.getUTCDate(), w = u.getUTCDay();
+  var hol = (m === 11 && w === 4 && d >= 22 && d <= 28) ? 'thanks' : ({'12/24': 'eve', '12/25': 'xmas', '1/1': 'newyear', '7/4': 'july4'})[m + '/' + d] || null;
+  return {w: w, u: u, hol: hol};
+}
 (function () {
-  var c = {"H": {"1": [450, 1050], "2": [450, 1050], "3": [450, 1050], "4": [450, 1050], "5": [450, 1050], "6": [480, 720]}, "L": {"open": "Open now, until {t}", "closed": "Closed now. We open {d} at {t}", "today": "today", "tomorrow": "tomorrow", "on": "on ", "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]}, "F": {"450": "7:30 a.m.", "1050": "5:30 p.m.", "480": "8 a.m.", "720": "noon"}}, H = c.H, L = c.L, F = c.F, n = sampleNow(), d = n.d, t = n.t, h = H[d], msg = '';
-  if (h && t >= h[0] && t < h[1]) { msg = L.open.replace('{t}', F[h[1]]); }
-  else { for (var i = 0; i < 8; i++) { var dd = (d + i) % 7, hh = H[dd]; if (hh && (i > 0 || t < hh[0])) {
-    msg = L.closed.replace('{d}', i === 0 ? L.today : (i === 1 ? L.tomorrow : L.on + L.days[dd])).replace('{t}', F[hh[0]]); break; } } }
+  /* A holiday counts as a closed day, and the next opening skips it */
+  var c = {"H": {"1": [450, 1050], "2": [450, 1050], "3": [450, 1050], "4": [450, 1050], "5": [450, 1050], "6": [480, 720]}, "L": {"open": "Open now, until {t}", "closed": "Closed now. We open {d} at {t}", "today": "today", "tomorrow": "tomorrow", "on": "on ", "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "signk": "Today, {d}", "to": "to", "shut": "Closed", "hol": "Closed today for {h}. We open {d} at {t}", "hday": "", "holshort": "Closed for {h}", "hols": {"thanks": "Thanksgiving", "eve": "Christmas Eve", "xmas": "Christmas", "newyear": "New Year's Day", "july4": "the Fourth of July"}}, "F": {"450": "7:30 a.m.", "1050": "5:30 p.m.", "480": "8 a.m.", "720": "noon"}}, H = c.H, L = c.L, F = c.F, t = sampleNow().t, td = shopDay(0), d = td.w, h = td.hol ? null : H[d], msg = '', open = !!(h && t >= h[0] && t < h[1]);
+  if (open) { msg = L.open.replace('{t}', F[h[1]]); }
+  else { for (var i = 0; i < 14; i++) { var sd = shopDay(i), hh = sd.hol ? null : H[sd.w]; if (hh && (i > 0 || t < hh[0])) {
+    msg = td.hol ? L.hol.replace('{h}', L.hols[td.hol]).replace('{d}', L.hday + L.days[sd.w]).replace('{t}', F[hh[0]])
+                 : L.closed.replace('{d}', i === 0 ? L.today : (i === 1 ? L.tomorrow : L.on + L.days[sd.w])).replace('{t}', F[hh[0]]); break; } } }
   var st = document.getElementById('open-status'); if (st) { st.textContent = msg; }
-  var row = document.querySelector('[data-day="' + d + '"]');
-  if (row) { row.classList.add('today'); row.querySelector('.today-tag').hidden = false; }
+  /* Home page sign: the colored field (green open, red closed) and today's hours replace the week summary shown without JavaScript */
+  var sg = document.getElementById('sign'), sk = document.getElementById('sign-day'), sv = document.getElementById('sign-today');
+  if (sg) { sg.classList.add(open ? 'is-open' : 'is-closed'); document.getElementById('sign-state').hidden = false; }
+  if (sk && sv) { sk.textContent = L.signk.replace('{d}', L.days[d]); sv.textContent = td.hol ? L.holshort.replace('{h}', L.hols[td.hol]) : (h ? F[h[0]] + ' ' + L.to + ' ' + F[h[1]] : L.shut); }
+  /* Hours table: mark today, and show any holiday in the coming 7 days on its weekday's row */
+  for (var k = 0; k < 7; k++) { var kd = shopDay(k), row = document.querySelector('[data-day="' + kd.w + '"]'); if (!row) { continue; }
+    if (kd.hol) { row.querySelector('td').textContent = L.holshort.replace('{h}', L.hols[kd.hol]); }
+    if (k === 0) { row.classList.add('today'); row.querySelector('.today-tag').hidden = false; } }
 }());
 </script>
 </body>

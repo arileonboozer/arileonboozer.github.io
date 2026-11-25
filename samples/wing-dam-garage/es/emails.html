@@ -77,9 +77,52 @@ p{margin:0 0 16px;text-wrap:pretty}
 .site-head .btn{border-color:var(--yellow);background:transparent;color:var(--yellow)}
 .site-head .btn:hover{background:var(--yellow);color:var(--ink)}
 @media (max-width:959px){.head-acts .btn{display:none}}
-.hero{padding:40px 0 48px}
-.hero-grid{display:grid;gap:32px}
-@media (min-width:960px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}}
+.counter{padding:24px 0 40px}
+@media (min-width:960px){.counter{padding:40px 0 56px}}
+.counter h1{font-size:clamp(2.125rem,3.6vw + 1.1rem,4rem);margin-bottom:16px}
+.signs{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px 16px;margin:0 0 28px}
+.sign{display:flex;gap:4px;padding:4px;border:2px solid var(--ink);border-radius:6px;background:var(--card)}
+.sign p,.plate-addr{margin:0;display:flex;flex-direction:column;justify-content:center;padding:8px 12px;border-radius:2px}
+.sign .sign-state{flex-direction:row;align-items:center;gap:12px;background:var(--ink);color:#FFFFFF;font:600 1.125rem/1.25 var(--head)}
+#sign.is-open .sign-state{background:var(--green)}
+#sign.is-closed .sign-state{background:var(--red)}
+.lamp{width:14px;height:14px;background:currentColor;flex:none}
+.is-open .lamp{border-radius:50%}
+.sign-k{font:400 .9375rem/1.3 var(--sans)}
+.sign-v{font:700 1.125rem/1.25 var(--head);font-variant-numeric:tabular-nums}
+.plate-addr{padding:8px 20px;border:2px solid #FFFFFF;border-radius:6px;outline:3px solid var(--blue);outline-offset:0;margin:4px;background:var(--blue);color:#FFFFFF}
+.sign-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;align-self:center;font-weight:600}
+.sign-link .ic{transform:rotate(90deg)}
+.nw{white-space:nowrap}
+@media (min-width:960px){.plate-addr{margin-left:auto}.sign{max-width:44rem}}
+@media (max-width:959px){.sign-link{order:1}}
+@media (max-width:719px){.sign{flex:1 1 100%}.sign p{flex:1 1 50%}}
+@media (max-width:479px){.sign{flex-direction:column}.sign p{flex:none}}
+.tix{list-style:none;margin:28px 0 20px;padding:0;display:grid;gap:16px}
+@media (min-width:960px){.tix{grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}}
+.tk{display:flex;height:100%;min-height:112px;color:var(--ink);text-decoration:none;background:var(--tk);border:2px solid var(--ink);border-radius:4px;transition:background-color .15s var(--ease)}
+.tk:hover{color:var(--ink);background:var(--tk-h)}
+.tk:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.tk-book{--tk:var(--yellow);--tk-h:#F7DD7E}
+.tk-est{--tk:#D7E3EF;--tk-h:#E5EDF5}
+.tk-stat{--tk:#F5D5DA;--tk-h:#F9E3E6}
+.tk-body{flex:1;min-width:0;display:flex;flex-direction:column;padding:16px 20px 20px}
+.tk-body h3{font-size:1.5rem;margin:0 0 4px}
+.tk-body p{margin:0}
+.tk-body .tk-kind{order:-1;margin:0 0 8px;font:600 .875rem/1.3 var(--mono)}
+.tk-stub{position:relative;flex:none;width:88px;border-left:2px dashed var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tk-stub::before,.tk-stub::after{content:"";position:absolute;left:0;transform:translateX(-11px);width:20px;height:20px;border:2px solid var(--ink);border-radius:50%;background:var(--page)}
+.tk-stub::before{top:-12px;clip-path:inset(50% -2px -2px -2px)}
+.tk-stub::after{bottom:-12px;clip-path:inset(-2px -2px 50% -2px)}
+.tk-no{font-size:.875rem;font-weight:600}
+.tk-n{font-size:1.125rem;font-weight:700;line-height:1.2}
+.tk-stub .ic{width:24px;height:24px;margin-top:4px}
+@media (max-width:479px){.tk-stub{width:72px}.tk-body{padding:16px}}
+.counter .note{max-width:52rem}
+.call-line{font-weight:600;margin-bottom:12px}
+@media (min-width:960px){.two .jobs{grid-template-columns:1fr}}
+#hours{scroll-margin-top:16px}
+.hours-card tr:first-child>*{border-top:0;padding-top:0}
 .kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
 .lede{font-size:1.1875rem;max-width:36rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
@@ -89,6 +132,7 @@ p{margin:0 0 16px;text-wrap:pretty}
 .hours th,.hours td{padding:8px 0;border-top:1px solid var(--rule);text-align:left;font-weight:400}
 .hours td{text-align:right}
 .hours tr.today th,.hours tr.today td{font-weight:700}
+.hol-note{margin:12px 0 0}
 .today-tag{margin-left:8px;font-size:.8125rem;font-weight:700;background:var(--yellow);padding:4px 8px;border-radius:2px}
 .status{font-weight:600;margin:0 0 12px}
 .section{padding:48px 0;border-top:2px solid var(--ink)}
@@ -101,19 +145,6 @@ p{margin:0 0 16px;text-wrap:pretty}
 @media (min-width:720px){.jobs{grid-template-columns:1fr 1fr}}
 .jobs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--rule)}
 .jobs .t{color:var(--ink-2);font-family:var(--mono);font-size:.9375rem;white-space:nowrap}
-.tools{display:grid;gap:20px}
-@media (min-width:960px){.tools{grid-template-columns:1fr 1fr 1fr}}
-.tool{display:block;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:4px;padding:20px;background:var(--card)}
-.tool:hover{color:var(--ink);background:var(--yellow-2)}
-.tool h3{margin-bottom:8px}
-.tool p{margin:0 0 12px;color:var(--ink-2)}
-.tool .go{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--blue)}
-.tool-ticket{background:var(--yellow);border-style:dashed}
-.tool-ticket:hover{background:#F7DD7E}
-.tool-ticket p{color:var(--ink)}
-.tool-receipt{font-family:var(--mono)}
-.tool-receipt h3{font-family:var(--head)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:2px;font:700 .8125rem/1.2 var(--sans);color:#fff}
 .chip svg{width:12px;height:12px}
 .c-now{background:var(--red)}
@@ -297,7 +328,7 @@ body.staff .actbar{display:none}
 .actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--page);border-top:2px solid var(--ink)}
 @media (min-width:960px){.actbar{display:none}}
 @media (max-width:959px){.demo-toast{bottom:84px}}
-@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media (prefers-reduced-motion:reduce){.btn,.tk{transition:none}.btn:active{transform:none}}
 @media print{.actbar,.nav,.head-acts,.skip{display:none}.site-head,.foot{background:#fff;color:#000}}
 </style>
 </head>
@@ -319,7 +350,7 @@ body.staff .actbar{display:none}
 <section class="section"><div class="wrap"><article class="mail-row" aria-labelledby="mail-0"><div class="mail-meta"><h2 id="mail-0">Confirmación de la cita</h2><p><strong>Cuándo sale:</strong> justo después de que alguien hace una cita en línea.</p><p><strong>Para quién:</strong> la persona que hizo la cita.</p></div><div class="mail"><dl class="mail-head"><div><dt>De</dt><dd>Wing Dam Garage</dd></div><div><dt>Para</dt><dd>Hollis Ray</dd></div><div><dt>Asunto</dt><dd>Su cita está hecha: jueves, 8:00&nbsp;a.&nbsp;m.</dd></div></dl><div class="mail-body"><p class="mail-brand"><span class="badge" aria-hidden="true">WD</span>Wing Dam Garage</p><p>Hola, Hollis: su cita está hecha. Esta es su orden.</p><div class="mail-ticket"><p class="no">N.º 24125</p><p>jueves, 8:00&nbsp;a.&nbsp;m.</p><p>Cambio de aceite sintético</p><p>2020 Chevy Equinox</p></div><p>Dónde: 1180 River Road, Landing. Estacione junto a la puerta amarilla y traiga sus llaves al mostrador.</p><p>Le enviaremos un recordatorio por correo el día anterior. Para cambiar o cancelar, responda a este correo o llame al (870)&nbsp;555-0193.</p><p>Puede ver cómo va su vehículo en cualquier momento con su número de orden.</p><p><button type="button" class="btn btn-sm btn-go" data-demo="maillink">Ver su vehículo</button></p></div><div class="mail-foot"><p>Wing Dam Garage · 1180 River Road, Landing, Arkansas · (870)&nbsp;555-0193</p><p>Recibe este correo porque hizo una cita con Wing Dam Garage. <button type="button" class="linkish" data-demo="unsub">Darse de baja</button></p></div></div></article><article class="mail-row" aria-labelledby="mail-1"><div class="mail-meta"><h2 id="mail-1">Recordatorio del día anterior</h2><p><strong>Cuándo sale:</strong> a las 10:00&nbsp;a.&nbsp;m. del día anterior a la cita.</p><p><strong>Para quién:</strong> la persona que hizo la cita.</p></div><div class="mail"><dl class="mail-head"><div><dt>De</dt><dd>Wing Dam Garage</dd></div><div><dt>Para</dt><dd>Hollis Ray</dd></div><div><dt>Asunto</dt><dd>Recordatorio: mañana a las 8:00&nbsp;a.&nbsp;m.</dd></div></dl><div class="mail-body"><p class="mail-brand"><span class="badge" aria-hidden="true">WD</span>Wing Dam Garage</p><p>Hola, Hollis: le recordamos su cita de mañana.</p><div class="mail-ticket"><p class="no">N.º 24125</p><p>jueves, 8:00&nbsp;a.&nbsp;m.</p><p>Cambio de aceite sintético</p><p>2020 Chevy Equinox</p></div><p>Calcule unos 30 minutos. Puede esperar en la sala del frente, que tiene café y wifi.</p><p>¿Viene antes de que abramos a las 7:30&nbsp;a.&nbsp;m.? Deje sus llaves en el buzón junto a la puerta amarilla, en un sobre con su nombre y su número de orden.</p><p>¿No puede venir? Responda a este correo o llame al (870)&nbsp;555-0193 y buscamos otra hora.</p></div><div class="mail-foot"><p>Wing Dam Garage · 1180 River Road, Landing, Arkansas · (870)&nbsp;555-0193</p><p>Recibe este correo porque hizo una cita con Wing Dam Garage. <button type="button" class="linkish" data-demo="unsub">Darse de baja</button></p></div></div></article><article class="mail-row" aria-labelledby="mail-2"><div class="mail-meta"><h2 id="mail-2">Resumen semanal</h2><p><strong>Cuándo sale:</strong> cada lunes a las 6:00&nbsp;a.&nbsp;m.</p><p><strong>Para quién:</strong> Carla, la dueña del taller.</p></div><div class="mail"><dl class="mail-head"><div><dt>De</dt><dd>Wing Dam Garage</dd></div><div><dt>Para</dt><dd>Carla Huddleston (dueña)</dd></div><div><dt>Asunto</dt><dd>La semana pasada en Wing Dam Garage: 27 citas</dd></div></dl><div class="mail-body"><p class="mail-brand"><span class="badge" aria-hidden="true">WD</span>Wing Dam Garage</p><p>Buenos días, Carla. Así fue la semana pasada en el taller.</p><table class="mail-table"><thead><tr><th scope="col">Día</th><th scope="col">En línea</th><th scope="col">Por teléfono</th></tr></thead><tbody><tr><th scope="row">Lunes</th><td>4</td><td>2</td></tr><tr><th scope="row">Martes</th><td>3</td><td>2</td></tr><tr><th scope="row">Miércoles</th><td>3</td><td>1</td></tr><tr><th scope="row">Jueves</th><td>4</td><td>2</td></tr><tr><th scope="row">Viernes</th><td>2</td><td>2</td></tr><tr><th scope="row">Sábado</th><td>1</td><td>1</td></tr></tbody><tfoot><tr><th scope="row">Total</th><td>17</td><td>10</td></tr></tfoot></table><p>Lo más reservado: cambios de aceite 9, frenos 6, luces de motor 5, llantas 4, baterías 3.</p><p>Citas a las que nadie llegó: 1. Correos de agradecimiento enviados: 24. Personas que se dieron de baja: 0.</p><p>Esta semana hasta ahora: 14 citas en línea y 3 por teléfono.</p><p><button type="button" class="btn btn-sm btn-go" data-demo="maillink">Ver todas las citas</button></p></div><div class="mail-foot"><p>Lo envía el sitio web de Wing Dam Garage cada lunes a las 6:00&nbsp;a.&nbsp;m. Solo lo recibe el taller.</p></div></div></article><article class="mail-row" aria-labelledby="mail-3"><div class="mail-meta"><h2 id="mail-3">Agradecimiento con el enlace para reseñas</h2><p><strong>Cuándo sale:</strong> el día después de cada entrega.</p><p><strong>Para quién:</strong> cada cliente, no solo quienes tuvieron una buena experiencia. Nunca ofrece un premio a cambio de una reseña (reglas de Google).</p></div><div class="mail"><dl class="mail-head"><div><dt>De</dt><dd>Wing Dam Garage</dd></div><div><dt>Para</dt><dd>June Pruitt</dd></div><div><dt>Asunto</dt><dd>Gracias por traer su Silverado</dd></div></dl><div class="mail-body"><p class="mail-brand"><span class="badge" aria-hidden="true">WD</span>Wing Dam Garage</p><p>Hola, June: gracias por dejarnos trabajar en su 2012 Chevy Silverado (N.º 24119).</p><p>Si los frenos no se sienten bien, tráigala de nuevo y la revisamos sin costo.</p><p>¿Nos cuenta cómo le fue? Una reseña corta en Google ayuda a sus vecinos a decidir dónde llevar su vehículo. Buena o mala, leemos todas.</p><p><button type="button" class="btn btn-sm btn-go" data-demo="review">Dejar una reseña en Google</button></p></div><div class="mail-foot"><p>Wing Dam Garage · 1180 River Road, Landing, Arkansas · (870)&nbsp;555-0193</p><p>Recibe este correo porque Wing Dam Garage le dio servicio a su vehículo. <button type="button" class="linkish" data-demo="unsub">Darse de baja</button></p></div></div></article></div></section>
 </main>
 <footer class="foot"><div class="wrap">
-<div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Horario</h2><p>Lunes a viernes, de 7:30 a. m. a 5:30 p. m.<br>Sábado, de 8 a. m. a 12 del mediodía.</p></div>
+<div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Horario</h2><p>Lunes a viernes, de 7:30 a. m. a 5:30 p. m.<br>Sábado, de 8 a. m. a 12 del mediodía.<br>Cerrado el Día de Acción de Gracias, el 24 y 25 de diciembre, el 1 de enero y el 4 de julio.</p></div>
 <div><h2>En línea</h2><ul class="foot-list"><li><a href="book.html">Hacer una cita</a></li><li><a href="estimate.html">Calcular el precio</a></li><li><a href="status.html">Ver su vehículo</a></li></ul></div>
 <div><h2>Localidades que atendemos</h2><ul class="foot-list"><li><a href="persimmon-landing.html">Persimmon Landing</a></li></ul><h2>Personal</h2><ul class="foot-list"><li><a href="shop-board.html">Acceso del personal</a></li></ul></div></div>
 <div class="foot-links"><span>© 2026 Wing Dam Garage</span><a href="privacy.html">Privacidad</a><a href="../emails.html" lang="en" hreflang="en">English</a></div>

@@ -27,7 +27,7 @@
 @media print{.sample-bar,.demo-toast{display:none}}
 
 :root{--page:#F3F4F1;--card:#FFFFFF;--ink:#1C1B19;--ink-2:#4A4A45;--line:#CFCFC8;--rule:#A9A9A2;--field:#5E5E57;--red:#B3261E;--red-d:#931F18;--blue:#2B4C7E;
---board:#1C1B19;--on-board:#F3F4F1;--board-2:#C9C4B5;--gold:#C9A54A;
+--board:#1C1B19;--on-board:#F3F4F1;--board-2:#C9C4B5;--gold:#C9A54A;--glass:#24313B;--glass-2:#2B3944;--wood:#8C7A5B;
 --sign:"Superclarendon","Bookman Old Style","URW Bookman","Bookman",Georgia,serif;
 --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--gut:20px;--ease:cubic-bezier(.22,1,.36,1)}
 @media (min-width:720px){:root{--gut:32px}}
@@ -77,9 +77,53 @@ p{margin:0 0 16px;text-wrap:pretty}
 .btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px}
 .btns + h2{margin-top:40px}
-.hero{padding:40px 0 48px}
-.hero-grid{display:grid;gap:32px}
-@media (min-width:900px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}}
+.hero{padding:16px 0 40px}
+@media (min-width:900px){.hero{padding:32px 0 64px}}
+/* Home opening: the shop window drawn across the page. The name on the glass is real text; the door sign is the live open/closed sign. */
+.shopfront{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;grid-template-areas:"name name name" "left door right";gap:8px;padding:8px;background:var(--board);border-radius:8px 8px 0 0}
+@media (min-width:600px){.shopfront{grid-template-columns:minmax(0,1fr) minmax(240px,30%) minmax(0,1fr);gap:8px;padding:12px}}
+@media (min-width:900px){.shopfront{grid-template-columns:minmax(0,1fr) minmax(240px,26%) minmax(0,1fr)}}
+.sf-sill{height:8px;margin:0 -8px;background:var(--wood);border-radius:3px}
+.sf-name{grid-area:name;position:relative;margin:0;padding:12px 16px 16px;background:var(--glass) linear-gradient(110deg,#24313B 0 14%,#2B3944 14% 23%,#24313B 23% 27%,#2B3944 27% 29%,#24313B 29%);color:var(--gold);font:700 clamp(2.125rem,5.4vw,4rem)/1.05 var(--sign);letter-spacing:.01em;text-align:center;text-wrap:balance;text-shadow:3px 3px 0 #0E0D0C}
+.sf-name::before{content:"";position:absolute;inset:8px;border:1px solid var(--gold);border-radius:3px;pointer-events:none}
+@media (min-width:600px){.sf-name{padding:20px 24px 24px}}
+.sf-side{display:grid;grid-template-rows:28px 1fr;gap:8px}
+.sf-left{grid-area:left}
+.sf-right{grid-area:right}
+.sf-pane{background:var(--glass)}
+.sf-pane + .sf-pane{display:none}
+.sf-light{display:flex;align-items:flex-end;justify-content:center;padding:12px;background:var(--glass) linear-gradient(110deg,#24313B 0 30%,#2B3944 30% 44%,#24313B 44%)}
+.sf-letter{display:none}
+@media (min-width:600px){.sf-side{grid-template-columns:repeat(3,1fr);grid-template-rows:36px 1fr;gap:8px}.sf-pane + .sf-pane{display:block}.sf-light{grid-column:1/-1}
+.sf-letter{display:block;color:var(--gold);font:700 1.0625rem/1.25 var(--sign);text-align:center;text-shadow:2px 2px 0 #0E0D0C}}
+.sf-door{grid-area:door;position:relative;background:var(--red);padding:8px 8px 20px;border-radius:2px}
+@media (min-width:600px){.sf-door{padding:12px 12px 24px}.sf-door::after{bottom:8px}.sf-sill{height:12px}}
+.sf-door::after{content:"";position:absolute;right:16px;bottom:4px;width:28px;height:8px;border-radius:4px;background:var(--gold)}
+.sf-glass{height:100%;display:flex;justify-content:center;padding:0 4px 8px;background:var(--glass);border:2px solid var(--red-d)}
+.sf-sign{width:100%;max-width:200px}
+@media (min-width:600px){.sf-sign{max-width:240px}}
+.sf-cord{width:100%;height:auto}
+/* the card spans x 14 to 286 of the cord's 300-wide drawing, so the cord meets its top edge */
+.sf-card{width:90.667%;margin:0 auto;background:#FFFFFF;border:3px solid var(--ink);border-radius:8px}
+.winsign{width:100%;height:auto}
+.hero-text{margin-top:24px}
+@media (min-width:900px){.hero-text{margin-top:32px}}
+.week-box{margin-top:32px}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:12px}
+.week-head h2{font-size:1.25rem;margin:0}
+.week-status{margin:0;font-weight:600}
+.week{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:16px;border-top:2px solid var(--ink);font-variant-numeric:tabular-nums}
+.week li{position:relative;padding:12px 0;border-bottom:1px solid var(--line)}
+.week .wd{display:block;font-weight:600}
+.week .hv{display:block;color:var(--ink-2)}
+.week li.today .wd,.week li.today .hv{color:var(--red);font-weight:700}
+.week li.today::before{content:"";position:absolute;left:0;right:0;top:-2px;height:4px;background:var(--red)}
+/* From 600px the cells are too narrow for "Wednesday Today" on 1 line, so today gets a red tab hanging from its bar */
+@media (min-width:600px){.week{grid-template-columns:repeat(4,1fr)}.week li{padding-top:36px}
+.week .today-tag{position:absolute;top:0;left:0;margin:0;padding:2px 8px 3px;background:var(--red);color:#FFFFFF;line-height:1.3;border-radius:0 0 4px 4px}}
+@media (min-width:900px){.week{grid-template-columns:repeat(7,1fr);column-gap:0;border-bottom:1px solid var(--line)}.week li{padding:36px 8px 16px 12px;border-bottom:0;border-left:1px solid var(--line)}
+.week li:first-child{padding-left:0;border-left:0}.week .today-tag{left:12px}.week li:first-child .today-tag{left:0}.week .hv{font-size:.9375rem}}
+.week-box .hol-note{border-top:0}
 .kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
 .lede{font-size:1.1875rem;max-width:34rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
@@ -192,7 +236,7 @@ textarea{min-height:8rem;resize:vertical}
 @media (min-width:900px){.actbar{display:none}}
 @media (max-width:899px){.demo-toast{bottom:84px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
-@media print{.actbar,.nav,.head-acts,.skip{display:none}.board{background:#fff;color:#000;box-shadow:none;border:2px solid #000}.board h2,.board h3,.posted,.fine,.ditto{color:#000}.rates li{border-top-color:#999}}
+@media print{.actbar,.nav,.head-acts,.skip,.sf-side,.sf-door,.sf-sill{display:none}.shopfront{display:block;background:none;padding:0}.sf-name{background:none;color:#000;text-shadow:none;text-align:left;padding:0}.sf-name::before{display:none}.board{background:#fff;color:#000;box-shadow:none;border:2px solid #000}.board h2,.board h3,.posted,.fine,.ditto{color:#000}.rates li{border-top-color:#999}}
 </style>
 </head>
 <body>
@@ -211,8 +255,30 @@ textarea{min-height:8rem;resize:vertical}
 </header>
 <main id="main">
 <section class="hero">
-<div class="wrap hero-grid">
-<div>
+<div class="wrap">
+<div class="shopfront"><p class="sf-name">Old Ferry Barbershop</p><div class="sf-side sf-left" aria-hidden="true"><span class="sf-pane"></span><span class="sf-pane"></span><span class="sf-pane"></span><span class="sf-light"><span class="sf-letter">Walk-ins welcome</span></span></div><div class="sf-door" aria-hidden="true"><div class="sf-glass"><div class="sf-sign"><svg class="sf-cord" viewBox="0 0 300 48" aria-hidden="true" focusable="false">
+<path d="M150 11 L40 48 M150 11 L260 48" stroke="#CFCFC8" stroke-width="2" fill="none"/>
+<circle cx="150" cy="9" r="6" fill="#C9A54A" stroke="#1C1B19" stroke-width="1.5"/></svg>
+<div class="sf-card"><svg class="winsign" viewBox="16 58 268 170" aria-hidden="true" focusable="false">
+<rect x="26" y="68" width="248" height="150" rx="6" fill="none" stroke="#B3261E" stroke-width="2"/>
+<g id="sign-neutral" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
+<text x="150" y="128" font-size="36" fill="#1C1B19" textLength="210" lengthAdjust="spacingAndGlyphs">Old Ferry</text>
+<text x="150" y="170" font-size="24" fill="#B3261E">See our hours</text></g>
+<g id="sign-open" visibility="hidden" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
+<text x="150" y="110" font-size="32" fill="#B3261E">Come in</text>
+<text x="150" y="152" font-size="34" fill="#1C1B19" textLength="220" lengthAdjust="spacingAndGlyphs">We're open</text>
+<text x="206" y="203" font-size="20" fill="#4A4A45" font-family="system-ui,'Segoe UI',sans-serif" font-weight="600" text-anchor="end">Open until</text></g>
+<g id="sign-closed" visibility="hidden" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
+<text x="150" y="110" font-size="32" fill="#B3261E">Sorry,</text>
+<text x="150" y="152" font-size="28.6" fill="#1C1B19" textLength="220" lengthAdjust="spacingAndGlyphs">we're closed</text>
+<text x="206" y="203" font-size="20" fill="#4A4A45" font-family="system-ui,'Segoe UI',sans-serif" font-weight="600" text-anchor="end">Back at</text></g>
+<g id="sign-clock" visibility="hidden">
+<circle cx="232" cy="196" r="16" fill="#F3F4F1" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(0 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(30 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(60 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(90 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(120 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(150 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(180 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(210 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(240 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(270 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(300 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(330 232 196)" stroke="#1C1B19" stroke-width="2"/>
+<line id="hand-h" x1="232" y1="196" x2="232" y2="187" stroke="#1C1B19" stroke-width="3" stroke-linecap="round"/>
+<line id="hand-m" x1="232" y1="196" x2="232" y2="183" stroke="#B3261E" stroke-width="2" stroke-linecap="round"/>
+<circle cx="232" cy="196" r="2" fill="#1C1B19"/></g>
+</svg></div></div></div></div><div class="sf-side sf-right" aria-hidden="true"><span class="sf-pane"></span><span class="sf-pane"></span><span class="sf-pane"></span><span class="sf-light"><span class="sf-letter"><span lang="es">Hablamos español</span></span></span></div></div><div class="sf-sill" aria-hidden="true"></div>
+<div class="hero-text">
 <p class="kicker">214 Front Street, Landing, Arkansas</p>
 <h1>Haircuts, fades and <span class="nw">hot-towel</span> shaves on Front Street</h1>
 <p class="lede">Walk in or book ahead. 2 chairs, a block up from the old ferry landing in Landing, Arkansas.</p>
@@ -222,32 +288,7 @@ textarea{min-height:8rem;resize:vertical}
 </div>
 <p class="note">Walk-ins until 30 minutes before closing. Booking ahead skips the wait.</p>
 </div>
-<div class="signcard">
-<svg class="doorsign" viewBox="0 0 300 236" aria-hidden="true" focusable="false">
-<circle cx="150" cy="12" r="5" fill="#1C1B19"/>
-<path d="M150 12 L44 64 M150 12 L256 64" stroke="#4A4A45" stroke-width="2" fill="none"/>
-<rect x="18" y="58" width="264" height="170" rx="10" fill="#FFFFFF" stroke="#1C1B19" stroke-width="4"/>
-<rect x="30" y="70" width="240" height="146" rx="6" fill="none" stroke="#B3261E" stroke-width="2"/>
-<g id="sign-neutral" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
-<text x="150" y="122" font-size="34" fill="#1C1B19" textLength="200" lengthAdjust="spacingAndGlyphs">Old Ferry</text>
-<text x="150" y="160" font-size="22" fill="#B3261E">See our hours</text></g>
-<g id="sign-open" visibility="hidden" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
-<text x="150" y="112" font-size="30" fill="#B3261E">Come in</text>
-<text x="150" y="152" font-size="32" fill="#1C1B19" textLength="214" lengthAdjust="spacingAndGlyphs">We're open</text>
-<text x="208" y="201" font-size="16" fill="#4A4A45" font-family="system-ui,'Segoe UI',sans-serif" font-weight="600" text-anchor="end">Open until</text></g>
-<g id="sign-closed" visibility="hidden" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
-<text x="150" y="112" font-size="30" fill="#B3261E">Sorry,</text>
-<text x="150" y="152" font-size="30" fill="#1C1B19" textLength="214" lengthAdjust="spacingAndGlyphs">we're closed</text>
-<text x="208" y="201" font-size="16" fill="#4A4A45" font-family="system-ui,'Segoe UI',sans-serif" font-weight="600" text-anchor="end">Back at</text></g>
-<g id="sign-clock" visibility="hidden">
-<circle cx="232" cy="196" r="16" fill="#F3F4F1" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(0 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(30 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(60 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(90 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(120 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(150 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(180 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(210 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(240 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(270 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(300 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(330 232 196)" stroke="#1C1B19" stroke-width="2"/>
-<line id="hand-h" x1="232" y1="196" x2="232" y2="187" stroke="#1C1B19" stroke-width="3" stroke-linecap="round"/>
-<line id="hand-m" x1="232" y1="196" x2="232" y2="183" stroke="#B3261E" stroke-width="2" stroke-linecap="round"/>
-<circle cx="232" cy="196" r="2" fill="#1C1B19"/></g>
-</svg>
-<p class="status" id="open-status" aria-live="polite"></p>
-<table class="hours"><caption>Hours</caption><tbody><tr data-day="1"><th scope="row">Monday<span class="today-tag" hidden>Today</span></th><td>Closed</td></tr><tr data-day="2"><th scope="row">Tuesday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="3"><th scope="row">Wednesday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="4"><th scope="row">Thursday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="5"><th scope="row">Friday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="6"><th scope="row">Saturday<span class="today-tag" hidden>Today</span></th><td>8 a.m. to 2 p.m.</td></tr><tr data-day="0"><th scope="row">Sunday<span class="today-tag" hidden>Today</span></th><td>Closed</td></tr></tbody></table><p class="hol-note">Closed New Year's Day, the Fourth of July, Thanksgiving and Christmas Day.</p>
-</div>
+<div class="week-box"><div class="week-head"><h2>Hours</h2><p class="week-status" id="open-status" aria-live="polite"></p></div><ul class="week"><li data-day="1"><span class="wd">Monday <span class="today-tag" hidden>Today</span></span> <span class="hv">Closed</span></li><li data-day="2"><span class="wd">Tuesday <span class="today-tag" hidden>Today</span></span> <span class="hv"><span class="nw">9 a.m.</span> to <span class="nw">6 p.m.</span></span></li><li data-day="3"><span class="wd">Wednesday <span class="today-tag" hidden>Today</span></span> <span class="hv"><span class="nw">9 a.m.</span> to <span class="nw">6 p.m.</span></span></li><li data-day="4"><span class="wd">Thursday <span class="today-tag" hidden>Today</span></span> <span class="hv"><span class="nw">9 a.m.</span> to <span class="nw">6 p.m.</span></span></li><li data-day="5"><span class="wd">Friday <span class="today-tag" hidden>Today</span></span> <span class="hv"><span class="nw">9 a.m.</span> to <span class="nw">6 p.m.</span></span></li><li data-day="6"><span class="wd">Saturday <span class="today-tag" hidden>Today</span></span> <span class="hv"><span class="nw">8 a.m.</span> to <span class="nw">2 p.m.</span></span></li><li data-day="0"><span class="wd">Sunday <span class="today-tag" hidden>Today</span></span> <span class="hv">Closed</span></li></ul><p class="hol-note">Closed New Year's Day, the Fourth of July, Thanksgiving and Christmas Day.</p></div>
 </div>
 </section>
 <section class="section">
@@ -411,7 +452,7 @@ function sampleNow() {
   for (var j = 0; j < 7; j++) {
     var y = day(j), k = holiday(y), row = document.querySelector('[data-day="' + y.w + '"]');
     if (!row) { continue; }
-    if (k >= 0) { row.querySelector('td').textContent = L.closedFor.replace('{h}', L.hol[k]); }
+    if (k >= 0) { row.querySelector('.hv').textContent = L.closedFor.replace('{h}', L.hol[k]); }
     if (j === 0) { row.classList.add('today'); var tg = row.querySelector('.today-tag'); if (tg) { tg.hidden = false; } }
   }
 }());

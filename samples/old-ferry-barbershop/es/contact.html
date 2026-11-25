@@ -27,7 +27,7 @@
 @media print{.sample-bar,.demo-toast{display:none}}
 
 :root{--page:#F3F4F1;--card:#FFFFFF;--ink:#1C1B19;--ink-2:#4A4A45;--line:#CFCFC8;--rule:#A9A9A2;--field:#5E5E57;--red:#B3261E;--red-d:#931F18;--blue:#2B4C7E;
---board:#1C1B19;--on-board:#F3F4F1;--board-2:#C9C4B5;--gold:#C9A54A;
+--board:#1C1B19;--on-board:#F3F4F1;--board-2:#C9C4B5;--gold:#C9A54A;--glass:#24313B;--glass-2:#2B3944;--wood:#8C7A5B;
 --sign:"Superclarendon","Bookman Old Style","URW Bookman","Bookman",Georgia,serif;
 --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--gut:20px;--ease:cubic-bezier(.22,1,.36,1)}
 @media (min-width:720px){:root{--gut:32px}}
@@ -77,9 +77,53 @@ p{margin:0 0 16px;text-wrap:pretty}
 .btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px}
 .btns + h2{margin-top:40px}
-.hero{padding:40px 0 48px}
-.hero-grid{display:grid;gap:32px}
-@media (min-width:900px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}}
+.hero{padding:16px 0 40px}
+@media (min-width:900px){.hero{padding:32px 0 64px}}
+/* Home opening: the shop window drawn across the page. The name on the glass is real text; the door sign is the live open/closed sign. */
+.shopfront{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;grid-template-areas:"name name name" "left door right";gap:8px;padding:8px;background:var(--board);border-radius:8px 8px 0 0}
+@media (min-width:600px){.shopfront{grid-template-columns:minmax(0,1fr) minmax(240px,30%) minmax(0,1fr);gap:8px;padding:12px}}
+@media (min-width:900px){.shopfront{grid-template-columns:minmax(0,1fr) minmax(240px,26%) minmax(0,1fr)}}
+.sf-sill{height:8px;margin:0 -8px;background:var(--wood);border-radius:3px}
+.sf-name{grid-area:name;position:relative;margin:0;padding:12px 16px 16px;background:var(--glass) linear-gradient(110deg,#24313B 0 14%,#2B3944 14% 23%,#24313B 23% 27%,#2B3944 27% 29%,#24313B 29%);color:var(--gold);font:700 clamp(2.125rem,5.4vw,4rem)/1.05 var(--sign);letter-spacing:.01em;text-align:center;text-wrap:balance;text-shadow:3px 3px 0 #0E0D0C}
+.sf-name::before{content:"";position:absolute;inset:8px;border:1px solid var(--gold);border-radius:3px;pointer-events:none}
+@media (min-width:600px){.sf-name{padding:20px 24px 24px}}
+.sf-side{display:grid;grid-template-rows:28px 1fr;gap:8px}
+.sf-left{grid-area:left}
+.sf-right{grid-area:right}
+.sf-pane{background:var(--glass)}
+.sf-pane + .sf-pane{display:none}
+.sf-light{display:flex;align-items:flex-end;justify-content:center;padding:12px;background:var(--glass) linear-gradient(110deg,#24313B 0 30%,#2B3944 30% 44%,#24313B 44%)}
+.sf-letter{display:none}
+@media (min-width:600px){.sf-side{grid-template-columns:repeat(3,1fr);grid-template-rows:36px 1fr;gap:8px}.sf-pane + .sf-pane{display:block}.sf-light{grid-column:1/-1}
+.sf-letter{display:block;color:var(--gold);font:700 1.0625rem/1.25 var(--sign);text-align:center;text-shadow:2px 2px 0 #0E0D0C}}
+.sf-door{grid-area:door;position:relative;background:var(--red);padding:8px 8px 20px;border-radius:2px}
+@media (min-width:600px){.sf-door{padding:12px 12px 24px}.sf-door::after{bottom:8px}.sf-sill{height:12px}}
+.sf-door::after{content:"";position:absolute;right:16px;bottom:4px;width:28px;height:8px;border-radius:4px;background:var(--gold)}
+.sf-glass{height:100%;display:flex;justify-content:center;padding:0 4px 8px;background:var(--glass);border:2px solid var(--red-d)}
+.sf-sign{width:100%;max-width:200px}
+@media (min-width:600px){.sf-sign{max-width:240px}}
+.sf-cord{width:100%;height:auto}
+/* the card spans x 14 to 286 of the cord's 300-wide drawing, so the cord meets its top edge */
+.sf-card{width:90.667%;margin:0 auto;background:#FFFFFF;border:3px solid var(--ink);border-radius:8px}
+.winsign{width:100%;height:auto}
+.hero-text{margin-top:24px}
+@media (min-width:900px){.hero-text{margin-top:32px}}
+.week-box{margin-top:32px}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:12px}
+.week-head h2{font-size:1.25rem;margin:0}
+.week-status{margin:0;font-weight:600}
+.week{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:16px;border-top:2px solid var(--ink);font-variant-numeric:tabular-nums}
+.week li{position:relative;padding:12px 0;border-bottom:1px solid var(--line)}
+.week .wd{display:block;font-weight:600}
+.week .hv{display:block;color:var(--ink-2)}
+.week li.today .wd,.week li.today .hv{color:var(--red);font-weight:700}
+.week li.today::before{content:"";position:absolute;left:0;right:0;top:-2px;height:4px;background:var(--red)}
+/* From 600px the cells are too narrow for "Wednesday Today" on 1 line, so today gets a red tab hanging from its bar */
+@media (min-width:600px){.week{grid-template-columns:repeat(4,1fr)}.week li{padding-top:36px}
+.week .today-tag{position:absolute;top:0;left:0;margin:0;padding:2px 8px 3px;background:var(--red);color:#FFFFFF;line-height:1.3;border-radius:0 0 4px 4px}}
+@media (min-width:900px){.week{grid-template-columns:repeat(7,1fr);column-gap:0;border-bottom:1px solid var(--line)}.week li{padding:36px 8px 16px 12px;border-bottom:0;border-left:1px solid var(--line)}
+.week li:first-child{padding-left:0;border-left:0}.week .today-tag{left:12px}.week li:first-child .today-tag{left:0}.week .hv{font-size:.9375rem}}
+.week-box .hol-note{border-top:0}
 .kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
 .lede{font-size:1.1875rem;max-width:34rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
@@ -192,7 +236,7 @@ textarea{min-height:8rem;resize:vertical}
 @media (min-width:900px){.actbar{display:none}}
 @media (max-width:899px){.demo-toast{bottom:84px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
-@media print{.actbar,.nav,.head-acts,.skip{display:none}.board{background:#fff;color:#000;box-shadow:none;border:2px solid #000}.board h2,.board h3,.posted,.fine,.ditto{color:#000}.rates li{border-top-color:#999}}
+@media print{.actbar,.nav,.head-acts,.skip,.sf-side,.sf-door,.sf-sill{display:none}.shopfront{display:block;background:none;padding:0}.sf-name{background:none;color:#000;text-shadow:none;text-align:left;padding:0}.sf-name::before{display:none}.board{background:#fff;color:#000;box-shadow:none;border:2px solid #000}.board h2,.board h3,.posted,.fine,.ditto{color:#000}.rates li{border-top-color:#999}}
 </style>
 </head>
 <body>
