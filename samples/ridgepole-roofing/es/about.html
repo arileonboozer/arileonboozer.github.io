@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiénes somos | Ridgepole Roofing (sitio de muestra)</title>
+<meta name="description" content="Sitio Completo de muestra de Ari Leon Boozer para una empresa de techos inventada: una página por servicio, dibujos de antes y después, formulario de presupuesto y versión en inglés.">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="alternate" hreflang="en" href="../about.html">
+<style>
+.sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
+.sample-bar p{margin:0}
+.sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.sample-bar a:hover{color:#FFFFFF}
+.sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+.sample-bar .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.demo-toast{position:fixed;left:12px;right:12px;bottom:16px;z-index:50;max-width:30rem;margin:0 auto;background:#1B1A17;color:#F5F0E6;border-radius:6px;padding:12px 12px 12px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.25);font:400 1rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s linear .15s}
+.demo-toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s}
+.demo-toast p{margin:4px 0 0;flex:1}
+.demo-toast button{flex:none;min-height:44px;min-width:44px;padding:8px 12px;border:2px solid #F5F0E6;border-radius:4px;background:transparent;color:#F5F0E6;font:600 .9375rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer}
+.demo-toast button:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.demo-toast,.demo-toast.on{transition:none;transform:none}}
+@media print{.sample-bar,.demo-toast{display:none}}
+
+:root{--page:#F6F7F6;--card:#FFFFFF;--ink:#2F3437;--ink-2:#4E565B;--rule:#C9CED1;--field:#5B6469;--blue:#1F5FAD;--blue-d:#174A88;
+--canary:#F6E7A6;--red:#B42318;--slate:#2F3437;--on-slate:#F6F7F6;--slate-2:#C9CED1;
+--head:Avenir,"Avenir Next",Corbel,"URW Gothic",Montserrat,"Segoe UI",sans-serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,Menlo,monospace;--gut:20px;--ease:cubic-bezier(.22,1,.36,1)}
+@media (min-width:720px){:root{--gut:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);font-variant-numeric:lining-nums}
+svg{display:block}
+a{color:var(--blue);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--blue-d)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:60;background:var(--ink);color:var(--page);padding:12px 16px;border-radius:4px;font-weight:600}
+.skip:focus{top:12px;color:var(--page)}
+.wrap{max-width:72rem;margin:0 auto;padding:0 var(--gut)}
+.ic{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0 0 12px;text-wrap:balance}
+h1{font-size:clamp(2rem,3vw + 1.1rem,3.25rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,1.4vw + 1rem,2.125rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 16px;text-wrap:pretty}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.site-head{background:var(--card);border-bottom:2px solid var(--ink)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:12px;min-height:44px;text-decoration:none;color:var(--ink)}
+.logo:hover{color:var(--ink)}
+.logo svg{width:44px;height:30px}
+.logo-name{font-family:var(--head);font-weight:700;font-size:1.375rem;line-height:1.1}
+.logo-sub{display:block;font-family:var(--sans);font-weight:400;font-size:.875rem;color:var(--ink-2)}
+.head-acts{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;font-weight:600}
+.nav-wide{display:none}
+.nav-wide ul,.menu ul{list-style:none;margin:0;padding:0}
+.nav-wide ul{display:flex;gap:0 20px;flex-wrap:wrap}
+.nav-wide a,.menu a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
+.nav-wide a:hover,.menu a:hover{border-bottom-color:var(--rule)}
+.nav-wide a[aria-current="page"],.menu a[aria-current="page"]{border-bottom-color:var(--blue)}
+.menu{border-top:1px solid var(--rule)}
+.menu summary{display:flex;align-items:center;gap:8px;min-height:48px;font-weight:600;cursor:pointer;list-style:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translateY(-3px);margin-left:4px}
+.menu[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.menu ul{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding-bottom:12px}
+@media (min-width:1040px){.nav-wide{display:block}.menu{display:none}.head-quote{display:inline-flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:4px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:600 1rem/1.2 var(--sans);cursor:pointer;text-decoration:none;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
+.btn:hover{background:var(--ink);color:var(--page)}
+.btn:active{transform:scale(.98)}
+.btn-blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-d);border-color:var(--blue-d);color:#fff}
+.btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
+.head-quote{display:none}
+.hero{padding:40px 0 48px}
+.hero-grid{display:grid;gap:32px;align-items:center}
+@media (min-width:960px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1fr 1fr;gap:48px}}
+.kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
+.lede{font-size:1.1875rem;max-width:36rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.note{color:var(--ink-2);font-size:.9375rem}
+.drawing{width:100%;height:auto;background:var(--card);border:2px solid var(--ink);border-radius:4px}
+.cap{font-size:.875rem;color:var(--ink-2);margin:8px 0 0}
+.legend{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:.9375rem}
+.legend li{display:flex;align-items:center;gap:8px}
+.lnum{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font:700 .8125rem/1 var(--mono)}
+.section{padding:48px 0;border-top:2px solid var(--ink)}
+@media (min-width:960px){.section{padding:72px 0}}
+.page-top{padding:40px 0 32px}
+@media (min-width:960px){.page-top{padding:56px 0 40px}}
+.two{display:grid;gap:32px}
+@media (min-width:960px){.two{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
+.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.svc li{border-bottom:1px solid var(--rule)}
+.svc a{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:20px 0;color:var(--ink);text-decoration:none}
+.svc a:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.svc svg{width:64px;height:40px}
+.svc h3{margin:0 0 4px}
+.svc p{margin:0;color:var(--ink-2)}
+.svc .ic{width:24px;height:24px;color:var(--blue)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--rule)}
+.steps li:first-child{border-top:0}
+.steps .n{font-family:var(--mono);font-weight:700;font-size:1.25rem;color:var(--blue)}
+.steps h3{margin-bottom:4px}
+.steps p{margin:0;color:var(--ink-2)}
+.ticks{list-style:none;margin:0 0 16px;padding:0}
+.ticks li{display:flex;gap:12px;padding:8px 0}
+.ticks .ic{color:var(--blue);margin-top:4px}
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:24px}
+.slope{width:100%;max-width:520px;height:auto}
+.facts{display:grid;gap:12px;margin:0;font-variant-numeric:tabular-nums}
+.facts div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--rule);padding:8px 0}
+.facts dt{color:var(--ink-2)}
+.facts dd{margin:0;font-weight:600;text-align:right}
+.cmp{position:relative;border:2px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--card)}
+.cmp svg{width:100%;height:auto}
+.cmp .after{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos,50%))}
+.cmp .divider{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1px;background:var(--ink)}
+.cmp-tags{display:flex;justify-content:space-between;font-weight:600;margin-top:8px}
+.cmp-ctl label{display:block;font-weight:600;margin:12px 0 4px}
+.cmp-ctl input{width:100%;min-height:44px;accent-color:var(--blue)}
+.gal{display:grid;gap:40px}
+@media (min-width:960px){.gal{grid-template-columns:1fr 1fr}}
+.faq details{border-top:1px solid var(--rule)}
+.faq details:last-child{border-bottom:1px solid var(--rule)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 0;font-weight:600;font-size:1.0625rem;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:1.5rem;line-height:1;color:var(--blue)}
+.faq details[open] summary::after{content:"\2013"}
+.faq .a{padding:0 0 16px;max-width:44rem}
+.faq .a p{margin:0}
+.prose{max-width:42rem}
+.sheet{position:relative;background:var(--canary);border:2px solid var(--ink);border-bottom:0;border-radius:4px 4px 0 0;padding:24px 20px 32px;max-width:44rem}
+@media (min-width:720px){.sheet{padding:32px 40px 40px}}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:24px}
+.sheet-head h2{margin:0}
+.formno{font-family:var(--mono);font-weight:700;color:var(--red);font-size:1.125rem}
+.sheet fieldset{border:0;margin:0 0 24px;padding:0}
+.sheet legend{font-weight:700;margin-bottom:8px;padding:0}
+.checks{display:grid;gap:4px 16px}
+@media (min-width:560px){.checks{grid-template-columns:1fr 1fr}}
+.checks label{display:flex;align-items:center;gap:12px;min-height:44px;font-weight:400;margin:0}
+.checks input{width:24px;height:24px;margin:0;accent-color:var(--blue);flex:none}
+.row2{display:grid;gap:0 24px}
+@media (min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.line{margin-bottom:20px}
+.line label{display:block;font-weight:600;font-size:.9375rem;margin-bottom:4px}
+.line input,.line select,.line textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:8px 2px}
+.line select{min-height:44px}
+.line textarea{border:2px solid var(--ink);background:rgba(255,255,255,.35);min-height:7rem;resize:vertical;padding:8px}
+.copy{font-family:var(--mono);font-size:.875rem;color:var(--red);text-align:right;margin:16px 0 0}
+.tear{display:block;width:100%;max-width:44rem;height:14px}
+.foot{background:var(--slate);color:var(--on-slate);padding:40px 0 112px}
+@media (min-width:1040px){.foot{padding-bottom:48px}}
+.foot a{color:var(--on-slate)}
+.foot a:hover{color:#9FC3F0}
+.foot-grid{display:grid;gap:24px}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot h2{font-size:1.25rem;margin-bottom:8px}
+.foot p{color:var(--slate-2);margin-bottom:8px}
+.social{display:flex;gap:8px}
+.social button{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid #6B7378;border-radius:4px;background:transparent;color:var(--on-slate);cursor:pointer}
+.social button:hover{border-color:#9FC3F0;color:#9FC3F0}
+.social .ic{width:20px;height:20px}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:24px;padding-top:12px;border-top:1px solid #4A5155;font-size:.9375rem}
+.foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
+.foot-links span{color:var(--slate-2)}
+.foot :focus-visible{outline-color:#9FC3F0}
+.actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--card);border-top:2px solid var(--ink)}
+@media (min-width:1040px){.actbar{display:none}}
+@media (max-width:1039px){.demo-toast{bottom:84px}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media print{.actbar,.menu,.nav-wide,.head-acts,.skip{display:none}.sheet{background:#fff}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol></svg>
+<a class="skip" href="#main">Saltar al contenido principal</a>
+<div class="sample-bar"><div class="sb-in"><p>Sitio Completo de muestra de Ari Leon Boozer. El negocio, los trabajos y el teléfono son inventados.</p><a href="/es/muestras/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>Ver todas las muestras</span></a></div></div>
+<header class="site-head">
+<div class="wrap head-row">
+<a class="logo" href="index.html"><svg viewBox="0 0 44 30" aria-hidden="true" focusable="false"><path d="M2 27 L22 4 L42 27" fill="none" stroke="#2F3437" stroke-width="4" stroke-linejoin="round"/><path d="M22 4 V27" stroke="#1F5FAD" stroke-width="2" stroke-dasharray="3 3"/></svg><span class="logo-name">Ridgepole Roofing<span class="logo-sub">Landing, Arkansas</span></span></a>
+<nav class="nav-wide" aria-label="Principal"><ul><li><a href="shingle.html">Techos de tejas</a></li><li><a href="metal.html">Techos de metal</a></li><li><a href="repairs.html">Reparaciones y goteras</a></li><li><a href="work.html">Trabajos</a></li><li><a href="about.html" aria-current="page">Quiénes somos</a></li><li><a href="questions.html">Preguntas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav>
+<div class="head-acts">
+<a class="btn btn-blue btn-sm head-quote" href="quote.html">Pedir un presupuesto</a>
+<a class="lang" href="../about.html" lang="en" hreflang="en">English</a>
+</div>
+</div>
+<div class="wrap"><details class="menu"><summary>Menú</summary><nav aria-label="Principal"><ul><li><a href="shingle.html">Techos de tejas</a></li><li><a href="metal.html">Techos de metal</a></li><li><a href="repairs.html">Reparaciones y goteras</a></li><li><a href="work.html">Trabajos</a></li><li><a href="about.html" aria-current="page">Quiénes somos</a></li><li><a href="questions.html">Preguntas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav></details></div>
+</header>
+<main id="main">
+<section class="page-top"><div class="wrap"><div class="prose"><h1>Quiénes somos</h1><p class="lede">Ridgepole Roofing es Ray Tolliver y un equipo de 4 personas. Ray empezó en el equipo de techos de su tío y dirige cada trabajo, desde la primera revisión hasta la revisión final.</p><p>Trabajamos en Landing y en los pueblos a menos de 40 millas. No tocamos puertas después de las tormentas; la mayor parte del trabajo viene de personas que ya nos llamaron antes.</p></div></div></section>
+<section class="section"><div class="wrap"><h2>A quién va a conocer</h2><div class="two"><div class="panel"><h3>Ray Tolliver</h3><p style="margin:0">Dueño. Revisa cada techo y escribe cada presupuesto.</p></div><div class="panel"><h3>El equipo</h3><p style="margin:0">4 personas que han trabajado juntas en la mayoría de nuestros trabajos.</p></div></div></div></section>
+</main>
+<footer class="foot">
+<div class="wrap">
+<div class="foot-grid">
+<div><h2>Ridgepole Roofing</h2><p>(870) 555-0168</p><p>Landing y los pueblos a menos de 40 millas. Vamos a su casa, así que no hay taller que visitar.</p></div>
+<div><h2>Horario de oficina</h2><p>Lunes a viernes, de 7 a. m. a 5 p. m.<br>Sábados con cita.</p></div>
+<div><h2>Síganos</h2><div class="social"><button type="button" data-demo="facebook" aria-label="Facebook"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></button></div></div>
+</div>
+<div class="foot-links"><span>© 2026 Ridgepole Roofing</span><a href="privacy.html">Privacidad</a><a href="../about.html" lang="en" hreflang="en">English</a></div>
+</div>
+</footer>
+<div class="actbar">
+<a class="btn btn-blue" href="quote.html">Pedir un presupuesto</a>
+<button type="button" class="btn" data-demo="text"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Envíenos un texto</span></button>
+</div>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite"><p id="demo-msg"></p><button type="button" id="demo-close">Cerrar</button></div>
+<script>
+/* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
+(function () {
+  var notes = {"text": "Muestra: en su sitio, este botón abre un mensaje de texto a su número.", "call": "Muestra: en su sitio, este botón llama a su número.", "map": "Muestra: en su sitio, esto abre su dirección en Mapas.", "facebook": "Muestra: en su sitio, esto abre su página de Facebook.", "instagram": "Muestra: en su sitio, esto abre su página de Instagram.", "booking": "Muestra: en su sitio, esto abre la página de citas que ya usa, como Square o Booksy.", "form": "Muestra: no se envió nada. En su sitio, este formulario le envía por correo lo que escribió la persona.", "quote": "Muestra: no se envió nada. En su sitio, este formulario le envía la solicitud por correo, con el servicio ya elegido."};
+  var toast = document.getElementById('demo-toast');
+  var msg = document.getElementById('demo-msg');
+  var timer = null;
+  function hide() { toast.classList.remove('on'); }
+  function show(kind) {
+    msg.textContent = notes[kind] || notes.form;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(hide, 7000);
+  }
+  document.getElementById('demo-close').addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hide(); } });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-demo]');
+    if (!b) { return; }
+    e.preventDefault();
+    var f = b.closest('form');
+    if (f && !f.reportValidity()) { return; }
+    show(b.getAttribute('data-demo'));
+  });
+  document.addEventListener('submit', function (e) { e.preventDefault(); });
+}());
+/* The made-up businesses keep Central time, whatever the visitor's clock says */
+function sampleNow() {
+  var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var o = {};
+  p.forEach(function (x) { o[x.type] = x.value; });
+  return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
+}
+</script>
+
+</body>
+</html>

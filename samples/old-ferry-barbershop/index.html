@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Old Ferry Barbershop: haircuts and shaves in Landing, Arkansas (sample site)</title>
+<meta name="description" content="Sample Brochure Site by Ari Leon Boozer for a made-up barbershop: prices, hours, a contact form and a Spanish version.">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#F3F4F1">
+<link rel="alternate" hreflang="es" href="es/index.html">
+<style>
+.sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
+.sample-bar p{margin:0}
+.sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.sample-bar a:hover{color:#FFFFFF}
+.sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+.sample-bar .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.demo-toast{position:fixed;left:12px;right:12px;bottom:16px;z-index:50;max-width:30rem;margin:0 auto;background:#1B1A17;color:#F5F0E6;border-radius:6px;padding:12px 12px 12px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.25);font:400 1rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s linear .15s}
+.demo-toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s}
+.demo-toast p{margin:4px 0 0;flex:1}
+.demo-toast button{flex:none;min-height:44px;min-width:44px;padding:8px 12px;border:2px solid #F5F0E6;border-radius:4px;background:transparent;color:#F5F0E6;font:600 .9375rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer}
+.demo-toast button:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.demo-toast,.demo-toast.on{transition:none;transform:none}}
+@media print{.sample-bar,.demo-toast{display:none}}
+
+:root{--page:#F3F4F1;--card:#FFFFFF;--ink:#1C1B19;--ink-2:#4A4A45;--line:#CFCFC8;--field:#5E5E57;--red:#B3261E;--red-d:#931F18;--blue:#2B4C7E;
+--board:#1C1B19;--on-board:#F3F4F1;--board-2:#C9C4B5;--gold:#C9A54A;
+--sign:"Superclarendon","Bookman Old Style","URW Bookman","Bookman",Georgia,serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--gut:20px;--ease:cubic-bezier(.22,1,.36,1)}
+@media (min-width:720px){:root{--gut:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);font-variant-numeric:lining-nums}
+svg{display:block}
+a{color:var(--blue);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:60;background:var(--ink);color:var(--page);padding:12px 16px;border-radius:4px;font-weight:600}
+.skip:focus{top:12px;color:var(--page)}
+.wrap{max-width:68rem;margin:0 auto;padding:0 var(--gut)}
+.ic{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{font-family:var(--sign);font-weight:700;line-height:1.12;margin:0 0 12px;text-wrap:balance}
+h1{font-size:clamp(2.125rem,3.2vw + 1.2rem,3.5rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.625rem,1.6vw + 1rem,2.25rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 16px;text-wrap:pretty}
+.site-head{border-bottom:2px solid var(--ink)}
+.head-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;padding-top:12px;padding-bottom:8px}
+.logo{display:flex;flex-direction:column;justify-content:center;min-height:44px;text-decoration:none;color:var(--ink);line-height:1.15}
+.logo:hover{color:var(--ink)}
+.logo-name{font-family:var(--sign);font-weight:700;font-size:1.5rem}
+.logo-sub{font-size:.875rem;color:var(--ink-2)}
+.head-acts{display:flex;align-items:center;gap:12px}
+@media (max-width:899px){.head-acts .btn{display:none}}
+.lang{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;font-weight:600}
+.nav{order:3;width:100%}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 24px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:var(--line)}
+.nav a[aria-current="page"]{border-bottom-color:var(--red)}
+@media (min-width:900px){.nav{order:0;width:auto;margin:0 auto 0 32px}.head-row{padding-bottom:12px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:6px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:600 1rem/1.2 var(--sans);cursor:pointer;text-decoration:none;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
+.btn:hover{background:var(--ink);color:var(--page)}
+.btn:active{transform:scale(.98)}
+.btn-red{background:var(--red);border-color:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d);border-color:var(--red-d);color:#fff}
+.btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
+.hero{padding:40px 0 48px}
+.hero-grid{display:grid;gap:32px}
+@media (min-width:900px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}}
+.kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
+.lede{font-size:1.1875rem;max-width:34rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.note{color:var(--ink-2);font-size:.9375rem}
+.signcard{background:var(--card);border:2px solid var(--ink);border-radius:8px;padding:20px}
+.doorsign{width:100%;max-width:300px;height:auto;margin:0 auto 4px}
+.status{font-weight:600;text-align:center;min-height:1.6em;margin-bottom:12px}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours caption{text-align:left;font-family:var(--sign);font-weight:700;font-size:1.25rem;margin-bottom:8px}
+.hours th,.hours td{padding:8px 0;border-top:1px solid var(--line);text-align:left;font-weight:400}
+.hours td{text-align:right}
+.hours tr.today th,.hours tr.today td{font-weight:700;color:var(--red)}
+.today-tag{margin-left:8px;font-size:.8125rem;font-weight:700}
+.section{padding:48px 0;border-top:2px solid var(--ink)}
+@media (min-width:900px){.section{padding:72px 0}}
+.page-top{padding:40px 0 32px}
+@media (min-width:900px){.page-top{padding:56px 0 40px}}
+.two{display:grid;gap:32px}
+@media (min-width:900px){.two{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
+.board{background:var(--board);color:var(--on-board);border-radius:8px;padding:24px 20px 20px;box-shadow:inset 0 0 0 6px #2A2825}
+@media (min-width:720px){.board{padding:32px 32px 24px}}
+.board h2,.board h3{color:var(--gold);margin-bottom:4px}
+.posted{color:var(--board-2);font-size:.9375rem;margin-bottom:12px}
+.rates{list-style:none;margin:0 0 16px;padding:0;font-variant-numeric:tabular-nums}
+.rates li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-top:1px solid #45423C}
+.rates li:first-child{border-top:0}
+.rates .p{font-weight:700;white-space:nowrap}
+.ditto{display:inline-block;width:1.25em;color:var(--board-2)}
+.fine{color:var(--board-2);font-size:.9375rem;margin:0}
+.more{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.facts li:first-child{border-top:0;padding-top:0}
+.facts .ic{margin-top:4px}
+.window{width:100%;height:auto;max-width:720px;border-radius:8px}
+.people{display:grid;gap:20px;margin-top:24px}
+@media (min-width:720px){.people{grid-template-columns:1fr 1fr}}
+.person{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px}
+.mono{flex:none;width:56px;height:56px;border-radius:50%;background:var(--board);color:var(--gold);display:grid;place-items:center;font-family:var(--sign);font-weight:700;font-size:1.5rem}
+.person h3{margin-bottom:4px}
+.person p{margin:0;color:var(--ink-2)}
+.addr{font-style:normal;margin-bottom:16px}
+.map{width:100%;height:auto;border:2px solid var(--ink);border-radius:8px}
+.cap{font-size:.875rem;color:var(--ink-2);margin:8px 0 16px}
+form{display:grid;gap:16px;max-width:36rem}
+label{display:block;font-weight:600;margin-bottom:8px}
+input,textarea{width:100%;font:inherit;padding:12px;border:2px solid var(--field);border-radius:6px;background:var(--card);color:var(--ink)}
+textarea{min-height:8rem;resize:vertical}
+.hint{font-size:.9375rem;color:var(--ink-2);margin:8px 0 0}
+.prose{max-width:40rem}
+.block{padding:16px 0;border-top:1px solid var(--line)}
+.block:first-child{border-top:0;padding-top:0}
+.block p{margin:0}
+.foot{background:var(--board);color:var(--on-board);padding:40px 0 112px}
+@media (min-width:900px){.foot{padding-bottom:48px}}
+.foot a{color:var(--on-board)}
+.foot a:hover{color:var(--gold)}
+.foot-grid{display:grid;gap:24px}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot h2{font-size:1.25rem;color:var(--gold);margin-bottom:8px}
+.foot p{color:var(--board-2);margin-bottom:8px}
+.social{display:flex;gap:8px}
+.social button{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid #6A665E;border-radius:6px;background:transparent;color:var(--on-board);cursor:pointer}
+.social button:hover{border-color:var(--gold);color:var(--gold)}
+.social .ic{width:20px;height:20px}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:24px;padding-top:12px;border-top:1px solid #45423C;font-size:.9375rem}
+.foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
+.foot-links span{color:var(--board-2)}
+.foot :focus-visible,.board :focus-visible{outline-color:var(--gold)}
+.actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--page);border-top:2px solid var(--ink)}
+@media (min-width:900px){.actbar{display:none}}
+@media (max-width:899px){.demo-toast{bottom:84px}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media print{.actbar,.nav,.head-acts,.skip{display:none}.board{background:#fff;color:#000;box-shadow:none;border:2px solid #000}.board h2,.board h3,.posted,.fine,.ditto{color:#000}.rates li{border-top-color:#999}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-parking" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M10 17V8h3.2a2.6 2.6 0 0 1 0 5.2H10"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="sample-bar"><div class="sb-in"><p>Sample Brochure Site by Ari Leon Boozer. The shop, prices and phone number are made up.</p><a href="/samples/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>See all samples</span></a></div></div>
+<header class="site-head">
+<div class="wrap head-row">
+<a class="logo" href="index.html"><span class="logo-name">Old Ferry Barbershop</span><span class="logo-sub">Landing, Arkansas</span></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="prices.html">Prices</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Hours and contact</a></li></ul></nav>
+<div class="head-acts">
+<button type="button" class="btn btn-red btn-sm" data-demo="text"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Text us</span></button>
+<a class="lang" href="es/index.html" lang="es" hreflang="es">Español</a>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<p class="kicker">214 Front Street, Landing, Arkansas</p>
+<h1>Haircuts, fades and hot-towel shaves on Front Street</h1>
+<p class="lede">Walk in or book ahead. 2 chairs, a block up from the old ferry landing in Landing, Arkansas.</p>
+<div class="cta">
+<button type="button" class="btn btn-red" data-demo="text"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Text (870) 555-0142</span></button>
+<button type="button" class="btn" data-demo="booking"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Book a time</span></button>
+</div>
+<p class="note">Walk-ins until 30 minutes before closing. Booking ahead skips the wait.</p>
+</div>
+<div class="signcard">
+<svg class="doorsign" viewBox="0 0 300 236" aria-hidden="true" focusable="false">
+<circle cx="150" cy="12" r="5" fill="#1C1B19"/>
+<path d="M150 12 L44 64 M150 12 L256 64" stroke="#4A4A45" stroke-width="2" fill="none"/>
+<rect x="18" y="58" width="264" height="170" rx="10" fill="#FFFFFF" stroke="#1C1B19" stroke-width="4"/>
+<rect x="30" y="70" width="240" height="146" rx="6" fill="none" stroke="#B3261E" stroke-width="2"/>
+<g id="sign-neutral" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
+<text x="150" y="122" font-size="34" fill="#1C1B19" textLength="200" lengthAdjust="spacingAndGlyphs">Old Ferry</text>
+<text x="150" y="160" font-size="22" fill="#B3261E">See our hours</text></g>
+<g id="sign-open" visibility="hidden" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
+<text x="150" y="112" font-size="30" fill="#B3261E">Come in</text>
+<text x="150" y="152" font-size="32" fill="#1C1B19" textLength="214" lengthAdjust="spacingAndGlyphs">We're open</text>
+<text x="132" y="201" font-size="16" fill="#4A4A45" font-family="system-ui,'Segoe UI',sans-serif" font-weight="600" text-anchor="end">Open until</text></g>
+<g id="sign-closed" visibility="hidden" font-family="Superclarendon,'Bookman Old Style',Georgia,serif" font-weight="700" text-anchor="middle">
+<text x="150" y="112" font-size="30" fill="#B3261E">Sorry,</text>
+<text x="150" y="152" font-size="30" fill="#1C1B19" textLength="214" lengthAdjust="spacingAndGlyphs">we're closed</text>
+<text x="132" y="201" font-size="16" fill="#4A4A45" font-family="system-ui,'Segoe UI',sans-serif" font-weight="600" text-anchor="end">Back at</text></g>
+<g id="sign-clock" visibility="hidden">
+<circle cx="232" cy="196" r="16" fill="#F3F4F1" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(0 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(30 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(60 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(90 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(120 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(150 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(180 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(210 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(240 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(270 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(300 232 196)" stroke="#1C1B19" stroke-width="2"/><line x1="232" y1="182" x2="232" y2="185" transform="rotate(330 232 196)" stroke="#1C1B19" stroke-width="2"/>
+<line id="hand-h" x1="232" y1="196" x2="232" y2="187" stroke="#1C1B19" stroke-width="3" stroke-linecap="round"/>
+<line id="hand-m" x1="232" y1="196" x2="232" y2="183" stroke="#B3261E" stroke-width="2" stroke-linecap="round"/>
+<circle cx="232" cy="196" r="2" fill="#1C1B19"/></g>
+</svg>
+<p class="status" id="open-status" aria-live="polite"></p>
+<table class="hours"><caption>Hours</caption><tbody><tr data-day="1"><th scope="row">Monday<span class="today-tag" hidden>Today</span></th><td>Closed</td></tr><tr data-day="2"><th scope="row">Tuesday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="3"><th scope="row">Wednesday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="4"><th scope="row">Thursday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="5"><th scope="row">Friday<span class="today-tag" hidden>Today</span></th><td>9 a.m. to 6 p.m.</td></tr><tr data-day="6"><th scope="row">Saturday<span class="today-tag" hidden>Today</span></th><td>8 a.m. to 2 p.m.</td></tr><tr data-day="0"><th scope="row">Sunday<span class="today-tag" hidden>Today</span></th><td>Closed</td></tr></tbody></table>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap two">
+<div><div class="board"><h2>Most asked for</h2><ul class="rates"><li><span>Haircut</span><span class="p">$25</span></li><li><span>Skin fade</span><span class="p">$30</span></li><li><span>Beard trim</span><span class="p">$15</span></li><li><span>Hot-towel shave</span><span class="p">$30</span></li></ul></div><p><a class="more" href="prices.html">See every price<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></p></div>
+<div><h2>Find the shop</h2><ul class="facts"><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>214 Front Street, Landing, Arkansas</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-parking"/></svg><span>Parking behind the shop on Ferry Street.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Hablamos español. Ask for Marisol.</span></li></ul>
+<p><button type="button" class="btn" data-demo="map"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Get directions</span></button></p></div>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap">
+<div class="foot-grid">
+<div><h2>Old Ferry Barbershop</h2><p>214 Front Street, Landing, Arkansas</p><p>(870) 555-0142</p><p>Hablamos español.</p></div>
+<div><h2>Hours</h2><p>Tuesday to Friday, 9 a.m. to 6 p.m.<br>Saturday, 8 a.m. to 2 p.m.</p></div>
+<div><h2>Follow the shop</h2><div class="social">
+<button type="button" data-demo="facebook" aria-label="Facebook"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></button>
+<button type="button" data-demo="instagram" aria-label="Instagram"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg></button></div></div>
+</div>
+<div class="foot-links"><span>© 2026 Old Ferry Barbershop</span><a href="privacy.html">Privacy</a><a href="es/index.html" lang="es" hreflang="es">Español</a></div>
+</div>
+</footer>
+<div class="actbar">
+<button type="button" class="btn btn-red" data-demo="text"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Text us</span></button>
+<button type="button" class="btn" data-demo="booking"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Book a time</span></button>
+</div>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite"><p id="demo-msg"></p><button type="button" id="demo-close">Close</button></div>
+<script>
+/* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
+(function () {
+  var notes = {"text": "Sample: on your site, this button starts a text message to your number.", "call": "Sample: on your site, this button calls your number.", "map": "Sample: on your site, this opens your address in Maps.", "facebook": "Sample: on your site, this opens your Facebook page.", "instagram": "Sample: on your site, this opens your Instagram page.", "booking": "Sample: on your site, this opens the booking page you already use, such as Square or Booksy.", "form": "Sample: nothing was sent. On your site, this form emails you what the visitor wrote.", "quote": "Sample: nothing was sent. On your site, this form emails you the request, with the service already filled in."};
+  var toast = document.getElementById('demo-toast');
+  var msg = document.getElementById('demo-msg');
+  var timer = null;
+  function hide() { toast.classList.remove('on'); }
+  function show(kind) {
+    msg.textContent = notes[kind] || notes.form;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(hide, 7000);
+  }
+  document.getElementById('demo-close').addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hide(); } });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-demo]');
+    if (!b) { return; }
+    e.preventDefault();
+    var f = b.closest('form');
+    if (f && !f.reportValidity()) { return; }
+    show(b.getAttribute('data-demo'));
+  });
+  document.addEventListener('submit', function (e) { e.preventDefault(); });
+}());
+/* The made-up businesses keep Central time, whatever the visitor's clock says */
+function sampleNow() {
+  var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var o = {};
+  p.forEach(function (x) { o[x.type] = x.value; });
+  return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
+}
+</script>
+<script>
+/* Door sign and today's row, from the shop's hours in Central time */
+(function () {
+  var c = {"H": {"2": [540, 1080], "3": [540, 1080], "4": [540, 1080], "5": [540, 1080], "6": [480, 840]}, "L": {"openUntil": "Open now, until {t}", "closedMsg": "Closed now. We open {day} at {t}", "today": "today", "tomorrow": "tomorrow", "on": "on ", "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "am": "a.m.", "pm": "p.m."}}, H = c.H, L = c.L, n = sampleNow(), d = n.d, t = n.t;
+  function fmt(m) { var h = Math.floor(m / 60), mi = m % 60, ap = h >= 12 ? L.pm : L.am; h = h % 12 || 12; return h + (mi ? ':' + ('0' + mi).slice(-2) : '') + '\u00a0' + ap; }
+  var h = H[d], open = !!h && t >= h[0] && t < h[1], target = null, msg = '';
+  if (open) { target = h[1]; msg = L.openUntil.replace('{t}', fmt(h[1])); }
+  else {
+    for (var i = 0; i < 8; i++) {
+      var dd = (d + i) % 7, hh = H[dd];
+      if (hh && (i > 0 || t < hh[0])) { target = hh[0]; msg = L.closedMsg.replace('{day}', i === 0 ? L.today : (i === 1 ? L.tomorrow : L.on + L.days[dd])).replace('{t}', fmt(hh[0])); break; }
+    }
+  }
+  var sign = document.getElementById('sign-neutral');
+  if (sign && target !== null) {
+    sign.setAttribute('visibility', 'hidden');
+    document.getElementById(open ? 'sign-open' : 'sign-closed').setAttribute('visibility', 'visible');
+    document.getElementById('sign-clock').setAttribute('visibility', 'visible');
+    var hr = Math.floor(target / 60) % 12, mn = target % 60;
+    document.getElementById('hand-h').setAttribute('transform', 'rotate(' + (hr * 30 + mn / 2) + ' 232 196)');
+    document.getElementById('hand-m').setAttribute('transform', 'rotate(' + (mn * 6) + ' 232 196)');
+  }
+  var st = document.getElementById('open-status');
+  if (st) { st.textContent = msg; }
+  var row = document.querySelector('[data-day="' + d + '"]');
+  if (row) { row.classList.add('today'); var tg = row.querySelector('.today-tag'); if (tg) { tg.hidden = false; } }
+}());
+</script>
+</body>
+</html>
