@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Price estimate | Wing Dam Garage (sample site)</title>
-<meta name="description" content="Sample Custom Build by Ari Leon Boozer for a made-up auto shop: online booking, a price estimator and a customer sign-in, all as demos.">
+<meta name="description" content="Sample Custom Build by Ari Leon Boozer for a made-up auto shop: online booking, a price estimator, a customer sign-in, a staff job board, moved records, routine emails, a town page and an app, all as demos.">
 <meta name="robots" content="noindex">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#17191B">
@@ -12,7 +12,8 @@
 <style>
 .sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 .sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
-.sample-bar p{margin:0}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
 .sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
 .sample-bar a:hover{color:#FFFFFF}
 .sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
@@ -174,13 +175,125 @@ table.list tr.new td{background:var(--yellow-2);font-weight:600}
 .foot a{color:var(--page)}
 .foot a:hover{color:var(--yellow)}
 .foot-grid{display:grid;gap:24px}
-@media (min-width:720px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+@media (min-width:720px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:960px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr 1fr}}
 .foot h2{font-size:1.25rem;margin-bottom:8px;color:var(--yellow)}
 .foot p{color:#C9CCC6;margin-bottom:8px}
+.foot-list{list-style:none;margin:0 0 16px;padding:0}
+.foot-list a{display:inline-flex;align-items:center;min-height:44px}
 .foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:24px;padding-top:12px;border-top:1px solid #3A3E42;font-size:.9375rem}
 .foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
 .foot-links span{color:#C9CCC6}
 .foot :focus-visible{outline-color:var(--yellow)}
+.staff-band{background:var(--yellow-2);border-bottom:2px dashed var(--ink)}
+.staff-band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;padding-top:4px;padding-bottom:4px}
+.staff-band p{margin:0;padding:8px 0}
+.staff-tabs ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 20px}
+.staff-tabs a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
+.staff-tabs a:hover{color:var(--ink);border-bottom-color:var(--field)}
+.staff-tabs a[aria-current="page"]{border-bottom-color:var(--ink)}
+.staff-tabs a:focus-visible{outline-color:var(--ink)}
+.board-stats{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-2);margin:0 0 4px}
+.board-msg{font-weight:600;margin:0 0 16px;min-height:1.6em}
+.board{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));align-items:start}
+.col{background:#F1F2EF;border:2px solid var(--ink);border-top-width:8px;border-radius:4px;padding:12px}
+.col h2{font-size:1.125rem;display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 12px}
+.col h2:focus{outline:none}
+.col h2:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.col .count{font:700 .9375rem/1 var(--mono);background:var(--ink);color:var(--page);padding:4px 8px;border-radius:2px}
+.col-0{border-top-color:var(--ink-2)}.col-1{border-top-color:var(--blue)}.col-2{border-top-color:var(--red)}.col-3{border-top-color:var(--yellow)}.col-4{border-top-color:var(--green)}
+.bcards{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.bcard{background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:12px}
+.bcard p{margin:0}
+.bc-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 8px;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.9375rem}
+.bc-no{font-weight:700}
+.bc-since{font-family:var(--sans);font-size:.875rem;color:var(--ink-2);white-space:nowrap}
+.bcard .bc-veh{font-weight:700;margin-top:4px}
+.bc-job,.bc-who{color:var(--ink-2);font-size:.9375rem}
+.bc-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.bc-acts .btn{min-height:44px;padding:8px 12px;font-size:.9375rem}
+.empty{color:var(--ink-2);font-size:.9375rem;margin:0}
+.stamp{display:inline-block;font:600 .9375rem/1.4 var(--mono);font-variant-numeric:tabular-nums;border:2px solid var(--ink);padding:4px 8px;border-radius:2px;background:var(--card);margin-bottom:24px}
+.rec-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px;margin-bottom:8px}
+.rec-search{flex:1 1 16rem;max-width:28rem}
+.rec-count{font-weight:600;margin:0 0 12px}
+table.list tbody th{font-weight:600}
+table.rec th,table.rec td{white-space:nowrap}
+table.rec tbody th,table.rec thead th:first-child{position:sticky;left:0;z-index:1}
+table.rec tbody th{background:var(--card);box-shadow:inset -2px 0 0 var(--rule)}
+.scroll-x:focus-visible{outline-offset:2px}
+.mail-row{display:grid;gap:20px;padding:32px 0;border-top:2px solid var(--ink)}
+.mail-row:first-of-type{border-top:0;padding-top:0}
+@media (min-width:960px){.mail-row{grid-template-columns:18rem 1fr;gap:48px}}
+.mail-meta p{margin:0 0 8px}
+.mail{background:var(--card);border:2px solid var(--ink);border-radius:4px;max-width:36rem;overflow:hidden}
+.mail-head{margin:0;padding:12px 16px;background:#F1F2EF;border-bottom:1px solid var(--rule);display:grid;gap:4px;font-size:.9375rem}
+.mail-head div{display:grid;grid-template-columns:4.5rem 1fr;gap:8px}
+.mail-head dt{color:var(--ink-2)}
+.mail-head dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.mail-body{padding:20px 16px 4px}
+.mail-brand{display:flex;align-items:center;gap:12px;font:700 1.125rem/1 var(--head);padding-bottom:12px;border-bottom:3px solid var(--yellow);margin-bottom:16px}
+.mail-brand .badge{width:32px;height:32px;font-size:.875rem}
+.mail-ticket{background:var(--yellow-2);border:2px dashed var(--ink);border-radius:4px;padding:12px 16px;font-family:var(--mono);font-variant-numeric:tabular-nums;margin:0 0 16px}
+.mail-ticket p{margin:0}
+.mail-ticket .no{font-weight:700}
+.mail-table{border-collapse:collapse;width:100%;max-width:24rem;margin:0 0 16px;font-variant-numeric:tabular-nums;font-size:.9375rem}
+.mail-table th,.mail-table td{padding:8px;border-bottom:1px solid var(--rule);text-align:left}
+.mail-table td{text-align:right}
+.mail-table thead th{border-bottom:2px solid var(--ink)}
+.mail-table thead th+th{text-align:right}
+.mail-table tfoot th,.mail-table tfoot td{font-weight:700;border-bottom:0}
+.mail-foot{padding:12px 16px;border-top:1px solid var(--rule);background:#F1F2EF;font-size:.875rem;color:var(--ink-2)}
+.mail-foot p{margin:0 0 4px}
+.linkish{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;border:0;background:none;color:var(--blue);font:inherit;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer}
+.linkish:hover{color:var(--blue-d)}
+.app-grid{display:grid;gap:32px}
+@media (min-width:960px){.app-grid{grid-template-columns:1fr 19rem;gap:64px;align-items:center}}
+.app-list{margin:0 0 24px;padding-left:24px}
+.app-list li{margin-bottom:8px}
+.stores{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px}
+.stores .btn{min-width:10rem}
+.app-fig{margin:0;justify-self:center}
+.app-fig figcaption{text-align:center;margin-top:12px;font-size:.9375rem;color:var(--ink-2)}
+.phone{width:280px;max-width:100%;border:12px solid var(--ink);border-radius:36px;background:var(--card);overflow:hidden}
+.ph-scr{padding:16px 16px 0;font-size:.875rem;line-height:1.4}
+.ph-slot{width:64px;height:8px;border-radius:4px;background:var(--rule);margin:0 auto 16px}
+.ph-bar{display:flex;align-items:center;gap:8px;font:700 1rem/1 var(--head);padding-bottom:12px;border-bottom:3px solid var(--yellow);margin-bottom:12px}
+.ph-bar .badge{width:28px;height:28px;font-size:.8125rem}
+.ph-scr p{margin:0}
+.ph-no{font:700 1rem/1.3 var(--mono)}
+.ph-scr .ph-veh{margin-bottom:12px;color:var(--ink-2)}
+.ph-steps{list-style:none;margin:0 0 12px;padding:0}
+.ph-steps li{display:flex;justify-content:space-between;gap:8px;padding:8px 4px;border-top:1px solid var(--rule)}
+.ph-steps .now{font-weight:700;background:var(--yellow-2)}
+.ph-steps span{font-family:var(--mono);color:var(--ink-2)}
+.ph-item{border:2px solid var(--ink);border-radius:4px;padding:8px;margin-bottom:16px}
+.ph-item .chip{margin-bottom:8px}
+.ph-scr .ph-line{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.ph-line b{font-family:var(--mono)}
+.ph-acts{display:flex;gap:8px}
+.ph-btn{flex:1;text-align:center;padding:8px 4px;border:2px solid var(--ink);border-radius:4px;font-weight:600;background:var(--yellow)}
+.ph-btn-2{background:var(--card)}
+.ph-tabs{display:flex;border-top:2px solid var(--ink);margin:0 -16px}
+.ph-tabs span{flex:1;text-align:center;padding:12px 4px;font-weight:600;font-size:.8125rem}
+.ph-tabs .on{background:var(--ink);color:var(--yellow)}
+.drive{margin:0 0 16px;padding-left:24px}
+.drive li{margin-bottom:12px;padding-left:4px}
+.route{width:100%;max-width:340px;height:auto;margin:0 auto}
+.route-fig{margin:0}
+.route-fig figcaption{margin-top:12px;font-size:.9375rem;color:var(--ink-2)}
+.brings{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:0 32px}
+@media (min-width:720px){.brings{grid-template-columns:1fr 1fr}}
+.brings li{padding:16px 0;border-top:1px solid var(--rule)}
+.brings h3{margin-bottom:4px}
+.brings p{margin:0;color:var(--ink-2)}
+.perks{list-style:none;margin:0 0 24px;padding:0}
+.perks li{padding:12px 0;border-top:1px solid var(--rule)}
+.perks li:first-child{border-top:0;padding-top:0}
+.go-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600}
+body.staff .foot{padding-bottom:40px}
+body.staff .actbar{display:none}
+@media (max-width:959px){body.staff .demo-toast{bottom:16px}}
 .actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--page);border-top:2px solid var(--ink)}
 @media (min-width:960px){.actbar{display:none}}
 @media (max-width:959px){.demo-toast{bottom:84px}}
@@ -189,9 +302,9 @@ table.list tr.new td{background:var(--yellow-2);font-weight:600}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></symbol></svg>
 <a class="skip" href="#main">Skip to main content</a>
-<div class="sample-bar"><div class="sb-in"><p>Sample Custom Build by Ari Leon Boozer, with online booking, a price estimator and a customer sign-in. The garage, prices and phone number are made up.</p><a href="/samples/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>See all samples</span></a></div></div>
+<div class="sample-bar"><div class="sb-in"><p>Sample Custom Build by Ari Leon Boozer: booking, estimates, job status, a staff board, records, emails, a town page and an app. The garage, prices and phone number are made up.</p><a href="/samples/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>See all samples</span></a></div></div>
 <header class="site-head">
 <div class="wrap head-row">
 <a class="logo" href="index.html"><span class="badge" aria-hidden="true">WD</span><span class="logo-name">Wing Dam Garage<span class="logo-sub">Auto repair · Landing, Arkansas</span></span></a>
@@ -215,7 +328,8 @@ table.list tr.new td{background:var(--yellow-2);font-weight:600}
 </main>
 <footer class="foot"><div class="wrap">
 <div class="foot-grid"><div><h2>Wing Dam Garage</h2><p>1180 River Road, Landing, Arkansas</p><p>(870) 555-0193</p></div><div><h2>Hours</h2><p>Monday to Friday, 7:30 a.m. to 5:30 p.m.<br>Saturday, 8 a.m. to noon.</p></div>
-<div><h2>Online</h2><p><a href="book.html">Book a time</a><br><a href="estimate.html">Price estimate</a><br><a href="status.html">Check on your car</a></p></div></div>
+<div><h2>Online</h2><ul class="foot-list"><li><a href="book.html">Book a time</a></li><li><a href="estimate.html">Price estimate</a></li><li><a href="status.html">Check on your car</a></li></ul></div>
+<div><h2>Towns we serve</h2><ul class="foot-list"><li><a href="persimmon-landing.html">Persimmon Landing</a></li></ul><h2>Staff</h2><ul class="foot-list"><li><a href="shop-board.html">Staff sign-in</a></li></ul></div></div>
 <div class="foot-links"><span>© 2026 Wing Dam Garage</span><a href="privacy.html">Privacy</a><a href="es/estimate.html" lang="es" hreflang="es">Español</a></div>
 </div></footer>
 <div class="actbar"><a class="btn btn-go" href="book.html"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><span>Book a time</span></a>
@@ -224,7 +338,7 @@ table.list tr.new td{background:var(--yellow-2);font-weight:600}
 <script>
 /* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
 (function () {
-  var notes = {"text": "Sample: on your site, this button starts a text message to your number.", "call": "Sample: on your site, this button calls your number.", "map": "Sample: on your site, this opens your address in Maps.", "facebook": "Sample: on your site, this opens your Facebook page.", "instagram": "Sample: on your site, this opens your Instagram page.", "booking": "Sample: on your site, this opens the booking page you already use, such as Square or Booksy.", "form": "Sample: nothing was sent. On your site, this form emails you what the visitor wrote.", "quote": "Sample: nothing was sent. On your site, this form emails you the request, with the service already filled in."};
+  var notes = {"text": "Sample: on your site, this button starts a text message to your number.", "call": "Sample: on your site, this button calls your number.", "map": "Sample: on your site, this opens your address in Maps.", "facebook": "Sample: on your site, this opens your Facebook page.", "instagram": "Sample: on your site, this opens your Instagram page.", "booking": "Sample: on your site, this opens the booking page you already use, such as Square or Booksy.", "form": "Sample: nothing was sent. On your site, this form emails you what the visitor wrote.", "quote": "Sample: nothing was sent. On your site, this form emails you the request, with the service already filled in.", "google": "Sample: on your site, this opens your Google Business Profile.", "review": "Sample: on your site, this opens your Google review page, so customers can leave a review.", "email": "Sample: on your site, this opens an email to your address.", "pay": "Sample: on your site, this opens the payment page you already use.", "checkout": "Sample: nothing was charged. On your site, this opens Stripe's own checkout page to pay by card.", "order": "Sample: nothing was ordered. On your site, the order is emailed to you and the customer gets a confirmation email.", "appstore": "Sample: on your site, this opens your app's page in the App Store.", "googleplay": "Sample: on your site, this opens your app's page on Google Play.", "unsub": "Sample: in the real email, this link stops these emails for that customer.", "maillink": "Sample: in the real email, this button opens that page on the shop's website."};
   var toast = document.getElementById('demo-toast');
   var msg = document.getElementById('demo-msg');
   var timer = null;
@@ -270,6 +384,9 @@ function sampleNow() {
   }
   job.addEventListener('change', upd);
   document.querySelectorAll('input[name="size"]').forEach(function (r) { r.addEventListener('change', upd); });
+  /* A link such as estimate.html?job=tires (from the town page) opens with that job picked */
+  var want = new URLSearchParams(location.search).get('job');
+  if (want && C.jobs[want]) { job.value = want; }
   upd();
 }());
 </script>

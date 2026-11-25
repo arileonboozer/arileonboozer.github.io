@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="es-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caminos del condado cerrados | Condado de Sweetgum (sitio de muestra)</title>
+<meta name="description" content="Muestra de Desarrollo a la Medida de Ari Leon Boozer para un condado inventado de Arkansas: calculadora de impuestos, tablero de caminos cerrados, archivo de reuniones con búsqueda y aviso de prohibición de quemas, todo como demostración.">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#7A2430">
+<link rel="alternate" hreflang="en" href="../roads.html">
+<style>
+.sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
+.sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.sample-bar a:hover{color:#FFFFFF}
+.sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+.sample-bar .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.demo-toast{position:fixed;left:12px;right:12px;bottom:16px;z-index:50;max-width:30rem;margin:0 auto;background:#1B1A17;color:#F5F0E6;border-radius:6px;padding:12px 12px 12px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.25);font:400 1rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s linear .15s}
+.demo-toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s}
+.demo-toast p{margin:4px 0 0;flex:1}
+.demo-toast button{flex:none;min-height:44px;min-width:44px;padding:8px 12px;border:2px solid #F5F0E6;border-radius:4px;background:transparent;color:#F5F0E6;font:600 .9375rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer}
+.demo-toast button:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.demo-toast,.demo-toast.on{transition:none;transform:none}}
+@media print{.sample-bar,.demo-toast{display:none}}
+
+:root{--page:#FFFFFF;--stone:#EFEDE7;--ink:#1B1B1F;--ink-2:#4B4B53;--rule:#C9C6BE;--field:#62646A;
+--ox:#7A2430;--ox-d:#5C1922;--ox-t:#F7EEEF;--amber:#FBE3AE;--amber-d:#7A4300;--blue:#1D4E89;--green:#1E6B34;
+--staff:#EDF1F6;--staff-line:#46617E;
+--head:Cambria,"Hoefler Text","Noto Serif","DejaVu Serif",Georgia,serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;--gut:20px;--ease:cubic-bezier(.22,1,.36,1)}
+@media (min-width:720px){:root{--gut:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 1.125rem/1.6 var(--sans);font-variant-numeric:lining-nums}
+svg{display:block}
+a{color:var(--ox);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--ox-d)}
+:focus-visible{outline:3px solid var(--ox);outline-offset:3px}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:60;background:var(--ink);color:#fff;padding:12px 16px;border-radius:4px;font-weight:600}
+.skip:focus{top:12px;color:#fff}
+.wrap{max-width:72rem;margin:0 auto;padding:0 var(--gut)}
+.narrow,.wrap.narrow>*{max-width:46rem}
+.wrap.narrow{max-width:72rem}
+.ic{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0 0 12px;text-wrap:balance}
+h1{font-size:clamp(2.25rem,3vw + 1.25rem,3.5rem)}
+h2{font-size:clamp(1.625rem,1.2vw + 1.125rem,2.25rem)}
+h3{font-size:1.3125rem}
+p{margin:0 0 16px;text-wrap:pretty}
+ul,ol{margin:0 0 16px;padding-left:24px}
+li{margin-bottom:4px}
+.num{font-variant-numeric:tabular-nums}
+.site-head{background:var(--ox);color:#fff}
+.head-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:12px;min-height:44px;color:#fff;text-decoration:none;flex:1 1 0;min-width:0}
+.logo:hover{color:#fff}
+.mark{width:44px;height:44px;flex:none}
+.logo-name{font:700 1.5rem/1.1 var(--head)}
+.logo-sub{display:block;font:400 .9375rem/1.3 var(--sans);color:#F2DDE0}
+.nav{order:3;width:100%;border-top:1px solid #9A4652;padding-top:4px}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 24px}
+.nav li{margin:0}
+.nav a{display:inline-flex;align-items:center;min-height:44px;color:#fff;font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:#E4BCC2;color:#fff}
+.nav a[aria-current="page"]{border-bottom-color:#fff}
+.lang{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;font-weight:600;color:#fff;flex:none}
+.lang:hover{color:#fff}
+.site-head :focus-visible{outline-color:#fff}
+.alert{background:var(--amber);color:var(--ink);border-top:2px solid var(--amber-d);border-bottom:2px solid var(--amber-d)}
+.alert-in{display:flex;gap:12px;align-items:flex-start;padding-top:12px;padding-bottom:12px}
+.alert .ic{width:28px;height:28px;color:var(--amber-d);margin-top:2px}
+.alert p{margin:0}
+.alert a{color:var(--ink);font-weight:600}
+.alert a:hover{color:var(--ink)}
+.alert :focus-visible{outline-color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:4px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:600 1rem/1.2 var(--sans);cursor:pointer;text-decoration:none;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
+.btn:hover{background:var(--stone);color:var(--ink)}
+.btn:active{transform:scale(.98)}
+.btn-go{background:var(--ox);border-color:var(--ox);color:#fff}
+.btn-go:hover{background:var(--ox-d);border-color:var(--ox-d);color:#fff}
+.btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
+.acts{display:flex;flex-wrap:wrap;gap:8px 12px;margin:12px 0 0}
+.page-top{padding:40px 0 24px}
+@media (min-width:960px){.page-top{padding:56px 0 32px}}
+.lede{font-size:1.25rem;max-width:44rem}
+.section{padding:40px 0;border-top:2px solid var(--ink)}
+@media (min-width:960px){.section{padding:56px 0}}
+.band{background:var(--stone)}
+.two{display:grid;gap:32px}
+@media (min-width:960px){.two{grid-template-columns:1fr 1fr;gap:48px;align-items:start}.two-wide{grid-template-columns:1.3fr .7fr}}
+.note{color:var(--ink-2);font-size:1rem}
+.hint{color:var(--ink-2);font-size:1rem;margin:-4px 0 8px}
+.emerg{font-weight:700}
+.stamp{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:0 0 12px;padding:8px 12px;border:4px double var(--ox);border-radius:2px;background:#fff;color:var(--ox);font:600 .9375rem/1.35 var(--sans);font-variant-numeric:tabular-nums}
+.stamp-by{color:var(--ink-2);font-weight:400}
+.stamps{display:flex;flex-wrap:wrap;gap:0 12px}
+.hero{padding:40px 0 48px}
+@media (min-width:960px){.hero{padding:56px 0 64px}}
+.hero-grid{display:grid;gap:32px}
+@media (min-width:960px){.hero-grid{grid-template-columns:1.25fr .75fr;gap:48px;align-items:start}}
+.card{background:#fff;border:2px solid var(--ink);border-radius:4px;padding:20px}
+.hours{width:100%;border-collapse:collapse;font-size:1rem;font-variant-numeric:tabular-nums;margin-bottom:12px}
+.hours caption{text-align:left;font:700 1.3125rem/1.2 var(--head);margin-bottom:8px}
+.hours th,.hours td{padding:8px 0;border-top:1px solid var(--rule);text-align:left;font-weight:400}
+.hours td{text-align:right;white-space:nowrap}
+.hours tr.today th,.hours tr.today td{font-weight:700}
+.today-tag{margin-left:4px;font-size:.8125rem;font-weight:700;background:var(--ox);color:#fff;padding:4px 8px;border-radius:2px}
+.open-st{font-weight:600;margin:0 0 12px}
+.tasks{list-style:none;margin:0;padding:0;display:grid;gap:0 32px}
+@media (min-width:720px){.tasks{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){.tasks{grid-template-columns:1fr 1fr 1fr}}
+.tasks li{margin:0}
+.tasks a{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;height:100%;padding:16px 0 20px;border-top:2px solid var(--ink);color:var(--ink);text-decoration:none}
+.tasks a:hover{color:var(--ink)}
+.tasks a:hover .t-name{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.tasks .ic{margin-top:4px;color:var(--ox)}
+.t-name{display:block;font:700 1.25rem/1.25 var(--head);color:var(--ox);margin-bottom:4px}
+.t-desc{display:block;color:var(--ink-2);font-size:1rem}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border:1px solid transparent;border-radius:2px;font:700 .875rem/1.3 var(--sans)}
+.chip svg{width:14px;height:14px;flex:none}
+.s-closed{background:var(--ink);color:#fff}
+.s-water{background:var(--blue);color:#fff}
+.s-lane{background:var(--amber);color:var(--ink);border-color:var(--amber-d)}
+.s-open{background:var(--green);color:#fff}
+.closures{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:16px}
+@media (min-width:960px){.closures{grid-template-columns:1fr 1fr}}
+.closures>li{margin:0}
+.closure{background:#fff;border:2px solid var(--ink);border-left-width:8px;border-radius:4px;padding:16px 20px}
+.c-water{border-left-color:var(--blue)}
+.c-lane{border-left-color:var(--amber-d)}
+.c-open{border-left-color:var(--green)}
+.closure h3{margin:12px 0 4px}
+.closure p{margin:0 0 8px}
+.closure dl,.facts{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:8px 0 0;font-variant-numeric:tabular-nums}
+.closure dt,.facts dt{font-weight:600}
+.closure dd,.facts dd{margin:0}
+.none{color:var(--ink-2)}
+.mini{list-style:none;margin:0 0 16px;padding:0}
+.mini li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:12px 0;border-top:1px solid var(--rule);margin:0}
+.mini .when{color:var(--ink-2);font-size:1rem;font-variant-numeric:tabular-nums}
+.mini a,.more{display:inline-flex;align-items:center;min-height:44px}
+.map-wrap{margin:0 0 24px}
+.map{width:100%;height:auto;max-width:760px;border:2px solid var(--ink);border-radius:4px;background:#F4F2EC}
+.map .mk{display:none}
+.map .mk.on{display:inline}
+.legend{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:1rem}
+.legend li{display:flex;align-items:center;gap:8px;margin:0}
+.legend svg{width:18px;height:18px}
+.staff{background:var(--staff);border:2px dashed var(--staff-line);border-radius:4px;padding:20px;margin-top:32px}
+@media (min-width:720px){.staff{padding:28px}}
+.staff-tag{font-weight:700;color:var(--staff-line);margin-bottom:16px}
+.staff h3{margin-top:24px}
+.st-row{background:#fff;border:1px solid var(--staff-line);border-radius:4px;padding:16px;margin-bottom:12px}
+.st-row p{margin:0 0 8px;font-weight:600}
+.st-grid{display:grid;gap:12px}
+@media (min-width:720px){.st-grid{grid-template-columns:1fr 1fr}}
+.st-live{font-weight:600;margin:16px 0 0;min-height:1.6em}
+form.fields,.fields{display:grid;gap:16px;max-width:36rem}
+label{display:block;font-weight:600;margin-bottom:8px}
+input,select,textarea{width:100%;font:inherit;padding:12px;border:2px solid var(--field);border-radius:4px;background:#fff;color:var(--ink)}
+select{min-height:52px}
+textarea{min-height:8rem}
+input[type="date"]{min-height:52px}
+.radios{display:flex;flex-wrap:wrap;gap:8px 24px;border:0;padding:0;margin:0}
+.radios legend{font-weight:600;margin-bottom:8px;padding:0}
+.radios label{display:flex;align-items:center;gap:8px;min-height:44px;font-weight:400;margin:0}
+.radios input{width:24px;height:24px;margin:0;accent-color:var(--ox)}
+.check{display:flex;align-items:flex-start;gap:12px;font-weight:400}
+.check input{width:24px;height:24px;margin:2px 0 0;accent-color:var(--ox);flex:none}
+.money-in{position:relative}
+.money-in span{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-weight:600;color:var(--ink-2)}
+.money-in input{padding-left:32px;font-variant-numeric:tabular-nums}
+.pubrec{border-left:4px solid var(--ox);padding:8px 0 8px 16px;margin:0;font-size:1rem}
+.ledger{background:#fff;border:2px solid var(--ink);border-radius:4px}
+.ledger-h{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--stone);border-bottom:2px solid var(--ink);font-weight:700}
+.ledger .row{display:grid;grid-template-columns:1.25rem 1fr auto;gap:4px 12px;padding:12px 16px;border-top:1px solid var(--rule);align-items:baseline}
+.ln{font:600 .875rem/1.4 var(--mono);color:var(--ink-2)}
+.how{display:block;color:var(--ink-2);font-size:.9375rem;font-variant-numeric:tabular-nums}
+.amt{font-weight:700;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.ledger .total{background:var(--ox-t);border-top:2px solid var(--ink)}
+.ledger .total .amt{font-size:1.5rem;color:var(--ox)}
+table.list{width:100%;border-collapse:collapse;background:#fff;font-size:1rem;font-variant-numeric:tabular-nums}
+table.list caption{text-align:left;font:700 1.3125rem/1.2 var(--head);margin-bottom:8px}
+table.list th,table.list td{padding:12px;border:1px solid var(--rule);text-align:left;vertical-align:top}
+table.list thead th{background:var(--stone);border-bottom:2px solid var(--ink)}
+table.list td.r,table.list th.r{text-align:right}
+table.list tfoot td,table.list tfoot th{font-weight:700;border-top:2px solid var(--ink)}
+.scroll-x{overflow-x:auto}
+.meets{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.meets>li{margin:0}
+.meet{display:grid;gap:12px 24px;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:20px}
+@media (min-width:720px){.meet{grid-template-columns:8.5rem 1fr}}
+.cal{border-top:6px solid var(--ox);padding-top:8px;font-variant-numeric:tabular-nums}
+.cal .m{display:block;font-weight:700;color:var(--ox)}
+.cal .d{display:block;font:700 2.5rem/1 var(--head)}
+.cal .w{display:block;color:var(--ink-2);font-size:1rem}
+.meet h3{margin-bottom:4px}
+.meet .where{margin:0 0 12px}
+details{margin:12px 0 0}
+summary{cursor:pointer;font-weight:600;color:var(--ox);min-height:44px;display:flex;align-items:center;gap:12px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"";border-left:8px solid currentColor;border-top:6px solid transparent;border-bottom:6px solid transparent}
+details[open]>summary::before{transform:rotate(90deg)}
+.finder{display:grid;gap:16px;margin:0 0 16px;max-width:none}
+@media (min-width:720px){.finder{grid-template-columns:2fr 1fr 1fr auto;align-items:end}}
+.count{font-weight:600;margin:0 0 16px}
+.arch{list-style:none;margin:0;padding:0}
+.arch>li{padding:20px 0;border-top:2px solid var(--ink);margin:0}
+@media (min-width:860px){.arch>li{display:grid;grid-template-columns:15rem 1fr;column-gap:32px}}
+.arch h3{margin-bottom:4px}
+.arch .board{color:var(--ink-2);margin:0 0 8px}
+.arch ul{margin:0 0 8px}
+.arch ul:not(.ords){list-style:disc}
+.ords{list-style:none;padding:0}
+.ords li{margin:0 0 8px}
+.ord-no{font:600 .9375rem/1.4 var(--mono);color:var(--ox);margin-right:8px}
+.ord-v{color:var(--ink-2);font-size:.9375rem;white-space:nowrap}
+mark{background:var(--amber);color:var(--ink);padding:0 2px}
+.agenda{counter-reset:none;padding-left:28px}
+.agenda>li{margin:0 0 16px;padding-left:4px}
+.agenda>li::marker{font-weight:700}
+.agenda ol{list-style:lower-alpha;margin:8px 0 0}
+.agenda .added{background:var(--ox-t);border-left:4px solid var(--ox);padding:4px 8px}
+.off{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+@media (min-width:960px){.off{grid-template-columns:1fr 1fr}}
+.off>li{margin:0;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:20px}
+.off h3{margin-bottom:4px}
+.jps{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:720px){.jps{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){.jps{grid-template-columns:1fr 1fr 1fr}}
+.jps li{margin:0;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:16px 20px}
+.jps .plate{display:inline-block;margin-bottom:8px}
+.jp-n{font:700 1.25rem/1.3 var(--head);margin:0 0 4px}
+.jps .note{margin:0 0 12px}
+.two>div>h2:not(:first-child){margin-top:32px}
+.off-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.plate{flex:none;background:var(--ox);color:#fff;font:700 .9375rem/1.2 var(--head);padding:4px 12px;border:4px double #F2DDE0;border-radius:2px;font-variant-numeric:lining-nums}
+.off .who{font-weight:600;margin-bottom:8px}
+.doclist{list-style:none;margin:0 0 16px;padding:0}
+.doclist li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;padding:12px 0;border-top:1px solid var(--rule);margin:0}
+.doclist .meta{display:block;color:var(--ink-2);font-size:1rem}
+.notice{padding:20px 0;border-top:2px solid var(--ink)}
+.notice h3{margin-bottom:8px}
+.foot{background:var(--stone);border-top:6px solid var(--ox);padding:40px 0 48px;color:var(--ink)}
+.foot-grid{display:grid;gap:24px}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr}}
+.foot h2{font-size:1.25rem;margin-bottom:8px}
+.foot p{margin-bottom:8px}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin:0}
+.foot li a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:24px;padding-top:12px;border-top:1px solid var(--rule);font-size:1rem}
+.foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
+.foot-mark{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.foot-mark h2{margin:0}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media print{.nav,.lang,.skip,.acts,.staff,.finder,.foot-grid,.alert .ic{display:none}.site-head,.foot{background:#fff;color:#000}.logo,.logo-sub{color:#000}.alert{background:#fff}body{font-size:12pt}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6.1 0-3.4 2.4-5.4 3.6-8.4.4 1.6 1.4 2.8 2.6 3.4.2-2.9 1.6-5.4 3.8-6.9-.4 2.8.9 4.6 2.2 6.4 1.1 1.5 1.8 3 1.8 5 0 3.8-3 6.6-7.5 6.6z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></symbol><symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2"/><rect x="7" y="14" width="10" height="6"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol></svg>
+<a class="skip" href="#main">Saltar al contenido principal</a>
+<div class="sample-bar"><div class="sb-in"><p>Muestra de Desarrollo a la Medida de Ari Leon Boozer. El condado de Sweetgum, sus autoridades, sus avisos y sus teléfonos son inventados. Este no es el sitio web de un gobierno real.</p><a href="/es/muestras/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>Ver todas las muestras</span></a></div></div>
+<header class="site-head">
+<div class="wrap head-row">
+<a class="logo" href="index.html"><svg class="mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><path d="M22 24 L22 43" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/><path d="M22.0 25.0 Q14.9 28.2 10.6 27.9 Q11.4 23.8 14.6 20.0 Q8.5 17.0 6.2 12.6 Q11.2 10.8 17.5 12.4 Q18.0 4.3 22.0 0.0 Q26.0 4.3 26.5 12.4 Q32.8 10.8 37.8 12.6 Q35.5 17.0 29.4 20.0 Q32.6 23.8 33.4 27.9 Q29.1 28.2 22.0 25.0 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/><g stroke="#7A2430" stroke-width="1" stroke-linecap="round"><path d="M22 24 L13.1 26.0"/><path d="M22 24 L9.7 14.0"/><path d="M22 24 L22.0 4.2"/><path d="M22 24 L34.3 14.0"/><path d="M22 24 L30.9 26.0"/></g></svg><span class="logo-name">Condado de Sweetgum<span class="logo-sub">Arkansas · Juzgado en Court Square, Landing</span></span></a>
+<nav class="nav" aria-label="Principal"><ul><li><a href="property-tax.html">Impuestos a la propiedad</a></li><li><a href="roads.html" aria-current="page">Caminos cerrados</a></li><li><a href="meetings.html">Reuniones</a></li><li><a href="officials.html">Oficinas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav>
+<a class="lang" href="../roads.html" lang="en" hreflang="en">English</a>
+</div>
+<div class="alert" id="burnban" role="region" aria-label="Alerta"><div class="wrap alert-in"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-flame"/></svg>
+<p><strong>Prohibición de quemas vigente.</strong> Desde el 9 de noviembre de 2026, no se permite quemar al aire libre en el condado de Sweetgum fuera de las ciudades, por orden del juez del condado, Wendell Ashby. <a href="notices.html#burn-ban">Qué incluye la prohibición</a></p></div></div>
+</header>
+<main id="main">
+<section class="page-top"><div class="wrap"><h1>Caminos del condado cerrados</h1><p class="lede">Caminos del condado cerrados y cruces bajos inundados, publicados por el Departamento de Caminos. Nunca maneje por un camino cubierto de agua: dé la vuelta.</p><p>Departamento de Caminos: (870) 555-0158 · Taller de Caminos del Condado, 1800 County Road 122</p></div></section>
+<section class="section"><div class="wrap">
+<h2>Cerrados ahora</h2>
+<p class="count" id="cl-count">4 cierres publicados</p>
+<ul class="closures" id="cl-list"><li class="closure c-water"><span class="chip s-water"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 5q3-3 6 0t6 0M1 10q3-3 6 0t6 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>Agua sobre el camino</span><h3>County Road 307, Willow Chute Road</h3><p>Cruce bajo en Fiddle Creek</p><dl><dt>Publicado</dt><dd>24 de noviembre de 2026, 6:40&nbsp;a.&nbsp;m.</dd><dt>Reapertura prevista</dt><dd>Cuando baje el agua y se revise el cruce</dd><dt>Desvío</dt><dd>County Road 118 hasta la carretera estatal</dd></dl></li><li class="closure c-water"><span class="chip s-water"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 5q3-3 6 0t6 0M1 10q3-3 6 0t6 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>Agua sobre el camino</span><h3>County Road 330, Gum Pond Road</h3><p>Cruce bajo en el pantano de Gum Pond</p><dl><dt>Publicado</dt><dd>23 de noviembre de 2026, 5:15&nbsp;p.&nbsp;m.</dd><dt>Reapertura prevista</dt><dd>Cuando baje el agua y se revise el cruce</dd><dt>Desvío</dt><dd>Rodee por Persimmon Road (County Road 205)</dd></dl></li><li class="closure c-lane"><span class="chip s-lane"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1l6 12H1z" fill="#1B1B1F"/></svg>1 carril abierto</span><h3>County Road 122, Shop Road</h3><p>Cambio de alcantarilla a 1 milla al oeste del taller de caminos, con señaleros de 7:00&nbsp;a.&nbsp;m. a 4:00&nbsp;p.&nbsp;m.</p><dl><dt>Publicado</dt><dd>18 de noviembre de 2026, 7:05&nbsp;a.&nbsp;m.</dd><dt>Reapertura prevista</dt><dd>25 de noviembre de 2026</dd></dl></li><li class="closure c-closed"><span class="chip s-closed"><svg viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="none" stroke="#FFFFFF" stroke-width="2"/><path d="M4 4l6 6M10 4l-6 6" stroke="#FFFFFF" stroke-width="2"/></svg>Cerrado</span><h3>County Road 214, Cane Creek Road</h3><p>Cambio del puente sobre Cane Creek, entre County Road 210 y County Road 238</p><dl><dt>Publicado</dt><dd>2 de noviembre de 2026, 7:30&nbsp;a.&nbsp;m.</dd><dt>Reapertura prevista</dt><dd>18 de diciembre de 2026</dd><dt>Desvío</dt><dd>County Road 210 (Brushy Lane) hasta County Road 238 (Pecan Grove Road)</dd></dl></li></ul>
+<div class="map-wrap"><svg class="map" id="map" viewBox="0 0 640 400" role="img" aria-label="Dibujo de caminos inventados del condado de Sweetgum, sin escala, con los cierres de hoy marcados. La lista de esta página tiene la misma información.">
+<rect x="0" y="0" width="640" height="400" fill="#F4F2EC"/>
+<path d="M300 0 C280 60 340 110 320 160 S300 260 350 300 S380 370 370 400" fill="none" stroke="#9CC2E2" stroke-width="16"/>
+<path d="M20 150 C80 128 140 112 176 120 S262 150 316 152" fill="none" stroke="#9CC2E2" stroke-width="6"/>
+<path d="M640 60 C560 92 500 112 472 148 S404 188 334 186" fill="none" stroke="#9CC2E2" stroke-width="6"/>
+<path d="M556 316 C552 330 548 344 542 372" fill="none" stroke="#9CC2E2" stroke-width="5"/>
+<ellipse cx="560" cy="298" rx="40" ry="20" fill="#CFE2F1" stroke="#9CC2E2" stroke-width="3"/>
+<path d="M0 214 L330 182 L412 176 L640 232" fill="none" stroke="#1B1B1F" stroke-width="6"/>
+<path d="M20 64 L120 92 L176 120 L250 162 L326 178" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M396 158 L472 148 L600 100 L640 94" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M438 154 L438 38" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M438 38 L610 38 L626 96" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M430 320 L520 330 L600 352 L640 358" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M330 196 L262 246 L140 300 L40 336" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M380 200 L392 300" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M140 300 L112 400" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/><path d="M352 150 L378 80 L356 0" fill="none" stroke="#7C7C84" stroke-width="4" stroke-linecap="round"/>
+<rect x="334" y="150" width="70" height="48" fill="#E3DFD5" stroke="#1B1B1F" stroke-width="1.5"/>
+<rect x="378" y="300" width="52" height="34" fill="#E3DFD5" stroke="#1B1B1F" stroke-width="1.5"/>
+<text x="410" y="210" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1B1B1F">Landing</text>
+<text x="376" y="356" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1B1B1F">Persimmon Landing</text>
+<text x="36" y="202" font-family="system-ui,sans-serif" font-size="13" fill="#1B1B1F" transform="rotate(-5.5 36 202)">Carretera estatal</text>
+<text x="166" y="24" font-family="system-ui,sans-serif" font-size="13" font-style="italic" fill="#1D4E89">Mossy Fork River</text>
+<text x="30" y="170" font-family="system-ui,sans-serif" font-size="13" font-style="italic" fill="#1D4E89">Fiddle Creek</text>
+<text x="548" y="62" font-family="system-ui,sans-serif" font-size="13" font-style="italic" fill="#1D4E89">Cane Creek</text>
+<text x="530" y="270" font-family="system-ui,sans-serif" font-size="13" font-style="italic" fill="#1D4E89">Gum Pond</text>
+<g><rect x="30" y="35" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="59" y="51" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 307</text></g><g><rect x="556" y="69" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="585" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 214</text></g><g><rect x="442" y="105" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="471" y="121" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 210</text></g><g><rect x="536" y="11" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="565" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 238</text></g><g><rect x="576" y="369" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="605" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 330</text></g><g><rect x="50" y="307" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="79" y="323" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 122</text></g><g><rect x="394" y="231" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="423" y="247" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 205</text></g><g><rect x="86" y="369" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="115" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 118</text></g><g><rect x="380" y="25" width="58" height="22" rx="3" fill="#FFFFFF" stroke="#1B1B1F" stroke-width="1.5"/><text x="409" y="41" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B1B1F">CR 455</text></g>
+<g class="mk" data-road="118" data-s="closed"><rect x="117" y="341" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M123 347l10 10M133 347l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="118" data-s="water"><circle cx="128" cy="352" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M121 350q3.5-3 7 0t7 0M121 356q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="118" data-s="lane"><path d="M128 339l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="122" data-s="closed"><rect x="215" y="251" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M221 257l10 10M231 257l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="122" data-s="water"><circle cx="226" cy="262" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M219 260q3.5-3 7 0t7 0M219 266q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk on" data-road="122" data-s="lane"><path d="M226 249l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="205" data-s="closed"><rect x="373" y="247" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M379 253l10 10M389 253l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="205" data-s="water"><circle cx="384" cy="258" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M377 256q3.5-3 7 0t7 0M377 262q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="205" data-s="lane"><path d="M384 245l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="210" data-s="closed"><rect x="427" y="89" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M433 95l10 10M443 95l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="210" data-s="water"><circle cx="438" cy="100" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M431 98q3.5-3 7 0t7 0M431 104q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="210" data-s="lane"><path d="M438 87l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk on" data-road="214" data-s="closed"><rect x="461" y="137" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M467 143l10 10M477 143l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="214" data-s="water"><circle cx="472" cy="148" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M465 146q3.5-3 7 0t7 0M465 152q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="214" data-s="lane"><path d="M472 135l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="238" data-s="closed"><rect x="519" y="27" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M525 33l10 10M535 33l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="238" data-s="water"><circle cx="530" cy="38" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M523 36q3.5-3 7 0t7 0M523 42q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="238" data-s="lane"><path d="M530 25l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="307" data-s="closed"><rect x="165" y="109" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M171 115l10 10M181 115l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk on" data-road="307" data-s="water"><circle cx="176" cy="120" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M169 118q3.5-3 7 0t7 0M169 124q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="307" data-s="lane"><path d="M176 107l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="330" data-s="closed"><rect x="537" y="327" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M543 333l10 10M553 333l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk on" data-road="330" data-s="water"><circle cx="548" cy="338" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M541 336q3.5-3 7 0t7 0M541 342q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="330" data-s="lane"><path d="M548 325l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g><g class="mk" data-road="455" data-s="closed"><rect x="359" y="85" width="22" height="22" fill="#1B1B1F" stroke="#FFFFFF" stroke-width="2"/><path d="M365 91l10 10M375 91l-10 10" stroke="#FFFFFF" stroke-width="2.5"/></g><g class="mk" data-road="455" data-s="water"><circle cx="370" cy="96" r="12" fill="#1D4E89" stroke="#FFFFFF" stroke-width="2"/><path d="M363 94q3.5-3 7 0t7 0M363 100q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></g><g class="mk" data-road="455" data-s="lane"><path d="M370 83l13 23h-26z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></g>
+</svg><ul class="legend"><li><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="2" y="2" width="22" height="22" fill="#1B1B1F"/><path d="M8 8l10 10M18 8L8 18" stroke="#FFFFFF" stroke-width="2.5"/></svg>Cerrado</li><li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="#1D4E89"/><path d="M6 11q3.5-3 7 0t7 0M6 17q3.5-3 7 0t7 0" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>Agua sobre el camino</li><li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 1l12 23H1z" fill="#FBE3AE" stroke="#1B1B1F" stroke-width="2"/></svg>1 carril abierto</li></ul>
+<p class="note" style="margin-top:8px">Dibujo sin escala. La lista de arriba es la información que vale.</p></div>
+<h2>Reabiertos en los últimos 7 días</h2>
+<ul class="closures" id="cl-reopened"><li class="closure c-open"><span class="chip s-open"><svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#FFFFFF"/><path d="M4 7.2l2 2 4-4.4" fill="none" stroke="#1E6B34" stroke-width="2"/></svg>Reabierto</span><h3>County Road 455, Oxbow Bend Road</h3><p>Trabajo de cunetas y alcantarillas cerca de la curva del río</p><dl><dt>Reabierto</dt><dd>20 de noviembre de 2026, 3:10&nbsp;p.&nbsp;m.</dd></dl></li></ul>
+<p class="note">Las carreteras estatales no son caminos del condado. Para ellas, consulte el servicio de condiciones de carreteras del estado.</p>
+
+<div class="staff" aria-labelledby="st-h">
+<h2 id="st-h" class="sr-only">Vista del personal</h2>
+<p class="staff-tag">Vista del personal (muestra): en su sitio, solo el personal del Departamento de Caminos con sesión iniciada ve esto.</p>
+<p>Publique un cierre, actualícelo o reabra el camino. La lista pública y el mapa cambian al instante. En esta muestra no se guarda nada: al recargar, la lista vuelve a como estaba.</p>
+<noscript><p>La demostración del personal necesita JavaScript.</p></noscript>
+<h3>Publicar un cierre</h3>
+<form class="fields" id="st-form" novalidate>
+<div><label for="st-road">Camino del condado</label><select id="st-road"><option value="118">County Road 118, Sandhill Road</option><option value="122">County Road 122, Shop Road</option><option value="205">County Road 205, Persimmon Road</option><option value="210">County Road 210, Brushy Lane</option><option value="214">County Road 214, Cane Creek Road</option><option value="238">County Road 238, Pecan Grove Road</option><option value="307">County Road 307, Willow Chute Road</option><option value="330">County Road 330, Gum Pond Road</option><option value="455">County Road 455, Oxbow Bend Road</option></select></div>
+<div><label for="st-where">En qué parte del camino</label><input id="st-where" maxlength="140" required></div>
+<div><label for="st-status">Estado</label><select id="st-status"><option value="closed">Cerrado</option><option value="water">Agua sobre el camino</option><option value="lane">1 carril abierto</option></select></div>
+<div><label for="st-date">Reapertura prevista (déjelo en blanco si no se sabe)</label><input id="st-date" type="date"></div>
+<div><label for="st-detour">Desvío (opcional)</label><input id="st-detour" maxlength="160"></div>
+<div><button type="button" class="btn btn-go" id="st-post">Publicar en la lista pública</button></div>
+</form>
+<h3>Actualizar o reabrir</h3>
+<div id="st-rows"></div>
+<p class="st-live" id="st-live" role="status" aria-live="polite"></p>
+</div>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="foot-grid"><div><div class="foot-mark"><svg class="mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><path d="M22 24 L22 43" stroke="#7A2430" stroke-width="2.5" stroke-linecap="round"/><path d="M22.0 25.0 Q14.9 28.2 10.6 27.9 Q11.4 23.8 14.6 20.0 Q8.5 17.0 6.2 12.6 Q11.2 10.8 17.5 12.4 Q18.0 4.3 22.0 0.0 Q26.0 4.3 26.5 12.4 Q32.8 10.8 37.8 12.6 Q35.5 17.0 29.4 20.0 Q32.6 23.8 33.4 27.9 Q29.1 28.2 22.0 25.0 Z" fill="#7A2430" stroke="#7A2430" stroke-width="1" stroke-linejoin="round"/><g stroke="#EFEDE7" stroke-width="1" stroke-linecap="round"><path d="M22 24 L13.1 26.0"/><path d="M22 24 L9.7 14.0"/><path d="M22 24 L22.0 4.2"/><path d="M22 24 L34.3 14.0"/><path d="M22 24 L30.9 26.0"/></g></svg><h2>Juzgado del Condado de Sweetgum</h2></div>
+<p>1 Court Square, Landing, Arkansas</p><p>Lunes a viernes, de 8:00&nbsp;a.&nbsp;m. a 4:30&nbsp;p.&nbsp;m.<br>Cerrado los días feriados del condado.</p><p>Juzgado: (870) 555-0150</p>
+<p class="emerg">En una emergencia, llame al 911.</p><p>Línea del sheriff para lo que no es emergencia: (870) 555-0156</p></div>
+<div><h2>Servicios</h2><ul><li><a href="property-tax.html">Impuestos a la propiedad</a></li><li><a href="roads.html">Caminos cerrados</a></li><li><a href="elections.html">Elecciones</a></li><li><a href="records.html">Solicitudes de registros</a></li><li><a href="jobs.html">Empleos</a></li></ul></div>
+<div><h2>Gobierno</h2><ul><li><a href="officials.html">Oficinas y autoridades</a></li><li><a href="quorum-court.html">Quorum Court</a></li><li><a href="meetings.html">Reuniones y agendas</a></li><li><a href="budget.html">Presupuesto e informes</a></li><li><a href="notices.html">Avisos y licitaciones</a></li></ul></div></div>
+<div class="foot-links"><span>© 2026 Condado de Sweetgum (muestra)</span><a href="contact.html">Contacto y horario</a><a href="accessibility.html">Accesibilidad</a><a href="privacy.html">Privacidad</a>
+<a href="../roads.html" lang="en" hreflang="en">English</a></div>
+</div></footer>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite"><p id="demo-msg"></p><button type="button" id="demo-close">Cerrar</button></div>
+<script>
+/* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
+(function () {
+  var notes = {"text": "Muestra: en su sitio, este botón abre un mensaje de texto a su número.", "call": "Muestra: en su sitio, este botón llama a su número.", "map": "Muestra: en su sitio, esto abre su dirección en Mapas.", "facebook": "Muestra: en su sitio, esto abre su página de Facebook.", "instagram": "Muestra: en su sitio, esto abre su página de Instagram.", "booking": "Muestra: en su sitio, esto abre la página de citas que ya usa, como Square o Booksy.", "form": "Muestra: no se envió nada. En su sitio, este formulario le envía por correo lo que escribió la persona.", "quote": "Muestra: no se envió nada. En su sitio, este formulario le envía la solicitud por correo, con el servicio ya elegido.", "google": "Muestra: en su sitio, esto abre su Perfil de Negocio de Google.", "review": "Muestra: en su sitio, esto abre su página de reseñas de Google, para que sus clientes dejen una reseña.", "email": "Muestra: en su sitio, esto abre un correo a su dirección.", "pay": "Muestra: en su sitio, esto abre la página de pagos que ya usa.", "checkout": "Muestra: no se cobró nada. En su sitio, esto abre la página de pago de Stripe para pagar con tarjeta.", "order": "Muestra: no se pidió nada. En su sitio, el pedido le llega por correo y la persona recibe un correo de confirmación.", "appstore": "Muestra: en su sitio, esto abre la página de su aplicación en el App Store.", "googleplay": "Muestra: en su sitio, esto abre la página de su aplicación en Google Play.", "paytax": "Muestra: no se pagó nada. En su sitio, esto abre la página de pagos que ya usa la Oficina de Recaudación.", "assess": "Muestra: en su sitio, esto abre el servicio de tasación en línea que ya usa la Oficina de Tasación.", "voter": "Muestra: en su sitio, esto abre la búsqueda de votantes de la Secretaría de Estado de Arkansas, donde cada persona revisa su registro y su lugar de votación.", "minutes": "Muestra: en su sitio, esto abre el acta como página web, con una copia en PDF para descargar.", "recording": "Muestra: en su sitio, esto reproduce la grabación de audio de la reunión. El condado guarda cada grabación al menos 1 año, como exige la ley de Arkansas.", "pdf": "Muestra: en su sitio, esto descarga una copia en PDF. La página web es la copia principal.", "doc": "Muestra: en su sitio, esto abre el documento como página web o en PDF.", "bid": "Muestra: en su sitio, esto descarga el paquete de la licitación.", "apply": "Muestra: en su sitio, esto descarga la solicitud de empleo del condado.", "gemail": "Muestra: en su sitio, esto abre un correo a la dirección del condado de esta oficina.", "gcall": "Muestra: en su sitio, este botón llama al juzgado del condado.", "gmap": "Muestra: en su sitio, esto abre la dirección del juzgado en Mapas.", "message": "Muestra: no se envió nada. En su sitio, este mensaje llega por correo a la oficina que eligió.", "foia": "Muestra: no se envió nada. En su sitio, la solicitud llega por correo a la persona encargada de los registros, con la hora de llegada."};
+  var toast = document.getElementById('demo-toast');
+  var msg = document.getElementById('demo-msg');
+  var timer = null;
+  function hide() { toast.classList.remove('on'); }
+  function show(kind) {
+    msg.textContent = notes[kind] || notes.form;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(hide, 7000);
+  }
+  document.getElementById('demo-close').addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hide(); } });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-demo]');
+    if (!b) { return; }
+    e.preventDefault();
+    var f = b.closest('form');
+    if (f && !f.reportValidity()) { return; }
+    show(b.getAttribute('data-demo'));
+  });
+  document.addEventListener('submit', function (e) { e.preventDefault(); });
+}());
+/* The made-up businesses keep Central time, whatever the visitor's clock says */
+function sampleNow() {
+  var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var o = {};
+  p.forEach(function (x) { o[x.type] = x.value; });
+  return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
+}
+</script>
+<script>
+/* Road closures board: the public list, the map and the staff view share 1 list in memory. Nothing is saved or sent. */
+(function () {
+  var C = {"lang": "es", "months": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"], "ap": ["a. m.", "p. m."], "L": {"cr": "County Road", "st": {"closed": "Cerrado", "water": "Agua sobre el camino", "lane": "1 carril abierto", "open": "Reabierto"}, "posted": "Publicado", "updated": "Actualizado", "reopenExp": "Reapertura prevista", "detour": "Desvío", "reopenedAt": "Reabierto", "whenWater": "Cuando baje el agua y se revise el cruce", "notSet": "Aún no se sabe", "none": "No hay caminos del condado cerrados ahora.", "count1": "1 cierre publicado", "countN": "{n} cierres publicados", "save": "Guardar cambio", "reopen": "Reabrir camino", "status": "Estado", "date": "Reapertura prevista", "livePost": "Publicado. County Road {r} ya aparece en la lista pública como {s}, publicado el {t}.", "liveUpd": "Actualizado. County Road {r} ahora dice {s}, reapertura prevista: {d}. Actualizado el {t}.", "liveRe": "Reabierto. County Road {r} pasó a la lista de caminos reabiertos el {t}.", "nothing": "No hay cierres para actualizar."}, "roads": {"118": "Sandhill Road", "122": "Shop Road", "205": "Persimmon Road", "210": "Brushy Lane", "214": "Cane Creek Road", "238": "Pecan Grove Road", "307": "Willow Chute Road", "330": "Gum Pond Road", "455": "Oxbow Bend Road"}, "icons": {"closed": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><rect x=\"1\" y=\"1\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2\"/><path d=\"M4 4l6 6M10 4l-6 6\" stroke=\"#FFFFFF\" stroke-width=\"2\"/></svg>", "water": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M1 5q3-3 6 0t6 0M1 10q3-3 6 0t6 0\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2\"/></svg>", "lane": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M7 1l6 12H1z\" fill=\"#1B1B1F\"/></svg>", "open": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"7\" r=\"6\" fill=\"#FFFFFF\"/><path d=\"M4 7.2l2 2 4-4.4\" fill=\"none\" stroke=\"#1E6B34\" stroke-width=\"2\"/></svg>"}, "closures": [{"id": 1, "road": "307", "status": "water", "posted": [2026, 11, 24, 6, 40], "reopen": null, "updated": null, "where": "Cruce bajo en Fiddle Creek", "detour": "County Road 118 hasta la carretera estatal"}, {"id": 2, "road": "330", "status": "water", "posted": [2026, 11, 23, 17, 15], "reopen": null, "updated": null, "where": "Cruce bajo en el pantano de Gum Pond", "detour": "Rodee por Persimmon Road (County Road 205)"}, {"id": 3, "road": "122", "status": "lane", "posted": [2026, 11, 18, 7, 5], "reopen": "2026-11-25", "updated": null, "where": "Cambio de alcantarilla a 1 milla al oeste del taller de caminos, con señaleros de 7:00 a. m. a 4:00 p. m.", "detour": ""}, {"id": 4, "road": "214", "status": "closed", "posted": [2026, 11, 2, 7, 30], "reopen": "2026-12-18", "updated": null, "where": "Cambio del puente sobre Cane Creek, entre County Road 210 y County Road 238", "detour": "County Road 210 (Brushy Lane) hasta County Road 238 (Pecan Grove Road)"}], "reopened": [{"road": "455", "when": [2026, 11, 20, 15, 10], "where": "Trabajo de cunetas y alcantarillas cerca de la curva del río"}]}, L = C.L, nextId = 100;
+  var list = document.getElementById('cl-list'), rlist = document.getElementById('cl-reopened'), rows = document.getElementById('st-rows'), live = document.getElementById('st-live');
+
+  var MO = C.months, AP = C.ap;
+  function fT(h, mi) { return (h % 12 || 12) + ':' + ('0' + mi).slice(-2) + '\u00a0' + AP[h >= 12 ? 1 : 0]; }
+  function fD(y, m, d) { return C.lang === 'en' ? MO[m - 1] + ' ' + d + ', ' + y : d + ' de ' + MO[m - 1] + ' de ' + y; }
+  function nowCT() {
+    var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date()), o = {};
+    p.forEach(function (q) { o[q.type] = q.value; });
+    return [+o.year, +o.month, +o.day, +o.hour % 24, +o.minute];
+  }
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (text != null) { e.textContent = text; } return e; }
+  function stampTxt(t) { return fD(t[0], t[1], t[2]) + ', ' + fT(t[3], t[4]); }
+  function dateTxt(iso) { var p = iso.split('-'); return fD(+p[0], +p[1], +p[2]); }
+  function reopenTxt(c) { return c.reopen ? dateTxt(c.reopen) : (c.status === 'water' ? L.whenWater : L.notSet); }
+  function chip(s) { var sp = el('span', 'chip s-' + s); sp.innerHTML = C.icons[s]; sp.appendChild(document.createTextNode(L.st[s])); return sp; }
+  function pair(dl, k, v) { dl.appendChild(el('dt', null, k)); dl.appendChild(el('dd', null, v)); }
+  function card(c, reopened) {
+    var li = el('li', 'closure c-' + (reopened ? 'open' : c.status));
+    li.appendChild(chip(reopened ? 'open' : c.status));
+    li.appendChild(el('h3', null, L.cr + ' ' + c.road + ', ' + C.roads[c.road]));
+    li.appendChild(el('p', null, c.where));
+    var dl = el('dl');
+    if (reopened) { pair(dl, L.reopenedAt, stampTxt(c.when)); }
+    else {
+      pair(dl, L.posted, stampTxt(c.posted));
+      if (c.updated) { pair(dl, L.updated, stampTxt(c.updated)); }
+      pair(dl, L.reopenExp, reopenTxt(c));
+      if (c.detour) { pair(dl, L.detour, c.detour); }
+    }
+    li.appendChild(dl); return li;
+  }
+  function render() {
+    list.innerHTML = '';
+    C.closures.forEach(function (c) { list.appendChild(card(c, false)); });
+    if (!C.closures.length) { list.appendChild(el('li', 'none', L.none)); }
+    rlist.innerHTML = '';
+    C.reopened.forEach(function (r) { rlist.appendChild(card(r, true)); });
+    var n = C.closures.length;
+    document.getElementById('cl-count').textContent = n === 1 ? L.count1 : L.countN.replace('{n}', n);
+    document.querySelectorAll('#map .mk').forEach(function (m) { m.classList.remove('on'); });
+    C.closures.forEach(function (c) { var m = document.querySelector('#map .mk[data-road="' + c.road + '"][data-s="' + c.status + '"]'); if (m) { m.classList.add('on'); } });
+    drawStaff();
+  }
+  function drawStaff() {
+    rows.innerHTML = '';
+    if (!C.closures.length) { rows.appendChild(el('p', null, L.nothing)); return; }
+    C.closures.forEach(function (c) {
+      var box = el('div', 'st-row'), g = el('div', 'st-grid'), id = 'st' + c.id;
+      box.appendChild(el('p', null, L.cr + ' ' + c.road + ', ' + C.roads[c.road] + ': ' + c.where));
+      var a = el('div'), la = el('label', null, L.status), s = el('select');
+      la.htmlFor = s.id = id + '-s';
+      ['closed', 'water', 'lane'].forEach(function (k) { var o = el('option', null, L.st[k]); o.value = k; if (k === c.status) { o.selected = true; } s.appendChild(o); });
+      a.appendChild(la); a.appendChild(s);
+      var b = el('div'), lb = el('label', null, L.date), d = el('input');
+      d.type = 'date'; lb.htmlFor = d.id = id + '-d'; d.value = c.reopen || '';
+      b.appendChild(lb); b.appendChild(d);
+      g.appendChild(a); g.appendChild(b); box.appendChild(g);
+      var acts = el('div', 'acts'), save = el('button', 'btn btn-sm', L.save), re = el('button', 'btn btn-sm', L.reopen);
+      save.type = re.type = 'button';
+      save.setAttribute('aria-label', L.save + ', ' + L.cr + ' ' + c.road); re.setAttribute('aria-label', L.reopen + ', ' + L.cr + ' ' + c.road);
+      save.addEventListener('click', function () {
+        c.status = s.value; c.reopen = d.value || null; c.updated = nowCT(); render();
+        live.textContent = L.liveUpd.replace('{r}', c.road).replace('{s}', L.st[c.status]).replace('{d}', reopenTxt(c)).replace('{t}', stampTxt(c.updated));
+      });
+      re.addEventListener('click', function () {
+        var t = nowCT();
+        C.closures = C.closures.filter(function (x) { return x !== c; });
+        C.reopened.unshift({road: c.road, when: t, where: c.where}); render();
+        live.textContent = L.liveRe.replace('{r}', c.road).replace('{t}', stampTxt(t));
+      });
+      acts.appendChild(save); acts.appendChild(re); box.appendChild(acts); rows.appendChild(box);
+    });
+  }
+  document.getElementById('st-post').addEventListener('click', function () {
+    var f = document.getElementById('st-form'); if (!f.reportValidity()) { return; }
+    var c = {id: nextId++, road: document.getElementById('st-road').value, status: document.getElementById('st-status').value, posted: nowCT(), updated: null,
+             reopen: document.getElementById('st-date').value || null, where: document.getElementById('st-where').value.trim(), detour: document.getElementById('st-detour').value.trim()};
+    C.closures.unshift(c); render(); f.reset();
+    live.textContent = L.livePost.replace('{r}', c.road).replace('{s}', L.st[c.status]).replace('{t}', stampTxt(c.posted));
+  });
+  render();
+}());
+</script>
+</body>
+</html>

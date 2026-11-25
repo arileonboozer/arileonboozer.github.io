@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roof inspections | Ridgepole Roofing (sample site)</title>
+<meta name="description" content="Sample Full Site by Ari Leon Boozer for a made-up roofer: 13 pages, a page per service, 4 drawn galleries, a quote request form, customer comments and a Spanish version.">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="alternate" hreflang="es" href="es/inspections.html">
+<style>
+.sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
+.sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.sample-bar a:hover{color:#FFFFFF}
+.sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+.sample-bar .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.demo-toast{position:fixed;left:12px;right:12px;bottom:16px;z-index:50;max-width:30rem;margin:0 auto;background:#1B1A17;color:#F5F0E6;border-radius:6px;padding:12px 12px 12px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.25);font:400 1rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s linear .15s}
+.demo-toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s}
+.demo-toast p{margin:4px 0 0;flex:1}
+.demo-toast button{flex:none;min-height:44px;min-width:44px;padding:8px 12px;border:2px solid #F5F0E6;border-radius:4px;background:transparent;color:#F5F0E6;font:600 .9375rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer}
+.demo-toast button:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.demo-toast,.demo-toast.on{transition:none;transform:none}}
+@media print{.sample-bar,.demo-toast{display:none}}
+
+:root{--page:#F6F7F6;--card:#FFFFFF;--ink:#2F3437;--ink-2:#4E565B;--rule:#C9CED1;--field:#5B6469;--blue:#1F5FAD;--blue-d:#174A88;
+--canary:#F6E7A6;--red:#B42318;--slate:#2F3437;--on-slate:#F6F7F6;--slate-2:#C9CED1;
+--head:Avenir,"Avenir Next",Corbel,"URW Gothic",Montserrat,"Segoe UI",sans-serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"Cascadia Mono","Cascadia Code",Consolas,Menlo,monospace;--gut:20px;--ease:cubic-bezier(.22,1,.36,1)}
+@media (min-width:720px){:root{--gut:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);font-variant-numeric:lining-nums}
+svg{display:block}
+a{color:var(--blue);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--blue-d)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:60;background:var(--ink);color:var(--page);padding:12px 16px;border-radius:4px;font-weight:600}
+.skip:focus{top:12px;color:var(--page)}
+.wrap{max-width:72rem;margin:0 auto;padding:0 var(--gut)}
+.ic{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0 0 12px;text-wrap:balance}
+h1{font-size:clamp(2rem,3vw + 1.1rem,3.25rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,1.4vw + 1rem,2.125rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 16px;text-wrap:pretty}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.site-head{background:var(--card);border-bottom:2px solid var(--ink)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:12px;min-height:44px;text-decoration:none;color:var(--ink)}
+.logo:hover{color:var(--ink)}
+.logo svg{width:44px;height:30px}
+.logo-name{font-family:var(--head);font-weight:700;font-size:1.375rem;line-height:1.1}
+.logo-sub{display:block;font-family:var(--sans);font-weight:400;font-size:.875rem;color:var(--ink-2)}
+.head-acts{display:flex;align-items:center;gap:12px 20px}
+.lang{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;font-weight:600}
+.head-phone{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1rem}
+.nav-row{display:none;border-top:1px solid var(--rule)}
+.nav-wide ul,.menu ul{list-style:none;margin:0;padding:0}
+.nav-wide>ul{display:flex;align-items:center;gap:0 28px;flex-wrap:wrap}
+.nav-wide li{position:relative}
+.nav-wide a,.menu a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
+.nav-wide a:hover,.menu a:hover{border-bottom-color:var(--rule)}
+.nav-wide a[aria-current="page"],.menu a[aria-current="page"]{border-bottom-color:var(--blue)}
+.sub>summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;cursor:pointer;list-style:none;border-bottom:3px solid transparent}
+.sub>summary::-webkit-details-marker{display:none}
+.sub>summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translateY(-3px);margin-left:4px}
+.sub[open]>summary::after{transform:rotate(-135deg) translateY(-1px)}
+.sub>summary:hover{border-bottom-color:var(--rule)}
+.sub>summary.cur{border-bottom-color:var(--blue)}
+.nav-wide .sub ul{position:absolute;left:-20px;top:100%;z-index:30;width:max-content;min-width:16rem;margin-top:4px;padding:8px 16px;background:var(--card);border:2px solid var(--ink);border-radius:4px}
+.sub ul a{display:flex}
+.sub:not([open]) ul{display:none}
+.menu{border-top:1px solid var(--rule)}
+.menu summary{display:flex;align-items:center;gap:8px;min-height:48px;font-weight:600;cursor:pointer;list-style:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translateY(-3px);margin-left:4px}
+.menu[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.menu-h{margin:4px 0 0;font-size:.875rem;font-weight:700;color:var(--ink-2)}
+.menu ul{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding-bottom:8px}
+.menu ul+ul{border-top:1px solid var(--rule);padding-top:8px;padding-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:4px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:600 1rem/1.2 var(--sans);cursor:pointer;text-decoration:none;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
+.btn:hover{background:var(--ink);color:var(--page)}
+.btn:active{transform:scale(.98)}
+.btn-blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-d);border-color:var(--blue-d);color:#fff}
+.btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
+.head-quote,.head-phone{display:none}
+@media (min-width:1040px){.nav-row{display:block}.menu{display:none}.head-quote{display:inline-flex}.head-phone{display:block}}
+.go{display:inline-flex;align-items:center;min-height:44px}
+.hero{padding:40px 0 48px}
+.hero-grid{display:grid;gap:32px;align-items:center}
+@media (min-width:960px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1fr 1fr;gap:48px}}
+.kicker{font-weight:600;color:var(--ink-2);margin-bottom:12px}
+.lede{font-size:1.1875rem;max-width:36rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.note{color:var(--ink-2);font-size:.9375rem}
+.drawing{width:100%;height:auto;background:var(--card);border:2px solid var(--ink);border-radius:4px}
+.cap{font-size:.875rem;color:var(--ink-2);margin:8px 0 0}
+.legend{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:.9375rem}
+.legend li{display:flex;align-items:center;gap:8px}
+.lnum{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font:700 .8125rem/1 var(--mono)}
+.section{padding:48px 0;border-top:2px solid var(--ink)}
+@media (min-width:960px){.section{padding:72px 0}}
+.page-top{padding:40px 0 32px}
+@media (min-width:960px){.page-top{padding:56px 0 40px}}
+.two{display:grid;gap:32px}
+@media (min-width:960px){.two{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
+.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.svc li{border-bottom:1px solid var(--rule)}
+.svc a{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:20px 0;color:var(--ink);text-decoration:none}
+.svc.plain a{grid-template-columns:1fr auto}
+.svc a:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.svc svg{width:64px;height:40px}
+.svc h3{margin:0 0 4px}
+.svc p{margin:0;color:var(--ink-2)}
+.svc .ic{width:24px;height:24px;color:var(--blue)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--rule)}
+.steps li:first-child{border-top:0}
+.steps .n{font-family:var(--mono);font-weight:700;font-size:1.25rem;color:var(--blue)}
+.steps h3{margin-bottom:4px}
+.steps p{margin:0;color:var(--ink-2)}
+.ticks,.nots{list-style:none;margin:0 0 16px;padding:0}
+.ticks li,.nots li{display:flex;gap:12px;padding:8px 0}
+.ticks .ic{color:var(--blue);margin-top:4px}
+.nots .ic{color:var(--ink-2);margin-top:4px}
+.mats{margin:0}
+.mats div{padding:12px 0;border-top:1px solid var(--rule)}
+.mats div:first-child{border-top:0;padding-top:0}
+.mats dt{font-weight:700}
+.mats dd{margin:4px 0 0;color:var(--ink-2)}
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:24px}
+.slope{width:100%;max-width:520px;height:auto}
+.facts{display:grid;gap:12px;margin:0;font-variant-numeric:tabular-nums}
+.facts div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--rule);padding:8px 0}
+.facts dt{color:var(--ink-2)}
+.facts dd{margin:0;font-weight:600;text-align:right}
+.cmp{position:relative;border:2px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--card)}
+.cmp svg{width:100%;height:auto}
+.cmp .after{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos,50%))}
+.cmp .divider{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1px;background:var(--ink)}
+.cmp-tags{display:flex;justify-content:space-between;font-weight:600;margin-top:8px}
+.cmp-ctl label{display:block;font-weight:600;margin:12px 0 4px}
+.cmp-ctl input{width:100%;min-height:44px;accent-color:var(--blue)}
+.gal{display:grid;gap:40px;margin-top:24px}
+@media (min-width:960px){.gal{grid-template-columns:1fr 1fr}}
+.jump{display:flex;flex-wrap:wrap;gap:0 24px;margin:16px 0 0;padding:0;list-style:none}
+.jump a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.gal-intro{max-width:42rem;margin:0}
+.thumbs{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
+@media (min-width:960px){.thumbs{grid-template-columns:repeat(4,1fr);gap:32px 24px}}
+.thumbs figure{margin:0}
+.thumb{display:block;width:100%;padding:0;border:2px solid var(--ink);border-radius:4px;background:var(--card);cursor:zoom-in;overflow:hidden}
+.thumb svg{width:100%;height:auto}
+.thumb:hover{border-color:var(--blue)}
+.tag{display:block;margin-top:4px;font-size:.8125rem}
+.lb{width:min(56rem,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:2px solid var(--ink);border-radius:4px;background:var(--card);color:var(--ink)}
+.lb::backdrop{background:rgba(27,26,23,.72)}
+.lb-in{padding:16px}
+@media (min-width:720px){.lb-in{padding:24px}}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.lb-title{margin:0;font:700 1.125rem/1.3 var(--head)}
+.lb-pic svg{width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.lb-cap{margin:12px 0 0}
+.lb-nav{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
+.said-grid{display:grid;gap:20px}
+@media (min-width:960px){.said-grid{grid-template-columns:repeat(3,1fr)}}
+.said{margin:0;padding:20px 24px;background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--ink);border-radius:4px;display:flex;flex-direction:column;justify-content:space-between}
+.said blockquote{margin:0 0 16px}
+.said blockquote p{margin:0}
+.said figcaption{font-weight:600}
+.made{display:block;margin-top:4px;font-weight:400;font-size:.875rem;color:var(--ink-2)}
+.owner{display:grid;gap:24px;align-items:start}
+@media (min-width:720px){.owner{grid-template-columns:200px 1fr;gap:32px}}
+.portrait{margin:0;max-width:200px}
+.portrait svg{width:100%;height:auto;border:2px solid var(--ink);border-radius:4px}
+.crew{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:720px){.crew{grid-template-columns:1fr 1fr}}
+.crew li{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:20px 24px}
+.crew h3{margin:0 0 4px}
+.role{margin:0 0 8px;font-weight:600;color:var(--ink-2)}
+.crew li p:last-child{margin:0}
+.rings{width:100%;max-width:520px;height:auto;background:var(--card);border:2px solid var(--ink);border-radius:4px}
+.bands{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.bands li{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:20px 24px}
+.bands h3{margin:0 0 8px}
+.towns{margin:0 0 12px}
+.hours-t{border-collapse:collapse;width:100%;max-width:30rem;margin:0 0 32px;font-variant-numeric:tabular-nums}
+.hours-t th,.hours-t td{text-align:left;padding:8px 0;border-bottom:1px solid var(--rule);font-weight:400}
+.hours-t th{color:var(--ink-2);padding-right:16px}
+.hours-t td{font-weight:600}
+.faq h2{margin:48px 0 8px}
+.faq h2:first-child{margin-top:0}
+.faq details{border-top:1px solid var(--rule)}
+.faq details:last-of-type{border-bottom:1px solid var(--rule)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 0;font-weight:600;font-size:1.0625rem;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:1.5rem;line-height:1;color:var(--blue)}
+.faq details[open] summary::after{content:"\2013"}
+.faq .a{padding:0 0 16px;max-width:44rem}
+.faq .a p{margin:0}
+.faq .a a{padding:2px 0}
+.prose{max-width:42rem}
+.quote-grid{display:grid;gap:40px}
+@media (min-width:1100px){.quote-grid{grid-template-columns:minmax(0,44rem) minmax(0,1fr);gap:48px;align-items:start}}
+.sheet{position:relative;background:var(--canary);border:2px solid var(--ink);border-bottom:0;border-radius:4px 4px 0 0;padding:24px 20px 32px;max-width:44rem}
+@media (min-width:720px){.sheet{padding:32px 40px 40px}}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:24px}
+.sheet-head h2{margin:0}
+.sheet-h{font-size:1.125rem;margin:8px 0 16px;padding-top:16px;border-top:1px solid var(--ink)}
+.formno{font-family:var(--mono);font-weight:700;color:var(--red);font-size:1.125rem}
+.sheet fieldset{border:0;margin:0 0 24px;padding:0}
+.sheet legend{font-weight:700;margin-bottom:8px;padding:0}
+.checks{display:grid;gap:4px 16px}
+@media (min-width:560px){.checks{grid-template-columns:1fr 1fr}}
+.checks3{display:flex;flex-wrap:wrap;gap:4px 32px}
+.checks label,.checks3 label{display:flex;align-items:center;gap:12px;min-height:44px;font-weight:400;margin:0}
+.checks input,.checks3 input{width:24px;height:24px;margin:0;accent-color:var(--blue);flex:none}
+.row2{display:grid;gap:0 24px}
+@media (min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.line{margin-bottom:20px}
+.line label{display:block;font-weight:600;font-size:.9375rem;margin-bottom:4px}
+.line input,.line select,.line textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:8px 2px}
+.line select{min-height:44px}
+.line textarea{border:2px solid var(--ink);background:rgba(255,255,255,.35);min-height:7rem;resize:vertical;padding:8px}
+.photo-note{border:2px dashed var(--ink);border-radius:4px;padding:12px 16px;margin:0 0 20px;background:rgba(255,255,255,.35)}
+.copy{font-family:var(--mono);font-size:.875rem;color:var(--red);text-align:right;margin:16px 0 0}
+.tear{display:block;width:100%;max-width:44rem;height:14px}
+.foot{background:var(--slate);color:var(--on-slate);padding:40px 0 112px}
+@media (min-width:1040px){.foot{padding-bottom:48px}}
+.foot a{color:var(--on-slate)}
+.foot a:hover{color:#9FC3F0}
+.foot-grid{display:grid;gap:24px}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot h2{font-size:1.25rem;margin-bottom:8px}
+.foot p{color:var(--slate-2);margin-bottom:8px}
+.social{display:flex;gap:8px}
+.social button{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid #6B7378;border-radius:4px;background:transparent;color:var(--on-slate);cursor:pointer}
+.social button:hover{border-color:#9FC3F0;color:#9FC3F0}
+.social .ic{width:20px;height:20px}
+.foot-acts{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:12px}
+.foot .btn{min-height:44px;padding:8px 16px;font-size:.9375rem;border-color:#9AA4AA;color:var(--on-slate)}
+.foot .btn:hover{background:var(--on-slate);border-color:var(--on-slate);color:var(--slate)}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:24px;padding-top:12px;border-top:1px solid #4A5155;font-size:.9375rem}
+.foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
+.foot-links span{color:var(--slate-2)}
+.foot :focus-visible{outline-color:#9FC3F0}
+.actbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--card);border-top:2px solid var(--ink)}
+@media (min-width:1040px){.actbar{display:none}}
+@media (max-width:1039px){.demo-toast{bottom:84px}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+@media print{.actbar,.menu,.nav-row,.head-acts,.skip,.lb{display:none}.sheet{background:#fff}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol></svg>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="sample-bar"><div class="sb-in"><p>Sample Full Site by Ari Leon Boozer. The business, the jobs and the phone number are made up.</p><a href="/samples/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>See all samples</span></a></div></div>
+<header class="site-head">
+<div class="wrap head-row">
+<a class="logo" href="index.html"><svg viewBox="0 0 44 30" aria-hidden="true" focusable="false"><path d="M2 27 L22 4 L42 27" fill="none" stroke="#2F3437" stroke-width="4" stroke-linejoin="round"/><path d="M22 4 V27" stroke="#1F5FAD" stroke-width="2" stroke-dasharray="3 3"/></svg><span class="logo-name">Ridgepole Roofing<span class="logo-sub">Landing, Arkansas</span></span></a>
+<div class="head-acts">
+<p class="head-phone">(870) 555-0168</p>
+<a class="btn btn-blue btn-sm head-quote" href="quote.html">Request a quote</a>
+<a class="lang" href="es/inspections.html" lang="es" hreflang="es">Español</a>
+</div>
+</div>
+<div class="nav-row"><div class="wrap"><nav class="nav-wide" aria-label="Main"><ul><li><details class="sub"><summary class="cur">Services</summary><ul><li><a href="shingle.html">Shingle roofs</a></li><li><a href="metal.html">Metal roofs</a></li><li><a href="repairs.html">Repairs and leaks</a></li><li><a href="storm.html">Storm damage</a></li><li><a href="inspections.html" aria-current="page">Roof inspections</a></li></ul></details></li><li><a href="work.html">Our work</a></li><li><a href="team.html">Our team</a></li><li><a href="about.html">About</a></li><li><a href="area.html">Where we work</a></li><li><a href="questions.html">Questions</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></div>
+<div class="wrap"><details class="menu"><summary>Menu</summary><nav aria-label="Main"><p class="menu-h">Services</p><ul><li><a href="shingle.html">Shingle roofs</a></li><li><a href="metal.html">Metal roofs</a></li><li><a href="repairs.html">Repairs and leaks</a></li><li><a href="storm.html">Storm damage</a></li><li><a href="inspections.html" aria-current="page">Roof inspections</a></li></ul><ul><li><a href="work.html">Our work</a></li><li><a href="team.html">Our team</a></li><li><a href="about.html">About</a></li><li><a href="area.html">Where we work</a></li><li><a href="questions.html">Questions</a></li><li><a href="contact.html">Contact</a></li></ul></nav></details></div>
+</header>
+<main id="main">
+<section class="page-top"><div class="wrap two"><div><h1>Roof inspections</h1><p class="lede">A close look at the roof and the attic, with a written report and photos. For a yearly check-up, before you buy or sell a house, or after a storm.</p>
+<div class="cta"><a class="btn btn-blue" href="quote.html?service=inspections">Request a quote for an inspection</a>
+<button type="button" class="btn" data-demo="text"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Text us</span></button></div></div>
+<div><svg class="slope" viewBox="0 0 520 300" role="img" aria-label="Drawing of a roof line at a 5 in 12 slope, with 3 spots circled for a closer look">
+<line x1="20" y1="262" x2="500" y2="262" stroke="#C9CED1" stroke-width="2"/>
+<path d="M60 250 L420 100.0 L420 250 Z" fill="#FFFFFF" stroke="#2F3437" stroke-width="3" stroke-linejoin="round"/>
+<path d="M60 250 L420 100.0" stroke="#2F3437" stroke-width="10" stroke-linecap="round"/>
+<line x1="100.0" y1="233.3" x2="82.0" y2="250.8" stroke="#4E565B" stroke-width="1.5"/><line x1="140.0" y1="216.7" x2="122.0" y2="234.2" stroke="#4E565B" stroke-width="1.5"/><line x1="180.0" y1="200.0" x2="162.0" y2="217.5" stroke="#4E565B" stroke-width="1.5"/><line x1="220.0" y1="183.3" x2="202.0" y2="200.8" stroke="#4E565B" stroke-width="1.5"/><line x1="260.0" y1="166.7" x2="242.0" y2="184.2" stroke="#4E565B" stroke-width="1.5"/><line x1="300.0" y1="150.0" x2="282.0" y2="167.5" stroke="#4E565B" stroke-width="1.5"/><line x1="340.0" y1="133.3" x2="322.0" y2="150.8" stroke="#4E565B" stroke-width="1.5"/><line x1="380.0" y1="116.7" x2="362.0" y2="134.2" stroke="#4E565B" stroke-width="1.5"/><circle cx="122.5" cy="217.5" r="20" fill="none" stroke="#1F5FAD" stroke-width="2.5" stroke-dasharray="6 5"/><circle cx="237.7" cy="169.5" r="20" fill="none" stroke="#1F5FAD" stroke-width="2.5" stroke-dasharray="6 5"/><circle cx="367.3" cy="115.5" r="20" fill="none" stroke="#1F5FAD" stroke-width="2.5" stroke-dasharray="6 5"/>
+<g font-family="ui-monospace,Consolas,monospace" font-size="18" fill="#1F5FAD" font-weight="700">
+<path d="M204 120.0 H300 V80.0 Z" fill="none" stroke="#1F5FAD" stroke-width="2"/>
+<text x="252.0" y="138.0" text-anchor="middle">12</text>
+<text x="310" y="106.0">5</text></g>
+<text x="20" y="290" font-family="ui-monospace,Consolas,monospace" font-size="16" fill="#4E565B">Slope 5:12</text>
+</svg></div></div></section>
+<section class="section"><div class="wrap two"><div><h2>What's included</h2><ul class="ticks"><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Every roof face walked, where it's safe to walk</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>The attic checked with a light for stains, daylight and damp wood</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Flashing, pipe boots, vents and gutters checked</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>A written report with photos within 2 business days</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Our best estimate of how many years the roof has left</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Small fixes, such as a popped nail, done the same day if you say yes</span></li></ul></div>
+<div class="panel"><dl class="facts"><div><dt>Inspection with written report</dt><dd>$125</dd></div><div><dt>Inspection as part of a quote</dt><dd>Free</dd></div><div><dt>Time at your house</dt><dd>About 1 hour</dd></div><div><dt>Report</dt><dd>Within 2 business days</dd></div></dl><p style="margin:16px 0 0"><a class="btn btn-blue" href="quote.html?service=inspections">Request a quote</a></p></div></div></section>
+<section class="section"><div class="wrap two"><div><h2>What we check</h2><dl class="mats"><div><dt>Shingles</dt><dd>Missing, cracked or curled shingles, bare spots where the granules have worn off, and hail marks.</dd></div><div><dt>Flashing</dt><dd>At walls, chimneys, skylights and valleys, where most leaks start.</dd></div><div><dt>Pipe boots and vents</dt><dd>Cracked rubber, rusted metal and missing nails.</dd></div><div><dt>Edges and gutters</dt><dd>Loose drip edge, soft fascia boards and granules piling up in the gutters.</dd></div><div><dt>Attic</dt><dd>Water stains, daylight through the decking, damp insulation and how well the attic breathes.</dd></div></dl></div>
+<div><h2>Step by step</h2><ol class="steps"><li><span class="n">01</span><div><h3>Set a time</h3><p>Use the quote form or text us. Most inspections happen within the week.</p></div></li><li><span class="n">02</span><div><h3>Outside</h3><p>We look from the ground first, then walk the roof if it's dry and safe.</p></div></li><li><span class="n">03</span><div><h3>Attic</h3><p>We check the underside of the roof with a light. Someone needs to be home for this part.</p></div></li><li><span class="n">04</span><div><h3>Report</h3><p>You get a written report with photos, what we found and what each fix would cost.</p></div></li><li><span class="n">05</span><div><h3>Your call</h3><p>The report is yours. Use it with us, with another roofer or with the buyer of your house.</p></div></li></ol></div></div></section>
+<section class="section"><div class="wrap two"><div><h2>Not included</h2><ul class="nots"><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>A home inspection. We look at the roof only, not the rest of the house.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>Walking a roof that is too steep or too fragile, such as slate or tile. We check those from a ladder and with a camera on a pole.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>Mold or air testing.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>A promise that the roof won't leak. The report says what we saw that day.</span></li></ul><p class="note">More answers on the <a href="questions.html">questions page</a>.</p></div>
+<div><h2>Other services</h2><ul class="svc"><li><a href="shingle.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V22 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">6:12</text></svg><div><h3>Shingle roofs</h3><p>Tear-off and a new shingle roof, usually in 1 to 3 days.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="metal.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V29 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">3:12</text></svg><div><h3>Metal roofs</h3><p>Standing-seam and screw-down metal for houses, shops and barns.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="repairs.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V17 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">8:12</text></svg><div><h3>Repairs and leaks</h3><p>Leaks, missing shingles and flashing. We tarp first, then fix.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="storm.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V20 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">7:12</text></svg><div><h3>Storm damage</h3><p>Hail and wind damage. We tarp, photograph it and meet your adjuster.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li></ul></div></div></section>
+</main>
+<footer class="foot">
+<div class="wrap">
+<div class="foot-grid">
+<div><h2>Ridgepole Roofing</h2><p>(870) 555-0168</p><p>Landing and the towns within 40 miles. We come to you, so there's no shop address to visit.</p><p><a class="go" href="area.html">See the towns we cover</a></p></div>
+<div><h2>Office hours</h2><p>Monday to Friday, 7 a.m. to 5 p.m.<br>Saturday by appointment.</p></div>
+<div><h2>Find us online</h2><div class="social"><button type="button" data-demo="facebook" aria-label="Facebook"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></button></div>
+<div class="foot-acts"><button type="button" class="btn" data-demo="google"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Find us on Google</span></button>
+<button type="button" class="btn" data-demo="review"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><span>Leave us a review</span></button></div></div>
+</div>
+<div class="foot-links"><span>© 2026 Ridgepole Roofing</span><a href="privacy.html">Privacy</a><a href="es/inspections.html" lang="es" hreflang="es">Español</a></div>
+</div>
+</footer>
+<div class="actbar">
+<a class="btn btn-blue" href="quote.html">Request a quote</a>
+<button type="button" class="btn" data-demo="text"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-text"/></svg><span>Text us</span></button>
+</div>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite"><p id="demo-msg"></p><button type="button" id="demo-close">Close</button></div>
+<script>
+/* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
+(function () {
+  var notes = {"text": "Sample: on your site, this button starts a text message to your number.", "call": "Sample: on your site, this button calls your number.", "map": "Sample: on your site, this opens your address in Maps.", "facebook": "Sample: on your site, this opens your Facebook page.", "instagram": "Sample: on your site, this opens your Instagram page.", "booking": "Sample: on your site, this opens the booking page you already use, such as Square or Booksy.", "form": "Sample: nothing was sent. On your site, this form emails you what the visitor wrote.", "quote": "Sample: nothing was sent. On your site, this form emails you the request, with the service already filled in.", "google": "Sample: on your site, this opens your Google Business Profile.", "review": "Sample: on your site, this opens your Google review page, so customers can leave a review.", "email": "Sample: on your site, this opens an email to your address.", "pay": "Sample: on your site, this opens the payment page you already use.", "checkout": "Sample: nothing was charged. On your site, this opens Stripe's own checkout page to pay by card.", "order": "Sample: nothing was ordered. On your site, the order is emailed to you and the customer gets a confirmation email.", "appstore": "Sample: on your site, this opens your app's page in the App Store.", "googleplay": "Sample: on your site, this opens your app's page on Google Play."};
+  var toast = document.getElementById('demo-toast');
+  var msg = document.getElementById('demo-msg');
+  var timer = null;
+  function hide() { toast.classList.remove('on'); }
+  function show(kind) {
+    msg.textContent = notes[kind] || notes.form;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(hide, 7000);
+  }
+  document.getElementById('demo-close').addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hide(); } });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-demo]');
+    if (!b) { return; }
+    e.preventDefault();
+    var f = b.closest('form');
+    if (f && !f.reportValidity()) { return; }
+    show(b.getAttribute('data-demo'));
+  });
+  document.addEventListener('submit', function (e) { e.preventDefault(); });
+}());
+/* The made-up businesses keep Central time, whatever the visitor's clock says */
+function sampleNow() {
+  var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var o = {};
+  p.forEach(function (x) { o[x.type] = x.value; });
+  return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
+}
+</script>
+<script>
+/* Services drop-down in the wide menu: closes on Escape, on a click outside it and when focus leaves it */
+(function () {
+  var d = document.querySelector('.sub');
+  if (!d) { return; }
+  var s = d.querySelector('summary');
+  document.addEventListener('click', function (e) { if (d.open && !d.contains(e.target)) { d.open = false; } });
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.open) { d.open = false; s.focus(); } });
+  d.addEventListener('focusout', function (e) { if (d.open && e.relatedTarget && !d.contains(e.relatedTarget)) { d.open = false; } });
+}());
+</script>
+
+</body>
+</html>

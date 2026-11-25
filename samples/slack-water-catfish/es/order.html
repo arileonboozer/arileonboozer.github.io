@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0F2A2D">
+<title>Pedir para recoger | Slack Water Catfish | Página de muestra de ALB</title>
+<meta name="description" content="Una página de muestra de ALB: pedidos en línea para recoger en un restaurante de bagre inventado, con precios inventados. No se pide, no se cobra ni se envía nada.">
+<link rel="alternate" hreflang="en-US" href="../order.html">
+<style>
+:root{--water:#0F2A2D;--moon:#EFE8DA;--reed:#A9BDB4;--lamp:#F2B65A;--lamp-2:#F6C77A;--board:#1A2E30;--rule:#2A4447;
+--paper:#EFE8DA;--ink:#0F2A2D;--ink-2:#3D5A5C;--paper-rule:#B8C4BE;
+--display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+--text:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--gut:max(20px, env(safe-area-inset-left));--ease:cubic-bezier(.22,1,.36,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:dark;background:var(--water);color:var(--moon);font-family:var(--text);line-height:1.55;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;font-size:1.0625rem;font-variant-numeric:lining-nums}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:3px;border-radius:4px}
+[hidden]{display:none!important}
+.skip-main{position:absolute;left:12px;top:-80px;z-index:60;background:var(--lamp);color:var(--water);padding:12px 16px;border-radius:4px;font-weight:600}
+.skip-main:focus{top:12px}
+.ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* Header: the scroll page's, with the name linking home */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 16px;padding:8px var(--gut);background:var(--water)}
+.top .name{display:inline-flex;align-items:center;min-height:44px;font-family:var(--display);font-weight:700;font-size:1.25rem;white-space:nowrap;text-decoration:none}
+.top .name:hover{text-decoration:underline}
+.top nav{display:flex;align-items:center;gap:16px}
+.lang{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem;color:var(--reed)}
+.call{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:0;border-radius:4px;background:var(--lamp);color:var(--water);font:inherit;font-weight:600;white-space:nowrap;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+footer{max-width:1080px;margin:0 auto;padding:24px var(--gut) 48px;border-top:1px solid var(--rule);color:var(--reed);font-size:.9375rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:8px}
+.foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--moon)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.intro{padding-top:40px;padding-bottom:32px}
+.intro h1{font-size:clamp(2.25rem,5.2vw,3.5rem);letter-spacing:-.01em}
+.intro .lede{margin-top:16px;max-width:40ch;font-size:clamp(1.0625rem,1.6vw,1.25rem)}
+.intro .hrs{margin-top:12px;max-width:56ch;color:var(--reed)}
+.nos{padding:16px;border:2px dashed var(--reed);border-radius:4px;margin-bottom:24px}
+/* Steps */
+.step{padding:28px 0 32px;border-top:1px solid var(--rule)}
+.step-h{display:flex;align-items:baseline;gap:12px;font-size:clamp(1.5rem,3vw,1.875rem)}
+.step-n{flex:none;display:inline-grid;place-items:center;min-width:32px;height:32px;padding:0 8px;border:2px solid var(--reed);border-radius:4px;font:700 1rem/1 var(--text);font-variant-numeric:tabular-nums;color:var(--moon);translate:0 -3px}
+@media (min-width:960px){.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0 56px;align-items:start}}
+/* Menu */
+.grp{margin-top:24px;font-size:1.25rem;color:var(--reed)}
+.menu{list-style:none;margin:8px 0 0;padding:0}
+.dish{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:center;padding:16px 0 16px 12px;border-bottom:1px solid var(--rule);border-left:4px solid transparent}
+.dish.in{border-left-color:var(--lamp)}
+.dish-n{font-family:var(--display);font-weight:700;font-size:1.1875rem;line-height:1.25}
+.dish-d{margin-top:4px;color:var(--reed)}
+.price{margin-top:4px;font-weight:600;font-variant-numeric:tabular-nums}
+.qty-box{display:flex;align-items:center;gap:4px}
+.qb{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:2px solid var(--reed);border-radius:4px;background:transparent;color:var(--moon);cursor:pointer;transition:background-color .15s var(--ease)}
+.qb:hover{background:var(--board)}
+.qb[aria-disabled="true"]{border-color:var(--rule);color:#6E8580;cursor:default;background:transparent}
+.qi{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.25;stroke-linecap:round}
+.qty{min-width:2.5ch;text-align:center;font-weight:700;font-size:1.125rem;font-variant-numeric:tabular-nums}
+.dish.in .qty{color:var(--lamp)}
+/* The guest check: the running order, on paper */
+.check{margin-top:16px;padding:20px;border-radius:4px;background:var(--paper);color:var(--ink);font-variant-numeric:tabular-nums}
+.check-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.check-title{font-family:var(--display);font-weight:700;font-size:1.25rem}
+.check-no{color:var(--ink-2);font-size:.9375rem}
+.check .empty{padding:12px 0;color:var(--ink-2)}
+.lines{list-style:none;margin:0;padding:0}
+.lines li{display:grid;grid-template-columns:2.5ch minmax(0,1fr) auto;gap:12px;padding:8px 0;border-bottom:1px solid var(--paper-rule)}
+.lines .q{font-weight:700}
+.lines .a{text-align:right;white-space:nowrap}
+.lines .each{display:block;color:var(--ink-2);font-size:.9375rem}
+.sum{margin-top:8px}
+.sum div{display:flex;justify-content:space-between;gap:16px;padding:4px 0}
+.sum .tot{margin-top:8px;padding-top:8px;border-top:2px solid var(--ink);font-weight:700;font-size:1.125rem}
+.check .fine{margin-top:12px;color:var(--ink-2);font-size:.875rem}
+/* Fields */
+.field{margin-top:20px}
+label{display:block;font-weight:600;margin-bottom:8px}
+.hint{color:var(--reed);font-size:.9375rem;margin:-4px 0 8px}
+.step .note{color:var(--reed);font-size:.9375rem;margin-top:12px}
+input[type="text"],input[type="tel"],input[type="email"],select{display:block;width:100%;min-height:48px;padding:12px;border:2px solid var(--reed);border-radius:4px;background:var(--board);color:var(--moon);font:inherit}
+select option{background:var(--board);color:var(--moon)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-weight:600;margin-bottom:8px;padding:0}
+.days{display:flex;flex-wrap:wrap;gap:8px}
+.day{position:relative;display:block;margin:0;font-weight:400;cursor:pointer}
+.day input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.day-in{display:flex;flex-direction:column;justify-content:center;min-width:9.5rem;min-height:60px;padding:8px 16px 8px 12px;border:2px solid var(--reed);border-radius:4px}
+.day-w{display:flex;align-items:center;gap:8px;font-weight:700}
+.day-d{color:var(--reed);font-size:.9375rem}
+.day .ok{display:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.day input:checked + .day-in{background:var(--lamp);border-color:var(--lamp);color:var(--water)}
+.day input:checked + .day-in .day-d{color:var(--water)}
+.day input:checked + .day-in .ok{display:block}
+.day input:focus-visible + .day-in{outline:3px solid var(--lamp);outline-offset:3px}
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:12px;min-height:60px;margin:0;padding:12px 16px;border:2px solid var(--reed);border-radius:4px;font-weight:400;cursor:pointer}
+.opt input{flex:none;width:24px;height:24px;margin:2px 0 0;accent-color:var(--lamp)}
+.opt b{display:block}
+.opt .sub{color:var(--reed);font-size:.9375rem}
+.opt:has(input:checked){border-color:var(--lamp);background:var(--board)}
+.card-note{margin-top:12px;padding:16px;border-left:4px solid var(--lamp);background:var(--board)}
+.card-note .note{margin-top:8px}
+.place{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:24px}
+.total-line{font-weight:700;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.go{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border:0;border-radius:4px;background:var(--lamp);color:var(--water);font:600 1.0625rem/1.2 var(--text);cursor:pointer;transition:background-color .15s var(--ease)}
+.go:hover{background:var(--lamp-2)}
+.ghost{display:inline-flex;align-items:center;min-height:48px;padding:12px 24px;border:2px solid var(--moon);border-radius:4px;background:transparent;color:var(--moon);font:600 1.0625rem/1.2 var(--text);cursor:pointer;transition:background-color .15s var(--ease)}
+.ghost:hover{background:var(--board)}
+.err{margin-top:12px;color:var(--lamp);font-weight:600}
+.err:empty{display:none}
+/* After the order */
+.done{padding-top:8px;padding-bottom:48px}
+.done > h2{font-size:clamp(1.75rem,4vw,2.5rem)}
+.done .when{margin-top:12px;max-width:52ch;font-size:1.1875rem}
+.done .paid{margin-top:8px;font-weight:600}
+.done .check{max-width:34rem}
+.demo-note{margin-top:20px;max-width:46rem;padding:12px 16px;border:2px dashed var(--reed);border-radius:4px}
+.sect{margin-top:40px;padding-top:32px;border-top:1px solid var(--rule)}
+.sect h2{font-size:clamp(1.5rem,3vw,1.875rem)}
+.sect > p{margin-top:12px;max-width:60ch;color:var(--reed)}
+.sect .k-sum{color:var(--moon);font-weight:600}
+.rail{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.tk{padding:16px;border:2px solid var(--rule);border-radius:4px;background:var(--board);font-variant-numeric:tabular-nums}
+.tk.new{border-color:var(--lamp)}
+.tk-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.tk-t{font-family:var(--display);font-weight:700;font-size:1.375rem}
+.tk-no{color:var(--reed)}
+.tk-new{display:inline-block;margin-bottom:8px;padding:4px 8px;border-radius:2px;background:var(--lamp);color:var(--water);font-weight:700;font-size:.875rem;line-height:1}
+.tk-who{margin-top:4px}
+.tk-items{list-style:none;margin:8px 0 0;padding:8px 0 0;border-top:1px dashed var(--reed)}
+.tk-pay{margin-top:8px;color:var(--reed);font-size:.9375rem}
+/* The confirmation email, drawn as an email: light, like an inbox */
+.mail{margin-top:16px;max-width:40rem;border-radius:4px;overflow:hidden;background:#FFFFFF;color:#1E2A2B}
+.mail-meta{padding:12px 20px;background:#E9ECEA;font-size:.9375rem}
+.mail-meta p{display:flex;gap:12px;padding:2px 0}
+.mail-meta .k{flex:none;min-width:4.5rem;color:#4A5859}
+.mail-body{padding:24px 20px;border-top:4px solid var(--lamp)}
+.mail-brand{font-family:var(--display);font-weight:700;font-size:1.375rem;color:var(--water)}
+.mail-body h3{margin-top:16px;font-family:var(--text);font-size:1.1875rem;line-height:1.3}
+.mail-body p{margin-top:12px}
+.mail-foot p{margin-top:0}
+.mail-lines{list-style:none;margin:16px 0 0;padding:0;font-variant-numeric:tabular-nums}
+.mail-lines li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid #D5DAD8}
+.mail-lines .tot{border-bottom:0;font-weight:700}
+.mail-foot{margin-top:20px;padding-top:12px;border-top:1px solid #D5DAD8;color:#4A5859;font-size:.875rem}
+.linkish{display:inline-flex;align-items:center;min-height:44px;padding:0;border:0;background:none;color:#0E4A52;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.linkish:focus-visible{outline-color:#0E4A52}
+.again{margin-top:40px}
+@media (prefers-reduced-motion:reduce){.qb,.go,.ghost{transition:none}}
+
+.sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
+.sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.sample-bar a:hover{color:#FFFFFF}
+.sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+.sample-bar .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.demo-toast{position:fixed;left:12px;right:12px;bottom:16px;z-index:50;max-width:30rem;margin:0 auto;background:#1B1A17;color:#F5F0E6;border-radius:6px;padding:12px 12px 12px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.25);font:400 1rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s linear .15s}
+.demo-toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s}
+.demo-toast p{margin:4px 0 0;flex:1}
+.demo-toast button{flex:none;min-height:44px;min-width:44px;padding:8px 12px;border:2px solid #F5F0E6;border-radius:4px;background:transparent;color:#F5F0E6;font:600 .9375rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer}
+.demo-toast button:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.demo-toast,.demo-toast.on{transition:none;transform:none}}
+@media print{.sample-bar,.demo-toast{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol></svg>
+<a class="skip-main" href="#main">Saltar al contenido principal</a>
+<div class="sample-bar"><div class="sb-in"><p>Muestra de Desarrollo a la Medida de Ari Leon Boozer, con un momento al desplazarse y pedidos en línea. El restaurante, el río, el horario, los precios y el teléfono son inventados.</p><a href="/es/muestras/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>Ver todas las muestras</span></a></div></div>
+<header class="top">
+<a class="name" href="index.html">Slack Water Catfish</a>
+<nav aria-label="Principal">
+<a class="lang" href="../order.html" hreflang="en-US" lang="en-US">English</a>
+<button type="button" class="call" data-demo="call">Llame al (870) 555-0137</button>
+</nav>
+</header>
+<main id="main">
+<div class="wrap intro">
+<h1>Pedir para recoger</h1>
+<p class="lede">Elija sus platos y una hora para recoger. Freímos todo al momento, para que esté caliente cuando llegue.</p>
+<p class="hrs">Para recoger de jueves a sábado, de 4 p. m. a 9 p. m., y el domingo, de 11 a. m. a 3 p. m. Cerrado de lunes a miércoles.</p>
+</div>
+<form class="wrap order" id="order-form" novalidate>
+<noscript><p class="nos">Este formulario de pedido necesita JavaScript. Nada de lo que escriba aquí sale de su navegador. En un sitio real, también se puede pedir por teléfono.</p></noscript>
+<div class="cols">
+<section class="step" id="menu" aria-labelledby="s1">
+<h2 class="step-h" id="s1" tabindex="-1"><span class="step-n">1</span>Elija sus platos</h2>
+<h3 class="grp">Platos</h3>
+<ul class="menu">
+<li class="dish" data-id="dinner"><div><p class="dish-n">Cena de bagre</p><p class="dish-d">3 filetes en harina de maíz, hushpuppies, ensalada de col y papas fritas.</p><p class="price">$15.99</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Cena de bagre"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Cena de bagre"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="basket"><div><p class="dish-n">Canasta de bagre</p><p class="dish-d">2 filetes y hushpuppies, para una cena más ligera.</p><p class="price">$11.49</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Canasta de bagre"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Canasta de bagre"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="shrimp"><div><p class="dish-n">Camarones fritos</p><p class="dish-d">Camarones del golfo en la misma harina de maíz, con papas fritas.</p><p class="price">$14.49</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Camarones fritos"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Camarones fritos"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="tenders"><div><p class="dish-n">Tiras de pollo</p><p class="dish-d">Para quien no come pescado.</p><p class="price">$9.99</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Tiras de pollo"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Tiras de pollo"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+</ul>
+<h3 class="grp">Para acompañar</h3>
+<ul class="menu">
+<li class="dish" data-id="tomatoes"><div><p class="dish-n">Tomates verdes fritos</p><p class="dish-d">Con salsa comeback.</p><p class="price">$6.99</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Tomates verdes fritos"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Tomates verdes fritos"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="hushpuppies"><div><p class="dish-n">Hushpuppies</p><p class="dish-d">6 por porción.</p><p class="price">$3.49</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Hushpuppies"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Hushpuppies"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="slaw"><div><p class="dish-n">Ensalada de col</p><p class="price">$2.49</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Ensalada de col"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Ensalada de col"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="fries"><div><p class="dish-n">Papas fritas</p><p class="price">$2.99</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Papas fritas"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Papas fritas"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+</ul>
+<h3 class="grp">Postre y bebidas</h3>
+<ul class="menu">
+<li class="dish" data-id="cobbler"><div><p class="dish-n">Cobbler de durazno</p><p class="dish-d">Caliente. El helado de vainilla va en un vaso aparte.</p><p class="price">$5.49</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Cobbler de durazno"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Cobbler de durazno"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="tea"><div><p class="dish-n">Té dulce, vaso grande</p><p class="price">$2.49</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Té dulce, vaso grande"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Té dulce, vaso grande"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+<li class="dish" data-id="gallon"><div><p class="dish-n">Té dulce, por galón</p><p class="dish-d">Para la mesa en casa.</p><p class="price">$6.99</p></div><div class="qty-box"><button type="button" class="qb" data-step="-1" aria-label="Quitar 1: Té dulce, por galón"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button><span class="qty">0</span><button type="button" class="qb" data-step="1" aria-label="Agregar 1: Té dulce, por galón"><svg class="qi" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></div></li>
+</ul>
+</section>
+<div>
+<section class="step" aria-labelledby="s2">
+<h2 class="step-h" id="s2"><span class="step-n">2</span>Su pedido</h2>
+<div class="check" id="check"><div class="check-head"><span class="check-title">Cuenta</span><span class="check-no">N.º —</span></div><p class="empty">Todavía no hay nada. Agregue platos del menú.</p><div class="sum"><div><span>Subtotal</span><span>$0.00</span></div><div><span>Impuesto (9.75%)</span><span>$0.00</span></div><div class="tot"><span>Total</span><span>$0.00</span></div></div><p class="fine">La tasa de impuesto de 9.75% es inventada para esta muestra. En un sitio real, las tasas las da el restaurante.</p></div>
+</section>
+<section class="step" aria-labelledby="s3">
+<h2 class="step-h" id="s3"><span class="step-n">3</span>Hora para recoger</h2>
+<fieldset class="field"><legend>Día</legend><div class="days" id="days"></div></fieldset>
+<p class="note">Cerrado el Día de Acción de Gracias y el día de Navidad.</p>
+<div class="field"><label for="time">Hora</label><p class="hint" id="time-hint">Cada 15 minutos, en nuestro horario. Para hoy, pida con 30 minutos de anticipación como mínimo.</p>
+<select id="time" required aria-describedby="time-hint"><option value="">Elija una hora</option></select></div>
+</section>
+<section class="step" aria-labelledby="s4">
+<h2 class="step-h" id="s4"><span class="step-n">4</span>Sus datos</h2>
+<p class="note">Muestra: nada de lo que escriba aquí sale de su navegador.</p>
+<div class="field"><label for="o-name">Nombre</label><input type="text" id="o-name" autocomplete="name" maxlength="80" required></div>
+<div class="field"><label for="o-phone">Teléfono</label><p class="hint" id="phone-hint">Solo llamamos si hay una pregunta sobre su pedido.</p>
+<input type="tel" id="o-phone" inputmode="tel" autocomplete="tel" maxlength="40" required aria-describedby="phone-hint"></div>
+<div class="field"><label for="o-email">Correo electrónico</label><p class="hint" id="email-hint">Aquí le llega la confirmación.</p>
+<input type="email" id="o-email" autocomplete="email" maxlength="120" required aria-describedby="email-hint"></div>
+</section>
+<section class="step" aria-labelledby="s5">
+<h2 class="step-h" id="s5"><span class="step-n">5</span>Cómo va a pagar</h2>
+<fieldset class="opts field" aria-labelledby="s5">
+<label class="opt"><input type="radio" name="pay" value="pickup" checked><span><b>Pagar al recoger</b><span class="sub">En efectivo o con tarjeta en el mostrador</span></span></label>
+<label class="opt"><input type="radio" name="pay" value="card"><span><b>Pagar ahora con tarjeta</b><span class="sub">En la página de pago de Stripe</span></span></label>
+</fieldset>
+<div class="card-note" id="card-note" hidden><p>Después se abre la página de pago de Stripe, donde usted escribe los datos de su tarjeta. El número de la tarjeta va a Stripe, no al restaurante.</p><p class="note">En esta muestra, esa página no se abre y no se cobra nada.</p></div>
+<div class="place"><p class="total-line">Total <span id="place-total">$0.00</span></p>
+<button type="button" class="go" id="place" data-demo="order">Hacer el pedido</button></div>
+<p class="err" id="err" role="alert"></p>
+</section>
+</div>
+</div>
+</form>
+<section class="wrap done" id="done" aria-labelledby="done-h" hidden>
+<h2 id="done-h" tabindex="-1"></h2>
+<p class="when" id="done-when"></p>
+<p class="paid" id="done-paid"></p>
+<div class="check" id="done-check"></div>
+<p class="demo-note">Muestra: no se pidió, no se cobró ni se envió nada. En un sitio real, cada pedido le llega al restaurante por correo y la persona recibe el correo que se ve abajo.</p>
+<div class="sect"><h2>Lo que ve el restaurante</h2><p>Cada pedido le llega al restaurante por correo en cuanto entra, y los pedidos del día se ordenan en 1 lista para la cocina, por hora de recogida.</p><p class="k-sum" id="k-sum"></p><ol class="rail" id="k-list"></ol></div>
+<div class="sect"><h2>El correo que recibe la persona</h2><div class="mail" id="mail"></div></div>
+<p class="again"><button type="button" class="ghost" id="again">Hacer otro pedido</button></p>
+</section>
+<p class="sr-only" id="live" aria-live="polite"></p>
+</main>
+<footer><p>Página de muestra de <a href="https://www.arileonboozer.com/es/">ALB</a>. Slack Water Catfish, el río Mossy Fork, Persimmon Landing, el número de teléfono, el horario y los precios son inventados.</p>
+<p class="foot-links"><a href="index.html">Página principal</a><a href="privacy.html">Privacidad</a><a href="../order.html" hreflang="en-US" lang="en-US">English</a></p></footer>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite"><p id="demo-msg"></p><button type="button" id="demo-close">Cerrar</button></div>
+<script>
+/* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
+(function () {
+  var notes = {"text": "Muestra: en su sitio, este botón abre un mensaje de texto a su número.", "call": "Muestra: en su sitio, este botón llama a su número.", "map": "Muestra: en su sitio, esto abre su dirección en Mapas.", "facebook": "Muestra: en su sitio, esto abre su página de Facebook.", "instagram": "Muestra: en su sitio, esto abre su página de Instagram.", "booking": "Muestra: en su sitio, esto abre la página de citas que ya usa, como Square o Booksy.", "form": "Muestra: no se envió nada. En su sitio, este formulario le envía por correo lo que escribió la persona.", "quote": "Muestra: no se envió nada. En su sitio, este formulario le envía la solicitud por correo, con el servicio ya elegido.", "google": "Muestra: en su sitio, esto abre su Perfil de Negocio de Google.", "review": "Muestra: en su sitio, esto abre su página de reseñas de Google, para que sus clientes dejen una reseña.", "email": "Muestra: en su sitio, esto abre un correo a su dirección.", "pay": "Muestra: en su sitio, esto abre la página de pagos que ya usa.", "checkout": "Muestra: no se cobró nada. En su sitio, esto abre la página de pago de Stripe para pagar con tarjeta.", "order": "Muestra: no se pidió nada. En su sitio, el pedido le llega por correo y la persona recibe un correo de confirmación.", "appstore": "Muestra: en su sitio, esto abre la página de su aplicación en el App Store.", "googleplay": "Muestra: en su sitio, esto abre la página de su aplicación en Google Play.", "unsub": "Muestra: en un correo real, este enlace detiene los demás correos del restaurante."};
+  var toast = document.getElementById('demo-toast');
+  var msg = document.getElementById('demo-msg');
+  var timer = null;
+  function hide() { toast.classList.remove('on'); }
+  function show(kind) {
+    msg.textContent = notes[kind] || notes.form;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(hide, 7000);
+  }
+  document.getElementById('demo-close').addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hide(); } });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-demo]');
+    if (!b) { return; }
+    e.preventDefault();
+    var f = b.closest('form');
+    if (f && !f.reportValidity()) { return; }
+    show(b.getAttribute('data-demo'));
+  });
+  document.addEventListener('submit', function (e) { e.preventDefault(); });
+}());
+/* The made-up businesses keep Central time, whatever the visitor's clock says */
+function sampleNow() {
+  var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var o = {};
+  p.forEach(function (x) { o[x.type] = x.value; });
+  return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
+}
+</script>
+<script>
+/* Order for pickup demo. Everything stays in this page's memory: nothing is stored, sent or charged.
+   Money is in whole cents; tax is rounded half up to the cent. Pickup times use the restaurant's Central time. */
+(function () {
+  var C = {"lang": "es", "ids": ["dinner", "basket", "shrimp", "tenders", "tomatoes", "hushpuppies", "slaw", "fries", "cobbler", "tea", "gallon"], "menu": {"dinner": {"n": "Cena de bagre", "p": 1599}, "basket": {"n": "Canasta de bagre", "p": 1149}, "shrimp": {"n": "Camarones fritos", "p": 1449}, "tenders": {"n": "Tiras de pollo", "p": 999}, "tomatoes": {"n": "Tomates verdes fritos", "p": 699}, "hushpuppies": {"n": "Hushpuppies", "p": 349}, "slaw": {"n": "Ensalada de col", "p": 249}, "fries": {"n": "Papas fritas", "p": 299}, "cobbler": {"n": "Cobbler de durazno", "p": 549}, "tea": {"n": "Té dulce, vaso grande", "p": 249}, "gallon": {"n": "Té dulce, por galón", "p": 699}}, "taxBp": 975, "max": 20, "nDays": 4, "lead": 30, "firstNo": 1046, "hours": {"4": [960, 1260], "5": [960, 1260], "6": [960, 1260], "0": [660, 900]}, "am": "a. m.", "pm": "p. m.", "days": ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"], "months": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"], "addr": "100 Dock Road, Persimmon Landing, Arkansas", "seeds": [["Darla W.", "(870) 555-0148", [["dinner", 2], ["gallon", 1]], "card"], ["Ray B.", "(870) 555-0162", [["basket", 1], ["tenders", 1], ["cobbler", 2]], "pickup"], ["Toni H.", "(870) 555-0119", [["shrimp", 1], ["tomatoes", 1]], "card"], ["Marcus J.", "(870) 555-0175", [["dinner", 4], ["hushpuppies", 2], ["gallon", 2]], "pickup"], ["Lupe R.", "(870) 555-0126", [["basket", 2], ["fries", 1], ["tea", 2]], "pickup"], ["Glenn P.", "(870) 555-0184", [["tenders", 2], ["slaw", 1], ["cobbler", 1]], "card"]], "okIcon": "<svg class=\"ok\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"/><\/svg>", "t": {"today": "Hoy", "tomorrow": "Mañana", "pickTime": "Elija una hora", "check": "Cuenta", "no": "N.º", "noBlank": "N.º —", "empty": "Todavía no hay nada. Agregue platos del menú.", "each": "cada uno", "sub": "Subtotal", "tax": "Impuesto (9.75%)", "total": "Total", "taxNote": "La tasa de impuesto de 9.75% es inventada para esta muestra. En un sitio real, las tasas las da el restaurante.", "said": "{n}: {q} en su pedido. Subtotal {sub}.", "placeOrder": "Hacer el pedido", "payCard": "Pagar con tarjeta", "needItems": "Primero agregue por lo menos 1 plato o bebida del menú.", "doneH": "Recibimos su pedido N.º {no}", "ready": "Recójalo en el mostrador de la entrada, 100 Dock Road, el {date} {at}", "payLater": "Paga {total} cuando lo recoja.", "paidCard": "Pagado con tarjeta: {total}.", "kSum": "{date}: {n} pedidos, {sum} en total", "new": "Nuevo", "tkCard": "Pagado con tarjeta", "tkLater": "Paga al recoger", "from": "De", "to": "Para", "subj": "Asunto", "subject": "Su pedido N.º {no}: listo el {day} {at}", "thanks": "Gracias, {name}. Recibimos su pedido.", "change": "¿Necesita cambiar algo? Llame al (870) 555-0137 en nuestro horario.", "why": "Recibe este correo porque hizo un pedido en nuestro sitio web.", "unsub": "Cancelar la suscripción"}}, T = C.t;
+  var form = document.getElementById('order-form'), done = document.getElementById('done'), live = document.getElementById('live');
+  var err = document.getElementById('err'), place = document.getElementById('place'), timeSel = document.getElementById('time');
+  var daysBox = document.getElementById('days'), menu = document.getElementById('menu');
+  var qty = {}, placed = [], days = [], nextNo = C.firstNo;
+  C.ids.forEach(function (id) { qty[id] = 0; });
+
+  function money(c) { return '$' + String(Math.floor(c / 100)).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '.' + ('0' + (c % 100)).slice(-2); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (ch) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[ch]; }); }
+  function sums(lines) {
+    var sub = 0;
+    lines.forEach(function (l) { sub += C.menu[l[0]].p * l[1]; });
+    var tax = Math.floor((sub * C.taxBp + 5000) / 10000);
+    return {sub: sub, tax: tax, total: sub + tax};
+  }
+  function current() { return C.ids.filter(function (id) { return qty[id] > 0; }).map(function (id) { return [id, qty[id]]; }); }
+  function fmtT(m) { var h = Math.floor(m / 60), mi = m % 60, ap = h >= 12 ? C.pm : C.am; h = h % 12 || 12; return h + ':' + ('0' + mi).slice(-2) + '\u00a0' + ap; }
+  function at(m) { return (C.lang === 'es' ? ((Math.floor(m / 60) % 12 || 12) === 1 ? 'a la ' : 'a las ') : 'at ') + fmtT(m); }
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  function longDate(d) { return C.lang === 'es' ? C.days[d.wd] + ' ' + d.d + ' de ' + C.months[d.m] : C.days[d.wd] + ', ' + C.months[d.m] + ' ' + d.d; }
+  function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 16777619) >>> 0; } return h; }
+  function val(id) { return document.getElementById(id).value.trim(); }
+
+  function checkHTML(lines, no) {
+    var s = sums(lines);
+    var rows = lines.map(function (l) {
+      var it = C.menu[l[0]], each = l[1] > 1 ? '<span class="each">' + money(it.p) + ' ' + T.each + '</span>' : '';
+      return '<li><span class="q">' + l[1] + '</span><span>' + esc(it.n) + each + '</span><span class="a">' + money(it.p * l[1]) + '</span></li>';
+    }).join('');
+    return '<div class="check-head"><span class="check-title">' + T.check + '</span><span class="check-no">' + (no ? T.no + ' ' + no : T.noBlank) + '</span></div>' +
+      (lines.length ? '<ul class="lines">' + rows + '</ul>' : '<p class="empty">' + T.empty + '</p>') +
+      '<div class="sum"><div><span>' + T.sub + '</span><span>' + money(s.sub) + '</span></div><div><span>' + T.tax + '</span><span>' + money(s.tax) +
+      '</span></div><div class="tot"><span>' + T.total + '</span><span>' + money(s.total) + '</span></div></div><p class="fine">' + T.taxNote + '</p>';
+  }
+  function renderCheck() {
+    document.getElementById('check').innerHTML = checkHTML(current(), 0);
+    document.getElementById('place-total').textContent = money(sums(current()).total);
+  }
+  function syncRow(row) {
+    var id = row.getAttribute('data-id'), b = row.querySelectorAll('[data-step]');
+    row.querySelector('.qty').textContent = qty[id];
+    row.classList.toggle('in', qty[id] > 0);
+    b[0].setAttribute('aria-disabled', String(qty[id] === 0));
+    b[1].setAttribute('aria-disabled', String(qty[id] >= C.max));
+  }
+  menu.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-step]');
+    if (!b || b.getAttribute('aria-disabled') === 'true') { return; }
+    var row = b.closest('[data-id]'), id = row.getAttribute('data-id');
+    qty[id] = Math.max(0, Math.min(C.max, qty[id] + Number(b.getAttribute('data-step'))));
+    syncRow(row);
+    renderCheck();
+    err.textContent = '';
+    live.textContent = T.said.replace('{n}', C.menu[id].n).replace('{q}', qty[id]).replace('{sub}', money(sums(current()).sub));
+  });
+
+  /* The next 4 open days with a pickup time left, skipping Thanksgiving and Christmas Day */
+  function buildDays() {
+    var now = sampleNow(), p = {};
+    new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric'})
+      .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+    var base = Date.UTC(+p.year, +p.month - 1, +p.day);
+    days = [];
+    for (var i = 0; days.length < C.nDays && i < 28; i++) {
+      var dt = new Date(base + i * 86400000), wd = dt.getUTCDay(), m = dt.getUTCMonth(), d = dt.getUTCDate(), h = C.hours[wd];
+      if (!h || (m === 11 && d === 25) || (m === 10 && wd === 4 && d >= 22 && d <= 28)) { continue; }
+      var first = i === 0 ? Math.max(h[0], Math.ceil((now.t + C.lead) / 15) * 15) : h[0], slots = [];
+      for (var t = first; t <= h[1] - 15; t += 15) { slots.push(t); }
+      if (slots.length) { days.push({i: i, wd: wd, m: m, d: d, key: (m + 1) + '-' + d, slots: slots, h: h}); }
+    }
+    daysBox.innerHTML = days.map(function (dd, k) {
+      var w = dd.i === 0 ? T.today : (dd.i === 1 ? T.tomorrow : cap(C.days[dd.wd]));
+      var dateTxt = C.lang === 'es' ? dd.d + ' de ' + C.months[dd.m] : C.months[dd.m] + ' ' + dd.d;
+      return '<label class="day"><input type="radio" name="day" value="' + k + '"' + (k === 0 ? ' checked' : '') + '><span class="day-in"><span class="day-w">' +
+        C.okIcon + w + '</span><span class="day-d">' + dateTxt + '</span></span></label>';
+    }).join('');
+    fillTimes();
+  }
+  function pickedDay() { var c = daysBox.querySelector('input:checked'); return c ? days[+c.value] : null; }
+  function fillTimes() {
+    var dd = pickedDay();
+    timeSel.innerHTML = '<option value="">' + T.pickTime + '</option>' +
+      (dd ? dd.slots.map(function (t) { return '<option value="' + t + '">' + fmtT(t) + '</option>'; }).join('') : '');
+  }
+  daysBox.addEventListener('change', fillTimes);
+
+  function setPay(card) {
+    document.getElementById('card-note').hidden = !card;
+    place.textContent = card ? T.payCard : T.placeOrder;
+    place.setAttribute('data-demo', card ? 'checkout' : 'order');
+  }
+  form.addEventListener('change', function (e) { if (e.target.name === 'pay') { setPay(e.target.value === 'card'); } });
+
+  /* Runs before the sample script's own handler, which then shows the "Sample:" note (or the browser's field messages) */
+  place.addEventListener('click', function (e) {
+    err.textContent = '';
+    var lines = current();
+    if (!lines.length) { e.stopPropagation(); err.textContent = T.needItems; return; }
+    if (!form.checkValidity()) { return; }
+    var o = {no: nextNo++, day: pickedDay(), t: +timeSel.value, name: val('o-name'), phone: val('o-phone'), email: val('o-email'),
+             pay: form.querySelector('input[name="pay"]:checked').value, lines: lines};
+    placed.push(o);
+    showDone(o);
+  });
+
+  function readyLine(o) { return T.ready.replace('{date}', longDate(o.day)).replace('{at}', at(o.t)); }
+  function payLine(o) { return (o.pay === 'card' ? T.paidCard : T.payLater).replace('{total}', money(sums(o.lines).total)); }
+  function seedsFor(dd) {
+    var slots = [], out = [], hs = hash(dd.key), n = 3 + (hs % 2);
+    for (var t = dd.h[0]; t <= dd.h[1] - 15; t += 15) { slots.push(t); }
+    for (var k = 0; k < n; k++) {
+      var s = C.seeds[(hs + k) % C.seeds.length];
+      out.push({no: C.firstNo - 5 + k, t: slots[hash(dd.key + ':' + k) % slots.length], name: s[0], phone: s[1], lines: s[2], pay: s[3]});
+    }
+    return out;
+  }
+  function renderKitchen(latest) {
+    var list = seedsFor(latest.day).concat(placed.filter(function (o) { return o.day.key === latest.day.key; })), sum = 0;
+    list.sort(function (a, b) { return a.t - b.t || a.no - b.no; });
+    document.getElementById('k-list').innerHTML = list.map(function (o) {
+      var s = sums(o.lines);
+      sum += s.total;
+      return '<li class="tk' + (o === latest ? ' new' : '') + '">' + (o === latest ? '<span class="tk-new">' + T.new + '</span>' : '') +
+        '<p class="tk-top"><span class="tk-t">' + fmtT(o.t) + '</span><span class="tk-no">' + T.no + ' ' + o.no + '</span></p><p class="tk-who">' + esc(o.name) + '<br>' + esc(o.phone) + '</p><ul class="tk-items">' +
+        o.lines.map(function (l) { return '<li>' + l[1] + ' \u00d7 ' + esc(C.menu[l[0]].n) + '</li>'; }).join('') + '</ul><p class="tk-pay">' +
+        (o.pay === 'card' ? T.tkCard : T.tkLater) + ', ' + money(s.total) + '</p></li>';
+    }).join('');
+    document.getElementById('k-sum').textContent = T.kSum.replace('{date}', cap(longDate(latest.day))).replace('{n}', list.length).replace('{sum}', money(sum));
+  }
+  function renderMail(o) {
+    var s = sums(o.lines);
+    var rows = o.lines.map(function (l) { var it = C.menu[l[0]]; return '<li><span>' + l[1] + ' \u00d7 ' + esc(it.n) + '</span><span>' + money(it.p * l[1]) + '</span></li>'; }).join('');
+    document.getElementById('mail').innerHTML =
+      '<div class="mail-meta"><p><span class="k">' + T.from + '</span><span>Slack Water Catfish</span></p><p><span class="k">' + T.to + '</span><span>' + esc(o.email) +
+      '</span></p><p><span class="k">' + T.subj + '</span><span>' + T.subject.replace('{no}', o.no).replace('{day}', C.days[o.day.wd]).replace('{at}', at(o.t)) + '</span></p></div>' +
+      '<div class="mail-body"><p class="mail-brand">Slack Water Catfish</p><h3>' + esc(T.thanks.replace('{name}', o.name)) + '</h3><p>' + readyLine(o) + '</p>' +
+      '<ul class="mail-lines">' + rows + '<li><span>' + T.sub + '</span><span>' + money(s.sub) + '</span></li><li><span>' + T.tax + '</span><span>' + money(s.tax) +
+      '</span></li><li class="tot"><span>' + T.total + '</span><span>' + money(s.total) + '</span></li></ul><p>' + payLine(o) + '</p><p>' + T.change + '</p>' +
+      '<div class="mail-foot"><p>Slack Water Catfish, ' + C.addr + '<br>' + T.why + '</p><button type="button" class="linkish" data-demo="unsub">' + T.unsub + '</button></div></div>';
+  }
+  function showDone(o) {
+    document.getElementById('done-h').textContent = T.doneH.replace('{no}', o.no);
+    document.getElementById('done-when').textContent = readyLine(o);
+    document.getElementById('done-paid').textContent = payLine(o);
+    document.getElementById('done-check').innerHTML = checkHTML(o.lines, o.no);
+    renderKitchen(o);
+    renderMail(o);
+    form.hidden = true;
+    done.hidden = false;
+    document.getElementById('done-h').focus();
+  }
+  /* A new order keeps the name, phone and email, and the orders already placed stay on the kitchen's list */
+  document.getElementById('again').addEventListener('click', function () {
+    C.ids.forEach(function (id) { qty[id] = 0; });
+    menu.querySelectorAll('[data-id]').forEach(syncRow);
+    form.querySelector('input[name="pay"][value="pickup"]').checked = true;
+    setPay(false);
+    buildDays();
+    renderCheck();
+    done.hidden = true;
+    form.hidden = false;
+    document.getElementById('s1').focus();
+  });
+
+  menu.querySelectorAll('[data-id]').forEach(syncRow);
+  buildDays();
+  renderCheck();
+}());
+</script>
+</body>
+</html>

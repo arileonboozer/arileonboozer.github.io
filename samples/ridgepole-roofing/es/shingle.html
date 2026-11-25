@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Techos de tejas | Ridgepole Roofing (sitio de muestra)</title>
-<meta name="description" content="Sitio Completo de muestra de Ari Leon Boozer para una empresa de techos inventada: una página por servicio, dibujos de antes y después, formulario de presupuesto y versión en inglés.">
+<meta name="description" content="Sitio Completo de muestra de Ari Leon Boozer para una empresa de techos inventada: 13 páginas, una página por servicio, 4 galerías de dibujos, formulario de presupuesto, comentarios de clientes y versión en inglés.">
 <meta name="robots" content="noindex">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#FFFFFF">
@@ -12,7 +12,8 @@
 <style>
 .sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 .sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
-.sample-bar p{margin:0}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
 .sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
 .sample-bar a:hover{color:#FFFFFF}
 .sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
@@ -56,28 +57,42 @@ p{margin:0 0 16px;text-wrap:pretty}
 .logo svg{width:44px;height:30px}
 .logo-name{font-family:var(--head);font-weight:700;font-size:1.375rem;line-height:1.1}
 .logo-sub{display:block;font-family:var(--sans);font-weight:400;font-size:.875rem;color:var(--ink-2)}
-.head-acts{display:flex;align-items:center;gap:12px}
+.head-acts{display:flex;align-items:center;gap:12px 20px}
 .lang{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;font-weight:600}
-.nav-wide{display:none}
+.head-phone{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1rem}
+.nav-row{display:none;border-top:1px solid var(--rule)}
 .nav-wide ul,.menu ul{list-style:none;margin:0;padding:0}
-.nav-wide ul{display:flex;gap:0 20px;flex-wrap:wrap}
+.nav-wide>ul{display:flex;align-items:center;gap:0 28px;flex-wrap:wrap}
+.nav-wide li{position:relative}
 .nav-wide a,.menu a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
 .nav-wide a:hover,.menu a:hover{border-bottom-color:var(--rule)}
 .nav-wide a[aria-current="page"],.menu a[aria-current="page"]{border-bottom-color:var(--blue)}
+.sub>summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;cursor:pointer;list-style:none;border-bottom:3px solid transparent}
+.sub>summary::-webkit-details-marker{display:none}
+.sub>summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translateY(-3px);margin-left:4px}
+.sub[open]>summary::after{transform:rotate(-135deg) translateY(-1px)}
+.sub>summary:hover{border-bottom-color:var(--rule)}
+.sub>summary.cur{border-bottom-color:var(--blue)}
+.nav-wide .sub ul{position:absolute;left:-20px;top:100%;z-index:30;width:max-content;min-width:16rem;margin-top:4px;padding:8px 16px;background:var(--card);border:2px solid var(--ink);border-radius:4px}
+.sub ul a{display:flex}
+.sub:not([open]) ul{display:none}
 .menu{border-top:1px solid var(--rule)}
 .menu summary{display:flex;align-items:center;gap:8px;min-height:48px;font-weight:600;cursor:pointer;list-style:none}
 .menu summary::-webkit-details-marker{display:none}
 .menu summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translateY(-3px);margin-left:4px}
 .menu[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
-.menu ul{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding-bottom:12px}
-@media (min-width:1040px){.nav-wide{display:block}.menu{display:none}.head-quote{display:inline-flex}}
+.menu-h{margin:4px 0 0;font-size:.875rem;font-weight:700;color:var(--ink-2)}
+.menu ul{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding-bottom:8px}
+.menu ul+ul{border-top:1px solid var(--rule);padding-top:8px;padding-bottom:12px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:4px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:600 1rem/1.2 var(--sans);cursor:pointer;text-decoration:none;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
 .btn:hover{background:var(--ink);color:var(--page)}
 .btn:active{transform:scale(.98)}
 .btn-blue{background:var(--blue);border-color:var(--blue);color:#fff}
 .btn-blue:hover{background:var(--blue-d);border-color:var(--blue-d);color:#fff}
 .btn-sm{min-height:44px;padding:8px 16px;font-size:.9375rem}
-.head-quote{display:none}
+.head-quote,.head-phone{display:none}
+@media (min-width:1040px){.nav-row{display:block}.menu{display:none}.head-quote{display:inline-flex}.head-phone{display:block}}
+.go{display:inline-flex;align-items:center;min-height:44px}
 .hero{padding:40px 0 48px}
 .hero-grid{display:grid;gap:32px;align-items:center}
 @media (min-width:960px){.hero{padding:64px 0}.hero-grid{grid-template-columns:1fr 1fr;gap:48px}}
@@ -99,6 +114,7 @@ p{margin:0 0 16px;text-wrap:pretty}
 .svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
 .svc li{border-bottom:1px solid var(--rule)}
 .svc a{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:20px 0;color:var(--ink);text-decoration:none}
+.svc.plain a{grid-template-columns:1fr auto}
 .svc a:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
 .svc svg{width:64px;height:40px}
 .svc h3{margin:0 0 4px}
@@ -110,9 +126,15 @@ p{margin:0 0 16px;text-wrap:pretty}
 .steps .n{font-family:var(--mono);font-weight:700;font-size:1.25rem;color:var(--blue)}
 .steps h3{margin-bottom:4px}
 .steps p{margin:0;color:var(--ink-2)}
-.ticks{list-style:none;margin:0 0 16px;padding:0}
-.ticks li{display:flex;gap:12px;padding:8px 0}
+.ticks,.nots{list-style:none;margin:0 0 16px;padding:0}
+.ticks li,.nots li{display:flex;gap:12px;padding:8px 0}
 .ticks .ic{color:var(--blue);margin-top:4px}
+.nots .ic{color:var(--ink-2);margin-top:4px}
+.mats{margin:0}
+.mats div{padding:12px 0;border-top:1px solid var(--rule)}
+.mats div:first-child{border-top:0;padding-top:0}
+.mats dt{font-weight:700}
+.mats dd{margin:4px 0 0;color:var(--ink-2)}
 .panel{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:24px}
 .slope{width:100%;max-width:520px;height:auto}
 .facts{display:grid;gap:12px;margin:0;font-variant-numeric:tabular-nums}
@@ -126,28 +148,80 @@ p{margin:0 0 16px;text-wrap:pretty}
 .cmp-tags{display:flex;justify-content:space-between;font-weight:600;margin-top:8px}
 .cmp-ctl label{display:block;font-weight:600;margin:12px 0 4px}
 .cmp-ctl input{width:100%;min-height:44px;accent-color:var(--blue)}
-.gal{display:grid;gap:40px}
+.gal{display:grid;gap:40px;margin-top:24px}
 @media (min-width:960px){.gal{grid-template-columns:1fr 1fr}}
+.jump{display:flex;flex-wrap:wrap;gap:0 24px;margin:16px 0 0;padding:0;list-style:none}
+.jump a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.gal-intro{max-width:42rem;margin:0}
+.thumbs{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
+@media (min-width:960px){.thumbs{grid-template-columns:repeat(4,1fr);gap:32px 24px}}
+.thumbs figure{margin:0}
+.thumb{display:block;width:100%;padding:0;border:2px solid var(--ink);border-radius:4px;background:var(--card);cursor:zoom-in;overflow:hidden}
+.thumb svg{width:100%;height:auto}
+.thumb:hover{border-color:var(--blue)}
+.tag{display:block;margin-top:4px;font-size:.8125rem}
+.lb{width:min(56rem,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:2px solid var(--ink);border-radius:4px;background:var(--card);color:var(--ink)}
+.lb::backdrop{background:rgba(27,26,23,.72)}
+.lb-in{padding:16px}
+@media (min-width:720px){.lb-in{padding:24px}}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.lb-title{margin:0;font:700 1.125rem/1.3 var(--head)}
+.lb-pic svg{width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.lb-cap{margin:12px 0 0}
+.lb-nav{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
+.said-grid{display:grid;gap:20px}
+@media (min-width:960px){.said-grid{grid-template-columns:repeat(3,1fr)}}
+.said{margin:0;padding:20px 24px;background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--ink);border-radius:4px;display:flex;flex-direction:column;justify-content:space-between}
+.said blockquote{margin:0 0 16px}
+.said blockquote p{margin:0}
+.said figcaption{font-weight:600}
+.made{display:block;margin-top:4px;font-weight:400;font-size:.875rem;color:var(--ink-2)}
+.owner{display:grid;gap:24px;align-items:start}
+@media (min-width:720px){.owner{grid-template-columns:200px 1fr;gap:32px}}
+.portrait{margin:0;max-width:200px}
+.portrait svg{width:100%;height:auto;border:2px solid var(--ink);border-radius:4px}
+.crew{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:720px){.crew{grid-template-columns:1fr 1fr}}
+.crew li{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:20px 24px}
+.crew h3{margin:0 0 4px}
+.role{margin:0 0 8px;font-weight:600;color:var(--ink-2)}
+.crew li p:last-child{margin:0}
+.rings{width:100%;max-width:520px;height:auto;background:var(--card);border:2px solid var(--ink);border-radius:4px}
+.bands{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.bands li{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:20px 24px}
+.bands h3{margin:0 0 8px}
+.towns{margin:0 0 12px}
+.hours-t{border-collapse:collapse;width:100%;max-width:30rem;margin:0 0 32px;font-variant-numeric:tabular-nums}
+.hours-t th,.hours-t td{text-align:left;padding:8px 0;border-bottom:1px solid var(--rule);font-weight:400}
+.hours-t th{color:var(--ink-2);padding-right:16px}
+.hours-t td{font-weight:600}
+.faq h2{margin:48px 0 8px}
+.faq h2:first-child{margin-top:0}
 .faq details{border-top:1px solid var(--rule)}
-.faq details:last-child{border-bottom:1px solid var(--rule)}
+.faq details:last-of-type{border-bottom:1px solid var(--rule)}
 .faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 0;font-weight:600;font-size:1.0625rem;cursor:pointer;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-family:var(--mono);font-size:1.5rem;line-height:1;color:var(--blue)}
 .faq details[open] summary::after{content:"\2013"}
 .faq .a{padding:0 0 16px;max-width:44rem}
 .faq .a p{margin:0}
+.faq .a a{padding:2px 0}
 .prose{max-width:42rem}
+.quote-grid{display:grid;gap:40px}
+@media (min-width:1100px){.quote-grid{grid-template-columns:minmax(0,44rem) minmax(0,1fr);gap:48px;align-items:start}}
 .sheet{position:relative;background:var(--canary);border:2px solid var(--ink);border-bottom:0;border-radius:4px 4px 0 0;padding:24px 20px 32px;max-width:44rem}
 @media (min-width:720px){.sheet{padding:32px 40px 40px}}
 .sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:24px}
 .sheet-head h2{margin:0}
+.sheet-h{font-size:1.125rem;margin:8px 0 16px;padding-top:16px;border-top:1px solid var(--ink)}
 .formno{font-family:var(--mono);font-weight:700;color:var(--red);font-size:1.125rem}
 .sheet fieldset{border:0;margin:0 0 24px;padding:0}
 .sheet legend{font-weight:700;margin-bottom:8px;padding:0}
 .checks{display:grid;gap:4px 16px}
 @media (min-width:560px){.checks{grid-template-columns:1fr 1fr}}
-.checks label{display:flex;align-items:center;gap:12px;min-height:44px;font-weight:400;margin:0}
-.checks input{width:24px;height:24px;margin:0;accent-color:var(--blue);flex:none}
+.checks3{display:flex;flex-wrap:wrap;gap:4px 32px}
+.checks label,.checks3 label{display:flex;align-items:center;gap:12px;min-height:44px;font-weight:400;margin:0}
+.checks input,.checks3 input{width:24px;height:24px;margin:0;accent-color:var(--blue);flex:none}
 .row2{display:grid;gap:0 24px}
 @media (min-width:560px){.row2{grid-template-columns:1fr 1fr}}
 .line{margin-bottom:20px}
@@ -155,6 +229,7 @@ p{margin:0 0 16px;text-wrap:pretty}
 .line input,.line select,.line textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:8px 2px}
 .line select{min-height:44px}
 .line textarea{border:2px solid var(--ink);background:rgba(255,255,255,.35);min-height:7rem;resize:vertical;padding:8px}
+.photo-note{border:2px dashed var(--ink);border-radius:4px;padding:12px 16px;margin:0 0 20px;background:rgba(255,255,255,.35)}
 .copy{font-family:var(--mono);font-size:.875rem;color:var(--red);text-align:right;margin:16px 0 0}
 .tear{display:block;width:100%;max-width:44rem;height:14px}
 .foot{background:var(--slate);color:var(--on-slate);padding:40px 0 112px}
@@ -169,6 +244,9 @@ p{margin:0 0 16px;text-wrap:pretty}
 .social button{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid #6B7378;border-radius:4px;background:transparent;color:var(--on-slate);cursor:pointer}
 .social button:hover{border-color:#9FC3F0;color:#9FC3F0}
 .social .ic{width:20px;height:20px}
+.foot-acts{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:12px}
+.foot .btn{min-height:44px;padding:8px 16px;font-size:.9375rem;border-color:#9AA4AA;color:var(--on-slate)}
+.foot .btn:hover{background:var(--on-slate);border-color:var(--on-slate);color:var(--slate)}
 .foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:24px;padding-top:12px;border-top:1px solid #4A5155;font-size:.9375rem}
 .foot-links a,.foot-links span{display:inline-flex;align-items:center;min-height:44px}
 .foot-links span{color:var(--slate-2)}
@@ -177,23 +255,24 @@ p{margin:0 0 16px;text-wrap:pretty}
 @media (min-width:1040px){.actbar{display:none}}
 @media (max-width:1039px){.demo-toast{bottom:84px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
-@media print{.actbar,.menu,.nav-wide,.head-acts,.skip{display:none}.sheet{background:#fff}}
+@media print{.actbar,.menu,.nav-row,.head-acts,.skip,.lb{display:none}.sheet{background:#fff}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol></svg>
 <a class="skip" href="#main">Saltar al contenido principal</a>
 <div class="sample-bar"><div class="sb-in"><p>Sitio Completo de muestra de Ari Leon Boozer. El negocio, los trabajos y el teléfono son inventados.</p><a href="/es/muestras/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>Ver todas las muestras</span></a></div></div>
 <header class="site-head">
 <div class="wrap head-row">
 <a class="logo" href="index.html"><svg viewBox="0 0 44 30" aria-hidden="true" focusable="false"><path d="M2 27 L22 4 L42 27" fill="none" stroke="#2F3437" stroke-width="4" stroke-linejoin="round"/><path d="M22 4 V27" stroke="#1F5FAD" stroke-width="2" stroke-dasharray="3 3"/></svg><span class="logo-name">Ridgepole Roofing<span class="logo-sub">Landing, Arkansas</span></span></a>
-<nav class="nav-wide" aria-label="Principal"><ul><li><a href="shingle.html" aria-current="page">Techos de tejas</a></li><li><a href="metal.html">Techos de metal</a></li><li><a href="repairs.html">Reparaciones y goteras</a></li><li><a href="work.html">Trabajos</a></li><li><a href="about.html">Quiénes somos</a></li><li><a href="questions.html">Preguntas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav>
 <div class="head-acts">
+<p class="head-phone">(870) 555-0168</p>
 <a class="btn btn-blue btn-sm head-quote" href="quote.html">Pedir un presupuesto</a>
 <a class="lang" href="../shingle.html" lang="en" hreflang="en">English</a>
 </div>
 </div>
-<div class="wrap"><details class="menu"><summary>Menú</summary><nav aria-label="Principal"><ul><li><a href="shingle.html" aria-current="page">Techos de tejas</a></li><li><a href="metal.html">Techos de metal</a></li><li><a href="repairs.html">Reparaciones y goteras</a></li><li><a href="work.html">Trabajos</a></li><li><a href="about.html">Quiénes somos</a></li><li><a href="questions.html">Preguntas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav></details></div>
+<div class="nav-row"><div class="wrap"><nav class="nav-wide" aria-label="Principal"><ul><li><details class="sub"><summary class="cur">Servicios</summary><ul><li><a href="shingle.html" aria-current="page">Techos de tejas</a></li><li><a href="metal.html">Techos de metal</a></li><li><a href="repairs.html">Reparaciones y goteras</a></li><li><a href="storm.html">Daños por tormenta</a></li><li><a href="inspections.html">Inspección de techos</a></li></ul></details></li><li><a href="work.html">Trabajos</a></li><li><a href="team.html">Nuestro equipo</a></li><li><a href="about.html">Quiénes somos</a></li><li><a href="area.html">Dónde trabajamos</a></li><li><a href="questions.html">Preguntas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav></div></div>
+<div class="wrap"><details class="menu"><summary>Menú</summary><nav aria-label="Principal"><p class="menu-h">Servicios</p><ul><li><a href="shingle.html" aria-current="page">Techos de tejas</a></li><li><a href="metal.html">Techos de metal</a></li><li><a href="repairs.html">Reparaciones y goteras</a></li><li><a href="storm.html">Daños por tormenta</a></li><li><a href="inspections.html">Inspección de techos</a></li></ul><ul><li><a href="work.html">Trabajos</a></li><li><a href="team.html">Nuestro equipo</a></li><li><a href="about.html">Quiénes somos</a></li><li><a href="area.html">Dónde trabajamos</a></li><li><a href="questions.html">Preguntas</a></li><li><a href="contact.html">Contacto</a></li></ul></nav></details></div>
 </header>
 <main id="main">
 <section class="page-top"><div class="wrap two"><div><h1>Techos de tejas</h1><p class="lede">Retiramos todo el techo viejo y ponemos tejas arquitectónicas nuevas, revisando la base y cambiando los tapajuntas.</p>
@@ -211,15 +290,20 @@ p{margin:0 0 16px;text-wrap:pretty}
 <text x="20" y="290" font-family="ui-monospace,Consolas,monospace" font-size="16" fill="#4E565B">Pendiente 6:12</text>
 </svg></div></div></section>
 <section class="section"><div class="wrap two"><div><h2>Qué incluye</h2><ul class="ticks"><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Retiro y acarreo de las tejas y la membrana viejas</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Revisión de la base; las tablas blandas o podridas se cambian al precio del presupuesto</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Membrana sintética, borde de goteo nuevo y tira inicial</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Tejas arquitectónicas del color que elija de las muestras</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Botas de tubería, tapajuntas escalonados y ventila de cumbrera nuevos</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Recogemos los clavos con un imán antes de irnos</span></li></ul></div>
-<div class="panel"><dl class="facts"><div><dt>Casa típica</dt><dd>1 a 3 días</dd></div><div><dt>Pendiente común</dt><dd>4:12 a 9:12</dd></div><div><dt>Presupuesto</dt><dd>Gratis, por escrito</dd></div></dl><p style="margin:16px 0 0"><a class="btn btn-blue" href="quote.html?service=shingle">Pedir un presupuesto</a></p></div></div></section>
-<section class="section"><div class="wrap"><div class="prose"><h2>Otros servicios</h2><ul class="svc"><li><a href="metal.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V29 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">3:12</text></svg><div><h3>Techos de metal</h3><p>Metal de junta alzada y atornillado para casas, talleres y graneros.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="repairs.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V17 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">8:12</text></svg><div><h3>Reparaciones y goteras</h3><p>Goteras, tejas que faltan y daños por tormenta. Primero cubrimos con lona, luego reparamos.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li></ul></div></div></section>
+<div class="panel"><dl class="facts"><div><dt>Casa típica</dt><dd>1 a 3 días</dd></div><div><dt>Pendiente común</dt><dd>4:12 a 9:12</dd></div><div><dt>Garantía de mano de obra</dt><dd>10 años</dd></div><div><dt>Presupuesto</dt><dd>Gratis, por escrito</dd></div></dl><p style="margin:16px 0 0"><a class="btn btn-blue" href="quote.html?service=shingle">Pedir un presupuesto</a></p></div></div></section>
+<section class="section"><div class="wrap two"><div><h2>Materiales</h2><dl class="mats"><div><dt>Tejas arquitectónicas</dt><dd>Tejas asfálticas laminadas, más gruesas que las antiguas tejas planas de 3 lengüetas. Usted elige el color con muestras en su casa.</dd></div><div><dt>Membrana sintética</dt><dd>Una lámina tejida sobre todo el techo, debajo de las tejas. Desvía el agua si alguna vez se vuela una teja.</dd></div><div><dt>Membrana autoadherible</dt><dd>Una lámina de caucho adhesiva en las limahoyas, alrededor de la chimenea y en cada tubería, donde suelen empezar las goteras.</dd></div><div><dt>Borde de goteo y tapajuntas</dt><dd>Borde de metal nuevo en los aleros y los extremos inclinados, y tapajuntas escalonados nuevos donde el techo se une a una pared.</dd></div><div><dt>Ventila y tapa de cumbrera</dt><dd>Una ventila a lo largo de la parte alta que deja salir el aire caliente del ático, cubierta con tejas de cumbrera.</dd></div></dl></div>
+<div><h2>Paso a paso</h2><ol class="steps"><li><span class="n">01</span><div><h3>Proteger el patio</h3><p>Ponemos lonas sobre los jardines, el aire acondicionado y todo lo que esté junto a las paredes. El contenedor va sobre madera contrachapada.</p></div></li><li><span class="n">02</span><div><h3>Retiro</h3><p>Quitamos las tejas y la membrana viejas por secciones, nunca más de lo que podemos cubrir ese día.</p></div></li><li><span class="n">03</span><div><h3>Revisar la base</h3><p>Pisamos cada tabla. Le mostramos las que están blandas y las cambiamos al precio por hoja de su presupuesto.</p></div></li><li><span class="n">04</span><div><h3>Cubrir el techo</h3><p>El borde de goteo, la membrana autoadherible y la membrana sintética se ponen el mismo día que se quita el techo viejo.</p></div></li><li><span class="n">05</span><div><h3>Tejas y cumbrera</h3><p>Tira inicial, tejas, tapajuntas y botas de tubería, y al final la ventila y la tapa de cumbrera.</p></div></li><li><span class="n">06</span><div><h3>Limpieza y revisión final</h3><p>Pasamos un imán por el patio y la entrada, y revisamos el trabajo con usted.</p></div></li></ol></div></div></section>
+<section class="section"><div class="wrap two"><div><h2>No incluye</h2><ul class="nots"><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>Canaletas nuevas. Quitamos las suyas y las volvemos a poner si el trabajo lo requiere, pero no vendemos ni instalamos canaletas nuevas.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>Vigas o estructura podridas. Si encontramos alguna, paramos, se la mostramos y le damos un precio por escrito antes de repararla.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>Tragaluces nuevos. Ponemos tapajuntas alrededor de los que ya tiene; cambiarlos tiene un precio aparte.</span></li><li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg><span>Pintar la fascia o las molduras.</span></li></ul><p class="note">Más respuestas en la <a href="questions.html">página de preguntas</a>.</p></div>
+<div><h2>Otros servicios</h2><ul class="svc"><li><a href="metal.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V29 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">3:12</text></svg><div><h3>Techos de metal</h3><p>Metal de junta alzada y atornillado para casas, talleres y graneros.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="repairs.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V17 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">8:12</text></svg><div><h3>Reparaciones y goteras</h3><p>Goteras, tejas que faltan y tapajuntas. Primero cubrimos con lona, luego reparamos.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="storm.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V20 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">7:12</text></svg><div><h3>Daños por tormenta</h3><p>Daños por granizo y viento. Cubrimos con lona, tomamos fotos y nos reunimos con su ajustador.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li><li><a href="inspections.html"><svg viewBox="0 0 64 40" aria-hidden="true" focusable="false"><path d="M4 36 H60 V24 Z" fill="#F6E7A6" stroke="#2F3437" stroke-width="2" stroke-linejoin="round"/><text x="32" y="33" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="10" fill="#2F3437">5:12</text></svg><div><h3>Inspección de techos</h3><p>Un informe por escrito con fotos, para una revisión, una venta o después de una tormenta.</p></div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></li></ul></div></div></section>
 </main>
 <footer class="foot">
 <div class="wrap">
 <div class="foot-grid">
-<div><h2>Ridgepole Roofing</h2><p>(870) 555-0168</p><p>Landing y los pueblos a menos de 40 millas. Vamos a su casa, así que no hay taller que visitar.</p></div>
+<div><h2>Ridgepole Roofing</h2><p>(870) 555-0168</p><p>Landing y los pueblos a menos de 40 millas. Vamos a su casa, así que no hay taller que visitar.</p><p><a class="go" href="area.html">Ver los pueblos que cubrimos</a></p></div>
 <div><h2>Horario de oficina</h2><p>Lunes a viernes, de 7 a. m. a 5 p. m.<br>Sábados con cita.</p></div>
-<div><h2>Síganos</h2><div class="social"><button type="button" data-demo="facebook" aria-label="Facebook"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></button></div></div>
+<div><h2>Encuéntrenos en línea</h2><div class="social"><button type="button" data-demo="facebook" aria-label="Facebook"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></button></div>
+<div class="foot-acts"><button type="button" class="btn" data-demo="google"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Encuéntrenos en Google</span></button>
+<button type="button" class="btn" data-demo="review"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><span>Déjenos una reseña</span></button></div></div>
 </div>
 <div class="foot-links"><span>© 2026 Ridgepole Roofing</span><a href="privacy.html">Privacidad</a><a href="../shingle.html" lang="en" hreflang="en">English</a></div>
 </div>
@@ -232,7 +316,7 @@ p{margin:0 0 16px;text-wrap:pretty}
 <script>
 /* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
 (function () {
-  var notes = {"text": "Muestra: en su sitio, este botón abre un mensaje de texto a su número.", "call": "Muestra: en su sitio, este botón llama a su número.", "map": "Muestra: en su sitio, esto abre su dirección en Mapas.", "facebook": "Muestra: en su sitio, esto abre su página de Facebook.", "instagram": "Muestra: en su sitio, esto abre su página de Instagram.", "booking": "Muestra: en su sitio, esto abre la página de citas que ya usa, como Square o Booksy.", "form": "Muestra: no se envió nada. En su sitio, este formulario le envía por correo lo que escribió la persona.", "quote": "Muestra: no se envió nada. En su sitio, este formulario le envía la solicitud por correo, con el servicio ya elegido."};
+  var notes = {"text": "Muestra: en su sitio, este botón abre un mensaje de texto a su número.", "call": "Muestra: en su sitio, este botón llama a su número.", "map": "Muestra: en su sitio, esto abre su dirección en Mapas.", "facebook": "Muestra: en su sitio, esto abre su página de Facebook.", "instagram": "Muestra: en su sitio, esto abre su página de Instagram.", "booking": "Muestra: en su sitio, esto abre la página de citas que ya usa, como Square o Booksy.", "form": "Muestra: no se envió nada. En su sitio, este formulario le envía por correo lo que escribió la persona.", "quote": "Muestra: no se envió nada. En su sitio, este formulario le envía la solicitud por correo, con el servicio ya elegido.", "google": "Muestra: en su sitio, esto abre su Perfil de Negocio de Google.", "review": "Muestra: en su sitio, esto abre su página de reseñas de Google, para que sus clientes dejen una reseña.", "email": "Muestra: en su sitio, esto abre un correo a su dirección.", "pay": "Muestra: en su sitio, esto abre la página de pagos que ya usa.", "checkout": "Muestra: no se cobró nada. En su sitio, esto abre la página de pago de Stripe para pagar con tarjeta.", "order": "Muestra: no se pidió nada. En su sitio, el pedido le llega por correo y la persona recibe un correo de confirmación.", "appstore": "Muestra: en su sitio, esto abre la página de su aplicación en el App Store.", "googleplay": "Muestra: en su sitio, esto abre la página de su aplicación en Google Play."};
   var toast = document.getElementById('demo-toast');
   var msg = document.getElementById('demo-msg');
   var timer = null;
@@ -262,6 +346,17 @@ function sampleNow() {
   p.forEach(function (x) { o[x.type] = x.value; });
   return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
 }
+</script>
+<script>
+/* Services drop-down in the wide menu: closes on Escape, on a click outside it and when focus leaves it */
+(function () {
+  var d = document.querySelector('.sub');
+  if (!d) { return; }
+  var s = d.querySelector('summary');
+  document.addEventListener('click', function (e) { if (d.open && !d.contains(e.target)) { d.open = false; } });
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.open) { d.open = false; s.focus(); } });
+  d.addEventListener('focusout', function (e) { if (d.open && e.relatedTarget && !d.contains(e.relatedTarget)) { d.open = false; } });
+}());
 </script>
 
 </body>

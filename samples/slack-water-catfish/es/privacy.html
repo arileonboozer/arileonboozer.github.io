@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0F2A2D">
+<title>Privacidad | Slack Water Catfish | Página de muestra de ALB</title>
+<meta name="description" content="Una página de muestra de ALB: el lugar de la página de privacidad de un restaurante de bagre inventado.">
+<link rel="alternate" hreflang="en-US" href="../privacy.html">
+<style>
+:root{--water:#0F2A2D;--moon:#EFE8DA;--reed:#A9BDB4;--lamp:#F2B65A;--lamp-2:#F6C77A;--board:#1A2E30;--rule:#2A4447;
+--paper:#EFE8DA;--ink:#0F2A2D;--ink-2:#3D5A5C;--paper-rule:#B8C4BE;
+--display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+--text:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--gut:max(20px, env(safe-area-inset-left));--ease:cubic-bezier(.22,1,.36,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:dark;background:var(--water);color:var(--moon);font-family:var(--text);line-height:1.55;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;font-size:1.0625rem;font-variant-numeric:lining-nums}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:3px;border-radius:4px}
+[hidden]{display:none!important}
+.skip-main{position:absolute;left:12px;top:-80px;z-index:60;background:var(--lamp);color:var(--water);padding:12px 16px;border-radius:4px;font-weight:600}
+.skip-main:focus{top:12px}
+.ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* Header: the scroll page's, with the name linking home */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 16px;padding:8px var(--gut);background:var(--water)}
+.top .name{display:inline-flex;align-items:center;min-height:44px;font-family:var(--display);font-weight:700;font-size:1.25rem;white-space:nowrap;text-decoration:none}
+.top .name:hover{text-decoration:underline}
+.top nav{display:flex;align-items:center;gap:16px}
+.lang{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem;color:var(--reed)}
+.call{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:0;border-radius:4px;background:var(--lamp);color:var(--water);font:inherit;font-weight:600;white-space:nowrap;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+footer{max-width:1080px;margin:0 auto;padding:24px var(--gut) 48px;border-top:1px solid var(--rule);color:var(--reed);font-size:.9375rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:8px}
+.foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--moon)}
+
+.legal{max-width:42rem;padding-top:40px;padding-bottom:48px}
+.legal h1{font-size:clamp(2.25rem,5.2vw,3.5rem)}
+.legal p{margin-top:16px}
+
+.sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
+.sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.sample-bar a:hover{color:#FFFFFF}
+.sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+.sample-bar .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.demo-toast{position:fixed;left:12px;right:12px;bottom:16px;z-index:50;max-width:30rem;margin:0 auto;background:#1B1A17;color:#F5F0E6;border-radius:6px;padding:12px 12px 12px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.25);font:400 1rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s linear .15s}
+.demo-toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .15s cubic-bezier(.22,1,.36,1),transform .15s cubic-bezier(.22,1,.36,1),visibility 0s}
+.demo-toast p{margin:4px 0 0;flex:1}
+.demo-toast button{flex:none;min-height:44px;min-width:44px;padding:8px 12px;border:2px solid #F5F0E6;border-radius:4px;background:transparent;color:#F5F0E6;font:600 .9375rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer}
+.demo-toast button:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.demo-toast,.demo-toast.on{transition:none;transform:none}}
+@media print{.sample-bar,.demo-toast{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol></svg>
+<a class="skip-main" href="#main">Saltar al contenido principal</a>
+<div class="sample-bar"><div class="sb-in"><p>Muestra de Desarrollo a la Medida de Ari Leon Boozer, con un momento al desplazarse y pedidos en línea. El restaurante, el río, el horario, los precios y el teléfono son inventados.</p><a href="/es/muestras/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>Ver todas las muestras</span></a></div></div>
+<header class="top">
+<a class="name" href="index.html">Slack Water Catfish</a>
+<nav aria-label="Principal">
+<a class="lang" href="../privacy.html" hreflang="en-US" lang="en-US">English</a>
+<button type="button" class="call" data-demo="call">Llame al (870) 555-0137</button>
+</nav>
+</header>
+<main id="main">
+<div class="wrap legal"><h1>Privacidad</h1><p>Este es un sitio de muestra, así que esta página ocupa el lugar de la verdadera.</p><p>Un Desarrollo a la Medida que recibe pedidos guarda datos de clientes, como nombres, teléfonos, correos electrónicos y pedidos, así que tiene su propia página de privacidad escrita para el negocio. Explica qué se guarda, quién puede verlo, cuánto tiempo se conserva, qué servicios externos lo manejan (como Stripe para los pagos con tarjeta) y cómo pedir que se borre.</p><p>Esta muestra no guarda nada. Su formulario de pedido funciona solo en su navegador, no envía nada, no cobra nada, no usa cookies y no carga nada de otros sitios web.</p></div>
+</main>
+<footer><p>Página de muestra de <a href="https://www.arileonboozer.com/es/">ALB</a>. Slack Water Catfish, el río Mossy Fork, Persimmon Landing, el número de teléfono, el horario y los precios son inventados.</p>
+<p class="foot-links"><a href="index.html">Página principal</a><a href="privacy.html">Privacidad</a><a href="../privacy.html" hreflang="en-US" lang="en-US">English</a></p></footer>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite"><p id="demo-msg"></p><button type="button" id="demo-close">Cerrar</button></div>
+<script>
+/* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
+(function () {
+  var notes = {"text": "Muestra: en su sitio, este botón abre un mensaje de texto a su número.", "call": "Muestra: en su sitio, este botón llama a su número.", "map": "Muestra: en su sitio, esto abre su dirección en Mapas.", "facebook": "Muestra: en su sitio, esto abre su página de Facebook.", "instagram": "Muestra: en su sitio, esto abre su página de Instagram.", "booking": "Muestra: en su sitio, esto abre la página de citas que ya usa, como Square o Booksy.", "form": "Muestra: no se envió nada. En su sitio, este formulario le envía por correo lo que escribió la persona.", "quote": "Muestra: no se envió nada. En su sitio, este formulario le envía la solicitud por correo, con el servicio ya elegido.", "google": "Muestra: en su sitio, esto abre su Perfil de Negocio de Google.", "review": "Muestra: en su sitio, esto abre su página de reseñas de Google, para que sus clientes dejen una reseña.", "email": "Muestra: en su sitio, esto abre un correo a su dirección.", "pay": "Muestra: en su sitio, esto abre la página de pagos que ya usa.", "checkout": "Muestra: no se cobró nada. En su sitio, esto abre la página de pago de Stripe para pagar con tarjeta.", "order": "Muestra: no se pidió nada. En su sitio, el pedido le llega por correo y la persona recibe un correo de confirmación.", "appstore": "Muestra: en su sitio, esto abre la página de su aplicación en el App Store.", "googleplay": "Muestra: en su sitio, esto abre la página de su aplicación en Google Play.", "unsub": "Muestra: en un correo real, este enlace detiene los demás correos del restaurante."};
+  var toast = document.getElementById('demo-toast');
+  var msg = document.getElementById('demo-msg');
+  var timer = null;
+  function hide() { toast.classList.remove('on'); }
+  function show(kind) {
+    msg.textContent = notes[kind] || notes.form;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(hide, 7000);
+  }
+  document.getElementById('demo-close').addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hide(); } });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-demo]');
+    if (!b) { return; }
+    e.preventDefault();
+    var f = b.closest('form');
+    if (f && !f.reportValidity()) { return; }
+    show(b.getAttribute('data-demo'));
+  });
+  document.addEventListener('submit', function (e) { e.preventDefault(); });
+}());
+/* The made-up businesses keep Central time, whatever the visitor's clock says */
+function sampleNow() {
+  var p = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var o = {};
+  p.forEach(function (x) { o[x.type] = x.value; });
+  return {d: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), t: (+o.hour % 24) * 60 + (+o.minute)};
+}
+</script>
+
+</body>
+</html>

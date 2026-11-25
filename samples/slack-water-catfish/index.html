@@ -154,7 +154,8 @@ footer { max-width: 1000px; margin: 0 auto; padding: 24px max(20px, env(safe-are
 
 .sample-bar{background:#1B1A17;color:#F5F0E6;font:400 .9375rem/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 .sample-bar .sb-in{max-width:72rem;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:20px;row-gap:4px}
-.sample-bar p{margin:0}
+.sample-bar p{margin:0;flex:1 1 24rem;min-width:0}
+.sample-bar a{flex:none}
 .sample-bar a{color:#F5F0E6;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
 .sample-bar a:hover{color:#FFFFFF}
 .sample-bar a:focus-visible{outline:3px solid #F5F0E6;outline-offset:2px}
@@ -168,10 +169,19 @@ footer { max-width: 1000px; margin: 0 auto; padding: 24px max(20px, env(safe-are
 @media print{.sample-bar,.demo-toast{display:none}}
 
 button.call{border:0;font:inherit;font-weight:600;cursor:pointer}
+
+.order-cta{margin-top:24px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.order-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:2px solid var(--lamp);border-radius:4px;color:var(--moon);font-weight:600;text-decoration:none;white-space:nowrap}
+.order-link:hover{background:var(--board)}
+.order-link .ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin:8px 0 0}
+.foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--moon)}
 </style>
 </head>
 <body>
-<div class="sample-bar"><div class="sb-in"><p>Sample Custom Build by Ari Leon Boozer, showing a scroll moment. The restaurant, river, hours and phone number are made up.</p><a href="/samples/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>See all samples</span></a></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol></svg>
+<div class="sample-bar"><div class="sb-in"><p>Sample Custom Build by Ari Leon Boozer, showing a scroll moment and online ordering. The restaurant, river, hours, prices and phone number are made up.</p><a href="/samples/"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-back"/></svg><span>See all samples</span></a></div></div>
 <header class="top">
   <span class="name">Slack Water Catfish</span>
   <nav aria-label="Main">
@@ -261,6 +271,7 @@ button.call{border:0;font:inherit;font-weight:600;cursor:pointer}
       <li><h3>Fried green tomatoes</h3><p>With comeback sauce.</p></li>
       <li><h3>Peach cobbler</h3><p>Warm, with a scoop of vanilla.</p></li>
     </ul>
+    <p class="order-cta"><a class="order-link" href="order.html">Order for pickup<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></p>
   </section>
 
   <section class="plain" id="hours" aria-labelledby="hours-title">
@@ -276,10 +287,10 @@ button.call{border:0;font:inherit;font-weight:600;cursor:pointer}
     <h2 id="find-title">Find the dock</h2>
     <p class="addr">100 Dock Road, Persimmon Landing, Arkansas</p>
     <p>Follow the signs for the boat ramp. The restaurant is at the end of Dock Road, out over the water.</p>
-    <p><button type="button" class="call" data-demo="call" data-contact>Call (870) 555-0137</button></p>
+    <p class="acts"><button type="button" class="call" data-demo="call" data-contact>Call (870) 555-0137</button><a class="order-link" href="order.html">Order for pickup<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-right"/></svg></a></p>
   </section>
 </main>
-<footer>Sample page by <a href="https://www.arileonboozer.com/">ALB</a>. Slack Water Catfish, the Mossy Fork River, Persimmon Landing, the phone number and the hours are all made up.</footer>
+<footer><p>Sample page by <a href="https://www.arileonboozer.com/">ALB</a>. Slack Water Catfish, the Mossy Fork River, Persimmon Landing, the phone number and the hours are all made up.</p><p class="foot-links"><a href="order.html">Order for pickup</a><a href="privacy.html">Privacy</a></p></footer>
 <script>
 /* alb-scroll-story engine.js v1 START (2026-11-24). Paste once, inline, in a <script> at the end of <body>.
    - Adds .js-scrub where CSS scroll timelines are missing (or when the URL has ?scrub=js, for testing).
@@ -349,7 +360,7 @@ button.call{border:0;font:inherit;font-weight:600;cursor:pointer}
 <script>
 /* Sample-site demo: buttons and forms show a note instead of opening or sending anything. */
 (function () {
-  var notes = {"text": "Sample: on your site, this button starts a text message to your number.", "call": "Sample: on your site, this button calls your number.", "map": "Sample: on your site, this opens your address in Maps.", "facebook": "Sample: on your site, this opens your Facebook page.", "instagram": "Sample: on your site, this opens your Instagram page.", "booking": "Sample: on your site, this opens the booking page you already use, such as Square or Booksy.", "form": "Sample: nothing was sent. On your site, this form emails you what the visitor wrote.", "quote": "Sample: nothing was sent. On your site, this form emails you the request, with the service already filled in."};
+  var notes = {"text": "Sample: on your site, this button starts a text message to your number.", "call": "Sample: on your site, this button calls your number.", "map": "Sample: on your site, this opens your address in Maps.", "facebook": "Sample: on your site, this opens your Facebook page.", "instagram": "Sample: on your site, this opens your Instagram page.", "booking": "Sample: on your site, this opens the booking page you already use, such as Square or Booksy.", "form": "Sample: nothing was sent. On your site, this form emails you what the visitor wrote.", "quote": "Sample: nothing was sent. On your site, this form emails you the request, with the service already filled in.", "google": "Sample: on your site, this opens your Google Business Profile.", "review": "Sample: on your site, this opens your Google review page, so customers can leave a review.", "email": "Sample: on your site, this opens an email to your address.", "pay": "Sample: on your site, this opens the payment page you already use.", "checkout": "Sample: nothing was charged. On your site, this opens Stripe's own checkout page to pay by card.", "order": "Sample: nothing was ordered. On your site, the order is emailed to you and the customer gets a confirmation email.", "appstore": "Sample: on your site, this opens your app's page in the App Store.", "googleplay": "Sample: on your site, this opens your app's page on Google Play.", "unsub": "Sample: in a real email, this link stops further emails from the restaurant."};
   var toast = document.getElementById('demo-toast');
   var msg = document.getElementById('demo-msg');
   var timer = null;
